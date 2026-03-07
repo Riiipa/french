@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Жорсткий тренажер: Французькі дієслова B1</title>
+    <title>Тренажер: Французькі дієслова B1</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .pop-animation { animation: pop 0.3s ease-out forwards; }
@@ -18,7 +18,6 @@
             border-bottom: 3px solid #cbd5e1;
             background: transparent;
             transition: all 0.2s;
-            /* Запобігає зуму на iOS */
             font-size: 1.5rem; 
         }
         .verb-input:focus {
@@ -43,7 +42,6 @@
         }
     </style>
 </head>
-<!-- Використовуємо 100dvh (динамічний в'юпорт) і прибиваємо до верху на мобілках (justify-start), щоб клавіатура не ламала UI -->
 <body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
@@ -60,6 +58,20 @@
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Présent<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Теперішній)</span>
                     </div>
+                </label>
+                <label class="cursor-pointer relative block">
+                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="saveSetup()">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
+                        Passé Composé<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Минулий)</span>
+                    </div>
+                </label>
+                <label class="cursor-pointer relative block">
+                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="saveSetup()">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
+                        Futur Simple<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Майбутній)</span>
+                    </div>
+                </label>
+            </div>
             <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Виберіть хоча б один час!</div>
         </div>
 
@@ -72,7 +84,7 @@
         </div>
 
         <div id="verbCategoriesContainer" class="w-full mb-6 max-h-[40vh] overflow-y-auto px-1 sm:px-2 text-left">
-            <!-- Categories injected here -->
+            <!-- Тут будуть згенеровані категорії з data.json -->
         </div>
 
         <div id="setupError" class="hidden text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одне дієслово.</div>
@@ -149,6 +161,11 @@
                 <span class="text-xs sm:text-sm font-bold text-green-700 uppercase">Правильно</span>
             </div>
             <div class="bg-red-50 rounded-2xl p-4 border border-red-100">
+                <span class="block text-3xl sm:text-4xl font-black text-red-500 mb-1" id="statMistakes">3</span>
+                <span class="text-xs sm:text-sm font-bold text-red-700 uppercase">Помилок</span>
+            </div>
+        </div>
+
         <div class="w-full bg-slate-100 rounded-full h-4 mb-2">
             <div id="accuracyBar" class="bg-indigo-500 h-4 rounded-full" style="width: 80%"></div>
         </div>
@@ -163,7 +180,7 @@
     </div>
 
     <script>
-        // БАЗА ПРАВИЛ ТА ДІЄСЛІВ (Залишається як була, вона вже правильна)
+        // БАЗА ПРАВИЛ ТА ПОЯСНЕНЬ
         const tenseExplanations = {
             "present": "Présent: Звичайне відмінювання.",
             "passe": "Passé Composé: Допоміжне Être/Avoir + Participe Passé. Увага на узгодження (elle est venue, ils sont partis) з Être!",
@@ -236,7 +253,6 @@
             localStorage.setItem('frenchVerbsSetupB1_v3', JSON.stringify({ verbs, tenses }));
         }
 
-        // ЖОРСТКА ПАМ'ЯТЬ (SRS MEMORY)
         function getSRSMemory() {
             const mem = localStorage.getItem('frenchVerbsSRS');
             return mem ? JSON.parse(mem) : {};
@@ -247,10 +263,8 @@
             if (!memory[cardId]) memory[cardId] = { errors: 0 };
             
             if (isCorrect) {
-                // Якщо правильно - вага падає (мінімум 0)
                 memory[cardId].errors = Math.max(0, memory[cardId].errors - 1);
             } else {
-                // Якщо помилка - жорстко караємо (+2 до ваги)
                 memory[cardId].errors += 2;
             }
             localStorage.setItem('frenchVerbsSRS', JSON.stringify(memory));
@@ -359,7 +373,6 @@
                             const conjugationTable = verbObj[tenseKey].map(f => (f.p.endsWith("'") ? f.p : f.p + " ") + f.v);
                             
                             verbObj[tenseKey].forEach(form => {
-                                // Унікальний ID картки для пам'яті: "Être_passe_je"
                                 const cardId = `${verbObj.infFr}_${tenseKey}_${form.p}`;
                                 const weight = srsMemory[cardId] ? srsMemory[cardId].errors : 0;
 
@@ -383,7 +396,6 @@
                 }
             });
 
-            // Наповнюємо глобальну колоду.
             unmasteredCards = [...allDatabaseCards];
             startSession();
         }
@@ -432,21 +444,17 @@
             document.getElementById('trainingScreen').classList.remove('hidden');
             
             if (unmasteredCards.length === 0) {
-                // Якщо колода вичерпалась, беремо знову ВСІ доступні картки
                 unmasteredCards = [...allDatabaseCards];
                 if (sessionStats.completed > 0) {
                     alert("Усі картки пройдено. Починаємо нове коло. Найслабші слова будуть першими.");
                 }
             }
             
-            // МАГІЯ SRS: Сортуємо глобальну колоду за вагою (помилками), найгірші йдуть першими.
-            // Щоб не було 100% передбачувано, додаємо дрібку рандому, але вага завжди перемагає.
             unmasteredCards.sort((a, b) => (b.weight - a.weight) || (Math.random() - 0.5));
             
             const cardsToTake = Math.min(SESSION_LENGTH, unmasteredCards.length);
             sessionQueue = unmasteredCards.splice(0, cardsToTake);
             
-            // Перемішуємо відібрані 15 карток, щоб вони не йшли суворо за рейтингом
             shuffle(sessionQueue);
             
             sessionQueue.forEach(card => card.mistakesThisSession = 0);
@@ -489,7 +497,6 @@
             const input = document.getElementById('userInput');
             input.value = '';
             input.disabled = false;
-            // Динамічна ширина для довших конструкцій Passé Composé
             input.style.width = Math.max(120, currentCard.verb.length * 16) + 'px';
             input.classList.remove('text-green-600', 'text-red-500', 'border-green-500', 'border-red-500');
             input.classList.add('text-indigo-700', 'border-slate-300');
@@ -524,7 +531,6 @@
                 
                 playCurrentAudio();
                 
-                // Знижуємо вагу картки в глобальній пам'яті
                 updateSRSCard(currentCard.id, true);
 
                 const finishedCard = sessionQueue.shift();
@@ -532,7 +538,6 @@
                 sessionStats.completed++;
                 
                 if (finishedCard.mistakesThisSession > 0) {
-                    // Якщо в цій сесії були помилки, вона повернеться в наступних колах, бо вага була збільшена
                     unmasteredCards.push(finishedCard);
                 }
             } else {
@@ -540,7 +545,6 @@
                 sessionStats.mistakes++;
                 currentCard.mistakesThisSession++;
                 
-                // Збільшуємо вагу картки в глобальній пам'яті (жорстке покарання)
                 updateSRSCard(currentCard.id, false);
                 
                 input.value = currentCard.verb; 
@@ -619,14 +623,10 @@
         // НОВИЙ АСИНХРОННИЙ СТАРТ: Завантажуємо JSON перед малюванням UI
         async function bootApp() {
             try {
-                // Звертаємось до файлу data.json у твоєму репозиторії
                 const response = await fetch('./data.json');
-                
                 if (!response.ok) throw new Error("Файл data.json не знайдено");
-                
                 rawData = await response.json();
-                initSetupScreen(); // Тільки тепер запускаємо лобі
-                
+                initSetupScreen();
             } catch (error) {
                 console.error("Критична помилка завантаження:", error);
                 document.getElementById('setupScreen').innerHTML = `
@@ -634,9 +634,9 @@
                     <p class="text-slate-600 font-medium">Не можу знайти або прочитати <b>data.json</b>.</p>
                     <p class="text-sm text-slate-500 mt-4 text-left bg-slate-50 p-4 rounded-xl border border-slate-200">
                         <b>Чому це сталось:</b><br>
-                        1. Файл відсутній у репозиторії.<br>
-                        2. Синтаксична помилка всередині JSON (зайва кома тощо).<br>
-                        3. Ти відкрив HTML просто подвійним кліком (file://). Браузери блокують fetch для локальних файлів. Використовуй VS Code Live Server або залий на GitHub.
+                        1. Файл відсутній у репозиторії (в одній папці з HTML).<br>
+                        2. Синтаксична помилка всередині JSON.<br>
+                        3. Ти відкрив HTML локально (file://), і браузер заблокував запит (CORS). Залий на GitHub.
                     </p>`;
                 document.getElementById('setupScreen').classList.remove('hidden');
             }
