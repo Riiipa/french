@@ -48,37 +48,23 @@
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
     <div id="setupScreen" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-4xl w-full mx-4 border border-slate-200 flex flex-col items-center">
-        <h1 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Командний центр B1</h1>
-        <p class="text-slate-500 mb-6 text-sm sm:text-base">Обирай мету. Твої помилки зберігаються назавжди.</p>
+        <h1 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Налаштування тренажера</h1>
+        <p class="text-slate-500 mb-6 text-sm sm:text-base">Оберіть дієслова та часи. Система інтервального повторення зберігатиме історію помилок.</p>
 
         <!-- БЛОК ВИБОРУ ЧАСУ -->
         <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
-            <h3 class="text-base sm:text-lg font-black text-slate-700 mb-3 uppercase tracking-widest">Крок 1: Часи</h3>
+            <h3 class="text-base sm:text-lg font-black text-slate-700 mb-3 uppercase tracking-widest">Часи</h3>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <label class="cursor-pointer relative block">
                     <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="saveSetup()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Présent<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Теперішній)</span>
                     </div>
-                </label>
-                <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="saveSetup()">
-                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
-                        Passé Composé<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Минулий)</span>
-                    </div>
-                </label>
-                <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="saveSetup()">
-                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
-                        Futur Simple<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Майбутній)</span>
-                    </div>
-                </label>
-            </div>
-            <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Вибери хоча б один час!</div>
+            <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Виберіть хоча б один час!</div>
         </div>
 
         <div class="flex justify-between w-full mb-4 px-2 border-b border-slate-100 pb-3 items-end">
-            <h3 class="text-base sm:text-lg font-black text-slate-700 uppercase tracking-widest m-0">Крок 2: Дієслова</h3>
+            <h3 class="text-base sm:text-lg font-black text-slate-700 uppercase tracking-widest m-0">Дієслова</h3>
             <div class="flex gap-3 sm:gap-4">
                 <button onclick="toggleAllVerbs(true)" class="text-xs sm:text-sm font-bold text-indigo-500 hover:text-indigo-700 uppercase tracking-wide">Всі</button>
                 <button onclick="toggleAllVerbs(false)" class="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wide">Скинути</button>
@@ -89,10 +75,10 @@
             <!-- Categories injected here -->
         </div>
 
-        <div id="setupError" class="hidden text-red-500 font-bold mb-4 pop-animation">Ти не вибрав жодного дієслова.</div>
+        <div id="setupError" class="hidden text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одне дієслово.</div>
 
-        <button onclick="initSessionFromSetup()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest">
-            ПОЧАТИ ШТУРМ
+        <button onclick="initSessionFromSetup()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
+            Почати тренування
         </button>
     </div>
 
@@ -154,8 +140,8 @@
 
     <!-- ЕКРАН 3: СТАТИСТИКА -->
     <div id="statsScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-md w-full mx-4 border border-slate-200 flex flex-col items-center">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Раунд завершено</h2>
-        <p class="text-slate-500 mb-8 text-sm sm:text-base">Я оновив твою базу помилок.</p>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Сесію завершено</h2>
+        <p class="text-slate-500 mb-8 text-sm sm:text-base">Результати збережено в базі.</p>
 
         <div class="grid grid-cols-2 gap-4 w-full mb-8">
             <div class="bg-green-50 rounded-2xl p-4 border border-green-100">
@@ -163,16 +149,16 @@
                 <span class="text-xs sm:text-sm font-bold text-green-700 uppercase">Правильно</span>
             </div>
             <div class="bg-red-50 rounded-2xl p-4 border border-red-100">
-                <span class="block text-3xl sm:text-4xl font-black text-red-500 mb-1" id="statMistakes">3</span>
-                <span class="text-xs sm:text-sm font-bold text-red-700 uppercase">Помилок</span>
-            </div>
+        <div class="w-full bg-slate-100 rounded-full h-4 mb-2">
+            <div id="accuracyBar" class="bg-indigo-500 h-4 rounded-full" style="width: 80%"></div>
         </div>
+        <p class="text-indigo-700 font-bold mb-8">Точність: <span id="accuracyText">80%</span></p>
 
         <button onclick="startSession()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">
-            Ще один раунд
+            Наступна сесія
         </button>
         <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm sm:text-base uppercase">
-            В лобі
+            В меню
         </button>
     </div>
 
@@ -185,7 +171,7 @@
         };
 
         const verbRules = {
-            "Venir": "Мутанти -enir. PC: ÊTRE + venu(e)(s). FS: корінь 'viendr-'.",
+            "Venir": "Дієслова на -enir. PC: ÊTRE + venu(e)(s). FS: корінь 'viendr-'.",
             "Devenir": "PC: ÊTRE + devenu(e)(s). FS: 'deviendr-'.",
             "Tenir": "PC: AVOIR + tenu (без узгодж.). FS: 'tiendr-'.",
             "Obtenir": "PC: AVOIR + obtenu. FS: 'obtiendr-'.",
@@ -449,7 +435,7 @@
                 // Якщо колода вичерпалась, беремо знову ВСІ доступні картки
                 unmasteredCards = [...allDatabaseCards];
                 if (sessionStats.completed > 0) {
-                    alert("Місія виконана! Починаємо нове коло. Найслабші слова підуть першими.");
+                    alert("Усі картки пройдено. Починаємо нове коло. Найслабші слова будуть першими.");
                 }
             }
             
