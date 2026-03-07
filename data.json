@@ -1,6 +1,6 @@
 [
   {
-    "category": "Ілюзія 1-ї групи (-frir/-vrir)",
+    "category": "Дієслова на -frir / -vrir",
     "infFr": "Offrir",
     "infUk": "дарувати",
     "present": [
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "category": "Ілюзія 1-ї групи (-frir/-vrir)",
+    "category": "Дієслова на -frir / -vrir",
     "infFr": "Souffrir",
     "infUk": "страждати",
     "present": [
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "category": "Ілюзія 1-ї групи (-frir/-vrir)",
+    "category": "Дієслова на -frir / -vrir",
     "infFr": "Ouvrir",
     "infUk": "відкривати",
     "present": [
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "category": "Ілюзія 1-ї групи (-frir/-vrir)",
+    "category": "Дієслова на -frir / -vrir",
     "infFr": "Couvrir",
     "infUk": "накривати",
     "present": [
@@ -116,7 +116,7 @@
     ]
   },
   {
-    "category": "Ілюзія 1-ї групи (-frir/-vrir)",
+    "category": "Дієслова на -frir / -vrir",
     "infFr": "Découvrir",
     "infUk": "відкривати (нове)",
     "present": [
@@ -145,7 +145,7 @@
     ]
   },
   {
-    "category": "Ампутація приголосної (-tir/-mir/-vir)",
+    "category": "Дієслова на -tir / -mir / -vir",
     "infFr": "Sortir",
     "infUk": "виходити",
     "present": [
@@ -174,7 +174,7 @@
     ]
   },
   {
-    "category": "Ампутація приголосної (-tir/-mir/-vir)",
+    "category": "Дієслова на -tir / -mir / -vir",
     "infFr": "Partir",
     "infUk": "вирушати",
     "present": [
@@ -203,7 +203,7 @@
     ]
   },
   {
-    "category": "Ампутація приголосної (-tir/-mir/-vir)",
+    "category": "Дієслова на -tir / -mir / -vir",
     "infFr": "Sentir",
     "infUk": "відчувати",
     "present": [
@@ -232,7 +232,7 @@
     ]
   },
   {
-    "category": "Ампутація приголосної (-tir/-mir/-vir)",
+    "category": "Дієслова на -tir / -mir / -vir",
     "infFr": "Dormir",
     "infUk": "спати",
     "present": [
@@ -261,7 +261,7 @@
     ]
   },
   {
-    "category": "Ампутація приголосної (-tir/-mir/-vir)",
+    "category": "Дієслова на -tir / -mir / -vir",
     "infFr": "Servir",
     "infUk": "служити / обслуговувати",
     "present": [
@@ -290,7 +290,7 @@
     ]
   },
   {
-    "category": "Ампутація приголосної (-tir/-mir/-vir)",
+    "category": "Дієслова на -tir / -mir / -vir",
     "infFr": "Mentir",
     "infUk": "брехати",
     "present": [
@@ -319,7 +319,7 @@
     ]
   },
   {
-    "category": "Мутанти кореня (-enir)",
+    "category": "Дієслова на -enir",
     "infFr": "Venir",
     "infUk": "приходити",
     "present": [
@@ -348,7 +348,7 @@
     ]
   },
   {
-    "category": "Мутанти кореня (-enir)",
+    "category": "Дієслова на -enir",
     "infFr": "Tenir",
     "infUk": "тримати",
     "present": [
@@ -377,7 +377,7 @@
     ]
   },
   {
-    "category": "Мутанти кореня (-enir)",
+    "category": "Дієслова на -enir",
     "infFr": "Devenir",
     "infUk": "ставати",
     "present": [
@@ -400,13 +400,13 @@
       { "p": "je", "v": "deviendrai", "s": "fou", "u": "я стану божевільним" },
       { "p": "tu", "v": "deviendras", "s": "grand", "u": "ти станеш великим" },
       { "p": "il", "v": "deviendra", "s": "triste", "u": "він стане сумним" },
-      { "p": "nous", "v": "deviendrons", "s": "amis", "u": "ми станемо друзями" },
+      { "p": "nous", "v": "deviendrons", "s": "amis", "u": "ми станеємо друзями" },
       { "p": "vous", "v": "deviendrez", "s": "riches", "u": "ви станете багатими" },
       { "p": "elles", "v": "deviendront", "s": "médecins", "u": "вони стануть лікарками" }
     ]
   },
   {
-    "category": "Мутанти кореня (-enir)",
+    "category": "Дієслова на -enir",
     "infFr": "Obtenir",
     "infUk": "отримувати",
     "present": [
@@ -435,7 +435,7 @@
     ]
   },
   {
-    "category": "Мутанти кореня (-enir)",
+    "category": "Дієслова на -enir",
     "infFr": "Retenir",
     "infUk": "утримувати / запам'ятовувати",
     "present": [
@@ -464,7 +464,7 @@
     ]
   },
   {
-    "category": "Родина -DRE",
+    "category": "Дієслова на -dre",
     "infFr": "Prendre",
     "infUk": "брати",
     "present": [
@@ -493,7 +493,7 @@
     ]
   },
   {
-    "category": "Родина -DRE",
+    "category": "Дієслова на -dre",
     "infFr": "Apprendre",
     "infUk": "вчити",
     "present": [
@@ -522,7 +522,7 @@
     ]
   },
   {
-    "category": "Родина -DRE",
+    "category": "Дієслова на -dre",
     "infFr": "Comprendre",
     "infUk": "розуміти",
     "present": [
@@ -551,7 +551,7 @@
     ]
   },
   {
-    "category": "Родина -DRE",
+    "category": "Дієслова на -dre",
     "infFr": "Attendre",
     "infUk": "чекати",
     "present": [
@@ -580,7 +580,7 @@
     ]
   },
   {
-    "category": "Родина -DRE",
+    "category": "Дієслова на -dre",
     "infFr": "Répondre",
     "infUk": "відповідати",
     "present": [
@@ -609,7 +609,7 @@
     ]
   },
   {
-    "category": "Група -OIR",
+    "category": "Дієслова на -oir",
     "infFr": "Pouvoir",
     "infUk": "могти",
     "present": [
@@ -638,7 +638,7 @@
     ]
   },
   {
-    "category": "Група -OIR",
+    "category": "Дієслова на -oir",
     "infFr": "Vouloir",
     "infUk": "хотіти",
     "present": [
@@ -667,7 +667,7 @@
     ]
   },
   {
-    "category": "Група -OIR",
+    "category": "Дієслова на -oir",
     "infFr": "Devoir",
     "infUk": "мусити",
     "present": [
@@ -696,7 +696,7 @@
     ]
   },
   {
-    "category": "Група -OIR",
+    "category": "Дієслова на -oir",
     "infFr": "Savoir",
     "infUk": "знати (факт)",
     "present": [
@@ -725,7 +725,7 @@
     ]
   },
   {
-    "category": "Група -OIR",
+    "category": "Дієслова на -oir",
     "infFr": "Voir",
     "infUk": "бачити",
     "present": [
@@ -754,9 +754,9 @@
     ]
   },
   {
-    "category": "Група -OIR",
+    "category": "Дієслова на -oir",
     "infFr": "Recevoir",
-    "infUk": "отримувати (приймати)",
+    "infUk": "отримувати",
     "present": [
       { "p": "je", "v": "reçois", "s": "un email", "u": "я отримую імейл" },
       { "p": "tu", "v": "reçois", "s": "des amis", "u": "ти приймаєш друзів" },
@@ -783,7 +783,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Être",
     "infUk": "бути",
     "present": [
@@ -812,7 +812,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Avoir",
     "infUk": "мати",
     "present": [
@@ -841,7 +841,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Aller",
     "infUk": "йти / їхати",
     "present": [
@@ -870,7 +870,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Faire",
     "infUk": "робити",
     "present": [
@@ -899,7 +899,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Dire",
     "infUk": "казати",
     "present": [
@@ -928,7 +928,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Mettre",
     "infUk": "класти / одягати",
     "present": [
@@ -957,7 +957,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Boire",
     "infUk": "пити",
     "present": [
@@ -986,7 +986,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Lire",
     "infUk": "читати",
     "present": [
@@ -1015,7 +1015,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Écrire",
     "infUk": "писати",
     "present": [
@@ -1044,7 +1044,7 @@
     ]
   },
   {
-    "category": "Абсолютний хаос (База)",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Croire",
     "infUk": "вірити / вважати",
     "present": [
