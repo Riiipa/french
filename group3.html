@@ -46,7 +46,18 @@
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
     <div id="setupScreen" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-4xl w-full mx-4 border border-slate-200 flex flex-col items-center">
-        <h1 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Налаштування тренажера</h1>
+        
+        <div class="flex items-center justify-between w-full mb-2">
+            <a href="index.html" class="text-slate-400 hover:text-indigo-600 transition-colors flex items-center gap-2" title="Повернутися в головне меню">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span class="font-bold hidden sm:inline">В лобі</span>
+            </a>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">Налаштування тренажера</h1>
+            <div class="w-6 sm:w-20"></div> <!-- Компенсатор для жорсткого центрування заголовка -->
+        </div>
+        
         <p class="text-slate-500 mb-6 text-sm sm:text-base">Оберіть дієслова та часи. Система інтервального повторення зберігатиме історію помилок.</p>
 
         <!-- БЛОК ВИБОРУ ЧАСУ -->
