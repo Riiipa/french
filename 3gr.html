@@ -2,8 +2,8 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жорсткий тренажер: Французькі дієслова 3 групи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Жорсткий тренажер: Французькі дієслова B1</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .pop-animation { animation: pop 0.3s ease-out forwards; }
@@ -18,6 +18,8 @@
             border-bottom: 3px solid #cbd5e1;
             background: transparent;
             transition: all 0.2s;
+            /* Запобігає зуму на iOS */
+            font-size: 1.5rem; 
         }
         .verb-input:focus {
             outline: none;
@@ -26,273 +28,282 @@
         .verb-input:disabled {
             background-color: transparent;
         }
-        /* Стилізація кастомних чекбоксів для вибору дієслів */
-        .verb-checkbox:checked + div {
+        .custom-checkbox:checked + div {
             background-color: #4f46e5;
             color: white;
             border-color: #4f46e5;
         }
-        .verb-checkbox:checked + div .translation-text {
-            color: #c7d2fe; /* Світліший текст перекладу, коли кнопка активна */
+        .custom-checkbox:checked + div .translation-text {
+            color: #c7d2fe;
+        }
+        .tense-checkbox:checked + div {
+            background-color: #10b981;
+            color: white;
+            border-color: #10b981;
         }
     </style>
 </head>
-<body class="bg-slate-100 min-h-screen flex flex-col items-center justify-center font-sans antialiased py-8 text-slate-800">
+<!-- Використовуємо 100dvh (динамічний в'юпорт) і прибиваємо до верху на мобілках (justify-start), щоб клавіатура не ламала UI -->
+<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
-    <div id="setupScreen" class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl text-center max-w-4xl w-full mx-4 border border-slate-200 flex flex-col items-center">
-        <h1 class="text-3xl font-black text-slate-800 mb-2">База дієслів B1</h1>
-        <p class="text-slate-500 mb-6">Деконструкція 3-ї групи. Вибирай патерни, які ще не закріпив у пам'яті.</p>
+    <div id="setupScreen" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-4xl w-full mx-4 border border-slate-200 flex flex-col items-center">
+        <h1 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Командний центр B1</h1>
+        <p class="text-slate-500 mb-6 text-sm sm:text-base">Обирай мету. Твої помилки зберігаються назавжди.</p>
 
-        <div class="flex justify-between w-full mb-4 px-2 border-b border-slate-100 pb-4">
-            <button onclick="toggleAllVerbs(true)" class="text-sm font-bold text-indigo-500 hover:text-indigo-700 uppercase tracking-wide">Увімкнути всі</button>
-            <button onclick="toggleAllVerbs(false)" class="text-sm font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wide">Скинути всі</button>
+        <!-- БЛОК ВИБОРУ ЧАСУ -->
+        <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
+            <h3 class="text-base sm:text-lg font-black text-slate-700 mb-3 uppercase tracking-widest">Крок 1: Часи</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <label class="cursor-pointer relative block">
+                    <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="saveSetup()">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
+                        Présent<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Теперішній)</span>
+                    </div>
+                </label>
+                <label class="cursor-pointer relative block">
+                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="saveSetup()">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
+                        Passé Composé<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Минулий)</span>
+                    </div>
+                </label>
+                <label class="cursor-pointer relative block">
+                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="saveSetup()">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
+                        Futur Simple<br><span class="text-[10px] sm:text-xs font-normal opacity-80">(Майбутній)</span>
+                    </div>
+                </label>
+            </div>
+            <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Вибери хоча б один час!</div>
         </div>
 
-        <!-- Контейнер для категорій генерується через JS -->
-        <div id="verbCategoriesContainer" class="w-full mb-8 max-h-[50vh] overflow-y-auto px-2 text-left">
-            <!-- Categories will be injected here -->
+        <div class="flex justify-between w-full mb-4 px-2 border-b border-slate-100 pb-3 items-end">
+            <h3 class="text-base sm:text-lg font-black text-slate-700 uppercase tracking-widest m-0">Крок 2: Дієслова</h3>
+            <div class="flex gap-3 sm:gap-4">
+                <button onclick="toggleAllVerbs(true)" class="text-xs sm:text-sm font-bold text-indigo-500 hover:text-indigo-700 uppercase tracking-wide">Всі</button>
+                <button onclick="toggleAllVerbs(false)" class="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wide">Скинути</button>
+            </div>
         </div>
 
-        <div id="setupError" class="hidden text-red-500 font-bold mb-4 pop-animation">Ти не вибрав жодного дієслова. З чим ти зібрався тренуватись?</div>
+        <div id="verbCategoriesContainer" class="w-full mb-6 max-h-[40vh] overflow-y-auto px-1 sm:px-2 text-left">
+            <!-- Categories injected here -->
+        </div>
 
-        <button onclick="initSessionFromSetup()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-xl tracking-wide">
-            СТАРТ ТРЕНУВАННЯ
+        <div id="setupError" class="hidden text-red-500 font-bold mb-4 pop-animation">Ти не вибрав жодного дієслова.</div>
+
+        <button onclick="initSessionFromSetup()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest">
+            ПОЧАТИ ШТУРМ
         </button>
     </div>
 
     <!-- ЕКРАН 2: ТРЕНУВАННЯ -->
-    <div id="trainingScreen" class="hidden bg-white p-8 sm:p-10 rounded-3xl shadow-xl text-center max-w-2xl w-full mx-4 border border-slate-200 flex flex-col items-center relative">
+    <div id="trainingScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-2xl w-full mx-4 border border-slate-200 flex flex-col items-center relative">
         
-        <button onclick="returnToSetup()" class="absolute top-6 left-6 text-slate-400 hover:text-slate-600 transition-colors" title="Налаштування">
+        <button onclick="returnToSetup()" class="absolute top-4 left-4 sm:top-6 sm:left-6 text-slate-400 hover:text-slate-600 transition-colors" title="Налаштування">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
         </button>
 
-        <div class="flex justify-between w-full mb-6 items-center pl-10">
-            <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">Сесія: <span id="sessionCounter" class="text-indigo-500">1/15</span></span>
-            <span class="text-xs font-bold text-slate-300 uppercase tracking-widest text-center">У черзі: <br><span id="globalDeckCounter" class="text-slate-500">?</span></span>
-            <span class="text-sm font-bold text-red-400 uppercase tracking-widest">Помилок: <span id="mistakeCounter">0</span></span>
+        <div class="flex justify-between w-full mb-4 sm:mb-6 items-center pl-8 sm:pl-10">
+            <span class="text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-widest">Сесія: <span id="sessionCounter" class="text-indigo-500">1/15</span></span>
+            <span class="text-[10px] sm:text-xs font-bold text-slate-300 uppercase tracking-widest text-center">Залишок: <br><span id="globalDeckCounter" class="text-slate-500">?</span></span>
+            <span class="text-xs sm:text-sm font-bold text-red-400 uppercase tracking-widest">Помилок: <span id="mistakeCounter">0</span></span>
         </div>
 
-        <div class="flex flex-col items-center justify-center w-full mb-6 min-h-[14rem]">
-            <!-- ПОВЕРНЕНА МИЛИЦЯ: Інфінітив -->
-            <span id="infinitiveHint" class="text-xs sm:text-sm text-slate-500 mb-3 font-bold bg-slate-200 px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm"></span>
+        <div class="flex flex-col items-center justify-center w-full mb-4 sm:mb-6 min-h-[12rem] sm:min-h-[16rem]">
             
-            <span id="wordDisplay" class="text-2xl sm:text-3xl font-bold text-indigo-600 mb-8 mt-2">???</span>
+            <div class="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <span id="infinitiveHint" class="text-[10px] sm:text-xs text-slate-600 font-bold bg-slate-200 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm"></span>
+                <span id="tenseHint" class="text-[10px] sm:text-xs text-white font-black bg-indigo-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm"></span>
+            </div>
             
-            <div class="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-4 text-2xl sm:text-3xl font-semibold text-slate-700 w-full">
+            <span id="wordDisplay" class="text-xl sm:text-3xl font-bold text-slate-800 mb-6 sm:mb-8 mt-1">???</span>
+            
+            <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
                 <input type="text" id="userInput" class="verb-input text-indigo-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 <span id="suffixDisplay"></span>
             </div>
 
-            <div id="feedbackContainer" class="hidden flex flex-col items-center mt-8 w-full">
-                <span id="feedbackDisplay" class="text-xl sm:text-2xl font-bold mb-2"></span>
-                <button onclick="playCurrentAudio()" class="p-3 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded-full transition-colors focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div id="feedbackContainer" class="hidden flex flex-col items-center mt-6 w-full">
+                <span id="feedbackDisplay" class="text-lg sm:text-2xl font-bold mb-2"></span>
+                <button onclick="playCurrentAudio()" class="p-2 sm:p-3 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded-full transition-colors focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.236l4.328 4.328a2 2 0 003.436-1.414V5.086a2 2 0 00-3.436-1.414L9.236 8H7a2 2 0 00-2 2z" />
                     </svg>
                 </button>
             </div>
         </div>
 
-        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg mb-4">
+        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Перевірити
         </button>
 
-        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg mb-4">
+        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
 
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-indigo-500 hover:text-indigo-700 font-medium underline transition-colors text-sm py-2 px-4 rounded-lg">
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-indigo-500 hover:text-indigo-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
 
-        <div id="ruleBox" class="hidden mt-4 p-5 bg-indigo-50 rounded-2xl border border-indigo-100 text-left text-sm text-indigo-900 w-full shadow-inner"></div>
+        <div id="ruleBox" class="hidden mt-3 p-4 bg-indigo-50 rounded-2xl border border-indigo-100 text-left text-xs sm:text-sm text-indigo-900 w-full shadow-inner"></div>
     </div>
 
     <!-- ЕКРАН 3: СТАТИСТИКА -->
     <div id="statsScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-md w-full mx-4 border border-slate-200 flex flex-col items-center">
-        <h2 class="text-3xl font-black text-slate-800 mb-2">Сесію завершено</h2>
-        <p class="text-slate-500 mb-8">Ось твої реальні результати.</p>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Раунд завершено</h2>
+        <p class="text-slate-500 mb-8 text-sm sm:text-base">Я оновив твою базу помилок.</p>
 
         <div class="grid grid-cols-2 gap-4 w-full mb-8">
             <div class="bg-green-50 rounded-2xl p-4 border border-green-100">
-                <span class="block text-4xl font-black text-green-500 mb-1" id="statCorrect">15</span>
-                <span class="text-sm font-bold text-green-700 uppercase">Правильно</span>
+                <span class="block text-3xl sm:text-4xl font-black text-green-500 mb-1" id="statCorrect">15</span>
+                <span class="text-xs sm:text-sm font-bold text-green-700 uppercase">Правильно</span>
             </div>
             <div class="bg-red-50 rounded-2xl p-4 border border-red-100">
-                <span class="block text-4xl font-black text-red-500 mb-1" id="statMistakes">3</span>
-                <span class="text-sm font-bold text-red-700 uppercase">Помилок</span>
+                <span class="block text-3xl sm:text-4xl font-black text-red-500 mb-1" id="statMistakes">3</span>
+                <span class="text-xs sm:text-sm font-bold text-red-700 uppercase">Помилок</span>
             </div>
         </div>
 
-        <div class="w-full bg-slate-100 rounded-full h-4 mb-2">
-            <div id="accuracyBar" class="bg-indigo-500 h-4 rounded-full" style="width: 80%"></div>
-        </div>
-        <p class="text-indigo-700 font-bold mb-8">Точність: <span id="accuracyText">80%</span></p>
-
-        <button onclick="startSession()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg mb-3">
-            Продовжити тренування
+        <button onclick="startSession()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">
+            Ще один раунд
         </button>
-        <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-base">
-            Змінити набір дієслів
+        <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm sm:text-base uppercase">
+            В лобі
         </button>
     </div>
 
     <script>
-        // БАЗА ПРАВИЛ
-        const verbRules = {
-            "Venir": "Мутанти -enir. Однина: корінь -ien- (je viens). Множина (nous/vous): корінь -en- (nous venons). Для ils/elles знову -ien- з подвоєнням n (ils viennent).",
-            "Devenir": "Відмінюється як Venir. Однина: -ien-. Множина (nous/vous): -en-. Множина (ils/elles): -ienn-.",
-            "Tenir": "Відмінюється як Venir.",
-            "Obtenir": "Відмінюється як Venir.",
-            "Retenir": "Відмінюється як Venir.",
-            
-            "Offrir": "Ілюзія 1-ї групи (-frir/-vrir). Відмінюються як правильні дієслова на -ER! Закінчення: -e, -es, -e, -ons, -ez, -ent.",
-            "Souffrir": "Відмінюється як Offrir.",
-            "Ouvrir": "Відмінюється як Offrir.",
-            "Couvrir": "Відмінюється як Offrir.",
-            "Découvrir": "Відмінюється як Offrir.",
-            
-            "Sortir": "Ампутація приголосної (-tir/-mir/-vir). В однині втрачають останню приголосну (je sors). Множина: повертають приголосну (nous sortons).",
-            "Partir": "Відмінюється як Sortir (je pars, nous partons).",
-            "Sentir": "Відмінюється як Sortir (je sens, nous sentons).",
-            "Dormir": "Відмінюється як Sortir (je dors, nous dormons).",
-            "Servir": "Відмінюється як Sortir (je sers, nous servons).",
-            "Mentir": "Відмінюється як Sortir (je mens, nous mentons).",
-            
-            "Prendre": "Родина -DRE. В однині зберігають 'd' (prends, prend). В множині 'd' ЗНИКАЄ (prenons). Для ils/elles подвоюється 'n' (prennent).",
-            "Apprendre": "Відмінюється абсолютно як Prendre.",
-            "Comprendre": "Відмінюється абсолютно як Prendre.",
-            "Attendre": "Родина -DRE (інший підтип). Зберігають 'd' скрізь! Однина: attends, attend. Множина: attendons, attendent.",
-            "Répondre": "Відмінюється абсолютно як Attendre (réponds, répondons).",
-            
-            "Pouvoir": "Група -OIR. Нестандартні закінчення (-x, -x, -t). Корені: peux/peut, pouv-, peuv-.",
-            "Vouloir": "Група -OIR. Нестандартні закінчення (-x, -x, -t). Корені: veux/veut, voul-, veul-.",
-            "Devoir": "Група -OIR. Корені: -doi- (je dois, ils doivent), -dev- (nous devons).",
-            "Savoir": "Група -OIR. Однина: sais, sais, sait. Множина: savons, savez, savent.",
-            "Voir": "Група -OIR. Однина: vois. Множина (nous/vous): y (voyons). Множина (ils/elles): i (voient).",
-            "Recevoir": "Група -OIR. Зміна 'c' на 'ç' перед 'o' та 'u' для збереження звуку [s] (reçois). Множина: recevons. Ils: reçoivent.",
-            
-            "Être": "Абсолютний хаос (допоміжне). Завчити напам'ять.",
-            "Avoir": "Абсолютний хаос (допоміжне). Завчити напам'ять. Увага: j'ai.",
-            "Aller": "Єдине дієслово на -er у 3-й групі. Неправильне: vais, vas, va, allons, allez, vont.",
-            "Faire": "Немає логіки. Увага на множину: vous FAITES (не faisez), ils FONT (не fontent).",
-            "Dire": "Неправильне дієслово. Увага на: vous DITES (не disez!).",
-            "Mettre": "Дієслово на -re. В однині втрачає одне 't' (mets, met). В множині два 't' повертаються (mettons).",
-            "Boire": "Неправильне. Корені змінюються: bois, boit, buvons, buvez, boivent.",
-            "Lire": "Неправильне. Додає 's' у множині: lis, lit, lisons, lisez, lisent.",
-            "Écrire": "Неправильне. Додає 'v' у множині: écris, écrit, écrivons, écrivez, écrivent.",
-            "Croire": "Неправильне. Зміна 'i' на 'y' у множині (croyons, croyez), але croient."
+        // БАЗА ПРАВИЛ ТА ДІЄСЛІВ (Залишається як була, вона вже правильна)
+        const tenseExplanations = {
+            "present": "Présent: Звичайне відмінювання.",
+            "passe": "Passé Composé: Допоміжне Être/Avoir + Participe Passé. Увага на узгодження (elle est venue, ils sont partis) з Être!",
+            "futur": "Futur Simple: Інфінітив (або спец. корінь) + закінчення (-ai, -as, -a, -ons, -ez, -ont)."
         };
 
-        // БАЗА ДАНИХ (З новими дієсловами та категоріями)
-        const rawData = [
-            // --- КАТЕГОРІЯ 1: Ілюзія 1-ї групи ---
-            { category: "Ілюзія 1-ї групи (-frir/-vrir)", infFr: "Offrir", infUk: "дарувати", forms: [ { prefix: "j'", verb: "offre", suffix: "un cadeau", ukFull: "я дарую подарунок" }, { prefix: "tu", verb: "offres", suffix: "des fleurs", ukFull: "ти даруєш квіти" }, { prefix: "elle", verb: "offre", suffix: "un café", ukFull: "вона пропонує каву" }, { prefix: "nous", verb: "offrons", suffix: "notre aide", ukFull: "ми пропонуємо допомогу" }, { prefix: "vous", verb: "offrez", suffix: "un verre", ukFull: "ви пропонуєте напій" }, { prefix: "ils", verb: "offrent", suffix: "un repas", ukFull: "вони пропонують їжу" } ] },
-            { category: "Ілюзія 1-ї групи (-frir/-vrir)", infFr: "Souffrir", infUk: "страждати", forms: [ { prefix: "je", verb: "souffre", suffix: "du dos", ukFull: "я страждаю від спини" }, { prefix: "tu", verb: "souffres", suffix: "en silence", ukFull: "ти страждаєш мовчки" }, { prefix: "il", verb: "souffre", suffix: "du froid", ukFull: "він страждає від холоду" }, { prefix: "nous", verb: "souffrons", suffix: "de la chaleur", ukFull: "ми страждаємо від спеки" }, { prefix: "vous", verb: "souffrez", suffix: "beaucoup", ukFull: "ви багато страждаєте" }, { prefix: "elles", verb: "souffrent", suffix: "de la faim", ukFull: "вони страждають від голоду" } ] },
-            { category: "Ілюзія 1-ї групи (-frir/-vrir)", infFr: "Ouvrir", infUk: "відкривати", forms: [ { prefix: "j'", verb: "ouvre", suffix: "la fenêtre", ukFull: "я відкриваю вікно" }, { prefix: "tu", verb: "ouvres", suffix: "la porte", ukFull: "ти відкриваєш двері" }, { prefix: "il", verb: "ouvre", suffix: "le livre", ukFull: "він відкриває книгу" }, { prefix: "nous", verb: "ouvrons", suffix: "le magasin", ukFull: "ми відкриваємо магазин" }, { prefix: "vous", verb: "ouvrez", suffix: "les yeux", ukFull: "ви відкриваєте очі" }, { prefix: "ils", verb: "ouvrent", suffix: "la boîte", ukFull: "вони відкривають коробку" } ] },
-            { category: "Ілюзія 1-ї групи (-frir/-vrir)", infFr: "Couvrir", infUk: "накривати", forms: [ { prefix: "je", verb: "couvre", suffix: "le plat", ukFull: "я накриваю страву" }, { prefix: "tu", verb: "couvres", suffix: "ton enfant", ukFull: "ти вкриваєш дитину" }, { prefix: "elle", verb: "couvre", suffix: "ses épaules", ukFull: "вона вкриває плечі" }, { prefix: "nous", verb: "couvrons", suffix: "la distance", ukFull: "ми покриваємо відстань" }, { prefix: "vous", verb: "couvrez", suffix: "la table", ukFull: "ви накриваєте на стіл" }, { prefix: "ils", verb: "couvrent", suffix: "le bruit", ukFull: "вони заглушають шум" } ] },
-            { category: "Ілюзія 1-ї групи (-frir/-vrir)", infFr: "Découvrir", infUk: "відкривати (нове)", forms: [ { prefix: "je", verb: "découvre", suffix: "la ville", ukFull: "я відкриваю для себе місто" }, { prefix: "tu", verb: "découvres", suffix: "la vérité", ukFull: "ти дізнаєшся правду" }, { prefix: "il", verb: "découvre", suffix: "un talent", ukFull: "він відкриває талант" }, { prefix: "nous", verb: "découvrons", suffix: "le monde", ukFull: "ми відкриваємо світ" }, { prefix: "vous", verb: "découvrez", suffix: "ce secret", ukFull: "ви відкриваєте цей секрет" }, { prefix: "elles", verb: "découvrent", suffix: "l'amour", ukFull: "вони відкривають кохання" } ] },
+        const verbRules = {
+            "Venir": "Мутанти -enir. PC: ÊTRE + venu(e)(s). FS: корінь 'viendr-'.",
+            "Devenir": "PC: ÊTRE + devenu(e)(s). FS: 'deviendr-'.",
+            "Tenir": "PC: AVOIR + tenu (без узгодж.). FS: 'tiendr-'.",
+            "Obtenir": "PC: AVOIR + obtenu. FS: 'obtiendr-'.",
+            "Retenir": "PC: AVOIR + retenu. FS: 'retiendr-'.",
+            "Offrir": "PC: AVOIR + offert. FS: 'offrir-'.",
+            "Souffrir": "PC: AVOIR + souffert. FS: 'souffrir-'.",
+            "Ouvrir": "PC: AVOIR + ouvert. FS: 'ouvrir-'.",
+            "Couvrir": "PC: AVOIR + couvert. FS: 'couvrir-'.",
+            "Découvrir": "PC: AVOIR + découvert. FS: 'découvrir-'.",
+            "Sortir": "PC: ÊTRE + sorti(e)(s). FS: 'sortir-'.",
+            "Partir": "PC: ÊTRE + parti(e)(s). FS: 'partir-'.",
+            "Sentir": "PC: AVOIR + senti. FS: 'sentir-'.",
+            "Dormir": "PC: AVOIR + dormi. FS: 'dormir-'.",
+            "Servir": "PC: AVOIR + servi. FS: 'servir-'.",
+            "Mentir": "PC: AVOIR + menti. FS: 'mentir-'.",
+            "Prendre": "PC: AVOIR + pris. FS: 'prendr-'.",
+            "Apprendre": "PC: AVOIR + appris. FS: 'apprendr-'.",
+            "Comprendre": "PC: AVOIR + compris. FS: 'comprendr-'.",
+            "Attendre": "PC: AVOIR + attendu. FS: 'attendr-'.",
+            "Répondre": "PC: AVOIR + répondu. FS: 'répondr-'.",
+            "Pouvoir": "PC: AVOIR + pu. FS: 'pourr-' (з двома r!).",
+            "Vouloir": "PC: AVOIR + voulu. FS: 'voudr-'.",
+            "Devoir": "PC: AVOIR + dû (з шапочкою). FS: 'devr-'.",
+            "Savoir": "PC: AVOIR + su. FS: 'saur-'.",
+            "Voir": "PC: AVOIR + vu. FS: 'verr-' (з двома r!).",
+            "Recevoir": "PC: AVOIR + reçu. FS: 'recevr-'.",
+            "Être": "PC: AVOIR + été. FS: 'ser-'.",
+            "Avoir": "PC: AVOIR + eu. FS: 'aur-'.",
+            "Aller": "PC: ÊTRE + allé(e)(s). FS: 'ir-'.",
+            "Faire": "PC: AVOIR + fait. FS: 'fer-'.",
+            "Dire": "PC: AVOIR + dit. FS: 'dir-'.",
+            "Mettre": "PC: AVOIR + mis. FS: 'mettr-'.",
+            "Boire": "PC: AVOIR + bu. FS: 'boir-'.",
+            "Lire": "PC: AVOIR + lu. FS: 'lir-'.",
+            "Écrire": "PC: AVOIR + écrit. FS: 'écrir-'.",
+            "Croire": "PC: AVOIR + cru. FS: 'croir-'."
+        };
 
-            // --- КАТЕГОРІЯ 2: Ампутація приголосної ---
-            { category: "Ампутація приголосної (-tir/-mir/-vir)", infFr: "Sortir", infUk: "виходити", forms: [ { prefix: "je", verb: "sors", suffix: "ce soir", ukFull: "я виходжу сьогодні ввечері" }, { prefix: "tu", verb: "sors", suffix: "le chien", ukFull: "ти вигулюєш собаку" }, { prefix: "il", verb: "sort", suffix: "du travail", ukFull: "він виходить з роботи" }, { prefix: "nous", verb: "sortons", suffix: "ensemble", ukFull: "ми виходимо разом" }, { prefix: "vous", verb: "sortez", suffix: "souvent", ukFull: "ви часто виходите" }, { prefix: "elles", verb: "sortent", suffix: "de la maison", ukFull: "вони виходять з дому" } ] },
-            { category: "Ампутація приголосної (-tir/-mir/-vir)", infFr: "Partir", infUk: "вирушати", forms: [ { prefix: "je", verb: "pars", suffix: "en vacances", ukFull: "я вирушаю у відпустку" }, { prefix: "tu", verb: "pars", suffix: "demain", ukFull: "ти вирушаєш завтра" }, { prefix: "elle", verb: "part", suffix: "au travail", ukFull: "вона вирушає на роботу" }, { prefix: "nous", verb: "partons", suffix: "tôt", ukFull: "ми вирушаємо рано" }, { prefix: "vous", verb: "partez", suffix: "loin", ukFull: "ви вирушаєте далеко" }, { prefix: "ils", verb: "partent", suffix: "en train", ukFull: "вони вирушають потягом" } ] },
-            { category: "Ампутація приголосної (-tir/-mir/-vir)", infFr: "Sentir", infUk: "відчувати", forms: [ { prefix: "je", verb: "sens", suffix: "la rose", ukFull: "я відчуваю запах троянди" }, { prefix: "tu", verb: "sens", suffix: "bon", ukFull: "ти гарно пахнеш" }, { prefix: "il", verb: "sent", suffix: "la fatigue", ukFull: "він відчуває втому" }, { prefix: "nous", verb: "sentons", suffix: "le danger", ukFull: "ми відчуваємо небезпеку" }, { prefix: "vous", verb: "sentez", suffix: "le parfum", ukFull: "ви відчуваєте парфум" }, { prefix: "elles", verb: "sentent", suffix: "la pluie", ukFull: "вони відчувають дощ" } ] },
-            { category: "Ампутація приголосної (-tir/-mir/-vir)", infFr: "Dormir", infUk: "спати", forms: [ { prefix: "je", verb: "dors", suffix: "bien", ukFull: "я сплю добре" }, { prefix: "tu", verb: "dors", suffix: "tard", ukFull: "ти спиш пізно" }, { prefix: "il", verb: "dort", suffix: "ici", ukFull: "він спить тут" }, { prefix: "nous", verb: "dormons", suffix: "peu", ukFull: "ми спимо мало" }, { prefix: "vous", verb: "dormez", suffix: "beaucoup", ukFull: "ви спите багато" }, { prefix: "elles", verb: "dorment", suffix: "ensemble", ukFull: "вони сплять разом" } ] },
-            { category: "Ампутація приголосної (-tir/-mir/-vir)", infFr: "Servir", infUk: "служити / обслуговувати", forms: [ { prefix: "je", verb: "sers", suffix: "à boire", ukFull: "я подаю напої" }, { prefix: "tu", verb: "sers", suffix: "le repas", ukFull: "ти подаєш їжу" }, { prefix: "il", verb: "sert", suffix: "son pays", ukFull: "він служить своїй країні" }, { prefix: "nous", verb: "servons", suffix: "les clients", ukFull: "ми обслуговуємо клієнтів" }, { prefix: "vous", verb: "servez", suffix: "le vin", ukFull: "ви подаєте вино" }, { prefix: "elles", verb: "servent", suffix: "à rien", ukFull: "вони ні на що не здатні (не служать)" } ] },
-            { category: "Ампутація приголосної (-tir/-mir/-vir)", infFr: "Mentir", infUk: "брехати", forms: [ { prefix: "je", verb: "mens", suffix: "parfois", ukFull: "я брешу іноді" }, { prefix: "tu", verb: "mens", suffix: "toujours", ukFull: "ти завжди брешеш" }, { prefix: "elle", verb: "ment", suffix: "mal", ukFull: "вона бреше погано" }, { prefix: "nous", verb: "mentons", suffix: "aux enfants", ukFull: "ми брешемо дітям" }, { prefix: "vous", verb: "mentez", suffix: "au juge", ukFull: "ви брешете судді" }, { prefix: "ils", verb: "mentent", suffix: "sans arrêt", ukFull: "вони брешуть без упину" } ] },
+        // ДАНІ ТЕПЕР ЖИВУТЬ ОКРЕМО
+        let rawData = [];
 
-            // --- КАТЕГОРІЯ 3: Мутанти кореня ---
-            { category: "Мутанти кореня (-enir)", infFr: "Venir", infUk: "приходити", forms: [ { prefix: "je", verb: "viens", suffix: "de Paris", ukFull: "я приходжу з Парижа" }, { prefix: "tu", verb: "viens", suffix: "avec nous", ukFull: "ти йдеш з нами" }, { prefix: "il", verb: "vient", suffix: "demain", ukFull: "він приходить завтра" }, { prefix: "nous", verb: "venons", suffix: "souvent", ukFull: "ми приходимо часто" }, { prefix: "vous", verb: "venez", suffix: "d'où ?", ukFull: "ви звідки приходите?" }, { prefix: "ils", verb: "viennent", suffix: "ici", ukFull: "вони приходять сюди" } ] },
-            { category: "Мутанти кореня (-enir)", infFr: "Devenir", infUk: "ставати", forms: [ { prefix: "je", verb: "deviens", suffix: "fou", ukFull: "я стаю божевільним" }, { prefix: "tu", verb: "deviens", suffix: "grand", ukFull: "ти стаєш великим" }, { prefix: "il", verb: "devient", suffix: "triste", ukFull: "він стає сумним" }, { prefix: "nous", verb: "devenons", suffix: "amis", ukFull: "ми стаємо друзями" }, { prefix: "vous", verb: "devenez", suffix: "riches", ukFull: "ви стаєте багатими" }, { prefix: "elles", verb: "deviennent", suffix: "médecins", ukFull: "вони стають лікарками" } ] },
-            { category: "Мутанти кореня (-enir)", infFr: "Tenir", infUk: "тримати", forms: [ { prefix: "je", verb: "tiens", suffix: "la porte", ukFull: "я тримаю двері" }, { prefix: "tu", verb: "tiens", suffix: "le sac", ukFull: "ти тримаєш сумку" }, { prefix: "il", verb: "tient", suffix: "sa promesse", ukFull: "він тримає свою обіцянку" }, { prefix: "nous", verb: "tenons", suffix: "le coup", ukFull: "ми тримаємося" }, { prefix: "vous", verb: "tenez", suffix: "le bébé", ukFull: "ви тримаєте немовля" }, { prefix: "ils", verb: "tiennent", suffix: "la main", ukFull: "вони тримають за руку" } ] },
-            { category: "Мутанти кореня (-enir)", infFr: "Obtenir", infUk: "отримувати", forms: [ { prefix: "j'", verb: "obtiens", suffix: "un visa", ukFull: "я отримую візу" }, { prefix: "tu", verb: "obtiens", suffix: "un prix", ukFull: "ти отримуєш приз" }, { prefix: "il", verb: "obtient", suffix: "un diplôme", ukFull: "він отримує диплом" }, { prefix: "nous", verb: "obtenons", suffix: "un accord", ukFull: "ми отримуємо згоду" }, { prefix: "vous", verb: "obtenez", suffix: "une réponse", ukFull: "ви отримуєте відповідь" }, { prefix: "elles", verb: "obtiennent", suffix: "le droit", ukFull: "вони отримують право" } ] },
-            { category: "Мутанти кореня (-enir)", infFr: "Retenir", infUk: "утримувати / запам'ятовувати", forms: [ { prefix: "je", verb: "retiens", suffix: "ce mot", ukFull: "я запам'ятовую це слово" }, { prefix: "tu", verb: "retiens", suffix: "ton souffle", ukFull: "ти затримуєш дихання" }, { prefix: "elle", verb: "retient", suffix: "ses larmes", ukFull: "вона стримує сльози" }, { prefix: "nous", verb: "retenons", suffix: "l'information", ukFull: "ми запам'ятовуємо інформацію" }, { prefix: "vous", verb: "retenez", suffix: "le client", ukFull: "ви утримуєте клієнта" }, { prefix: "ils", verb: "retiennent", suffix: "leur colère", ukFull: "вони стримують гнів" } ] },
-
-            // --- КАТЕГОРІЯ 4: Родина -DRE ---
-            { category: "Родина -DRE", infFr: "Prendre", infUk: "брати", forms: [ { prefix: "je", verb: "prends", suffix: "le métro", ukFull: "я сідаю в метро" }, { prefix: "tu", verb: "prends", suffix: "ton temps", ukFull: "ти не поспішаєш" }, { prefix: "elle", verb: "prend", suffix: "une douche", ukFull: "вона приймає душ" }, { prefix: "nous", verb: "prenons", suffix: "un café", ukFull: "ми п'ємо каву" }, { prefix: "vous", verb: "prenez", suffix: "des notes", ukFull: "ви робите нотатки" }, { prefix: "ils", verb: "prennent", suffix: "la fuite", ukFull: "вони тікають" } ] },
-            { category: "Родина -DRE", infFr: "Apprendre", infUk: "вчити", forms: [ { prefix: "j'", verb: "apprends", suffix: "le français", ukFull: "я вчу французьку" }, { prefix: "tu", verb: "apprends", suffix: "vite", ukFull: "ти вчишся швидко" }, { prefix: "il", verb: "apprend", suffix: "sa leçon", ukFull: "він вчить свій урок" }, { prefix: "nous", verb: "apprenons", suffix: "à lire", ukFull: "ми вчимося читати" }, { prefix: "vous", verb: "apprenez", suffix: "la nouvelle", ukFull: "ви дізнаєтесь новину" }, { prefix: "elles", verb: "apprennent", suffix: "par cœur", ukFull: "вони вчать напам'ять" } ] },
-            { category: "Родина -DRE", infFr: "Comprendre", infUk: "розуміти", forms: [ { prefix: "je", verb: "comprends", suffix: "tout", ukFull: "я розумію все" }, { prefix: "tu", verb: "comprends", suffix: "le problème", ukFull: "ти розумієш проблему" }, { prefix: "elle", verb: "comprend", suffix: "l'anglais", ukFull: "вона розуміє англійську" }, { prefix: "nous", verb: "comprenons", suffix: "bien", ukFull: "ми розуміємо добре" }, { prefix: "vous", verb: "comprenez", suffix: "la règle", ukFull: "ви розумієте правило" }, { prefix: "ils", verb: "comprennent", suffix: "rien", ukFull: "вони нічого не розуміють" } ] },
-            { category: "Родина -DRE", infFr: "Attendre", infUk: "чекати", forms: [ { prefix: "j'", verb: "attends", suffix: "le bus", ukFull: "я чекаю автобус" }, { prefix: "tu", verb: "attends", suffix: "ici", ukFull: "ти чекаєш тут" }, { prefix: "il", verb: "attend", suffix: "son ami", ukFull: "він чекає свого друга" }, { prefix: "nous", verb: "attendons", suffix: "patiemment", ukFull: "ми терпляче чекаємо" }, { prefix: "vous", verb: "attendez", suffix: "quelqu'un ?", ukFull: "ви на когось чекаєте?" }, { prefix: "elles", verb: "attendent", suffix: "la réponse", ukFull: "вони чекають на відповідь" } ] },
-            { category: "Родина -DRE", infFr: "Répondre", infUk: "відповідати", forms: [ { prefix: "je", verb: "réponds", suffix: "au téléphone", ukFull: "я відповідаю на дзвінок" }, { prefix: "tu", verb: "réponds", suffix: "vite", ukFull: "ти відповідаєш швидко" }, { prefix: "elle", verb: "répond", suffix: "à la question", ukFull: "вона відповідає на питання" }, { prefix: "nous", verb: "répondons", suffix: "aux emails", ukFull: "ми відповідаємо на листи" }, { prefix: "vous", verb: "répondez", suffix: "souvent", ukFull: "ви часто відповідаєте" }, { prefix: "ils", verb: "répondent", suffix: "présent", ukFull: "вони відповідають 'присутній'" } ] },
-
-            // --- КАТЕГОРІЯ 5: Група -OIR ---
-            { category: "Група -OIR", infFr: "Pouvoir", infUk: "могти", forms: [ { prefix: "je", verb: "peux", suffix: "le faire", ukFull: "я можу це зробити" }, { prefix: "tu", verb: "peux", suffix: "venir", ukFull: "ти можеш прийти" }, { prefix: "elle", verb: "peut", suffix: "t'aider", ukFull: "вона може тобі допомогти" }, { prefix: "nous", verb: "pouvons", suffix: "gagner", ukFull: "ми можемо виграти" }, { prefix: "vous", verb: "pouvez", suffix: "entrer", ukFull: "ви можете увійти" }, { prefix: "ils", verb: "peuvent", suffix: "rester", ukFull: "вони можуть залишитися" } ] },
-            { category: "Група -OIR", infFr: "Vouloir", infUk: "хотіти", forms: [ { prefix: "je", verb: "veux", suffix: "manger", ukFull: "я хочу їсти" }, { prefix: "tu", verb: "veux", suffix: "dormir", ukFull: "ти хочеш спати" }, { prefix: "il", verb: "veut", suffix: "un chat", ukFull: "він хоче кота" }, { prefix: "nous", verb: "voulons", suffix: "partir", ukFull: "ми хочемо вирушити" }, { prefix: "vous", verb: "voulez", suffix: "du thé", ukFull: "ви хочете чаю" }, { prefix: "elles", verb: "veulent", suffix: "jouer", ukFull: "вони хочуть грати" } ] },
-            { category: "Група -OIR", infFr: "Devoir", infUk: "мусити", forms: [ { prefix: "je", verb: "dois", suffix: "travailler", ukFull: "я мушу працювати" }, { prefix: "tu", verb: "dois", suffix: "étudier", ukFull: "ти мусиш вчитися" }, { prefix: "elle", verb: "doit", suffix: "payer", ukFull: "вона мусить платити" }, { prefix: "nous", verb: "devons", suffix: "manger", ukFull: "ми мусимо їсти" }, { prefix: "vous", verb: "devez", suffix: "attendre", ukFull: "ви мусите чекати" }, { prefix: "ils", verb: "doivent", suffix: "partir", ukFull: "вони мусять вирушити" } ] },
-            { category: "Група -OIR", infFr: "Savoir", infUk: "знати (факт)", forms: [ { prefix: "je", verb: "sais", suffix: "nager", ukFull: "я вмію плавати" }, { prefix: "tu", verb: "sais", suffix: "tout", ukFull: "ти знаєш все" }, { prefix: "il", verb: "sait", suffix: "la réponse", ukFull: "він знає відповідь" }, { prefix: "nous", verb: "savons", suffix: "pourquoi", ukFull: "ми знаємо чому" }, { prefix: "vous", verb: "savez", suffix: "comment", ukFull: "ви знаєте як" }, { prefix: "elles", verb: "savent", suffix: "lire", ukFull: "вони вміють читати" } ] },
-            { category: "Група -OIR", infFr: "Voir", infUk: "бачити", forms: [ { prefix: "je", verb: "vois", suffix: "un ami", ukFull: "я бачу друга" }, { prefix: "tu", verb: "vois", suffix: "clair", ukFull: "ти бачиш ясно" }, { prefix: "elle", verb: "voit", suffix: "le problème", ukFull: "вона бачить проблему" }, { prefix: "nous", verb: "voyons", suffix: "bien", ukFull: "ми бачимо добре" }, { prefix: "vous", verb: "voyez", suffix: "le film", ukFull: "ви бачите фільм" }, { prefix: "ils", verb: "voient", suffix: "la mer", ukFull: "вони бачать море" } ] },
-            { category: "Група -OIR", infFr: "Recevoir", infUk: "отримувати (приймати)", forms: [ { prefix: "je", verb: "reçois", suffix: "un email", ukFull: "я отримую імейл" }, { prefix: "tu", verb: "reçois", suffix: "des amis", ukFull: "ти приймаєш друзів" }, { prefix: "il", verb: "reçoit", suffix: "un appel", ukFull: "він отримує дзвінок" }, { prefix: "nous", verb: "recevons", suffix: "du courrier", ukFull: "ми отримуємо пошту" }, { prefix: "vous", verb: "recevez", suffix: "le public", ukFull: "ви приймаєте публіку" }, { prefix: "elles", verb: "reçoivent", suffix: "un prix", ukFull: "вони отримують премію" } ] },
-
-            // --- КАТЕГОРІЯ 6: Абсолютний хаос ---
-            { category: "Абсолютний хаос (База)", infFr: "Être", infUk: "бути", forms: [ { prefix: "je", verb: "suis", suffix: "prêt", ukFull: "я готовий" }, { prefix: "tu", verb: "es", suffix: "en retard", ukFull: "ти із запізненням" }, { prefix: "elle", verb: "est", suffix: "belle", ukFull: "вона красива" }, { prefix: "nous", verb: "sommes", suffix: "fatigués", ukFull: "ми втомлені" }, { prefix: "vous", verb: "êtes", suffix: "ici", ukFull: "ви тут" }, { prefix: "ils", verb: "sont", suffix: "partis", ukFull: "вони пішли" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Avoir", infUk: "мати", forms: [ { prefix: "j'", verb: "ai", suffix: "faim", ukFull: "я голодний (маю голод)" }, { prefix: "tu", verb: "as", suffix: "soif", ukFull: "ти маєш спрагу" }, { prefix: "elle", verb: "a", suffix: "une voiture", ukFull: "вона має машину" }, { prefix: "nous", verb: "avons", suffix: "le temps", ukFull: "ми маємо час" }, { prefix: "vous", verb: "avez", suffix: "raison", ukFull: "ви маєте рацію" }, { prefix: "ils", verb: "ont", suffix: "peur", ukFull: "вони мають страх" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Aller", infUk: "йти / їхати", forms: [ { prefix: "je", verb: "vais", suffix: "au cinéma", ukFull: "я йду в кіно" }, { prefix: "tu", verb: "vas", suffix: "bien", ukFull: "ти почуваєшся добре" }, { prefix: "il", verb: "va", suffix: "à Paris", ukFull: "він їде в Париж" }, { prefix: "nous", verb: "allons", suffix: "manger", ukFull: "ми йдемо їсти" }, { prefix: "vous", verb: "allez", suffix: "voir", ukFull: "ви підете подивитесь" }, { prefix: "elles", verb: "vont", suffix: "au parc", ukFull: "вони йдуть у парк" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Faire", infUk: "робити", forms: [ { prefix: "je", verb: "fais", suffix: "le ménage", ukFull: "я роблю прибирання" }, { prefix: "tu", verb: "fais", suffix: "attention", ukFull: "ти звертаєш увагу" }, { prefix: "il", verb: "fait", suffix: "son travail", ukFull: "він робить свою роботу" }, { prefix: "nous", verb: "faisons", suffix: "du sport", ukFull: "ми займаємося спортом" }, { prefix: "vous", verb: "faites", suffix: "du bruit", ukFull: "ви робите шум" }, { prefix: "ils", verb: "font", suffix: "la fête", ukFull: "вони влаштовують вечірку" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Dire", infUk: "казати", forms: [ { prefix: "je", verb: "dis", suffix: "la vérité", ukFull: "я кажу правду" }, { prefix: "tu", verb: "dis", suffix: "n'importe quoi", ukFull: "ти верзеш нісенітницю" }, { prefix: "elle", verb: "dit", suffix: "bonjour", ukFull: "вона каже добрий день" }, { prefix: "nous", verb: "disons", suffix: "merci", ukFull: "ми кажемо дякую" }, { prefix: "vous", verb: "dites", suffix: "oui", ukFull: "ви кажете так" }, { prefix: "ils", verb: "disent", suffix: "non", ukFull: "вони кажуть ні" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Mettre", infUk: "класти / одягати", forms: [ { prefix: "je", verb: "mets", suffix: "un pull", ukFull: "я одягаю светр" }, { prefix: "tu", verb: "mets", suffix: "la table", ukFull: "ти накриваєш на стіл" }, { prefix: "il", verb: "met", suffix: "du temps", ukFull: "він витрачає час" }, { prefix: "nous", verb: "mettons", suffix: "en ordre", ukFull: "ми приводимо в порядок" }, { prefix: "vous", verb: "mettez", suffix: "le livre ici", ukFull: "ви кладете книгу тут" }, { prefix: "elles", verb: "mettent", suffix: "des robes", ukFull: "вони одягають сукні" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Boire", infUk: "пити", forms: [ { prefix: "je", verb: "bois", suffix: "de l'eau", ukFull: "я п'ю воду" }, { prefix: "tu", verb: "bois", suffix: "un café", ukFull: "ти п'єш каву" }, { prefix: "elle", verb: "boit", suffix: "du thé", ukFull: "вона п'є чай" }, { prefix: "nous", verb: "buvons", suffix: "du vin", ukFull: "ми п'ємо вино" }, { prefix: "vous", verb: "buvez", suffix: "trop", ukFull: "ви п'єте забагато" }, { prefix: "ils", verb: "boivent", suffix: "un coup", ukFull: "вони випивають" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Lire", infUk: "читати", forms: [ { prefix: "je", verb: "lis", suffix: "un livre", ukFull: "я читаю книгу" }, { prefix: "tu", verb: "lis", suffix: "le journal", ukFull: "ти читаєш газету" }, { prefix: "il", verb: "lit", suffix: "vite", ukFull: "він читає швидко" }, { prefix: "nous", verb: "lisons", suffix: "ensemble", ukFull: "ми читаємо разом" }, { prefix: "vous", verb: "lisez", suffix: "à haute voix", ukFull: "ви читаєте вголос" }, { prefix: "elles", verb: "lisent", suffix: "un magazine", ukFull: "вони читають журнал" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Écrire", infUk: "писати", forms: [ { prefix: "j'", verb: "écris", suffix: "une lettre", ukFull: "я пишу листа" }, { prefix: "tu", verb: "écris", suffix: "un message", ukFull: "ти пишеш повідомлення" }, { prefix: "elle", verb: "écrit", suffix: "un roman", ukFull: "вона пише роман" }, { prefix: "nous", verb: "écrivons", suffix: "un email", ukFull: "ми пишемо імейл" }, { prefix: "vous", verb: "écrivez", suffix: "bien", ukFull: "ви пишете добре" }, { prefix: "ils", verb: "écrivent", suffix: "au tableau", ukFull: "вони пишуть на дошці" } ] },
-            { category: "Абсолютний хаос (База)", infFr: "Croire", infUk: "вірити / вважати", forms: [ { prefix: "je", verb: "crois", suffix: "en Dieu", ukFull: "я вірю в Бога" }, { prefix: "tu", verb: "crois", suffix: "ça ?", ukFull: "ти віриш у це?" }, { prefix: "il", verb: "croit", suffix: "avoir raison", ukFull: "він вважає, що має рацію" }, { prefix: "nous", verb: "croyons", suffix: "au succès", ukFull: "ми віримо в успіх" }, { prefix: "vous", verb: "croyez", suffix: "que oui", ukFull: "ви вважаєте, що так" }, { prefix: "elles", verb: "croient", suffix: "au Père Noël", ukFull: "вони вірять у Діда Мороза" } ] }
-        ];
-
-        // --- ЛОГІКА НАЛАШТУВАНЬ ТА ПАМ'ЯТІ ---
+        // --- ЛОГІКА НАЛАШТУВАНЬ ТА ПАМ'ЯТІ (SRS) ---
         
-        function getSavedSelection() {
-            const saved = localStorage.getItem('frenchVerbsSelectionB1'); // Змінив ключ, щоб не конфліктувало зі старою базою
+        function getSavedSetup() {
+            const saved = localStorage.getItem('frenchVerbsSetupB1_v3'); 
             if (saved) {
                 try { return JSON.parse(saved); } catch (e) { return null; }
             }
-            return null;
+            return {
+                verbs: rawData.map(v => v.infFr),
+                tenses: ['present', 'passe', 'futur']
+            };
         }
 
-        function saveSelection() {
-            const checkboxes = document.querySelectorAll('.verb-checkbox');
-            const selected = [];
-            checkboxes.forEach(cb => {
-                if (cb.checked) selected.push(cb.value);
-            });
-            localStorage.setItem('frenchVerbsSelectionB1', JSON.stringify(selected));
+        function saveSetup() {
+            const verbCb = document.querySelectorAll('.verb-checkbox');
+            const verbs = Array.from(verbCb).filter(cb => cb.checked).map(cb => cb.value);
+            
+            const tenseCb = document.querySelectorAll('.tense-checkbox');
+            const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
+            
+            localStorage.setItem('frenchVerbsSetupB1_v3', JSON.stringify({ verbs, tenses }));
+        }
+
+        // ЖОРСТКА ПАМ'ЯТЬ (SRS MEMORY)
+        function getSRSMemory() {
+            const mem = localStorage.getItem('frenchVerbsSRS');
+            return mem ? JSON.parse(mem) : {};
+        }
+
+        function updateSRSCard(cardId, isCorrect) {
+            let memory = getSRSMemory();
+            if (!memory[cardId]) memory[cardId] = { errors: 0 };
+            
+            if (isCorrect) {
+                // Якщо правильно - вага падає (мінімум 0)
+                memory[cardId].errors = Math.max(0, memory[cardId].errors - 1);
+            } else {
+                // Якщо помилка - жорстко караємо (+2 до ваги)
+                memory[cardId].errors += 2;
+            }
+            localStorage.setItem('frenchVerbsSRS', JSON.stringify(memory));
         }
 
         function initSetupScreen() {
             const container = document.getElementById('verbCategoriesContainer');
             container.innerHTML = '';
             
-            const savedSelection = getSavedSelection();
+            const savedSetup = getSavedSetup();
+            
+            document.querySelectorAll('.tense-checkbox').forEach(cb => {
+                cb.checked = savedSetup.tenses.includes(cb.value);
+            });
 
-            // Групуємо дієслова за категоріями
             const groupedVerbs = {};
             rawData.forEach(verb => {
                 if (!groupedVerbs[verb.category]) groupedVerbs[verb.category] = [];
                 groupedVerbs[verb.category].push(verb);
             });
 
-            // Рендеримо категорії
             Object.keys(groupedVerbs).forEach(category => {
                 const categoryDiv = document.createElement('div');
-                categoryDiv.className = "mb-8";
-                categoryDiv.innerHTML = `<h3 class="text-lg font-bold text-slate-700 mb-3 border-b-2 border-indigo-100 inline-block pb-1">${category}</h3>`;
+                categoryDiv.className = "mb-6 sm:mb-8";
+                categoryDiv.innerHTML = `<h3 class="text-sm sm:text-lg font-bold text-slate-700 mb-2 sm:mb-3 border-b-2 border-indigo-100 inline-block pb-1">${category}</h3>`;
                 
                 const grid = document.createElement('div');
-                grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3";
+                grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3";
 
                 groupedVerbs[category].forEach(verbObj => {
-                    const isChecked = savedSelection ? savedSelection.includes(verbObj.infFr) : true; 
+                    const isChecked = savedSetup.verbs.includes(verbObj.infFr); 
                     
                     const label = document.createElement('label');
                     label.className = "cursor-pointer relative block h-full";
                     label.innerHTML = `
-                        <input type="checkbox" value="${verbObj.infFr}" class="verb-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSelection()">
-                        <div class="h-full px-3 py-3 rounded-xl border-2 border-slate-200 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 bg-white shadow-sm">
-                            <span class="font-bold text-base sm:text-lg mb-1">${verbObj.infFr}</span>
-                            <span class="translation-text text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight">${verbObj.infUk}</span>
+                        <input type="checkbox" value="${verbObj.infFr}" class="verb-checkbox custom-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSetup()">
+                        <div class="h-full px-2 py-2 sm:px-3 sm:py-3 rounded-xl border-2 border-slate-200 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 bg-white shadow-sm">
+                            <span class="font-bold text-sm sm:text-lg mb-0.5 sm:mb-1">${verbObj.infFr}</span>
+                            <span class="translation-text text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight">${verbObj.infUk}</span>
                         </div>
                     `;
                     grid.appendChild(label);
@@ -308,19 +319,18 @@
         }
 
         function toggleAllVerbs(state) {
-            const checkboxes = document.querySelectorAll('.verb-checkbox');
-            checkboxes.forEach(cb => cb.checked = state);
-            saveSelection();
+            document.querySelectorAll('.verb-checkbox').forEach(cb => cb.checked = state);
+            saveSetup();
         }
 
         function returnToSetup() {
             document.getElementById('setupScreen').classList.remove('hidden');
             document.getElementById('trainingScreen').classList.add('hidden');
             document.getElementById('statsScreen').classList.add('hidden');
-            unmasteredCards = []; // Очищаємо колоду при виході в меню
+            unmasteredCards = []; 
         }
 
-        // --- ОСНОВНИЙ РУШІЙ ТРЕНУВАННЯ ---
+        // --- РУШІЙ ТРЕНУВАННЯ ---
 
         let allDatabaseCards = [];
         const SESSION_LENGTH = 15;
@@ -331,42 +341,68 @@
         let frVoice = null;
 
         function initSessionFromSetup() {
-            const checkboxes = document.querySelectorAll('.verb-checkbox:checked');
-            if (checkboxes.length === 0) {
-                const errorEl = document.getElementById('setupError');
-                errorEl.classList.remove('hidden');
-                errorEl.classList.remove('pop-animation');
-                void errorEl.offsetWidth;
-                errorEl.classList.add('pop-animation');
+            const verbCb = document.querySelectorAll('.verb-checkbox:checked');
+            const tenseCb = document.querySelectorAll('.tense-checkbox:checked');
+            
+            const tenseError = document.getElementById('tenseError');
+            const verbError = document.getElementById('setupError');
+            
+            tenseError.classList.add('hidden');
+            verbError.classList.add('hidden');
+
+            if (tenseCb.length === 0) {
+                tenseError.classList.remove('hidden'); tenseError.classList.remove('pop-animation'); void tenseError.offsetWidth; tenseError.classList.add('pop-animation');
                 return;
             }
-            document.getElementById('setupError').classList.add('hidden');
+            if (verbCb.length === 0) {
+                verbError.classList.remove('hidden'); verbError.classList.remove('pop-animation'); void verbError.offsetWidth; verbError.classList.add('pop-animation');
+                return;
+            }
 
-            const selectedVerbs = Array.from(checkboxes).map(cb => cb.value);
+            const selectedVerbs = Array.from(verbCb).map(cb => cb.value);
+            const selectedTenses = Array.from(tenseCb).map(cb => cb.value);
+            
+            const tenseNames = { "present": "Présent", "passe": "Passé Composé", "futur": "Futur Simple" };
+            const srsMemory = getSRSMemory();
             
             allDatabaseCards = [];
             rawData.forEach(verbObj => {
                 if (selectedVerbs.includes(verbObj.infFr)) {
-                    const conjugationTable = verbObj.forms.map(f => (f.prefix.endsWith("'") ? f.prefix : f.prefix + " ") + f.verb);
-                    verbObj.forms.forEach(form => {
-                        allDatabaseCards.push({
-                            infFr: verbObj.infFr,
-                            infUk: verbObj.infUk,
-                            prefix: form.prefix,
-                            verb: form.verb,
-                            suffix: form.suffix,
-                            ukFull: form.ukFull,
-                            rule: verbRules[verbObj.infFr] || "Правило відсутнє.",
-                            allForms: conjugationTable
-                        });
+                    selectedTenses.forEach(tenseKey => {
+                        if (verbObj[tenseKey]) {
+                            const conjugationTable = verbObj[tenseKey].map(f => (f.p.endsWith("'") ? f.p : f.p + " ") + f.v);
+                            
+                            verbObj[tenseKey].forEach(form => {
+                                // Унікальний ID картки для пам'яті: "Être_passe_je"
+                                const cardId = `${verbObj.infFr}_${tenseKey}_${form.p}`;
+                                const weight = srsMemory[cardId] ? srsMemory[cardId].errors : 0;
+
+                                allDatabaseCards.push({
+                                    id: cardId,
+                                    weight: weight,
+                                    infFr: verbObj.infFr,
+                                    infUk: verbObj.infUk,
+                                    tenseKey: tenseKey,
+                                    tenseName: tenseNames[tenseKey],
+                                    prefix: form.p,
+                                    verb: form.v,
+                                    suffix: form.s,
+                                    ukFull: form.u,
+                                    rule: tenseExplanations[tenseKey] + "<br><br>" + (verbRules[verbObj.infFr] || ""),
+                                    allForms: conjugationTable
+                                });
+                            });
+                        }
                     });
                 }
             });
 
-            unmasteredCards = shuffle([...allDatabaseCards]);
+            // Наповнюємо глобальну колоду.
+            unmasteredCards = [...allDatabaseCards];
             startSession();
         }
 
+        // --- AUDIO ---
         function loadVoices() {
             if (!window.speechSynthesis) return;
             const voices = window.speechSynthesis.getVoices();
@@ -410,14 +446,23 @@
             document.getElementById('trainingScreen').classList.remove('hidden');
             
             if (unmasteredCards.length === 0) {
-                unmasteredCards = shuffle([...allDatabaseCards]);
+                // Якщо колода вичерпалась, беремо знову ВСІ доступні картки
+                unmasteredCards = [...allDatabaseCards];
                 if (sessionStats.completed > 0) {
-                    alert("Всі картки з вибраного набору пройдені! Починаємо нове коло.");
+                    alert("Місія виконана! Починаємо нове коло. Найслабші слова підуть першими.");
                 }
             }
             
+            // МАГІЯ SRS: Сортуємо глобальну колоду за вагою (помилками), найгірші йдуть першими.
+            // Щоб не було 100% передбачувано, додаємо дрібку рандому, але вага завжди перемагає.
+            unmasteredCards.sort((a, b) => (b.weight - a.weight) || (Math.random() - 0.5));
+            
             const cardsToTake = Math.min(SESSION_LENGTH, unmasteredCards.length);
             sessionQueue = unmasteredCards.splice(0, cardsToTake);
+            
+            // Перемішуємо відібрані 15 карток, щоб вони не йшли суворо за рейтингом
+            shuffle(sessionQueue);
+            
             sessionQueue.forEach(card => card.mistakesThisSession = 0);
             
             sessionStats = { mistakes: 0, completed: 0, totalErrors: 0 };
@@ -429,11 +474,7 @@
             const currentSessionTotal = sessionStats.completed + sessionQueue.length + (currentCard ? 1 : 0);
             document.getElementById('sessionCounter').innerText = `${sessionStats.completed + 1}/${currentSessionTotal || SESSION_LENGTH}`;
             document.getElementById('mistakeCounter').innerText = sessionStats.totalErrors;
-            
-            let globalCounter = document.getElementById('globalDeckCounter');
-            if (globalCounter) {
-                globalCounter.innerText = unmasteredCards.length + sessionQueue.length + (currentCard ? 1 : 0);
-            }
+            document.getElementById('globalDeckCounter').innerText = unmasteredCards.length + sessionQueue.length + (currentCard ? 1 : 0);
         }
 
         function loadNextCard() {
@@ -445,9 +486,14 @@
             currentCard = sessionQueue[0];
             updateUIStats();
 
-            // Вставляємо інфінітив та його переклад у плашку
             document.getElementById('infinitiveHint').innerText = `${currentCard.infFr} — ${currentCard.infUk}`;
             
+            const tenseHint = document.getElementById('tenseHint');
+            tenseHint.innerText = currentCard.tenseName;
+            if (currentCard.tenseKey === 'present') tenseHint.className = "text-[10px] sm:text-xs text-slate-700 font-black bg-slate-200 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
+            if (currentCard.tenseKey === 'passe') tenseHint.className = "text-[10px] sm:text-xs text-white font-black bg-amber-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
+            if (currentCard.tenseKey === 'futur') tenseHint.className = "text-[10px] sm:text-xs text-white font-black bg-indigo-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
+
             document.getElementById('wordDisplay').innerText = currentCard.ukFull;
             
             const prefixDisplay = document.getElementById('prefixDisplay');
@@ -457,7 +503,8 @@
             const input = document.getElementById('userInput');
             input.value = '';
             input.disabled = false;
-            input.style.width = Math.max(100, currentCard.verb.length * 18) + 'px';
+            // Динамічна ширина для довших конструкцій Passé Composé
+            input.style.width = Math.max(120, currentCard.verb.length * 16) + 'px';
             input.classList.remove('text-green-600', 'text-red-500', 'border-green-500', 'border-red-500');
             input.classList.add('text-indigo-700', 'border-slate-300');
             
@@ -485,17 +532,21 @@
 
             if (userVerb === correctVerb) {
                 feedbackText.innerText = "Ідеально ✓";
-                feedbackText.className = "text-xl sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
+                feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
                 input.classList.remove('text-indigo-700', 'border-slate-300');
                 input.classList.add('text-green-600', 'border-green-500');
                 
                 playCurrentAudio();
+                
+                // Знижуємо вагу картки в глобальній пам'яті
+                updateSRSCard(currentCard.id, true);
 
                 const finishedCard = sessionQueue.shift();
                 currentCard = null; 
                 sessionStats.completed++;
                 
                 if (finishedCard.mistakesThisSession > 0) {
+                    // Якщо в цій сесії були помилки, вона повернеться в наступних колах, бо вага була збільшена
                     unmasteredCards.push(finishedCard);
                 }
             } else {
@@ -503,9 +554,12 @@
                 sessionStats.mistakes++;
                 currentCard.mistakesThisSession++;
                 
+                // Збільшуємо вагу картки в глобальній пам'яті (жорстке покарання)
+                updateSRSCard(currentCard.id, false);
+                
                 input.value = currentCard.verb; 
-                feedbackText.innerHTML = `Помилка. Ти мав написати: <span class="text-indigo-600 font-black">${currentCard.verb}</span>`;
-                feedbackText.className = "text-xl sm:text-2xl mb-2 text-red-500 pop-animation";
+                feedbackText.innerHTML = `Помилка. Треба: <span class="text-indigo-600 font-black">${currentCard.verb}</span>`;
+                feedbackText.className = "text-lg sm:text-2xl mb-2 text-red-500 pop-animation";
                 input.classList.remove('text-indigo-700', 'border-slate-300');
                 input.classList.add('text-red-500', 'border-red-500');
 
@@ -537,8 +591,6 @@
             const totalAttempts = sessionStats.completed + sessionStats.totalErrors;
             const accuracy = Math.round((sessionStats.completed / totalAttempts) * 100) || 0;
             
-            document.getElementById('accuracyText').innerText = accuracy + '%';
-            
             const bar = document.getElementById('accuracyBar');
             bar.style.width = accuracy + '%';
             
@@ -552,12 +604,12 @@
             const ruleBtn = document.getElementById('ruleToggleBtn');
             
             if (ruleBox.classList.contains('hidden')) {
-                const ruleText = currentCard ? currentCard.rule : "Перейди до наступного завдання.";
+                const ruleText = currentCard ? currentCard.rule : "";
                 let html = `<p class="font-medium leading-relaxed">${ruleText}</p>`;
                 
                 if (currentCard && currentCard.allForms) {
-                    html = `<p class="mb-4 font-medium leading-relaxed">${ruleText}</p>
-                            <div class="grid grid-cols-2 gap-x-3 gap-y-2 text-slate-700 bg-white p-3 rounded-xl border border-indigo-100 shadow-sm font-medium">
+                    html = `<p class="mb-3 sm:mb-4 font-medium leading-relaxed">${ruleText}</p>
+                            <div class="grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-3 sm:gap-y-2 text-slate-700 bg-white p-2 sm:p-3 rounded-xl border border-indigo-100 shadow-sm font-medium">
                                 ${currentCard.allForms.map(f => `<div>${f}</div>`).join('')}
                             </div>`;
                 }
@@ -578,7 +630,33 @@
             }
         });
 
-        window.onload = initSetupScreen;
+        // НОВИЙ АСИНХРОННИЙ СТАРТ: Завантажуємо JSON перед малюванням UI
+        async function bootApp() {
+            try {
+                // Звертаємось до файлу data.json у твоєму репозиторії
+                const response = await fetch('./data.json');
+                
+                if (!response.ok) throw new Error("Файл data.json не знайдено");
+                
+                rawData = await response.json();
+                initSetupScreen(); // Тільки тепер запускаємо лобі
+                
+            } catch (error) {
+                console.error("Критична помилка завантаження:", error);
+                document.getElementById('setupScreen').innerHTML = `
+                    <h2 class="text-2xl sm:text-3xl font-black text-red-500 mb-4">Помилка архітектури!</h2>
+                    <p class="text-slate-600 font-medium">Не можу знайти або прочитати <b>data.json</b>.</p>
+                    <p class="text-sm text-slate-500 mt-4 text-left bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <b>Чому це сталось:</b><br>
+                        1. Файл відсутній у репозиторії.<br>
+                        2. Синтаксична помилка всередині JSON (зайва кома тощо).<br>
+                        3. Ти відкрив HTML просто подвійним кліком (file://). Браузери блокують fetch для локальних файлів. Використовуй VS Code Live Server або залий на GitHub.
+                    </p>`;
+                document.getElementById('setupScreen').classList.remove('hidden');
+            }
+        }
+
+        window.onload = bootApp;
     </script>
 </body>
 </html>
