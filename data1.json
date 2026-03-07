@@ -1,0 +1,295 @@
+[
+  {
+    "category": "Мутація: -ger (g -> ge перед o/a)",
+    "infFr": "manger",
+    "infUk": "їсти",
+    "present": [
+      { "p": "je", "v": "mange", "s": "une pomme", "u": "я їм яблуко" },
+      { "p": "tu", "v": "manges", "s": "vite", "u": "ти їси швидко" },
+      { "p": "il", "v": "mange", "s": "au resto", "u": "він їсть у ресторані" },
+      { "p": "nous", "v": "mangeons", "s": "ensemble", "u": "ми їмо разом" },
+      { "p": "vous", "v": "mangez", "s": "tard", "u": "ви їсте пізно" },
+      { "p": "ils", "v": "mangent", "s": "beaucoup", "u": "вони їдять багато" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai mangé", "s": "une pomme", "u": "я з'їв яблуко" },
+      { "p": "nous", "v": "avons mangé", "s": "ensemble", "u": "ми поїли разом" }
+    ],
+    "futur": [
+      { "p": "je", "v": "mangerai", "s": "une pomme", "u": "я з'їм яблуко" },
+      { "p": "nous", "v": "mangerons", "s": "ensemble", "u": "ми поїмо разом" }
+    ]
+  },
+  {
+    "category": "Мутація: -ger (g -> ge перед o/a)",
+    "infFr": "changer",
+    "infUk": "змінювати",
+    "present": [
+      { "p": "je", "v": "change", "s": "d'avis", "u": "я змінюю думку" },
+      { "p": "tu", "v": "changes", "s": "de train", "u": "ти пересідаєш на інший потяг" },
+      { "p": "il", "v": "change", "s": "tout", "u": "він змінює все" },
+      { "p": "nous", "v": "changeons", "s": "de sujet", "u": "ми змінюємо тему" },
+      { "p": "vous", "v": "changez", "s": "d'adresse", "u": "ви змінюєте адресу" },
+      { "p": "ils", "v": "changent", "s": "les règles", "u": "вони змінюють правила" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai changé", "s": "d'avis", "u": "я змінив думку" },
+      { "p": "nous", "v": "avons changé", "s": "de sujet", "u": "ми змінили тему" }
+    ],
+    "futur": [
+      { "p": "je", "v": "changerai", "s": "d'avis", "u": "я зміню думку" },
+      { "p": "nous", "v": "changerons", "s": "de sujet", "u": "ми змінимо тему" }
+    ]
+  },
+  {
+    "category": "Мутація: -cer (c -> ç перед o/a)",
+    "infFr": "commencer",
+    "infUk": "починати",
+    "present": [
+      { "p": "je", "v": "commence", "s": "à travailler", "u": "я починаю працювати" },
+      { "p": "tu", "v": "commences", "s": "tôt", "u": "ти починаєш рано" },
+      { "p": "il", "v": "commence", "s": "le livre", "u": "він починає книгу" },
+      { "p": "nous", "v": "commençons", "s": "la réunion", "u": "ми починаємо зустріч" },
+      { "p": "vous", "v": "commencez", "s": "le projet", "u": "ви починаєте проект" },
+      { "p": "ils", "v": "commencent", "s": "à parler", "u": "вони починають говорити" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai commencé", "s": "à travailler", "u": "я почав працювати" },
+      { "p": "nous", "v": "avons commencé", "s": "la réunion", "u": "ми почали зустріч" }
+    ],
+    "futur": [
+      { "p": "je", "v": "commencerai", "s": "à travailler", "u": "я почну працювати" },
+      { "p": "nous", "v": "commencerons", "s": "la réunion", "u": "ми почнемо зустріч" }
+    ]
+  },
+  {
+    "category": "Мутація: -cer (c -> ç перед o/a)",
+    "infFr": "avancer",
+    "infUk": "рухатися вперед",
+    "present": [
+      { "p": "j'", "v": "avance", "s": "lentement", "u": "я просуваюся повільно" },
+      { "p": "nous", "v": "avançons", "s": "vers le but", "u": "ми просуваємося до мети" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai avancé", "s": "lentement", "u": "я просунувся повільно" },
+      { "p": "nous", "v": "avons avancé", "s": "vers le but", "u": "ми просунулися до мети" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "avancerai", "s": "lentement", "u": "я просуватимусь повільно" },
+      { "p": "nous", "v": "avancerons", "s": "vers le but", "u": "ми просуватимемось до мети" }
+    ]
+  },
+  {
+    "category": "Мутація: e_er (e -> è)",
+    "infFr": "acheter",
+    "infUk": "купувати",
+    "present": [
+      { "p": "j'", "v": "achète", "s": "du pain", "u": "я купую хліб" },
+      { "p": "tu", "v": "achètes", "s": "une voiture", "u": "ти купуєш машину" },
+      { "p": "il", "v": "achète", "s": "un billet", "u": "він купує квиток" },
+      { "p": "nous", "v": "achetons", "s": "des fruits", "u": "ми купуємо фрукти" },
+      { "p": "vous", "v": "achetez", "s": "des vêtements", "u": "ви купуєте одяг" },
+      { "p": "ils", "v": "achètent", "s": "une maison", "u": "вони купують дім" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai acheté", "s": "du pain", "u": "я купив хліб" },
+      { "p": "nous", "v": "avons acheté", "s": "des fruits", "u": "ми купили фрукти" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "achèterai", "s": "du pain", "u": "я куплю хліб" },
+      { "p": "nous", "v": "achèterons", "s": "des fruits", "u": "ми купимо фрукти" }
+    ]
+  },
+  {
+    "category": "Мутація: é_er (é -> è)",
+    "infFr": "espérer",
+    "infUk": "сподіватися",
+    "present": [
+      { "p": "j'", "v": "espère", "s": "réussir", "u": "я сподіваюсь досягти успіху" },
+      { "p": "tu", "v": "espères", "s": "gagner", "u": "ти сподіваєшся виграти" },
+      { "p": "il", "v": "espère", "s": "te voir", "u": "він сподівається побачити тебе" },
+      { "p": "nous", "v": "espérons", "s": "le meilleur", "u": "ми сподіваємось на краще" },
+      { "p": "vous", "v": "espérez", "s": "un miracle", "u": "ви сподіваєтесь на диво" },
+      { "p": "ils", "v": "espèrent", "s": "rentrer", "u": "вони сподіваються повернутися" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai espéré", "s": "réussir", "u": "я сподівався досягти успіху" },
+      { "p": "nous", "v": "avons espéré", "s": "le meilleur", "u": "ми сподівалися на краще" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "espérerai", "s": "réussir", "u": "я сподіватимусь досягти успіху" },
+      { "p": "nous", "v": "espérerons", "s": "le meilleur", "u": "ми сподіватимемось на краще" }
+    ]
+  },
+  {
+    "category": "Мутація: -eler / -eter (подвоєння l / t)",
+    "infFr": "appeler",
+    "infUk": "дзвонити / звати",
+    "present": [
+      { "p": "j'", "v": "appelle", "s": "un ami", "u": "я дзвоню другу" },
+      { "p": "tu", "v": "appelles", "s": "ton père", "u": "ти дзвониш батькові" },
+      { "p": "il", "v": "appelle", "s": "la police", "u": "він дзвонить в поліцію" },
+      { "p": "nous", "v": "appelons", "s": "le médecin", "u": "ми дзвонимо лікарю" },
+      { "p": "vous", "v": "appelez", "s": "un taxi", "u": "ви викликаєте таксі" },
+      { "p": "ils", "v": "appellent", "s": "au secours", "u": "вони звуть на допомогу" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai appelé", "s": "un ami", "u": "я подзвонив другу" },
+      { "p": "nous", "v": "avons appelé", "s": "le médecin", "u": "ми подзвонили лікарю" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "appellerai", "s": "un ami", "u": "я подзвоню другу" },
+      { "p": "nous", "v": "appellerons", "s": "le médecin", "u": "ми подзвонимо лікарю" }
+    ]
+  },
+  {
+    "category": "Мутація: -yer (y -> i)",
+    "infFr": "essayer",
+    "infUk": "намагатися / міряти",
+    "present": [
+      { "p": "j'", "v": "essaie", "s": "de comprendre", "u": "я намагаюся зрозуміти" },
+      { "p": "tu", "v": "essaies", "s": "ce pantalon", "u": "ти міряєш ці штани" },
+      { "p": "il", "v": "essaie", "s": "de dormir", "u": "він намагається спати" },
+      { "p": "nous", "v": "essayons", "s": "encore", "u": "ми пробуємо ще раз" },
+      { "p": "vous", "v": "essayez", "s": "cette robe", "u": "ви міряєте цю сукню" },
+      { "p": "ils", "v": "essaient", "s": "de fuir", "u": "вони намагаються втекти" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai essayé", "s": "de comprendre", "u": "я намагався зрозуміти" },
+      { "p": "nous", "v": "avons essayé", "s": "encore", "u": "ми спробували ще раз" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "essaierai", "s": "de comprendre", "u": "я намагатимусь зрозуміти" },
+      { "p": "nous", "v": "essaierons", "s": "encore", "u": "ми спробуємо ще раз" }
+    ]
+  },
+  {
+    "category": "Дієслова з Être (Рух)",
+    "infFr": "arriver",
+    "infUk": "прибувати",
+    "present": [
+      { "p": "j'", "v": "arrive", "s": "à la gare", "u": "я прибуваю на вокзал" },
+      { "p": "nous", "v": "arrivons", "s": "en retard", "u": "ми прибуваємо із запізненням" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis arrivé", "s": "à la gare", "u": "я (ч.р.) прибув на вокзал" },
+      { "p": "elle", "v": "est arrivée", "s": "tôt", "u": "вона прибула рано" },
+      { "p": "nous", "v": "sommes arrivés", "s": "en retard", "u": "ми прибули із запізненням" },
+      { "p": "elles", "v": "sont arrivées", "s": "hier", "u": "вони прибули вчора (ж.р.)" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "arriverai", "s": "à la gare", "u": "я прибуду на вокзал" },
+      { "p": "nous", "v": "arriverons", "s": "en retard", "u": "ми прибудемо із запізненням" }
+    ]
+  },
+  {
+    "category": "Дієслова з Être (Рух)",
+    "infFr": "entrer",
+    "infUk": "входити",
+    "present": [
+      { "p": "j'", "v": "entre", "s": "dans la salle", "u": "я входжу в зал" },
+      { "p": "nous", "v": "entrons", "s": "en contact", "u": "ми вступаємо в контакт" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis entré", "s": "dans la salle", "u": "я (ч.р.) увійшов у зал" },
+      { "p": "elle", "v": "est entrée", "s": "sans frapper", "u": "вона увійшла без стуку" },
+      { "p": "ils", "v": "sont entrés", "s": "en premier", "u": "вони увійшли першими" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "entrerai", "s": "dans la salle", "u": "я увійду в зал" },
+      { "p": "nous", "v": "entrerons", "s": "en contact", "u": "ми вступимо в контакт" }
+    ]
+  },
+  {
+    "category": "Дієслова з Être (Рух)",
+    "infFr": "rentrer",
+    "infUk": "повертатися (додому)",
+    "present": [
+      { "p": "je", "v": "rentre", "s": "chez moi", "u": "я повертаюся додому" },
+      { "p": "nous", "v": "rentrons", "s": "tard", "u": "ми повертаємося пізно" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis rentré", "s": "chez moi", "u": "я (ч.р.) повернувся додому" },
+      { "p": "elle", "v": "est rentrée", "s": "tôt", "u": "вона повернулася рано" },
+      { "p": "ils", "v": "sont rentrés", "s": "hier", "u": "вони повернулися вчора" }
+    ],
+    "futur": [
+      { "p": "je", "v": "rentrerai", "s": "chez moi", "u": "я повернуся додому" },
+      { "p": "nous", "v": "rentrerons", "s": "tard", "u": "ми повернемося пізно" }
+    ]
+  },
+  {
+    "category": "Дієслова з Être (Рух)",
+    "infFr": "rester",
+    "infUk": "залишатися",
+    "present": [
+      { "p": "je", "v": "reste", "s": "ici", "u": "я залишаюся тут" },
+      { "p": "nous", "v": "restons", "s": "calmes", "u": "ми залишаємося спокійними" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis resté", "s": "ici", "u": "я (ч.р.) залишився тут" },
+      { "p": "elle", "v": "est restée", "s": "à la maison", "u": "вона залишилася вдома" },
+      { "p": "ils", "v": "sont restés", "s": "debout", "u": "вони залишилися стояти" }
+    ],
+    "futur": [
+      { "p": "je", "v": "resterai", "s": "ici", "u": "я залишуся тут" },
+      { "p": "nous", "v": "resterons", "s": "calmes", "u": "ми залишимося спокійними" }
+    ]
+  },
+  {
+    "category": "Дієслова з Être (Рух)",
+    "infFr": "tomber",
+    "infUk": "падати",
+    "present": [
+      { "p": "je", "v": "tombe", "s": "malade", "u": "я хворію (падаю хворим)" },
+      { "p": "nous", "v": "tombons", "s": "par terre", "u": "ми падаємо на землю" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis tombé", "s": "malade", "u": "я (ч.р.) захворів" },
+      { "p": "elle", "v": "est tombée", "s": "dans la rue", "u": "вона впала на вулиці" },
+      { "p": "ils", "v": "sont tombés", "s": "amoureux", "u": "вони закохалися" }
+    ],
+    "futur": [
+      { "p": "je", "v": "tomberai", "s": "malade", "u": "я захворію" },
+      { "p": "nous", "v": "tomberons", "s": "par terre", "u": "ми впадемо на землю" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "donner",
+    "infUk": "давати",
+    "present": [
+      { "p": "je", "v": "donne", "s": "ma parole", "u": "я даю слово" },
+      { "p": "tu", "v": "donnes", "s": "trop", "u": "ти даєш забагато" },
+      { "p": "il", "v": "donne", "s": "l'exemple", "u": "він подає приклад" },
+      { "p": "nous", "v": "donnons", "s": "notre accord", "u": "ми даємо згоду" },
+      { "p": "vous", "v": "donnez", "s": "un avis", "u": "ви даєте пораду" },
+      { "p": "ils", "v": "donnent", "s": "leur sang", "u": "вони здають кров" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai donné", "s": "ma parole", "u": "я дав слово" },
+      { "p": "nous", "v": "avons donné", "s": "notre accord", "u": "ми дали згоду" }
+    ],
+    "futur": [
+      { "p": "je", "v": "donnerai", "s": "ma parole", "u": "я дам слово" },
+      { "p": "nous", "v": "donnerons", "s": "notre accord", "u": "ми дамо згоду" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "aimer",
+    "infUk": "любити",
+    "present": [
+      { "p": "j'", "v": "aime", "s": "ce film", "u": "я люблю цей фільм" },
+      { "p": "nous", "v": "aimons", "s": "voyager", "u": "ми любимо подорожувати" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai aimé", "s": "ce film", "u": "мені сподобався цей фільм" },
+      { "p": "nous", "v": "avons aimé", "s": "le repas", "u": "нам сподобалася їжа" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "aimerai", "s": "ce film", "u": "мені сподобається цей фільм" },
+      { "p": "nous", "v": "aimerons", "s": "voyager", "u": "ми любитимемо подорожувати" }
+    ]
+  }
+]
