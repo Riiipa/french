@@ -322,35 +322,6 @@
     ]
   },
   {
-    "category": "Мутація: -cer (c -> ç перед o/a)",
-    "infFr": "avancer",
-    "infUk": "просуватися, рухатися вперед",
-    "present": [
-      { "p": "j'", "v": "avance", "s": "vers le but", "u": "я просуваюся до мети" },
-      { "p": "tu", "v": "avances", "s": "rapidement", "u": "ти рухаєшся швидко" },
-      { "p": "elle", "v": "avance", "s": "dans la vie", "u": "вона просувається в житті" },
-      { "p": "nous", "v": "avançons", "s": "ensemble", "u": "ми рухаємося вперед разом" },
-      { "p": "vous", "v": "avancez", "s": "vos pions", "u": "ви рухаєте свої пішаки" },
-      { "p": "ils", "v": "avancent", "s": "prudemment", "u": "вони просуваються обережно" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai avancé", "s": "vers le but", "u": "я просунувся до мети" },
-      { "p": "tu", "v": "as avancé", "s": "rapidement", "u": "ти рухався швидко" },
-      { "p": "elle", "v": "a avancé", "s": "dans la vie", "u": "вона просунулася в житті" },
-      { "p": "nous", "v": "avons avancé", "s": "ensemble", "u": "ми рушили вперед разом" },
-      { "p": "vous", "v": "avez avancé", "s": "vos pions", "u": "ви посунули свої пішаки" },
-      { "p": "ils", "v": "ont avancé", "s": "prudemment", "u": "вони просунулися обережно" }
-    ],
-    "futur": [
-      { "p": "j'", "v": "avancerai", "s": "vers le but", "u": "я буду просуватися до мети" },
-      { "p": "tu", "v": "avanceras", "s": "rapidement", "u": "ти рухатимешся швидко" },
-      { "p": "elle", "v": "avancera", "s": "dans la vie", "u": "вона просуватиметься в житті" },
-      { "p": "nous", "v": "avancerons", "s": "ensemble", "u": "ми будемо рухатися вперед разом" },
-      { "p": "vous", "v": "avancerez", "s": "vos pions", "u": "ви посунете свої пішаки" },
-      { "p": "ils", "v": "avanceront", "s": "prudemment", "u": "вони будуть просуватися обережно" }
-    ]
-  },
-  {
     "category": "Базові правильні (Регулярні)",
     "infFr": "bavarder",
     "infUk": "базікати",
@@ -467,35 +438,6 @@
     ]
   },
   {
-    "category": "Мутація: -ger (g -> ge перед o/a)",
-    "infFr": "changer",
-    "infUk": "змінювати",
-    "present": [
-      { "p": "je", "v": "change", "s": "d'avis", "u": "я змінюю думку" },
-      { "p": "tu", "v": "changes", "s": "de vêtements", "u": "ти переодягаєшся (змінюєш одяг)" },
-      { "p": "il", "v": "change", "s": "le monde", "u": "він змінює світ" },
-      { "p": "nous", "v": "changeons", "s": "de sujet", "u": "ми змінюємо тему" },
-      { "p": "vous", "v": "changez", "s": "d'adresse", "u": "ви змінюєте адресу" },
-      { "p": "elles", "v": "changent", "s": "les règles", "u": "вони змінюють правила" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai changé", "s": "d'avis", "u": "я змінив думку" },
-      { "p": "tu", "v": "as changé", "s": "de vêtements", "u": "ти переодягнувся" },
-      { "p": "il", "v": "a changé", "s": "le monde", "u": "він змінив світ" },
-      { "p": "nous", "v": "avons changé", "s": "de sujet", "u": "ми змінили тему" },
-      { "p": "vous", "v": "avez changé", "s": "d'adresse", "u": "ви змінили адресу" },
-      { "p": "elles", "v": "ont changé", "s": "les règles", "u": "вони змінили правила" }
-    ],
-    "futur": [
-      { "p": "je", "v": "changerai", "s": "d'avis", "u": "я зміню думку" },
-      { "p": "tu", "v": "changeras", "s": "de vêtements", "u": "ти переодягнешся" },
-      { "p": "il", "v": "changera", "s": "le monde", "u": "він змінить світ" },
-      { "p": "nous", "v": "changerons", "s": "de sujet", "u": "ми змінимо тему" },
-      { "p": "vous", "v": "changerez", "s": "d'adresse", "u": "ви зміните адресу" },
-      { "p": "elles", "v": "changeront", "s": "les règles", "u": "вони змінять правила" }
-    ]
-  },
-  {
     "category": "Базові правильні (Регулярні)",
     "infFr": "chanter",
     "infUk": "співати",
@@ -551,35 +493,6 @@
       { "p": "nous", "v": "chercherons", "s": "la sortie", "u": "ми будемо шукати вихід" },
       { "p": "vous", "v": "chercherez", "s": "quelque chose", "u": "ви будете шукати щось" },
       { "p": "elles", "v": "chercheront", "s": "l'amour", "u": "вони шукатимуть кохання" }
-    ]
-  },
-  {
-    "category": "Мутація: -cer (c -> ç перед o/a)",
-    "infFr": "commencer",
-    "infUk": "починати",
-    "present": [
-      { "p": "je", "v": "commence", "s": "à travailler", "u": "я починаю працювати" },
-      { "p": "tu", "v": "commences", "s": "demain", "u": "ти починаєш завтра" },
-      { "p": "elle", "v": "commence", "s": "le livre", "u": "вона починає книгу" },
-      { "p": "nous", "v": "commençons", "s": "la réunion", "u": "ми починаємо зустріч" },
-      { "p": "vous", "v": "commencez", "s": "tard", "u": "ви починаєте пізно" },
-      { "p": "ils", "v": "commencent", "s": "à comprendre", "u": "вони починають розуміти" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai commencé", "s": "à travailler", "u": "я почав працювати" },
-      { "p": "tu", "v": "as commencé", "s": "demain", "u": "ти почав завтра (сарказм)" },
-      { "p": "elle", "v": "a commencé", "s": "le livre", "u": "вона почала книгу" },
-      { "p": "nous", "v": "avons commencé", "s": "la réunion", "u": "ми почали зустріч" },
-      { "p": "vous", "v": "avez commencé", "s": "tard", "u": "ви почали пізно" },
-      { "p": "ils", "v": "ont commencé", "s": "à comprendre", "u": "вони почали розуміти" }
-    ],
-    "futur": [
-      { "p": "je", "v": "commencerai", "s": "à travailler", "u": "я почну працювати" },
-      { "p": "tu", "v": "commenceras", "s": "demain", "u": "ти почнеш завтра" },
-      { "p": "elle", "v": "commencera", "s": "le livre", "u": "вона почне книгу" },
-      { "p": "nous", "v": "commencerons", "s": "la réunion", "u": "ми почнемо зустріч" },
-      { "p": "vous", "v": "commencerez", "s": "tard", "u": "ви почнете пізно" },
-      { "p": "ils", "v": "commenceront", "s": "à comprendre", "u": "вони почнуть розуміти" }
     ]
   },
   {
@@ -932,35 +845,6 @@
   },
   {
     "category": "Базові правильні (Регулярні)",
-    "infFr": "donner",
-    "infUk": "давати",
-    "present": [
-      { "p": "je", "v": "donne", "s": "un conseil", "u": "я даю пораду" },
-      { "p": "tu", "v": "donnes", "s": "trop d'argent", "u": "ти даєш забагато грошей" },
-      { "p": "il", "v": "donne", "s": "l'exemple", "u": "він подає приклад" },
-      { "p": "nous", "v": "donnons", "s": "notre accord", "u": "ми даємо свою згоду" },
-      { "p": "vous", "v": "donnez", "s": "votre avis", "u": "ви даєте свою думку" },
-      { "p": "elles", "v": "donnent", "s": "leur sang", "u": "вони здають кров" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai donné", "s": "un conseil", "u": "я дав пораду" },
-      { "p": "tu", "v": "as donné", "s": "trop d'argent", "u": "ти дав забагато грошей" },
-      { "p": "il", "v": "a donné", "s": "l'exemple", "u": "він подав приклад" },
-      { "p": "nous", "v": "avons donné", "s": "notre accord", "u": "ми дали свою згоду" },
-      { "p": "vous", "v": "avez donné", "s": "votre avis", "u": "ви дали свою думку" },
-      { "p": "elles", "v": "ont donné", "s": "leur sang", "u": "вони здали кров" }
-    ],
-    "futur": [
-      { "p": "je", "v": "donnerai", "s": "un conseil", "u": "я дам пораду" },
-      { "p": "tu", "v": "donneras", "s": "trop d'argent", "u": "ти даси забагато грошей" },
-      { "p": "il", "v": "donnera", "s": "l'exemple", "u": "він подасть приклад" },
-      { "p": "nous", "v": "donnerons", "s": "notre accord", "u": "ми дамо свою згоду" },
-      { "p": "vous", "v": "donnerez", "s": "votre avis", "u": "ви дасте свою думку" },
-      { "p": "elles", "v": "donneront", "s": "leur sang", "u": "вони здадуть кров" }
-    ]
-  },
-  {
-    "category": "Базові правильні (Регулярні)",
     "infFr": "écouter",
     "infUk": "слухати",
     "present": [
@@ -1015,6 +899,2198 @@
       { "p": "nous", "v": "ennuierons", "s": "le voisin", "u": "ми будемо набридати сусідові" },
       { "p": "vous", "v": "ennuierez", "s": "les invités", "u": "ви будете надокучати гостям" },
       { "p": "elles", "v": "ennuieront", "s": "le chien", "u": "вони будуть набридати собаці" }
+    ]
+  },
+  {
+    "category": "Мутація: -yer (y -> i)",
+    "infFr": "envoyer",
+    "infUk": "відправляти",
+    "present": [
+      { "p": "j'", "v": "envoie", "s": "un colis", "u": "я відправляю посилку" },
+      { "p": "tu", "v": "envoies", "s": "un message", "u": "ти відправляєш повідомлення" },
+      { "p": "il", "v": "envoie", "s": "des fleurs", "u": "він відправляє квіти" },
+      { "p": "nous", "v": "envoyons", "s": "une lettre", "u": "ми відправляємо листа" },
+      { "p": "vous", "v": "envoyez", "s": "de l'argent", "u": "ви відправляєте гроші" },
+      { "p": "elles", "v": "envoient", "s": "des invitations", "u": "вони відправляють запрошення" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai envoyé", "s": "un colis", "u": "я відправив посилку" },
+      { "p": "tu", "v": "as envoyé", "s": "un message", "u": "ти відправив повідомлення" },
+      { "p": "il", "v": "a envoyé", "s": "des fleurs", "u": "він відправив квіти" },
+      { "p": "nous", "v": "avons envoyé", "s": "une lettre", "u": "ми відправили листа" },
+      { "p": "vous", "v": "avez envoyé", "s": "de l'argent", "u": "ви відправили гроші" },
+      { "p": "elles", "v": "ont envoyé", "s": "des invitations", "u": "вони відправили запрошення" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "enverrai", "s": "un colis", "u": "я відправлю посилку" },
+      { "p": "tu", "v": "enverras", "s": "un message", "u": "ти відправиш повідомлення" },
+      { "p": "il", "v": "enverra", "s": "des fleurs", "u": "він відправить квіти" },
+      { "p": "nous", "v": "enverrons", "s": "une lettre", "u": "ми відправимо листа" },
+      { "p": "vous", "v": "enverrez", "s": "de l'argent", "u": "ви відправите гроші" },
+      { "p": "elles", "v": "enverront", "s": "des invitations", "u": "вони відправлять запрошення" }
+    ]
+  },
+  {
+    "category": "Мутація: -yer (y -> i)",
+    "infFr": "essuyer",
+    "infUk": "витирати",
+    "present": [
+      { "p": "j'", "v": "essuie", "s": "la table", "u": "я витираю стіл" },
+      { "p": "tu", "v": "essuies", "s": "la vaisselle", "u": "ти витираєш посуд" },
+      { "p": "elle", "v": "essuie", "s": "ses larmes", "u": "вона витирає сльози" },
+      { "p": "nous", "v": "essuyons", "s": "les verres", "u": "ми витираємо склянки" },
+      { "p": "vous", "v": "essuyez", "s": "le sol", "u": "ви витираєте підлогу" },
+      { "p": "ils", "v": "essuient", "s": "leurs pieds", "u": "вони витирають ноги" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai essuyé", "s": "la table", "u": "я витер стіл" },
+      { "p": "tu", "v": "as essuyé", "s": "la vaisselle", "u": "ти витер посуд" },
+      { "p": "elle", "v": "a essuyé", "s": "ses larmes", "u": "вона витерла сльози" },
+      { "p": "nous", "v": "avons essuyé", "s": "les verres", "u": "ми витерли склянки" },
+      { "p": "vous", "v": "avez essuyé", "s": "le sol", "u": "ви витерли підлогу" },
+      { "p": "ils", "v": "ont essuyé", "s": "leurs pieds", "u": "вони витерли ноги" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "essuierai", "s": "la table", "u": "я витру стіл" },
+      { "p": "tu", "v": "essuieras", "s": "la vaisselle", "u": "ти витреш посуд" },
+      { "p": "elle", "v": "essuiera", "s": "ses larmes", "u": "вона витре сльози" },
+      { "p": "nous", "v": "essuierons", "s": "les verres", "u": "ми витремо склянки" },
+      { "p": "vous", "v": "essuierez", "s": "le sol", "u": "ви витрете підлогу" },
+      { "p": "ils", "v": "essuieront", "s": "leurs pieds", "u": "вони витруть ноги" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "expliquer",
+    "infUk": "пояснювати",
+    "present": [
+      { "p": "j'", "v": "explique", "s": "la règle", "u": "я пояснюю правило" },
+      { "p": "tu", "v": "expliques", "s": "mal", "u": "ти пояснюєш погано" },
+      { "p": "il", "v": "explique", "s": "son choix", "u": "він пояснює свій вибір" },
+      { "p": "nous", "v": "expliquons", "s": "la situation", "u": "ми пояснюємо ситуацію" },
+      { "p": "vous", "v": "expliquez", "s": "clairement", "u": "ви пояснюєте чітко" },
+      { "p": "elles", "v": "expliquent", "s": "leur projet", "u": "вони пояснюють свій проект" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai expliqué", "s": "la règle", "u": "я пояснив правило" },
+      { "p": "tu", "v": "as expliqué", "s": "mal", "u": "ти пояснив погано" },
+      { "p": "il", "v": "a expliqué", "s": "son choix", "u": "він пояснив свій вибір" },
+      { "p": "nous", "v": "avons expliqué", "s": "la situation", "u": "ми пояснили ситуацію" },
+      { "p": "vous", "v": "avez expliqué", "s": "clairement", "u": "ви пояснили чітко" },
+      { "p": "elles", "v": "ont expliqué", "s": "leur projet", "u": "вони пояснили свій проект" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "expliquerai", "s": "la règle", "u": "я поясню правило" },
+      { "p": "tu", "v": "expliqueras", "s": "mal", "u": "ти поясниш погано" },
+      { "p": "il", "v": "expliquera", "s": "son choix", "u": "він пояснить свій вибір" },
+      { "p": "nous", "v": "expliquerons", "s": "la situation", "u": "ми пояснимо ситуацію" },
+      { "p": "vous", "v": "expliquerez", "s": "clairement", "u": "ви поясните чітко" },
+      { "p": "elles", "v": "expliqueront", "s": "leur projet", "u": "вони пояснять свій проект" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "fermer",
+    "infUk": "зачиняти",
+    "present": [
+      { "p": "je", "v": "ferme", "s": "la porte", "u": "я зачиняю двері" },
+      { "p": "tu", "v": "fermes", "s": "la fenêtre", "u": "ти зачиняєш вікно" },
+      { "p": "il", "v": "ferme", "s": "les yeux", "u": "він заплющує очі" },
+      { "p": "nous", "v": "fermons", "s": "le magasin", "u": "ми зачиняємо магазин" },
+      { "p": "vous", "v": "fermez", "s": "le livre", "u": "ви закриваєте книгу" },
+      { "p": "ils", "v": "ferment", "s": "à clé", "u": "вони зачиняють на ключ" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai fermé", "s": "la porte", "u": "я зачинив двері" },
+      { "p": "tu", "v": "as fermé", "s": "la fenêtre", "u": "ти зачинив вікно" },
+      { "p": "il", "v": "a fermé", "s": "les yeux", "u": "він заплющив очі" },
+      { "p": "nous", "v": "avons fermé", "s": "le magasin", "u": "ми зачинили магазин" },
+      { "p": "vous", "v": "avez fermé", "s": "le livre", "u": "ви закрили книгу" },
+      { "p": "ils", "v": "ont fermé", "s": "à clé", "u": "вони зачинили на ключ" }
+    ],
+    "futur": [
+      { "p": "je", "v": "fermerai", "s": "la porte", "u": "я зачиню двері" },
+      { "p": "tu", "v": "fermeras", "s": "la fenêtre", "u": "ти зачиниш вікно" },
+      { "p": "il", "v": "fermera", "s": "les yeux", "u": "він заплющить очі" },
+      { "p": "nous", "v": "fermerons", "s": "le magasin", "u": "ми зачинимо магазин" },
+      { "p": "vous", "v": "fermerez", "s": "le livre", "u": "ви закриєте книгу" },
+      { "p": "ils", "v": "fermeront", "s": "à clé", "u": "вони зачинять на ключ" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "gagner",
+    "infUk": "вигравати, заробляти",
+    "present": [
+      { "p": "je", "v": "gagne", "s": "le match", "u": "я виграю матч" },
+      { "p": "tu", "v": "gagnes", "s": "du temps", "u": "ти виграєш час" },
+      { "p": "elle", "v": "gagne", "s": "beaucoup", "u": "вона багато заробляє" },
+      { "p": "nous", "v": "gagnons", "s": "la course", "u": "ми виграємо гонку" },
+      { "p": "vous", "v": "gagnez", "s": "bien votre vie", "u": "ви добре заробляєте" },
+      { "p": "ils", "v": "gagnent", "s": "le prix", "u": "вони виграють приз" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai gagné", "s": "le match", "u": "я виграв матч" },
+      { "p": "tu", "v": "as gagné", "s": "du temps", "u": "ти виграв час" },
+      { "p": "elle", "v": "a gagné", "s": "beaucoup", "u": "вона багато заробила" },
+      { "p": "nous", "v": "avons gagné", "s": "la course", "u": "ми виграли гонку" },
+      { "p": "vous", "v": "avez gagné", "s": "bien votre vie", "u": "ви добре заробили" },
+      { "p": "ils", "v": "ont gagné", "s": "le prix", "u": "вони виграли приз" }
+    ],
+    "futur": [
+      { "p": "je", "v": "gagnerai", "s": "le match", "u": "я виграю матч" },
+      { "p": "tu", "v": "gagneras", "s": "du temps", "u": "ти виграєш час" },
+      { "p": "elle", "v": "gagnera", "s": "beaucoup", "u": "вона буде багато заробляти" },
+      { "p": "nous", "v": "gagnerons", "s": "la course", "u": "ми виграємо гонку" },
+      { "p": "vous", "v": "gagnerez", "s": "bien votre vie", "u": "ви будете добре заробляти" },
+      { "p": "ils", "v": "gagneront", "s": "le prix", "u": "вони виграють приз" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "garder",
+    "infUk": "зберігати, стерегти",
+    "present": [
+      { "p": "je", "v": "garde", "s": "le secret", "u": "я зберігаю секрет" },
+      { "p": "tu", "v": "gardes", "s": "les enfants", "u": "ти сидиш з дітьми" },
+      { "p": "il", "v": "garde", "s": "le silence", "u": "він зберігає мовчання" },
+      { "p": "nous", "v": "gardons", "s": "espoir", "u": "ми зберігаємо надію" },
+      { "p": "vous", "v": "gardez", "s": "la monnaie", "u": "ви залишаєте решту собі" },
+      { "p": "elles", "v": "gardent", "s": "le contact", "u": "вони підтримують зв'язок" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai gardé", "s": "le secret", "u": "я зберіг секрет" },
+      { "p": "tu", "v": "as gardé", "s": "les enfants", "u": "ти посидів з дітьми" },
+      { "p": "il", "v": "a gardé", "s": "le silence", "u": "він зберіг мовчання" },
+      { "p": "nous", "v": "avons gardé", "s": "espoir", "u": "ми зберегли надію" },
+      { "p": "vous", "v": "avez gardé", "s": "la monnaie", "u": "ви залишили решту" },
+      { "p": "elles", "v": "ont gardé", "s": "le contact", "u": "вони підтримали зв'язок" }
+    ],
+    "futur": [
+      { "p": "je", "v": "garderai", "s": "le secret", "u": "я буду зберігати секрет" },
+      { "p": "tu", "v": "garderas", "s": "les enfants", "u": "ти посидиш з дітьми" },
+      { "p": "il", "v": "gardera", "s": "le silence", "u": "він буде зберігати мовчання" },
+      { "p": "nous", "v": "garderons", "s": "espoir", "u": "ми збережемо надію" },
+      { "p": "vous", "v": "garderez", "s": "la monnaie", "u": "ви залишите решту" },
+      { "p": "elles", "v": "garderont", "s": "le contact", "u": "вони підтримуватимуть зв'язок" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "goûter",
+    "infUk": "куштувати, пробувати",
+    "present": [
+      { "p": "je", "v": "goûte", "s": "le vin", "u": "я куштую вино" },
+      { "p": "tu", "v": "goûtes", "s": "la soupe", "u": "ти пробуєш суп" },
+      { "p": "elle", "v": "goûte", "s": "le gâteau", "u": "вона куштує торт" },
+      { "p": "nous", "v": "goûtons", "s": "au succès", "u": "ми смакуємо успіх" },
+      { "p": "vous", "v": "goûtez", "s": "ce plat", "u": "ви куштуєте цю страву" },
+      { "p": "ils", "v": "goûtent", "s": "le fromage", "u": "вони пробують сир" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai goûté", "s": "le vin", "u": "я скуштував вино" },
+      { "p": "tu", "v": "as goûté", "s": "la soupe", "u": "ти спробував суп" },
+      { "p": "elle", "v": "a goûté", "s": "le gâteau", "u": "вона скуштувала торт" },
+      { "p": "nous", "v": "avons goûté", "s": "au succès", "u": "ми посмакували успіхом" },
+      { "p": "vous", "v": "avez goûté", "s": "ce plat", "u": "ви скуштували цю страву" },
+      { "p": "ils", "v": "ont goûté", "s": "le fromage", "u": "вони спробували сир" }
+    ],
+    "futur": [
+      { "p": "je", "v": "goûterai", "s": "le vin", "u": "я скуштую вино" },
+      { "p": "tu", "v": "goûteras", "s": "la soupe", "u": "ти спробуєш суп" },
+      { "p": "elle", "v": "goûtera", "s": "le gâteau", "u": "вона скуштує торт" },
+      { "p": "nous", "v": "goûterons", "s": "au succès", "u": "ми скуштуємо успіх" },
+      { "p": "vous", "v": "goûterez", "s": "ce plat", "u": "ви скуштуєте цю страву" },
+      { "p": "ils", "v": "goûteront", "s": "le fromage", "u": "вони спробують сир" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "habiter",
+    "infUk": "жити, мешкати",
+    "present": [
+      { "p": "j'", "v": "habite", "s": "à Paris", "u": "я живу в Парижі" },
+      { "p": "tu", "v": "habites", "s": "seul", "u": "ти живеш сам" },
+      { "p": "il", "v": "habite", "s": "loin", "u": "він живе далеко" },
+      { "p": "nous", "v": "habitons", "s": "ensemble", "u": "ми живемо разом" },
+      { "p": "vous", "v": "habitez", "s": "ici", "u": "ви живете тут" },
+      { "p": "elles", "v": "habitent", "s": "en ville", "u": "вони живуть у місті" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai habité", "s": "à Paris", "u": "я жив у Парижі" },
+      { "p": "tu", "v": "as habité", "s": "seul", "u": "ти жив сам" },
+      { "p": "il", "v": "a habité", "s": "loin", "u": "він жив далеко" },
+      { "p": "nous", "v": "avons habité", "s": "ensemble", "u": "ми жили разом" },
+      { "p": "vous", "v": "avez habité", "s": "ici", "u": "ви жили тут" },
+      { "p": "elles", "v": "ont habité", "s": "en ville", "u": "вони жили в місті" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "habiterai", "s": "à Paris", "u": "я житиму в Парижі" },
+      { "p": "tu", "v": "habiteras", "s": "seul", "u": "ти житимеш сам" },
+      { "p": "il", "v": "habitera", "s": "loin", "u": "він житиме далеко" },
+      { "p": "nous", "v": "habiterons", "s": "ensemble", "u": "ми житимемо разом" },
+      { "p": "vous", "v": "habiterez", "s": "ici", "u": "ви житимете тут" },
+      { "p": "elles", "v": "habiteront", "s": "en ville", "u": "вони житимуть у місті" }
+    ]
+  },
+  {
+    "category": "Мутація: e_er (e -> è)",
+    "infFr": "inquiéter",
+    "infUk": "турбувати, хвилювати",
+    "present": [
+      { "p": "j'", "v": "inquiète", "s": "ma mère", "u": "я хвилюю свою матір" },
+      { "p": "tu", "v": "inquiètes", "s": "tout le monde", "u": "ти турбуєш всіх" },
+      { "p": "elle", "v": "inquiète", "s": "ses parents", "u": "вона хвилює своїх батьків" },
+      { "p": "nous", "v": "inquiétons", "s": "le médecin", "u": "ми турбуємо лікаря" },
+      { "p": "vous", "v": "inquiétez", "s": "les voisins", "u": "ви турбуєте сусідів" },
+      { "p": "ils", "v": "inquiètent", "s": "les profs", "u": "вони хвилюють вчителів" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai inquiété", "s": "ma mère", "u": "я змусив матір хвилюватися" },
+      { "p": "tu", "v": "as inquiété", "s": "tout le monde", "u": "ти стурбував усіх" },
+      { "p": "elle", "v": "a inquiété", "s": "ses parents", "u": "вона змусила батьків хвилюватися" },
+      { "p": "nous", "v": "avons inquiété", "s": "le médecin", "u": "ми стурбували лікаря" },
+      { "p": "vous", "v": "avez inquiété", "s": "les voisins", "u": "ви стурбували сусідів" },
+      { "p": "ils", "v": "ont inquiété", "s": "les profs", "u": "вони змусили вчителів хвилюватися" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "inquiéterai", "s": "ma mère", "u": "я змушу матір хвилюватися" },
+      { "p": "tu", "v": "inquiéteras", "s": "tout le monde", "u": "ти стурбуєш усіх" },
+      { "p": "elle", "v": "inquiétera", "s": "ses parents", "u": "вона змусить батьків хвилюватися" },
+      { "p": "nous", "v": "inquiéterons", "s": "le médecin", "u": "ми стурбуємо лікаря" },
+      { "p": "vous", "v": "inquiéterez", "s": "les voisins", "u": "ви стурбуєте сусідів" },
+      { "p": "ils", "v": "inquiéteront", "s": "les profs", "u": "вони змусять вчителів хвилюватися" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "inviter",
+    "infUk": "запрошувати",
+    "present": [
+      { "p": "j'", "v": "invite", "s": "mes amis", "u": "я запрошую друзів" },
+      { "p": "tu", "v": "invites", "s": "ta famille", "u": "ти запрошуєш свою родину" },
+      { "p": "il", "v": "invite", "s": "à dîner", "u": "він запрошує на вечерю" },
+      { "p": "nous", "v": "invitons", "s": "les voisins", "u": "ми запрошуємо сусідів" },
+      { "p": "vous", "v": "invitez", "s": "tout le monde", "u": "ви запрошуєте всіх" },
+      { "p": "elles", "v": "invitent", "s": "au mariage", "u": "вони запрошують на весілля" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai invité", "s": "mes amis", "u": "я запросив друзів" },
+      { "p": "tu", "v": "as invité", "s": "ta famille", "u": "ти запросив свою родину" },
+      { "p": "il", "v": "a invité", "s": "à dîner", "u": "він запросив на вечерю" },
+      { "p": "nous", "v": "avons invité", "s": "les voisins", "u": "ми запросили сусідів" },
+      { "p": "vous", "v": "avez invité", "s": "tout le monde", "u": "ви запросили всіх" },
+      { "p": "elles", "v": "ont invité", "s": "au mariage", "u": "вони запросили на весілля" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "inviterai", "s": "mes amis", "u": "я запрошу друзів" },
+      { "p": "tu", "v": "inviteras", "s": "ta famille", "u": "ти запросиш свою родину" },
+      { "p": "il", "v": "invitera", "s": "à dîner", "u": "він запросить на вечерю" },
+      { "p": "nous", "v": "inviterons", "s": "les voisins", "u": "ми запросимо сусідів" },
+      { "p": "vous", "v": "inviterez", "s": "tout le monde", "u": "ви запросите всіх" },
+      { "p": "elles", "v": "inviteront", "s": "au mariage", "u": "вони запросять на весілля" }
+    ]
+  },
+  {
+    "category": "Мутація: -eter (подвоєння t)",
+    "infFr": "jeter",
+    "infUk": "кидати, викидати",
+    "present": [
+      { "p": "je", "v": "jette", "s": "l'éponge", "u": "я здаюся (викидаю губку)" },
+      { "p": "tu", "v": "jettes", "s": "les poubelles", "u": "ти викидаєш сміття" },
+      { "p": "elle", "v": "jette", "s": "un œil", "u": "вона кидає погляд" },
+      { "p": "nous", "v": "jetons", "s": "des pierres", "u": "ми кидаємо каміння" },
+      { "p": "vous", "v": "jetez", "s": "tout", "u": "ви викидаєте все" },
+      { "p": "ils", "v": "jettent", "s": "leur argent", "u": "вони розкидаються грошима" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai jeté", "s": "l'éponge", "u": "я здався" },
+      { "p": "tu", "v": "as jeté", "s": "les poubelles", "u": "ти викинув сміття" },
+      { "p": "elle", "v": "a jeté", "s": "un œil", "u": "вона кинула погляд" },
+      { "p": "nous", "v": "avons jeté", "s": "des pierres", "u": "ми кидали каміння" },
+      { "p": "vous", "v": "avez jeté", "s": "tout", "u": "ви викинули все" },
+      { "p": "ils", "v": "ont jeté", "s": "leur argent", "u": "вони розкидалися грошима" }
+    ],
+    "futur": [
+      { "p": "je", "v": "jetterai", "s": "l'éponge", "u": "я здамся" },
+      { "p": "tu", "v": "jetteras", "s": "les poubelles", "u": "ти викинеш сміття" },
+      { "p": "elle", "v": "jettera", "s": "un œil", "u": "вона кине погляд" },
+      { "p": "nous", "v": "jetterons", "s": "des pierres", "u": "ми будемо кидати каміння" },
+      { "p": "vous", "v": "jetterez", "s": "tout", "u": "ви викинете все" },
+      { "p": "ils", "v": "jetteront", "s": "leur argent", "u": "вони будуть розкидатися грошима" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "jouer",
+    "infUk": "грати",
+    "present": [
+      { "p": "je", "v": "joue", "s": "au foot", "u": "я граю у футбол" },
+      { "p": "tu", "v": "joues", "s": "de la guitare", "u": "ти граєш на гітарі" },
+      { "p": "il", "v": "joue", "s": "avec le feu", "u": "він грає з вогнем" },
+      { "p": "nous", "v": "jouons", "s": "aux cartes", "u": "ми граємо в карти" },
+      { "p": "vous", "v": "jouez", "s": "le jeu", "u": "ви підігруєте" },
+      { "p": "elles", "v": "jouent", "s": "dehors", "u": "вони граються надворі" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai joué", "s": "au foot", "u": "я грав у футбол" },
+      { "p": "tu", "v": "as joué", "s": "de la guitare", "u": "ти грав на гітарі" },
+      { "p": "il", "v": "a joué", "s": "avec le feu", "u": "він грав з вогнем" },
+      { "p": "nous", "v": "avons joué", "s": "aux cartes", "u": "ми грали в карти" },
+      { "p": "vous", "v": "avez joué", "s": "le jeu", "u": "ви підіграли" },
+      { "p": "elles", "v": "ont joué", "s": "dehors", "u": "вони гралися надворі" }
+    ],
+    "futur": [
+      { "p": "je", "v": "jouerai", "s": "au foot", "u": "я буду грати у футбол" },
+      { "p": "tu", "v": "joueras", "s": "de la guitare", "u": "ти гратимеш на гітарі" },
+      { "p": "il", "v": "jouera", "s": "avec le feu", "u": "він буде грати з вогнем" },
+      { "p": "nous", "v": "jouerons", "s": "aux cartes", "u": "ми будемо грати в карти" },
+      { "p": "vous", "v": "jouerez", "s": "le jeu", "u": "ви будете підігрувати" },
+      { "p": "elles", "v": "joueront", "s": "dehors", "u": "вони будуть гратися надворі" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "laver",
+    "infUk": "мити",
+    "present": [
+      { "p": "je", "v": "lave", "s": "la voiture", "u": "я мию машину" },
+      { "p": "tu", "v": "laves", "s": "la vaisselle", "u": "ти миєш посуд" },
+      { "p": "elle", "v": "lave", "s": "le linge", "u": "вона пере білизну" },
+      { "p": "nous", "v": "lavons", "s": "nos mains", "u": "ми миємо руки" },
+      { "p": "vous", "v": "lavez", "s": "le sol", "u": "ви миєте підлогу" },
+      { "p": "ils", "v": "lavent", "s": "le chien", "u": "вони миють собаку" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai lavé", "s": "la voiture", "u": "я помив машину" },
+      { "p": "tu", "v": "as lavé", "s": "la vaisselle", "u": "ти помив посуд" },
+      { "p": "elle", "v": "a lavé", "s": "le linge", "u": "вона випрала білизну" },
+      { "p": "nous", "v": "avons lavé", "s": "nos mains", "u": "ми помили руки" },
+      { "p": "vous", "v": "avez lavé", "s": "le sol", "u": "ви помили підлогу" },
+      { "p": "ils", "v": "ont lavé", "s": "le chien", "u": "вони помили собаку" }
+    ],
+    "futur": [
+      { "p": "je", "v": "laverai", "s": "la voiture", "u": "я помию машину" },
+      { "p": "tu", "v": "laveras", "s": "la vaisselle", "u": "ти помиєш посуд" },
+      { "p": "elle", "v": "lavera", "s": "le linge", "u": "вона випере білизну" },
+      { "p": "nous", "v": "laverons", "s": "nos mains", "u": "ми помиємо руки" },
+      { "p": "vous", "v": "laverez", "s": "le sol", "u": "ви помиєте підлогу" },
+      { "p": "ils", "v": "laveront", "s": "le chien", "u": "вони помиють собаку" }
+    ]
+  },
+  {
+    "category": "Мутація: e_er (e -> è)",
+    "infFr": "lever",
+    "infUk": "піднімати",
+    "present": [
+      { "p": "je", "v": "lève", "s": "la main", "u": "я піднімаю руку" },
+      { "p": "tu", "v": "lèves", "s": "les yeux", "u": "ти підводиш очі" },
+      { "p": "il", "v": "lève", "s": "son verre", "u": "він піднімає келих" },
+      { "p": "nous", "v": "levons", "s": "le camp", "u": "ми згортаємо табір" },
+      { "p": "vous", "v": "levez", "s": "la tête", "u": "ви піднімаєте голову" },
+      { "p": "elles", "v": "lèvent", "s": "le doigt", "u": "вони піднімають палець" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai levé", "s": "la main", "u": "я підняв руку" },
+      { "p": "tu", "v": "as levé", "s": "les yeux", "u": "ти підвів очі" },
+      { "p": "il", "v": "a levé", "s": "son verre", "u": "він підняв келих" },
+      { "p": "nous", "v": "avons levé", "s": "le camp", "u": "ми згорнули табір" },
+      { "p": "vous", "v": "avez levé", "s": "la tête", "u": "ви підняли голову" },
+      { "p": "elles", "v": "ont levé", "s": "le doigt", "u": "вони підняли палець" }
+    ],
+    "futur": [
+      { "p": "je", "v": "lèverai", "s": "la main", "u": "я підніму руку" },
+      { "p": "tu", "v": "lèveras", "s": "les yeux", "u": "ти підведеш очі" },
+      { "p": "il", "v": "lèvera", "s": "son verre", "u": "він підніме келих" },
+      { "p": "nous", "v": "lèverons", "s": "le camp", "u": "ми згорнемо табір" },
+      { "p": "vous", "v": "lèverez", "s": "la tête", "u": "ви піднімете голову" },
+      { "p": "elles", "v": "lèveront", "s": "le doigt", "u": "вони піднімуть палець" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "marcher",
+    "infUk": "ходити, працювати (про механізм)",
+    "present": [
+      { "p": "je", "v": "marche", "s": "vite", "u": "я йду швидко" },
+      { "p": "tu", "v": "marches", "s": "dans la rue", "u": "ти йдеш по вулиці" },
+      { "p": "il", "v": "marche", "s": "bien", "u": "він (механізм) працює добре" },
+      { "p": "nous", "v": "marchons", "s": "ensemble", "u": "ми йдемо разом" },
+      { "p": "vous", "v": "marchez", "s": "lentement", "u": "ви йдете повільно" },
+      { "p": "elles", "v": "marchent", "s": "au parc", "u": "вони гуляють у парку" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai marché", "s": "vite", "u": "я йшов швидко" },
+      { "p": "tu", "v": "as marché", "s": "dans la rue", "u": "ти йшов по вулиці" },
+      { "p": "il", "v": "a marché", "s": "bien", "u": "він (механізм) працював добре" },
+      { "p": "nous", "v": "avons marché", "s": "ensemble", "u": "ми йшли разом" },
+      { "p": "vous", "v": "avez marché", "s": "lentement", "u": "ви йшли повільно" },
+      { "p": "elles", "v": "ont marché", "s": "au parc", "u": "вони гуляли у парку" }
+    ],
+    "futur": [
+      { "p": "je", "v": "marcherai", "s": "vite", "u": "я буду йти швидко" },
+      { "p": "tu", "v": "marcheras", "s": "dans la rue", "u": "ти будеш йти по вулиці" },
+      { "p": "il", "v": "marchera", "s": "bien", "u": "він (механізм) буде працювати добре" },
+      { "p": "nous", "v": "marcherons", "s": "ensemble", "u": "ми будемо йти разом" },
+      { "p": "vous", "v": "marcherez", "s": "lentement", "u": "ви будете йти повільно" },
+      { "p": "elles", "v": "marcheront", "s": "au parc", "u": "вони будуть гуляти у парку" }
+    ]
+  },
+  {
+    "category": "Дієслова з Être (Рух)",
+    "infFr": "monter",
+    "infUk": "підніматися",
+    "present": [
+      { "p": "je", "v": "monte", "s": "l'escalier", "u": "я піднімаюся сходами" },
+      { "p": "tu", "v": "montes", "s": "dans le train", "u": "ти сідаєш у поїзд" },
+      { "p": "il", "v": "monte", "s": "au ciel", "u": "він піднімається в небо" },
+      { "p": "nous", "v": "montons", "s": "au premier", "u": "ми піднімаємося на перший поверх" },
+      { "p": "vous", "v": "montez", "s": "le son", "u": "ви робите звук гучнішим (піднімаєте звук)" },
+      { "p": "ils", "v": "montent", "s": "la garde", "u": "вони стоять на варті (піднімають варту)" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis monté", "s": "l'escalier", "u": "я (ч.р.) піднявся сходами" },
+      { "p": "tu", "v": "es monté", "s": "dans le train", "u": "ти (ч.р.) сів у поїзд" },
+      { "p": "il", "v": "est monté", "s": "au ciel", "u": "він піднявся в небо" },
+      { "p": "nous", "v": "sommes montés", "s": "au premier", "u": "ми піднялися на перший поверх" },
+      { "p": "vous", "v": "avez monté", "s": "le son", "u": "ви зробили звук гучнішим (з AVOIR)" },
+      { "p": "ils", "v": "ont monté", "s": "la garde", "u": "вони стояли на варті (з AVOIR)" }
+    ],
+    "futur": [
+      { "p": "je", "v": "monterai", "s": "l'escalier", "u": "я буду підніматися сходами" },
+      { "p": "tu", "v": "monteras", "s": "dans le train", "u": "ти сядеш у поїзд" },
+      { "p": "il", "v": "montera", "s": "au ciel", "u": "він підніметься в небо" },
+      { "p": "nous", "v": "monterons", "s": "au premier", "u": "ми піднімемося на перший поверх" },
+      { "p": "vous", "v": "monterez", "s": "le son", "u": "ви зробите звук гучнішим" },
+      { "p": "ils", "v": "monteront", "s": "la garde", "u": "вони стоятимуть на варті" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "montrer",
+    "infUk": "показувати",
+    "present": [
+      { "p": "je", "v": "montre", "s": "le chemin", "u": "я показую дорогу" },
+      { "p": "tu", "v": "montres", "s": "l'exemple", "u": "ти показуєш приклад" },
+      { "p": "elle", "v": "montre", "s": "ses dents", "u": "вона шкірить зуби (показує зуби)" },
+      { "p": "nous", "v": "montrons", "s": "notre carte", "u": "ми показуємо нашу карту" },
+      { "p": "vous", "v": "montrez", "s": "du courage", "u": "ви проявляєте (показуєте) сміливість" },
+      { "p": "ils", "v": "montrent", "s": "leurs billets", "u": "вони показують свої квитки" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai montré", "s": "le chemin", "u": "я показав дорогу" },
+      { "p": "tu", "v": "as montré", "s": "l'exemple", "u": "ти показав приклад" },
+      { "p": "elle", "v": "a montré", "s": "ses dents", "u": "вона вишкірила зуби" },
+      { "p": "nous", "v": "avons montré", "s": "notre carte", "u": "ми показали нашу карту" },
+      { "p": "vous", "v": "avez montré", "s": "du courage", "u": "ви проявили сміливість" },
+      { "p": "ils", "v": "ont montré", "s": "leurs billets", "u": "вони показали свої квитки" }
+    ],
+    "futur": [
+      { "p": "je", "v": "montrerai", "s": "le chemin", "u": "я покажу дорогу" },
+      { "p": "tu", "v": "montreras", "s": "l'exemple", "u": "ти покажеш приклад" },
+      { "p": "elle", "v": "montrera", "s": "ses dents", "u": "вона вишкірить зуби" },
+      { "p": "nous", "v": "montrerons", "s": "notre carte", "u": "ми покажемо нашу карту" },
+      { "p": "vous", "v": "montrerez", "s": "du courage", "u": "ви проявите сміливість" },
+      { "p": "ils", "v": "montreront", "s": "leurs billets", "u": "вони покажуть свої квитки" }
+    ]
+  },
+  {
+    "category": "Мутація: -ger (g -> ge перед o/a)",
+    "infFr": "neiger",
+    "infUk": "йти (про сніг)",
+    "present": [
+      { "p": "il", "v": "neige", "s": "fort", "u": "йде сильний сніг" },
+      { "p": "il", "v": "neige", "s": "souvent ici", "u": "тут часто йде сніг" }
+    ],
+    "passe": [
+      { "p": "il", "v": "a neigé", "s": "toute la nuit", "u": "сніг йшов усю ніч" },
+      { "p": "il", "v": "a neigé", "s": "hier", "u": "вчора йшов сніг" }
+    ],
+    "futur": [
+      { "p": "il", "v": "neigera", "s": "demain", "u": "завтра йтиме сніг" },
+      { "p": "il", "v": "neigera", "s": "cet hiver", "u": "цієї зими йтиме сніг" }
+    ]
+  },
+  {
+    "category": "Мутація: -yer (y -> i)",
+    "infFr": "nettoyer",
+    "infUk": "чистити, прибирати",
+    "present": [
+      { "p": "je", "v": "nettoie", "s": "la maison", "u": "я прибираю будинок" },
+      { "p": "tu", "v": "nettoies", "s": "ta chambre", "u": "ти прибираєш свою кімнату" },
+      { "p": "elle", "v": "nettoie", "s": "les vitres", "u": "вона миє вікна" },
+      { "p": "nous", "v": "nettoyons", "s": "la voiture", "u": "ми чистимо машину" },
+      { "p": "vous", "v": "nettoyez", "s": "le sol", "u": "ви миєте підлогу" },
+      { "p": "ils", "v": "nettoient", "s": "tout", "u": "вони прибирають все" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai nettoyé", "s": "la maison", "u": "я прибрав будинок" },
+      { "p": "tu", "v": "as nettoyé", "s": "ta chambre", "u": "ти прибрав свою кімнату" },
+      { "p": "elle", "v": "a nettoyé", "s": "les vitres", "u": "вона помила вікна" },
+      { "p": "nous", "v": "avons nettoyé", "s": "la voiture", "u": "ми почистили машину" },
+      { "p": "vous", "v": "avez nettoyé", "s": "le sol", "u": "ви помили підлогу" },
+      { "p": "ils", "v": "ont nettoyé", "s": "tout", "u": "вони прибрали все" }
+    ],
+    "futur": [
+      { "p": "je", "v": "nettoierai", "s": "la maison", "u": "я приберу будинок" },
+      { "p": "tu", "v": "nettoieras", "s": "ta chambre", "u": "ти прибереш свою кімнату" },
+      { "p": "elle", "v": "nettoiera", "s": "les vitres", "u": "вона помиє вікна" },
+      { "p": "nous", "v": "nettoierons", "s": "la voiture", "u": "ми почистимо машину" },
+      { "p": "vous", "v": "nettoierez", "s": "le sol", "u": "ви помиєте підлогу" },
+      { "p": "ils", "v": "nettoieront", "s": "tout", "u": "вони приберуть все" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "oublier",
+    "infUk": "забувати",
+    "present": [
+      { "p": "j'", "v": "oublie", "s": "tout", "u": "я все забуваю" },
+      { "p": "tu", "v": "oublies", "s": "souvent", "u": "ти часто забуваєш" },
+      { "p": "il", "v": "oublie", "s": "son nom", "u": "він забуває своє ім'я" },
+      { "p": "nous", "v": "oublions", "s": "le passé", "u": "ми забуваємо минуле" },
+      { "p": "vous", "v": "oubliez", "s": "vos clés", "u": "ви забуваєте свої ключі" },
+      { "p": "elles", "v": "oublient", "s": "de m'appeler", "u": "вони забувають мені подзвонити" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai oublié", "s": "tout", "u": "я все забув" },
+      { "p": "tu", "v": "as oublié", "s": "souvent", "u": "ти часто забував" },
+      { "p": "il", "v": "a oublié", "s": "son nom", "u": "він забув своє ім'я" },
+      { "p": "nous", "v": "avons oublié", "s": "le passé", "u": "ми забули минуле" },
+      { "p": "vous", "v": "avez oublié", "s": "vos clés", "u": "ви забули свої ключі" },
+      { "p": "elles", "v": "ont oublié", "s": "de m'appeler", "u": "вони забули мені подзвонити" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "oublierai", "s": "tout", "u": "я все забуду" },
+      { "p": "tu", "v": "oublieras", "s": "souvent", "u": "ти будеш часто забувати" },
+      { "p": "il", "v": "oubliera", "s": "son nom", "u": "він забуде своє ім'я" },
+      { "p": "nous", "v": "oublierons", "s": "le passé", "u": "ми забудемо минуле" },
+      { "p": "vous", "v": "oublierez", "s": "vos clés", "u": "ви забудете свої ключі" },
+      { "p": "elles", "v": "oublieront", "s": "de m'appeler", "u": "вони забудуть мені подзвонити" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "pardonner",
+    "infUk": "прощати, вибачати",
+    "present": [
+      { "p": "je", "v": "pardonne", "s": "facilement", "u": "я легко прощаю" },
+      { "p": "tu", "v": "pardonnes", "s": "tout", "u": "ти все прощаєш" },
+      { "p": "elle", "v": "pardonne", "s": "son erreur", "u": "вона прощає його помилку" },
+      { "p": "nous", "v": "pardonnons", "s": "à nos ennemis", "u": "ми прощаємо нашим ворогам" },
+      { "p": "vous", "v": "pardonnez", "s": "cette offense", "u": "ви прощаєте цю образу" },
+      { "p": "ils", "v": "pardonnent", "s": "rarement", "u": "вони рідко прощають" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai pardonné", "s": "facilement", "u": "я легко пробачив" },
+      { "p": "tu", "v": "as pardonné", "s": "tout", "u": "ти все пробачив" },
+      { "p": "elle", "v": "a pardonné", "s": "son erreur", "u": "вона пробачила його помилку" },
+      { "p": "nous", "v": "avons pardonné", "s": "à nos ennemis", "u": "ми пробачили нашим ворогам" },
+      { "p": "vous", "v": "avez pardonné", "s": "cette offense", "u": "ви пробачили цю образу" },
+      { "p": "ils", "v": "ont pardonné", "s": "rarement", "u": "вони рідко пробачали" }
+    ],
+    "futur": [
+      { "p": "je", "v": "pardonnerai", "s": "facilement", "u": "я легко пробачу" },
+      { "p": "tu", "v": "pardonneras", "s": "tout", "u": "ти все пробачиш" },
+      { "p": "elle", "v": "pardonnera", "s": "son erreur", "u": "вона пробачить його помилку" },
+      { "p": "nous", "v": "pardonnerons", "s": "à nos ennemis", "u": "ми пробачимо нашим ворогам" },
+      { "p": "vous", "v": "pardonnerez", "s": "cette offense", "u": "ви пробачите цю образу" },
+      { "p": "ils", "v": "pardonneront", "s": "rarement", "u": "вони рідко будуть прощати" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "parler",
+    "infUk": "говорити, розмовляти",
+    "present": [
+      { "p": "je", "v": "parle", "s": "français", "u": "я розмовляю французькою" },
+      { "p": "tu", "v": "parles", "s": "trop", "u": "ти забагато говориш" },
+      { "p": "il", "v": "parle", "s": "de toi", "u": "він говорить про тебе" },
+      { "p": "nous", "v": "parlons", "s": "d'affaires", "u": "ми говоримо про справи" },
+      { "p": "vous", "v": "parlez", "s": "bien", "u": "ви говорите добре" },
+      { "p": "elles", "v": "parlent", "s": "entre elles", "u": "вони розмовляють між собою" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai parlé", "s": "français", "u": "я розмовляв французькою" },
+      { "p": "tu", "v": "as parlé", "s": "trop", "u": "ти говорив забагато" },
+      { "p": "il", "v": "a parlé", "s": "de toi", "u": "він говорив про тебе" },
+      { "p": "nous", "v": "avons parlé", "s": "d'affaires", "u": "ми говорили про справи" },
+      { "p": "vous", "v": "avez parlé", "s": "bien", "u": "ви говорили добре" },
+      { "p": "elles", "v": "ont parlé", "s": "entre elles", "u": "вони розмовляли між собою" }
+    ],
+    "futur": [
+      { "p": "je", "v": "parlerai", "s": "français", "u": "я буду розмовляти французькою" },
+      { "p": "tu", "v": "parleras", "s": "trop", "u": "ти будеш говорити забагато" },
+      { "p": "il", "v": "parlera", "s": "de toi", "u": "він буде говорити про тебе" },
+      { "p": "nous", "v": "parlerons", "s": "d'affaires", "u": "ми будемо говорити про справи" },
+      { "p": "vous", "v": "parlerez", "s": "bien", "u": "ви будете говорити добре" },
+      { "p": "elles", "v": "parleront", "s": "entre elles", "u": "вони будуть розмовляти між собою" }
+    ]
+  },
+  {
+    "category": "Мутація: -ger (g -> ge перед o/a)",
+    "infFr": "partager",
+    "infUk": "ділитися",
+    "present": [
+      { "p": "je", "v": "partage", "s": "mon repas", "u": "я ділюся своєю їжею" },
+      { "p": "tu", "v": "partages", "s": "tout", "u": "ти ділишся всім" },
+      { "p": "elle", "v": "partage", "s": "l'addition", "u": "вона ділить рахунок" },
+      { "p": "nous", "v": "partageons", "s": "les frais", "u": "ми ділимо витрати" },
+      { "p": "vous", "v": "partagez", "s": "le gâteau", "u": "ви ділите торт" },
+      { "p": "ils", "v": "partagent", "s": "la même chambre", "u": "вони ділять одну кімнату" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai partagé", "s": "mon repas", "u": "я поділився їжею" },
+      { "p": "tu", "v": "as partagé", "s": "tout", "u": "ти поділився всім" },
+      { "p": "elle", "v": "a partagé", "s": "l'addition", "u": "вона поділила рахунок" },
+      { "p": "nous", "v": "avons partagé", "s": "les frais", "u": "ми поділили витрати" },
+      { "p": "vous", "v": "avez partagé", "s": "le gâteau", "u": "ви поділили торт" },
+      { "p": "ils", "v": "ont partagé", "s": "la même chambre", "u": "вони ділили одну кімнату" }
+    ],
+    "futur": [
+      { "p": "je", "v": "partagerai", "s": "mon repas", "u": "я поділюся їжею" },
+      { "p": "tu", "v": "partageras", "s": "tout", "u": "ти поділишся всім" },
+      { "p": "elle", "v": "partagera", "s": "l'addition", "u": "вона поділить рахунок" },
+      { "p": "nous", "v": "partagerons", "s": "les frais", "u": "ми поділимо витрати" },
+      { "p": "vous", "v": "partagerez", "s": "le gâteau", "u": "ви поділите торт" },
+      { "p": "ils", "v": "partageront", "s": "la même chambre", "u": "вони ділитимуть одну кімнату" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "passer",
+    "infUk": "проводити час / проходити",
+    "present": [
+      { "p": "je", "v": "passe", "s": "du temps", "u": "я проводжу час" },
+      { "p": "tu", "v": "passes", "s": "l'examen", "u": "ти складаєш іспит" },
+      { "p": "il", "v": "passe", "s": "devant moi", "u": "він проходить повз мене" },
+      { "p": "nous", "v": "passons", "s": "à l'action", "u": "ми переходимо до дій" },
+      { "p": "vous", "v": "passez", "s": "un bon moment", "u": "ви добре проводите час" },
+      { "p": "elles", "v": "passent", "s": "le balai", "u": "вони підмітають (проходять віником)" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai passé", "s": "du temps", "u": "я провів час" },
+      { "p": "tu", "v": "as passé", "s": "l'examen", "u": "ти складав іспит" },
+      { "p": "il", "v": "a passé", "s": "le test", "u": "він склав тест" },
+      { "p": "nous", "v": "avons passé", "s": "l'été ici", "u": "ми провели літо тут" },
+      { "p": "vous", "v": "avez passé", "s": "un bon moment", "u": "ви добре провели час" },
+      { "p": "elles", "v": "ont passé", "s": "le balai", "u": "вони підмели" }
+    ],
+    "futur": [
+      { "p": "je", "v": "passerai", "s": "du temps", "u": "я буду проводити час" },
+      { "p": "tu", "v": "passeras", "s": "l'examen", "u": "ти будеш складати іспит" },
+      { "p": "il", "v": "passera", "s": "devant moi", "u": "він пройде повз мене" },
+      { "p": "nous", "v": "passerons", "s": "à l'action", "u": "ми перейдемо до дій" },
+      { "p": "vous", "v": "passerez", "s": "un bon moment", "u": "ви добре проведете час" },
+      { "p": "elles", "v": "passeront", "s": "le balai", "u": "вони будуть підмітати" }
+    ]
+  },
+  {
+    "category": "Мутація: -yer (y -> i)",
+    "infFr": "payer",
+    "infUk": "платити",
+    "present": [
+      { "p": "je", "v": "paie", "s": "l'addition", "u": "я плачу за рахунком" },
+      { "p": "tu", "v": "paies", "s": "le loyer", "u": "ти платиш оренду" },
+      { "p": "elle", "v": "paie", "s": "très cher", "u": "вона платить дуже дорого" },
+      { "p": "nous", "v": "payons", "s": "les impôts", "u": "ми платимо податки" },
+      { "p": "vous", "v": "payez", "s": "en espèces", "u": "ви платите готівкою" },
+      { "p": "ils", "v": "paient", "s": "la facture", "u": "вони оплачують рахунок" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai payé", "s": "l'addition", "u": "я оплатив рахунок" },
+      { "p": "tu", "v": "as payé", "s": "le loyer", "u": "ти заплатив оренду" },
+      { "p": "elle", "v": "a payé", "s": "très cher", "u": "вона заплатила дуже дорого" },
+      { "p": "nous", "v": "avons payé", "s": "les impôts", "u": "ми заплатили податки" },
+      { "p": "vous", "v": "avez payé", "s": "en espèces", "u": "ви заплатили готівкою" },
+      { "p": "ils", "v": "ont payé", "s": "la facture", "u": "вони оплатили рахунок" }
+    ],
+    "futur": [
+      { "p": "je", "v": "paierai", "s": "l'addition", "u": "я оплачу рахунок" },
+      { "p": "tu", "v": "paieras", "s": "le loyer", "u": "ти заплатиш оренду" },
+      { "p": "elle", "v": "paiera", "s": "très cher", "u": "вона заплатить дуже дорого" },
+      { "p": "nous", "v": "paierons", "s": "les impôts", "u": "ми заплатимо податки" },
+      { "p": "vous", "v": "paierez", "s": "en espèces", "u": "ви будете платити готівкою" },
+      { "p": "ils", "v": "paieront", "s": "la facture", "u": "вони оплатять рахунок" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "penser",
+    "infUk": "думати",
+    "present": [
+      { "p": "je", "v": "pense", "s": "à toi", "u": "я думаю про тебе" },
+      { "p": "tu", "v": "penses", "s": "que oui", "u": "ти думаєш, що так" },
+      { "p": "il", "v": "pense", "s": "à l'avenir", "u": "він думає про майбутнє" },
+      { "p": "nous", "v": "pensons", "s": "la même chose", "u": "ми думаємо те саме" },
+      { "p": "vous", "v": "pensez", "s": "avoir raison", "u": "ви думаєте, що маєте рацію" },
+      { "p": "elles", "v": "pensent", "s": "à lui", "u": "вони думають про нього" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai pensé", "s": "à toi", "u": "я думав про тебе" },
+      { "p": "tu", "v": "as pensé", "s": "que oui", "u": "ти думав, що так" },
+      { "p": "il", "v": "a pensé", "s": "à l'avenir", "u": "він подумав про майбутнє" },
+      { "p": "nous", "v": "avons pensé", "s": "la même chose", "u": "ми думали те саме" },
+      { "p": "vous", "v": "avez pensé", "s": "avoir raison", "u": "ви думали, що маєте рацію" },
+      { "p": "elles", "v": "ont pensé", "s": "à lui", "u": "вони думали про нього" }
+    ],
+    "futur": [
+      { "p": "je", "v": "penserai", "s": "à toi", "u": "я буду думати про тебе" },
+      { "p": "tu", "v": "penseras", "s": "que oui", "u": "ти будеш думати, що так" },
+      { "p": "il", "v": "pensera", "s": "à l'avenir", "u": "він буде думати про майбутнє" },
+      { "p": "nous", "v": "penserons", "s": "la même chose", "u": "ми будемо думати те саме" },
+      { "p": "vous", "v": "penserez", "s": "avoir raison", "u": "ви будете думати, що маєте рацію" },
+      { "p": "elles", "v": "penseront", "s": "à lui", "u": "вони будуть думати про нього" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "pleurer",
+    "infUk": "плакати",
+    "present": [
+      { "p": "je", "v": "pleure", "s": "de joie", "u": "я плачу від радості" },
+      { "p": "tu", "v": "pleures", "s": "pour rien", "u": "ти плачеш через дрібниці" },
+      { "p": "elle", "v": "pleure", "s": "souvent", "u": "вона часто плаче" },
+      { "p": "nous", "v": "pleurons", "s": "ensemble", "u": "ми плачемо разом" },
+      { "p": "vous", "v": "pleurez", "s": "en silence", "u": "ви плачете мовчки" },
+      { "p": "ils", "v": "pleurent", "s": "leur ami", "u": "вони оплакують друга" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai pleuré", "s": "de joie", "u": "я плакав від радості" },
+      { "p": "tu", "v": "as pleuré", "s": "pour rien", "u": "ти плакав через дрібниці" },
+      { "p": "elle", "v": "a pleuré", "s": "souvent", "u": "вона часто плакала" },
+      { "p": "nous", "v": "avons pleuré", "s": "ensemble", "u": "ми плакали разом" },
+      { "p": "vous", "v": "avez pleuré", "s": "en silence", "u": "ви плакали мовчки" },
+      { "p": "ils", "v": "ont pleuré", "s": "leur ami", "u": "вони оплакували друга" }
+    ],
+    "futur": [
+      { "p": "je", "v": "pleurerai", "s": "de joie", "u": "я буду плакати від радості" },
+      { "p": "tu", "v": "pleureras", "s": "pour rien", "u": "ти будеш плакати через дрібниці" },
+      { "p": "elle", "v": "pleurera", "s": "souvent", "u": "вона буде часто плакати" },
+      { "p": "nous", "v": "pleurerons", "s": "ensemble", "u": "ми будемо плакати разом" },
+      { "p": "vous", "v": "pleurerez", "s": "en silence", "u": "ви будете плакати мовчки" },
+      { "p": "ils", "v": "pleureront", "s": "leur ami", "u": "вони будуть оплакувати друга" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "porter",
+    "infUk": "носити",
+    "present": [
+      { "p": "je", "v": "porte", "s": "des lunettes", "u": "я ношу окуляри" },
+      { "p": "tu", "v": "portes", "s": "ce sac", "u": "ти несеш цю сумку" },
+      { "p": "il", "v": "porte", "s": "la responsabilité", "u": "він несе відповідальність" },
+      { "p": "nous", "v": "portons", "s": "un uniforme", "u": "ми носимо форму" },
+      { "p": "vous", "v": "portez", "s": "le bébé", "u": "ви несете немовля" },
+      { "p": "elles", "v": "portent", "s": "des jupes", "u": "вони носять спідниці" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai porté", "s": "des lunettes", "u": "я носив окуляри" },
+      { "p": "tu", "v": "as porté", "s": "ce sac", "u": "ти ніс цю сумку" },
+      { "p": "il", "v": "a porté", "s": "la responsabilité", "u": "він ніс відповідальність" },
+      { "p": "nous", "v": "avons porté", "s": "un uniforme", "u": "ми носили форму" },
+      { "p": "vous", "v": "avez porté", "s": "le bébé", "u": "ви несли немовля" },
+      { "p": "elles", "v": "ont porté", "s": "des jupes", "u": "вони носили спідниці" }
+    ],
+    "futur": [
+      { "p": "je", "v": "porterai", "s": "des lunettes", "u": "я буду носити окуляри" },
+      { "p": "tu", "v": "porteras", "s": "ce sac", "u": "ти понесеш цю сумку" },
+      { "p": "il", "v": "portera", "s": "la responsabilité", "u": "він нестиме відповідальність" },
+      { "p": "nous", "v": "porterons", "s": "un uniforme", "u": "ми будемо носити форму" },
+      { "p": "vous", "v": "porterez", "s": "le bébé", "u": "ви понесете немовля" },
+      { "p": "elles", "v": "porteront", "s": "des jupes", "u": "вони будуть носити спідниці" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "pousser",
+    "infUk": "штовхати, рости",
+    "present": [
+      { "p": "je", "v": "pousse", "s": "la porte", "u": "я штовхаю двері" },
+      { "p": "tu", "v": "pousses", "s": "trop loin", "u": "ти заходиш надто далеко (перегинаєш палицю)" },
+      { "p": "elle", "v": "pousse", "s": "le chariot", "u": "вона штовхає візок" },
+      { "p": "nous", "v": "poussons", "s": "la voiture", "u": "ми штовхаємо машину" },
+      { "p": "vous", "v": "poussez", "s": "fort", "u": "ви сильно штовхаєте" },
+      { "p": "ils", "v": "poussent", "s": "vite", "u": "вони (рослини) швидко ростуть" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai poussé", "s": "la porte", "u": "я штовхнув двері" },
+      { "p": "tu", "v": "as poussé", "s": "trop loin", "u": "ти зайшов надто далеко" },
+      { "p": "elle", "v": "a poussé", "s": "le chariot", "u": "вона штовхнула візок" },
+      { "p": "nous", "v": "avons poussé", "s": "la voiture", "u": "ми штовхнули машину" },
+      { "p": "vous", "v": "avez poussé", "s": "fort", "u": "ви сильно штовхнули" },
+      { "p": "ils", "v": "ont poussé", "s": "vite", "u": "вони швидко виросли" }
+    ],
+    "futur": [
+      { "p": "je", "v": "pousserai", "s": "la porte", "u": "я штовхну двері" },
+      { "p": "tu", "v": "pousseras", "s": "trop loin", "u": "ти зайдеш надто далеко" },
+      { "p": "elle", "v": "poussera", "s": "le chariot", "u": "вона штовхатиме візок" },
+      { "p": "nous", "v": "pousserons", "s": "la voiture", "u": "ми штовхатимемо машину" },
+      { "p": "vous", "v": "pousserez", "s": "fort", "u": "ви будете сильно штовхати" },
+      { "p": "ils", "v": "pousseront", "s": "vite", "u": "вони швидко виростуть" }
+    ]
+  },
+  {
+    "category": "Мутація: é_er (é -> è)",
+    "infFr": "préférer",
+    "infUk": "віддавати перевагу",
+    "present": [
+      { "p": "je", "v": "préfère", "s": "le thé", "u": "я віддаю перевагу чаю" },
+      { "p": "tu", "v": "préfères", "s": "rester", "u": "ти волієш залишитися" },
+      { "p": "il", "v": "préfère", "s": "la viande", "u": "він віддає перевагу м'ясу" },
+      { "p": "nous", "v": "préférons", "s": "partir", "u": "ми воліємо піти" },
+      { "p": "vous", "v": "préférez", "s": "lire", "u": "ви віддаєте перевагу читанню" },
+      { "p": "elles", "v": "préfèrent", "s": "le silence", "u": "вони віддають перевагу тиші" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai préféré", "s": "le thé", "u": "я віддав перевагу чаю" },
+      { "p": "tu", "v": "as préféré", "s": "rester", "u": "ти вирішив (волів) залишитися" },
+      { "p": "il", "v": "a préféré", "s": "la viande", "u": "він віддав перевагу м'ясу" },
+      { "p": "nous", "v": "avons préféré", "s": "partir", "u": "ми воліли піти" },
+      { "p": "vous", "v": "avez préféré", "s": "lire", "u": "ви віддали перевагу читанню" },
+      { "p": "elles", "v": "ont préféré", "s": "le silence", "u": "вони віддали перевагу тиші" }
+    ],
+    "futur": [
+      { "p": "je", "v": "préférerai", "s": "le thé", "u": "я буду віддавати перевагу чаю" },
+      { "p": "tu", "v": "préféreras", "s": "rester", "u": "ти будеш воліти залишитися" },
+      { "p": "il", "v": "préférera", "s": "la viande", "u": "він буде віддавати перевагу м'ясу" },
+      { "p": "nous", "v": "préférerons", "s": "partir", "u": "ми будемо воліти піти" },
+      { "p": "vous", "v": "préférerez", "s": "lire", "u": "ви будете віддавати перевагу читанню" },
+      { "p": "elles", "v": "préféreront", "s": "le silence", "u": "вони будуть віддавати перевагу тиші" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "préparer",
+    "infUk": "готувати (щось)",
+    "present": [
+      { "p": "je", "v": "prépare", "s": "le repas", "u": "я готую їжу" },
+      { "p": "tu", "v": "prépares", "s": "tes affaires", "u": "ти готуєш свої речі" },
+      { "p": "elle", "v": "prépare", "s": "l'examen", "u": "вона готується до іспиту" },
+      { "p": "nous", "v": "préparons", "s": "la salle", "u": "ми готуємо зал" },
+      { "p": "vous", "v": "préparez", "s": "un plan", "u": "ви готуєте план" },
+      { "p": "ils", "v": "préparent", "s": "une surprise", "u": "вони готують сюрприз" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai préparé", "s": "le repas", "u": "я приготував їжу" },
+      { "p": "tu", "v": "as préparé", "s": "tes affaires", "u": "ти приготував свої речі" },
+      { "p": "elle", "v": "a préparé", "s": "l'examen", "u": "вона підготувалася до іспиту" },
+      { "p": "nous", "v": "avons préparé", "s": "la salle", "u": "ми підготували зал" },
+      { "p": "vous", "v": "avez préparé", "s": "un plan", "u": "ви підготували план" },
+      { "p": "ils", "v": "ont préparé", "s": "une surprise", "u": "вони приготували сюрприз" }
+    ],
+    "futur": [
+      { "p": "je", "v": "préparerai", "s": "le repas", "u": "я приготую їжу" },
+      { "p": "tu", "v": "prépareras", "s": "tes affaires", "u": "ти приготуєш свої речі" },
+      { "p": "elle", "v": "préparera", "s": "l'examen", "u": "вона буде готуватися до іспиту" },
+      { "p": "nous", "v": "préparerons", "s": "la salle", "u": "ми підготуємо зал" },
+      { "p": "vous", "v": "préparerez", "s": "un plan", "u": "ви підготуєте план" },
+      { "p": "ils", "v": "prépareront", "s": "une surprise", "u": "вони приготують сюрприз" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "présenter",
+    "infUk": "представляти",
+    "present": [
+      { "p": "je", "v": "présente", "s": "mon ami", "u": "я представляю свого друга" },
+      { "p": "tu", "v": "présentes", "s": "ton projet", "u": "ти презентуєш свій проект" },
+      { "p": "il", "v": "présente", "s": "des excuses", "u": "він приносить (представляє) вибачення" },
+      { "p": "nous", "v": "présentons", "s": "ce produit", "u": "ми представляємо цей продукт" },
+      { "p": "vous", "v": "présentez", "s": "bien", "u": "ви маєте гарний вигляд (добре себе подаєте)" },
+      { "p": "elles", "v": "présentent", "s": "leur travail", "u": "вони презентують свою роботу" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai présenté", "s": "mon ami", "u": "я представив свого друга" },
+      { "p": "tu", "v": "as présenté", "s": "ton projet", "u": "ти презентував свій проект" },
+      { "p": "il", "v": "a présenté", "s": "des excuses", "u": "він приніс вибачення" },
+      { "p": "nous", "v": "avons présenté", "s": "ce produit", "u": "ми представили цей продукт" },
+      { "p": "vous", "v": "avez présenté", "s": "bien", "u": "ви мали гарний вигляд" },
+      { "p": "elles", "v": "ont présenté", "s": "leur travail", "u": "вони презентували свою роботу" }
+    ],
+    "futur": [
+      { "p": "je", "v": "présenterai", "s": "mon ami", "u": "я представлю свого друга" },
+      { "p": "tu", "v": "présenteras", "s": "ton projet", "u": "ти презентуєш свій проект" },
+      { "p": "il", "v": "présentera", "s": "des excuses", "u": "він принесе вибачення" },
+      { "p": "nous", "v": "présenterons", "s": "ce produit", "u": "ми представимо цей продукт" },
+      { "p": "vous", "v": "présenterez", "s": "bien", "u": "ви будете мати гарний вигляд" },
+      { "p": "elles", "v": "présenteront", "s": "leur travail", "u": "вони презентують свою роботу" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "prêter",
+    "infUk": "позичати (комусь)",
+    "present": [
+      { "p": "je", "v": "prête", "s": "mon livre", "u": "я позичаю свою книгу" },
+      { "p": "tu", "v": "prêtes", "s": "de l'argent", "u": "ти позичаєш гроші" },
+      { "p": "elle", "v": "prête", "s": "attention", "u": "вона звертає увагу (позичає увагу)" },
+      { "p": "nous", "v": "prêtons", "s": "notre voiture", "u": "ми позичаємо нашу машину" },
+      { "p": "vous", "v": "prêtez", "s": "serment", "u": "ви складаєте присягу" },
+      { "p": "ils", "v": "prêtent", "s": "leur voix", "u": "вони позичають свій голос" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai prêté", "s": "mon livre", "u": "я позичив свою книгу" },
+      { "p": "tu", "v": "as prêté", "s": "de l'argent", "u": "ти позичив гроші" },
+      { "p": "elle", "v": "a prêté", "s": "attention", "u": "вона звернула увагу" },
+      { "p": "nous", "v": "avons prêté", "s": "notre voiture", "u": "ми позичили нашу машину" },
+      { "p": "vous", "v": "avez prêté", "s": "serment", "u": "ви склали присягу" },
+      { "p": "ils", "v": "ont prêté", "s": "leur voix", "u": "вони позичили свій голос" }
+    ],
+    "futur": [
+      { "p": "je", "v": "prêterai", "s": "mon livre", "u": "я позичу свою книгу" },
+      { "p": "tu", "v": "prêteras", "s": "de l'argent", "u": "ти позичиш гроші" },
+      { "p": "elle", "v": "prêtera", "s": "attention", "u": "вона зверне увагу" },
+      { "p": "nous", "v": "prêterons", "s": "notre voiture", "u": "ми позичимо нашу машину" },
+      { "p": "vous", "v": "prêterez", "s": "serment", "u": "ви складете присягу" },
+      { "p": "ils", "v": "prêteront", "s": "leur voix", "u": "вони позичать свій голос" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "prier",
+    "infUk": "молитися, просити",
+    "present": [
+      { "p": "je", "v": "prie", "s": "Dieu", "u": "я молюся Богу" },
+      { "p": "tu", "v": "pries", "s": "pour lui", "u": "ти молишся за нього" },
+      { "p": "il", "v": "prie", "s": "de m'excuser", "u": "він просить вибачити його" },
+      { "p": "nous", "v": "prions", "s": "le ciel", "u": "ми молимо небеса" },
+      { "p": "vous", "v": "priez", "s": "trop fort", "u": "ви молитеся занадто голосно" },
+      { "p": "elles", "v": "prient", "s": "chaque jour", "u": "вони моляться кожного дня" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai prié", "s": "Dieu", "u": "я молився Богу" },
+      { "p": "tu", "v": "as prié", "s": "pour lui", "u": "ти помолився за нього" },
+      { "p": "il", "v": "a prié", "s": "de l'excuser", "u": "він попросив вибачити його" },
+      { "p": "nous", "v": "avons prié", "s": "le ciel", "u": "ми молили небеса" },
+      { "p": "vous", "v": "avez prié", "s": "trop fort", "u": "ви молилися занадто голосно" },
+      { "p": "elles", "v": "ont prié", "s": "chaque jour", "u": "вони молилися кожного дня" }
+    ],
+    "futur": [
+      { "p": "je", "v": "prierai", "s": "Dieu", "u": "я буду молитися Богу" },
+      { "p": "tu", "v": "prieras", "s": "pour lui", "u": "ти будеш молитися за нього" },
+      { "p": "il", "v": "priera", "s": "de l'excuser", "u": "він попросить вибачити його" },
+      { "p": "nous", "v": "prierons", "s": "le ciel", "u": "ми будемо молити небеса" },
+      { "p": "vous", "v": "prierez", "s": "trop fort", "u": "ви будете молитися занадто голосно" },
+      { "p": "elles", "v": "prieront", "s": "chaque jour", "u": "вони будуть молитися кожного дня" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "proposer",
+    "infUk": "пропонувати",
+    "present": [
+      { "p": "je", "v": "propose", "s": "une idée", "u": "я пропоную ідею" },
+      { "p": "tu", "v": "proposes", "s": "une solution", "u": "ти пропонуєш рішення" },
+      { "p": "elle", "v": "propose", "s": "son aide", "u": "вона пропонує свою допомогу" },
+      { "p": "nous", "v": "proposons", "s": "de partir", "u": "ми пропонуємо піти" },
+      { "p": "vous", "v": "proposez", "s": "un marché", "u": "ви пропонуєте угоду" },
+      { "p": "ils", "v": "proposent", "s": "un jeu", "u": "вони пропонують гру" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai proposé", "s": "une idée", "u": "я запропонував ідею" },
+      { "p": "tu", "v": "as proposé", "s": "une solution", "u": "ти запропонував рішення" },
+      { "p": "elle", "v": "a proposé", "s": "son aide", "u": "вона запропонувала свою допомогу" },
+      { "p": "nous", "v": "avons proposé", "s": "de partir", "u": "ми запропонували піти" },
+      { "p": "vous", "v": "avez proposé", "s": "un marché", "u": "ви запропонували угоду" },
+      { "p": "ils", "v": "ont proposé", "s": "un jeu", "u": "вони запропонували гру" }
+    ],
+    "futur": [
+      { "p": "je", "v": "proposerai", "s": "une idée", "u": "я запропоную ідею" },
+      { "p": "tu", "v": "proposeras", "s": "une solution", "u": "ти запропонуєш рішення" },
+      { "p": "elle", "v": "proposera", "s": "son aide", "u": "вона запропонує свою допомогу" },
+      { "p": "nous", "v": "proposerons", "s": "de partir", "u": "ми запропонуємо піти" },
+      { "p": "vous", "v": "proposerez", "s": "un marché", "u": "ви запропонуєте угоду" },
+      { "p": "ils", "v": "proposeront", "s": "un jeu", "u": "вони запропонують гру" }
+    ]
+  },
+  {
+    "category": "Мутація: é_er + -ger (комбо)",
+    "infFr": "protéger",
+    "infUk": "захищати",
+    "present": [
+      { "p": "je", "v": "protège", "s": "ma famille", "u": "я захищаю свою родину" },
+      { "p": "tu", "v": "protèges", "s": "les faibles", "u": "ти захищаєш слабких" },
+      { "p": "il", "v": "protège", "s": "la nature", "u": "він захищає природу" },
+      { "p": "nous", "v": "protégeons", "s": "la ville", "u": "ми захищаємо місто" },
+      { "p": "vous", "v": "protégez", "s": "vos données", "u": "ви захищаєте свої дані" },
+      { "p": "elles", "v": "protègent", "s": "leurs enfants", "u": "вони захищають своїх дітей" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai protégé", "s": "ma famille", "u": "я захистив свою родину" },
+      { "p": "tu", "v": "as protégé", "s": "les faibles", "u": "ти захистив слабких" },
+      { "p": "il", "v": "a protégé", "s": "la nature", "u": "він захистив природу" },
+      { "p": "nous", "v": "avons protégé", "s": "la ville", "u": "ми захистили місто" },
+      { "p": "vous", "v": "avez protégé", "s": "vos données", "u": "ви захистили свої дані" },
+      { "p": "elles", "v": "ont protégé", "s": "leurs enfants", "u": "вони захистили своїх дітей" }
+    ],
+    "futur": [
+      { "p": "je", "v": "protégerai", "s": "ma famille", "u": "я буду захищати свою родину" },
+      { "p": "tu", "v": "protégeras", "s": "les faibles", "u": "ти будеш захищати слабких" },
+      { "p": "il", "v": "protégera", "s": "la nature", "u": "він захищатиме природу" },
+      { "p": "nous", "v": "protégerons", "s": "la ville", "u": "ми захищатимемо місто" },
+      { "p": "vous", "v": "protégerez", "s": "vos données", "u": "ви будете захищати свої дані" },
+      { "p": "elles", "v": "protégeront", "s": "leurs enfants", "u": "вони будуть захищати своїх дітей" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "quitter",
+    "infUk": "залишати, покидати",
+    "present": [
+      { "p": "je", "v": "quitte", "s": "la pièce", "u": "я покидаю кімнату" },
+      { "p": "tu", "v": "quittes", "s": "ton travail", "u": "ти кидаєш свою роботу" },
+      { "p": "elle", "v": "quitte", "s": "la ville", "u": "вона залишає місто" },
+      { "p": "nous", "v": "quittons", "s": "le pays", "u": "ми покидаємо країну" },
+      { "p": "vous", "v": "quittez", "s": "la maison", "u": "ви залишаєте будинок" },
+      { "p": "ils", "v": "quittent", "s": "le jeu", "u": "вони виходять з гри" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai quitté", "s": "la pièce", "u": "я покинув кімнату" },
+      { "p": "tu", "v": "as quitté", "s": "ton travail", "u": "ти покинув свою роботу" },
+      { "p": "elle", "v": "a quitté", "s": "la ville", "u": "вона залишила місто" },
+      { "p": "nous", "v": "avons quitté", "s": "le pays", "u": "ми покинули країну" },
+      { "p": "vous", "v": "avez quitté", "s": "la maison", "u": "ви залишили будинок" },
+      { "p": "ils", "v": "ont quitté", "s": "le jeu", "u": "вони вийшли з гри" }
+    ],
+    "futur": [
+      { "p": "je", "v": "quitterai", "s": "la pièce", "u": "я покину кімнату" },
+      { "p": "tu", "v": "quitteras", "s": "ton travail", "u": "ти кинеш свою роботу" },
+      { "p": "elle", "v": "quittera", "s": "la ville", "u": "вона залишить місто" },
+      { "p": "nous", "v": "quitterons", "s": "le pays", "u": "ми покинемо країну" },
+      { "p": "vous", "v": "quitterez", "s": "la maison", "u": "ви залишите будинок" },
+      { "p": "ils", "v": "quitteront", "s": "le jeu", "u": "вони вийдуть з гри" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "raconter",
+    "infUk": "розповідати",
+    "present": [
+      { "p": "je", "v": "raconte", "s": "une histoire", "u": "я розповідаю історію" },
+      { "p": "tu", "v": "racontes", "s": "ta vie", "u": "ти розповідаєш про своє життя" },
+      { "p": "il", "v": "raconte", "s": "des blagues", "u": "він розповідає жарти" },
+      { "p": "nous", "v": "racontons", "s": "des mensonges", "u": "ми розказуємо брехню" },
+      { "p": "vous", "v": "racontez", "s": "n'importe quoi", "u": "ви розказуєте нісенітниці" },
+      { "p": "elles", "v": "racontent", "s": "tout", "u": "вони розказують все" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai raconté", "s": "une histoire", "u": "я розповів історію" },
+      { "p": "tu", "v": "as raconté", "s": "ta vie", "u": "ти розповів про своє життя" },
+      { "p": "il", "v": "a raconté", "s": "des blagues", "u": "він розповів жарти" },
+      { "p": "nous", "v": "avons raconté", "s": "des mensonges", "u": "ми розказали брехню" },
+      { "p": "vous", "v": "avez raconté", "s": "n'importe quoi", "u": "ви розказали нісенітниці" },
+      { "p": "elles", "v": "ont raconté", "s": "tout", "u": "вони розказали все" }
+    ],
+    "futur": [
+      { "p": "je", "v": "raconterai", "s": "une histoire", "u": "я розповім історію" },
+      { "p": "tu", "v": "raconteras", "s": "ta vie", "u": "ти розкажеш про своє життя" },
+      { "p": "il", "v": "racontera", "s": "des blagues", "u": "він буде розказувати жарти" },
+      { "p": "nous", "v": "raconterons", "s": "des mensonges", "u": "ми розкажемо брехню" },
+      { "p": "vous", "v": "raconterez", "s": "n'importe quoi", "u": "ви будете розказувати нісенітниці" },
+      { "p": "elles", "v": "raconteront", "s": "tout", "u": "вони розкажуть все" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "ramasser",
+    "infUk": "збирати, піднімати (з підлоги)",
+    "present": [
+      { "p": "je", "v": "ramasse", "s": "les feuilles", "u": "я збираю листя" },
+      { "p": "tu", "v": "ramasses", "s": "ton stylo", "u": "ти піднімаєш свою ручку" },
+      { "p": "il", "v": "ramasse", "s": "les miettes", "u": "він збирає крихти" },
+      { "p": "nous", "v": "ramassons", "s": "les ordures", "u": "ми збираємо сміття" },
+      { "p": "vous", "v": "ramassez", "s": "le linge", "u": "ви збираєте білизну" },
+      { "p": "ils", "v": "ramassent", "s": "les fruits", "u": "вони збирають фрукти" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai ramassé", "s": "les feuilles", "u": "я зібрав листя" },
+      { "p": "tu", "v": "as ramassé", "s": "ton stylo", "u": "ти підняв свою ручку" },
+      { "p": "il", "v": "a ramassé", "s": "les miettes", "u": "він зібрав крихти" },
+      { "p": "nous", "v": "avons ramassé", "s": "les ordures", "u": "ми зібрали сміття" },
+      { "p": "vous", "v": "avez ramassé", "s": "le linge", "u": "ви зібрали білизну" },
+      { "p": "ils", "v": "ont ramassé", "s": "les fruits", "u": "вони зібрали фрукти" }
+    ],
+    "futur": [
+      { "p": "je", "v": "ramasserai", "s": "les feuilles", "u": "я буду збирати листя" },
+      { "p": "tu", "v": "ramasseras", "s": "ton stylo", "u": "ти піднімеш свою ручку" },
+      { "p": "il", "v": "ramassera", "s": "les miettes", "u": "він збере крихти" },
+      { "p": "nous", "v": "ramasserons", "s": "les ordures", "u": "ми будемо збирати сміття" },
+      { "p": "vous", "v": "ramasserez", "s": "le linge", "u": "ви будете збирати білизну" },
+      { "p": "ils", "v": "ramasseront", "s": "les fruits", "u": "вони зберуть фрукти" }
+    ]
+  },
+  {
+    "category": "Мутація: -ger (g -> ge перед o/a)",
+    "infFr": "ranger",
+    "infUk": "прибирати, складати",
+    "present": [
+      { "p": "je", "v": "range", "s": "ma chambre", "u": "я прибираю свою кімнату" },
+      { "p": "tu", "v": "ranges", "s": "tes affaires", "u": "ти складаєш свої речі" },
+      { "p": "elle", "v": "range", "s": "le bureau", "u": "вона прибирає кабінет" },
+      { "p": "nous", "v": "rangeons", "s": "les livres", "u": "ми складаємо книги" },
+      { "p": "vous", "v": "rangez", "s": "la vaisselle", "u": "ви розкладаєте посуд" },
+      { "p": "ils", "v": "rangent", "s": "le garage", "u": "вони прибирають гараж" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai rangé", "s": "ma chambre", "u": "я прибрав свою кімнату" },
+      { "p": "tu", "v": "as rangé", "s": "tes affaires", "u": "ти склав свої речі" },
+      { "p": "elle", "v": "a rangé", "s": "le bureau", "u": "вона прибрала кабінет" },
+      { "p": "nous", "v": "avons rangé", "s": "les livres", "u": "ми склали книги" },
+      { "p": "vous", "v": "avez rangé", "s": "la vaisselle", "u": "ви розклали посуд" },
+      { "p": "ils", "v": "ont rangé", "s": "le garage", "u": "вони прибрали гараж" }
+    ],
+    "futur": [
+      { "p": "je", "v": "rangerai", "s": "ma chambre", "u": "я приберу свою кімнату" },
+      { "p": "tu", "v": "rangeras", "s": "tes affaires", "u": "ти складеш свої речі" },
+      { "p": "elle", "v": "rangera", "s": "le bureau", "u": "вона прибере кабінет" },
+      { "p": "nous", "v": "rangerons", "s": "les livres", "u": "ми складемо книги" },
+      { "p": "vous", "v": "rangerez", "s": "la vaisselle", "u": "ви розкладете посуд" },
+      { "p": "ils", "v": "rangeront", "s": "le garage", "u": "вони приберуть гараж" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "refuser",
+    "infUk": "відмовлятися",
+    "present": [
+      { "p": "je", "v": "refuse", "s": "de venir", "u": "я відмовляюся прийти" },
+      { "p": "tu", "v": "refuses", "s": "cette offre", "u": "ти відхиляєш цю пропозицію" },
+      { "p": "elle", "v": "refuse", "s": "de parler", "u": "вона відмовляється говорити" },
+      { "p": "nous", "v": "refusons", "s": "le paquet", "u": "ми відмовляємося від посилки" },
+      { "p": "vous", "v": "refusez", "s": "l'invitation", "u": "ви відхиляєте запрошення" },
+      { "p": "ils", "v": "refusent", "s": "de payer", "u": "вони відмовляються платити" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai refusé", "s": "de venir", "u": "я відмовився прийти" },
+      { "p": "tu", "v": "as refusé", "s": "cette offre", "u": "ти відхилив цю пропозицію" },
+      { "p": "elle", "v": "a refusé", "s": "de parler", "u": "вона відмовилася говорити" },
+      { "p": "nous", "v": "avons refusé", "s": "le paquet", "u": "ми відмовилися від посилки" },
+      { "p": "vous", "v": "avez refusé", "s": "l'invitation", "u": "ви відхилили запрошення" },
+      { "p": "ils", "v": "ont refusé", "s": "de payer", "u": "вони відмовилися платити" }
+    ],
+    "futur": [
+      { "p": "je", "v": "refuserai", "s": "de venir", "u": "я відмовлюся прийти" },
+      { "p": "tu", "v": "refuseras", "s": "cette offre", "u": "ти відхилиш цю пропозицію" },
+      { "p": "elle", "v": "refusera", "s": "de parler", "u": "вона відмовиться говорити" },
+      { "p": "nous", "v": "refuserons", "s": "le paquet", "u": "ми відмовимося від посилки" },
+      { "p": "vous", "v": "refuserez", "s": "l'invitation", "u": "ви відхилите запрошення" },
+      { "p": "ils", "v": "refuseront", "s": "de payer", "u": "вони відмовляться платити" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "regarder",
+    "infUk": "дивитися",
+    "present": [
+      { "p": "je", "v": "regarde", "s": "la télé", "u": "я дивлюся телевізор" },
+      { "p": "tu", "v": "regardes", "s": "par la fenêtre", "u": "ти дивишся у вікно" },
+      { "p": "il", "v": "regarde", "s": "un film", "u": "він дивиться фільм" },
+      { "p": "nous", "v": "regardons", "s": "les étoiles", "u": "ми дивимося на зірки" },
+      { "p": "vous", "v": "regardez", "s": "trop la télé", "u": "ви забагато дивитесь телевізор" },
+      { "p": "elles", "v": "regardent", "s": "le match", "u": "вони дивляться матч" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai regardé", "s": "la télé", "u": "я дивився телевізор" },
+      { "p": "tu", "v": "as regardé", "s": "par la fenêtre", "u": "ти дивився у вікно" },
+      { "p": "il", "v": "a regardé", "s": "un film", "u": "він подивився фільм" },
+      { "p": "nous", "v": "avons regardé", "s": "les étoiles", "u": "ми дивилися на зірки" },
+      { "p": "vous", "v": "avez regardé", "s": "trop la télé", "u": "ви дивилися телевізор забагато" },
+      { "p": "elles", "v": "ont regardé", "s": "le match", "u": "вони подивилися матч" }
+    ],
+    "futur": [
+      { "p": "je", "v": "regarderai", "s": "la télé", "u": "я буду дивитися телевізор" },
+      { "p": "tu", "v": "regarderas", "s": "par la fenêtre", "u": "ти будеш дивитися у вікно" },
+      { "p": "il", "v": "regardera", "s": "un film", "u": "він подивиться фільм" },
+      { "p": "nous", "v": "regarderons", "s": "les étoiles", "u": "ми будемо дивитися на зірки" },
+      { "p": "vous", "v": "regarderez", "s": "trop la télé", "u": "ви будете дивитися телевізор забагато" },
+      { "p": "elles", "v": "regarderont", "s": "le match", "u": "вони подивляться матч" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "regretter",
+    "infUk": "шкодувати",
+    "present": [
+      { "p": "je", "v": "regrette", "s": "mon choix", "u": "я шкодую про свій вибір" },
+      { "p": "tu", "v": "regrettes", "s": "de partir", "u": "ти шкодуєш, що йдеш" },
+      { "p": "il", "v": "regrette", "s": "ses mots", "u": "він шкодує про свої слова" },
+      { "p": "nous", "v": "regrettons", "s": "cette erreur", "u": "ми шкодуємо про цю помилку" },
+      { "p": "vous", "v": "regrettez", "s": "le passé", "u": "ви шкодуєте за минулим" },
+      { "p": "ils", "v": "regrettent", "s": "leur décision", "u": "вони шкодують про своє рішення" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai regretté", "s": "mon choix", "u": "я пошкодував про свій вибір" },
+      { "p": "tu", "v": "as regretté", "s": "de partir", "u": "ти пошкодував, що пішов" },
+      { "p": "il", "v": "a regretté", "s": "ses mots", "u": "він пошкодував про свої слова" },
+      { "p": "nous", "v": "avons regretté", "s": "cette erreur", "u": "ми пошкодували про цю помилку" },
+      { "p": "vous", "v": "avez regretté", "s": "le passé", "u": "ви пошкодували за минулим" },
+      { "p": "ils", "v": "ont regretté", "s": "leur décision", "u": "вони пошкодували про своє рішення" }
+    ],
+    "futur": [
+      { "p": "je", "v": "regretterai", "s": "mon choix", "u": "я буду шкодувати про свій вибір" },
+      { "p": "tu", "v": "regretteras", "s": "de partir", "u": "ти пошкодуєш, що підеш" },
+      { "p": "il", "v": "regrettera", "s": "ses mots", "u": "він пошкодує про свої слова" },
+      { "p": "nous", "v": "regretterons", "s": "cette erreur", "u": "ми будемо шкодувати про цю помилку" },
+      { "p": "vous", "v": "regretterez", "s": "le passé", "u": "ви будете шкодувати за минулим" },
+      { "p": "ils", "v": "regretteront", "s": "leur décision", "u": "вони пошкодують про своє рішення" }
+    ]
+  },
+  {
+    "category": "Мутація: -cer (c -> ç перед o/a)",
+    "infFr": "remercier",
+    "infUk": "дякувати",
+    "present": [
+      { "p": "je", "v": "remercie", "s": "mes amis", "u": "я дякую своїм друзям" },
+      { "p": "tu", "v": "remercies", "s": "le ciel", "u": "ти дякуєш небесам" },
+      { "p": "elle", "v": "remercie", "s": "son équipe", "u": "вона дякує своїй команді" },
+      { "p": "nous", "v": "remercions", "s": "le directeur", "u": "ми дякуємо директору" },
+      { "p": "vous", "v": "remerciez", "s": "les invités", "u": "ви дякуєте гостям" },
+      { "p": "ils", "v": "remercient", "s": "tout le monde", "u": "вони дякують всім" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai remercié", "s": "mes amis", "u": "я подякував своїм друзям" },
+      { "p": "tu", "v": "as remercié", "s": "le ciel", "u": "ти подякував небесам" },
+      { "p": "elle", "v": "a remercié", "s": "son équipe", "u": "вона подякувала своїй команді" },
+      { "p": "nous", "v": "avons remercié", "s": "le directeur", "u": "ми подякували директору" },
+      { "p": "vous", "v": "avez remercié", "s": "les invités", "u": "ви подякували гостям" },
+      { "p": "ils", "v": "ont remercié", "s": "tout le monde", "u": "вони подякували всім" }
+    ],
+    "futur": [
+      { "p": "je", "v": "remercierai", "s": "mes amis", "u": "я подякую своїм друзям" },
+      { "p": "tu", "v": "remercieras", "s": "le ciel", "u": "ти подякуєш небесам" },
+      { "p": "elle", "v": "remerciera", "s": "son équipe", "u": "вона подякує своїй команді" },
+      { "p": "nous", "v": "remercierons", "s": "le directeur", "u": "ми подякуємо директору" },
+      { "p": "vous", "v": "remercierez", "s": "les invités", "u": "ви подякуєте гостям" },
+      { "p": "ils", "v": "remercieront", "s": "tout le monde", "u": "вони подякують всім" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "rencontrer",
+    "infUk": "зустрічати",
+    "present": [
+      { "p": "je", "v": "rencontre", "s": "un ami", "u": "я зустрічаю друга" },
+      { "p": "tu", "v": "rencontres", "s": "des problèmes", "u": "ти стикаєшся з проблемами" },
+      { "p": "il", "v": "rencontre", "s": "du succès", "u": "він має (зустрічає) успіх" },
+      { "p": "nous", "v": "rencontrons", "s": "le directeur", "u": "ми зустрічаємося з директором" },
+      { "p": "vous", "v": "rencontrez", "s": "des gens", "u": "ви знайомитеся з людьми" },
+      { "p": "elles", "v": "rencontrent", "s": "des difficultés", "u": "вони стикаються з труднощами" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai rencontré", "s": "un ami", "u": "я зустрів друга" },
+      { "p": "tu", "v": "as rencontré", "s": "des problèmes", "u": "ти зіткнувся з проблемами" },
+      { "p": "il", "v": "a rencontré", "s": "du succès", "u": "він мав успіх" },
+      { "p": "nous", "v": "avons rencontré", "s": "le directeur", "u": "ми зустрілися з директором" },
+      { "p": "vous", "v": "avez rencontré", "s": "des gens", "u": "ви познайомилися з людьми" },
+      { "p": "elles", "v": "ont rencontré", "s": "des difficultés", "u": "вони зіткнулися з труднощами" }
+    ],
+    "futur": [
+      { "p": "je", "v": "rencontrerai", "s": "un ami", "u": "я зустріну друга" },
+      { "p": "tu", "v": "rencontreras", "s": "des problèmes", "u": "ти зіткнешся з проблемами" },
+      { "p": "il", "v": "rencontrera", "s": "du succès", "u": "він матиме успіх" },
+      { "p": "nous", "v": "rencontrerons", "s": "le directeur", "u": "ми зустрінемося з директором" },
+      { "p": "vous", "v": "rencontrerez", "s": "des gens", "u": "ви познайомитеся з людьми" },
+      { "p": "elles", "v": "rencontreront", "s": "des difficultés", "u": "вони зіткнуться з труднощами" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "réparer",
+    "infUk": "лагодити, ремонтувати",
+    "present": [
+      { "p": "je", "v": "répare", "s": "le vélo", "u": "я лагоджу велосипед" },
+      { "p": "tu", "v": "répares", "s": "la voiture", "u": "ти ремонтуєш машину" },
+      { "p": "elle", "v": "répare", "s": "son erreur", "u": "вона виправляє свою помилку" },
+      { "p": "nous", "v": "réparons", "s": "le toit", "u": "ми лагодимо дах" },
+      { "p": "vous", "v": "réparez", "s": "l'ordinateur", "u": "ви ремонтуєте комп'ютер" },
+      { "p": "ils", "v": "réparent", "s": "le moteur", "u": "вони лагодять двигун" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai réparé", "s": "le vélo", "u": "я полагодив велосипед" },
+      { "p": "tu", "v": "as réparé", "s": "la voiture", "u": "ти відремонтував машину" },
+      { "p": "elle", "v": "a réparé", "s": "son erreur", "u": "вона виправила свою помилку" },
+      { "p": "nous", "v": "avons réparé", "s": "le toit", "u": "ми полагодили дах" },
+      { "p": "vous", "v": "avez réparé", "s": "l'ordinateur", "u": "ви відремонтували комп'ютер" },
+      { "p": "ils", "v": "ont réparé", "s": "le moteur", "u": "вони полагодили двигун" }
+    ],
+    "futur": [
+      { "p": "je", "v": "réparerai", "s": "le vélo", "u": "я полагоджу велосипед" },
+      { "p": "tu", "v": "répareras", "s": "la voiture", "u": "ти відремонтуєш машину" },
+      { "p": "elle", "v": "réparera", "s": "son erreur", "u": "вона виправить свою помилку" },
+      { "p": "nous", "v": "réparerons", "s": "le toit", "u": "ми полагодмо дах" },
+      { "p": "vous", "v": "réparerez", "s": "l'ordinateur", "u": "ви відремонтуєте комп'ютер" },
+      { "p": "ils", "v": "répareront", "s": "le moteur", "u": "вони полагодять двигун" }
+    ]
+  },
+  {
+    "category": "Мутація: é_er (é -> è)",
+    "infFr": "répéter",
+    "infUk": "повторювати",
+    "present": [
+      { "p": "je", "v": "répète", "s": "la question", "u": "я повторюю запитання" },
+      { "p": "tu", "v": "répètes", "s": "la même chose", "u": "ти повторюєш те саме" },
+      { "p": "il", "v": "répète", "s": "ce mot", "u": "він повторює це слово" },
+      { "p": "nous", "v": "répétons", "s": "la phrase", "u": "ми повторюємо фразу" },
+      { "p": "vous", "v": "répétez", "s": "la scène", "u": "ви репетируєте (повторюєте) сцену" },
+      { "p": "elles", "v": "répètent", "s": "l'exercice", "u": "вони повторюють вправу" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai répété", "s": "la question", "u": "я повторив запитання" },
+      { "p": "tu", "v": "as répété", "s": "la même chose", "u": "ти повторив те саме" },
+      { "p": "il", "v": "a répété", "s": "ce mot", "u": "він повторив це слово" },
+      { "p": "nous", "v": "avons répété", "s": "la phrase", "u": "ми повторили фразу" },
+      { "p": "vous", "v": "avez répété", "s": "la scène", "u": "ви репетирували сцену" },
+      { "p": "elles", "v": "ont répété", "s": "l'exercice", "u": "вони повторили вправу" }
+    ],
+    "futur": [
+      { "p": "je", "v": "répéterai", "s": "la question", "u": "я повторю запитання" },
+      { "p": "tu", "v": "répéteras", "s": "la même chose", "u": "ти будеш повторювати те саме" },
+      { "p": "il", "v": "répétera", "s": "ce mot", "u": "він повторить це слово" },
+      { "p": "nous", "v": "répéterons", "s": "la phrase", "u": "ми повторимо фразу" },
+      { "p": "vous", "v": "répéterez", "s": "la scène", "u": "ви будете репетирувати сцену" },
+      { "p": "elles", "v": "répéteront", "s": "l'exercice", "u": "вони повторять вправу" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "réserver",
+    "infUk": "бронювати",
+    "present": [
+      { "p": "je", "v": "réserve", "s": "une table", "u": "я бронюю столик" },
+      { "p": "tu", "v": "réserves", "s": "les billets", "u": "ти бронюєш квитки" },
+      { "p": "elle", "v": "réserve", "s": "sa place", "u": "вона залишає (бронює) своє місце" },
+      { "p": "nous", "v": "réservons", "s": "une chambre", "u": "ми бронюємо номер" },
+      { "p": "vous", "v": "réservez", "s": "votre soirée", "u": "ви бронюєте свій вечір" },
+      { "p": "ils", "v": "réservent", "s": "le vol", "u": "вони бронюють рейс" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai réservé", "s": "une table", "u": "я забронював столик" },
+      { "p": "tu", "v": "as réservé", "s": "les billets", "u": "ти забронював квитки" },
+      { "p": "elle", "v": "a réservé", "s": "sa place", "u": "вона забронювала своє місце" },
+      { "p": "nous", "v": "avons réservé", "s": "une chambre", "u": "ми забронювали номер" },
+      { "p": "vous", "v": "avez réservé", "s": "votre soirée", "u": "ви забронювали свій вечір" },
+      { "p": "ils", "v": "ont réservé", "s": "le vol", "u": "вони забронювали рейс" }
+    ],
+    "futur": [
+      { "p": "je", "v": "réserverai", "s": "une table", "u": "я забронюю столик" },
+      { "p": "tu", "v": "réserveras", "s": "les billets", "u": "ти забронюєш квитки" },
+      { "p": "elle", "v": "réservera", "s": "sa place", "u": "вона забронює своє місце" },
+      { "p": "nous", "v": "réserverons", "s": "une chambre", "u": "ми забронюємо номер" },
+      { "p": "vous", "v": "réserverez", "s": "votre soirée", "u": "ви забронюєте свій вечір" },
+      { "p": "ils", "v": "réserveront", "s": "le vol", "u": "вони забронюють рейс" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "respirer",
+    "infUk": "дихати",
+    "present": [
+      { "p": "je", "v": "respire", "s": "profondément", "u": "я дихаю глибоко" },
+      { "p": "tu", "v": "respires", "s": "fort", "u": "ти дихаєш важко" },
+      { "p": "il", "v": "respire", "s": "l'air pur", "u": "він дихає свіжим повітрям" },
+      { "p": "nous", "v": "respirons", "s": "bien", "u": "ми дихаємо вільно" },
+      { "p": "vous", "v": "respirez", "s": "la santé", "u": "ви випромінюєте (дихаєте) здоров'я" },
+      { "p": "elles", "v": "respirent", "s": "enfin", "u": "вони нарешті дихають" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai respiré", "s": "profondément", "u": "я дихав глибоко" },
+      { "p": "tu", "v": "as respiré", "s": "fort", "u": "ти дихав важко" },
+      { "p": "il", "v": "a respiré", "s": "l'air pur", "u": "він вдихав свіже повітря" },
+      { "p": "nous", "v": "avons respiré", "s": "bien", "u": "ми дихали вільно" },
+      { "p": "vous", "v": "avez respiré", "s": "la santé", "u": "ви випромінювали здоров'я" },
+      { "p": "elles", "v": "ont respiré", "s": "enfin", "u": "вони нарешті видихнули" }
+    ],
+    "futur": [
+      { "p": "je", "v": "respirerai", "s": "profondément", "u": "я буду дихати глибоко" },
+      { "p": "tu", "v": "respireras", "s": "fort", "u": "ти будеш дихати важко" },
+      { "p": "il", "v": "respirera", "s": "l'air pur", "u": "він буде дихати свіжим повітрям" },
+      { "p": "nous", "v": "respirerons", "s": "bien", "u": "ми будемо дихати вільно" },
+      { "p": "vous", "v": "respirerez", "s": "la santé", "u": "ви будете випромінювати здоров'я" },
+      { "p": "elles", "v": "respireront", "s": "enfin", "u": "вони нарешті зітхнуть" }
+    ]
+  },
+  {
+    "category": "Дієслова з Être (Рух)",
+    "infFr": "retourner",
+    "infUk": "повертатися",
+    "present": [
+      { "p": "je", "v": "retourne", "s": "au bureau", "u": "я повертаюся в офіс" },
+      { "p": "tu", "v": "retournes", "s": "en France", "u": "ти повертаєшся до Франції" },
+      { "p": "il", "v": "retourne", "s": "à sa place", "u": "він повертається на своє місце" },
+      { "p": "nous", "v": "retournons", "s": "chez nous", "u": "ми повертаємося додому" },
+      { "p": "vous", "v": "retournez", "s": "le voir", "u": "ви повертаєтеся побачити його" },
+      { "p": "elles", "v": "retournent", "s": "au travail", "u": "вони повертаються на роботу" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis retourné", "s": "au bureau", "u": "я (ч.р.) повернувся в офіс" },
+      { "p": "tu", "v": "es retourné", "s": "en France", "u": "ти (ч.р.) повернувся до Франції" },
+      { "p": "il", "v": "est retourné", "s": "à sa place", "u": "він повернувся на своє місце" },
+      { "p": "nous", "v": "sommes retournés", "s": "chez nous", "u": "ми повернулися додому" },
+      { "p": "vous", "v": "êtes retournés", "s": "le voir", "u": "ви повернулися побачити його" },
+      { "p": "elles", "v": "sont retournées", "s": "au travail", "u": "вони повернулися на роботу" }
+    ],
+    "futur": [
+      { "p": "je", "v": "retournerai", "s": "au bureau", "u": "я повернуся в офіс" },
+      { "p": "tu", "v": "retourneras", "s": "en France", "u": "ти повернешся до Франції" },
+      { "p": "il", "v": "retournera", "s": "à sa place", "u": "він повернеться на своє місце" },
+      { "p": "nous", "v": "retournerons", "s": "chez nous", "u": "ми повернемося додому" },
+      { "p": "vous", "v": "retournerez", "s": "le voir", "u": "ви повернетеся побачити його" },
+      { "p": "elles", "v": "retourneront", "s": "au travail", "u": "вони повернуться на роботу" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "réveiller",
+    "infUk": "будити",
+    "present": [
+      { "p": "je", "v": "réveille", "s": "mon fils", "u": "я буджу свого сина" },
+      { "p": "tu", "v": "réveilles", "s": "le chien", "u": "ти будиш собаку" },
+      { "p": "elle", "v": "réveille", "s": "le quartier", "u": "вона будить увесь район" },
+      { "p": "nous", "v": "réveillons", "s": "tôt", "u": "ми будимо рано" },
+      { "p": "vous", "v": "réveillez", "s": "les invités", "u": "ви будите гостей" },
+      { "p": "ils", "v": "réveillent", "s": "la maison", "u": "вони будять весь будинок" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai réveillé", "s": "mon fils", "u": "я розбудив свого сина" },
+      { "p": "tu", "v": "as réveillé", "s": "le chien", "u": "ти розбудив собаку" },
+      { "p": "elle", "v": "a réveillé", "s": "le quartier", "u": "вона розбудила район" },
+      { "p": "nous", "v": "avons réveillé", "s": "tôt", "u": "ми розбудили рано" },
+      { "p": "vous", "v": "avez réveillé", "s": "les invités", "u": "ви розбудили гостей" },
+      { "p": "ils", "v": "ont réveillé", "s": "la maison", "u": "вони розбудили будинок" }
+    ],
+    "futur": [
+      { "p": "je", "v": "réveillerai", "s": "mon fils", "u": "я розбуджу свого сина" },
+      { "p": "tu", "v": "réveilleras", "s": "le chien", "u": "ти розбудиш собаку" },
+      { "p": "elle", "v": "réveillera", "s": "le quartier", "u": "вона розбудить район" },
+      { "p": "nous", "v": "réveillerons", "s": "tôt", "u": "ми розбудимо рано" },
+      { "p": "vous", "v": "réveillerez", "s": "les invités", "u": "ви розбудите гостей" },
+      { "p": "ils", "v": "réveilleront", "s": "la maison", "u": "вони розбудять будинок" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "rigoler",
+    "infUk": "сміятися, жартувати",
+    "present": [
+      { "p": "je", "v": "rigole", "s": "beaucoup", "u": "я багато сміюся" },
+      { "p": "tu", "v": "rigoles", "s": "tout le temps", "u": "ти постійно жартуєш" },
+      { "p": "il", "v": "rigole", "s": "de moi", "u": "він сміється з мене" },
+      { "p": "nous", "v": "rigolons", "s": "bien", "u": "ми добре сміємося" },
+      { "p": "vous", "v": "rigolez", "s": "trop", "u": "ви забагато смієтесь" },
+      { "p": "elles", "v": "rigolent", "s": "ensemble", "u": "вони сміються разом" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai rigolé", "s": "beaucoup", "u": "я багато сміявся" },
+      { "p": "tu", "v": "as rigolé", "s": "tout le temps", "u": "ти постійно жартував" },
+      { "p": "il", "v": "a rigolé", "s": "de moi", "u": "він сміявся з мене" },
+      { "p": "nous", "v": "avons rigolé", "s": "bien", "u": "ми добре посміялися" },
+      { "p": "vous", "v": "avez rigolé", "s": "trop", "u": "ви забагато сміялися" },
+      { "p": "elles", "v": "ont rigolé", "s": "ensemble", "u": "вони сміялися разом" }
+    ],
+    "futur": [
+      { "p": "je", "v": "rigolerai", "s": "beaucoup", "u": "я буду багато сміятися" },
+      { "p": "tu", "v": "rigoleras", "s": "tout le temps", "u": "ти будеш постійно жартувати" },
+      { "p": "il", "v": "rigolera", "s": "de moi", "u": "він буде сміятися з мене" },
+      { "p": "nous", "v": "rigolerons", "s": "bien", "u": "ми добре посміємося" },
+      { "p": "vous", "v": "rigolerez", "s": "trop", "u": "ви будете багато сміятися" },
+      { "p": "elles", "v": "rigoleront", "s": "ensemble", "u": "вони будуть сміятися разом" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "saluer",
+    "infUk": "вітати",
+    "present": [
+      { "p": "je", "v": "salue", "s": "mon voisin", "u": "я вітаю свого сусіда" },
+      { "p": "tu", "v": "salues", "s": "le professeur", "u": "ти вітаєш вчителя" },
+      { "p": "il", "v": "salue", "s": "le public", "u": "він вітає публіку" },
+      { "p": "nous", "v": "saluons", "s": "ce choix", "u": "ми вітаємо цей вибір" },
+      { "p": "vous", "v": "saluez", "s": "la foule", "u": "ви вітаєте натовп" },
+      { "p": "ils", "v": "saluent", "s": "leur ami", "u": "вони вітають свого друга" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai salué", "s": "mon voisin", "u": "я привітав свого сусіда" },
+      { "p": "tu", "v": "as salué", "s": "le professeur", "u": "ти привітав вчителя" },
+      { "p": "il", "v": "a salué", "s": "le public", "u": "він привітав публіку" },
+      { "p": "nous", "v": "avons salué", "s": "ce choix", "u": "ми привітали цей вибір" },
+      { "p": "vous", "v": "avez salué", "s": "la foule", "u": "ви привітали натовп" },
+      { "p": "ils", "v": "ont salué", "s": "leur ami", "u": "вони привітали свого друга" }
+    ],
+    "futur": [
+      { "p": "je", "v": "saluerai", "s": "mon voisin", "u": "я привітаю свого сусіда" },
+      { "p": "tu", "v": "salueras", "s": "le professeur", "u": "ти привітаєш вчителя" },
+      { "p": "il", "v": "saluera", "s": "le public", "u": "він привітає публіку" },
+      { "p": "nous", "v": "saluerons", "s": "ce choix", "u": "ми привітаємо цей вибір" },
+      { "p": "vous", "v": "saluerez", "s": "la foule", "u": "ви привітаєте натовп" },
+      { "p": "ils", "v": "salueront", "s": "leur ami", "u": "вони привітають свого друга" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "sauter",
+    "infUk": "стрибати",
+    "present": [
+      { "p": "je", "v": "saute", "s": "de joie", "u": "я стрибаю від радості" },
+      { "p": "tu", "v": "sautes", "s": "sur le lit", "u": "ти стрибаєш на ліжку" },
+      { "p": "elle", "v": "saute", "s": "les obstacles", "u": "вона перестрибує перешкоди" },
+      { "p": "nous", "v": "sautons", "s": "le pas", "u": "ми робимо рішучий крок (стрибаємо)" },
+      { "p": "vous", "v": "sautez", "s": "une ligne", "u": "ви пропускаєте (перестрибуєте) рядок" },
+      { "p": "ils", "v": "sautent", "s": "dans l'eau", "u": "вони стрибають у воду" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai sauté", "s": "de joie", "u": "я стрибав від радості" },
+      { "p": "tu", "v": "as sauté", "s": "sur le lit", "u": "ти стрибав на ліжку" },
+      { "p": "elle", "v": "a sauté", "s": "les obstacles", "u": "вона перестрибнула перешкоди" },
+      { "p": "nous", "v": "avons sauté", "s": "le pas", "u": "ми зробили рішучий крок" },
+      { "p": "vous", "v": "avez sauté", "s": "une ligne", "u": "ви пропустили рядок" },
+      { "p": "ils", "v": "ont sauté", "s": "dans l'eau", "u": "вони стрибнули у воду" }
+    ],
+    "futur": [
+      { "p": "je", "v": "sauterai", "s": "de joie", "u": "я буду стрибати від радості" },
+      { "p": "tu", "v": "sauteras", "s": "sur le lit", "u": "ти будеш стрибати на ліжку" },
+      { "p": "elle", "v": "sautera", "s": "les obstacles", "u": "вона перестрибне перешкоди" },
+      { "p": "nous", "v": "sauterons", "s": "le pas", "u": "ми зробимо рішучий крок" },
+      { "p": "vous", "v": "sauterez", "s": "une ligne", "u": "ви пропустите рядок" },
+      { "p": "ils", "v": "sauteront", "s": "dans l'eau", "u": "вони стрибнуть у воду" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "sauver",
+    "infUk": "рятувати",
+    "present": [
+      { "p": "je", "v": "sauve", "s": "le monde", "u": "я рятую світ" },
+      { "p": "tu", "v": "sauves", "s": "une vie", "u": "ти рятуєш життя" },
+      { "p": "il", "v": "sauve", "s": "la situation", "u": "він рятує ситуацію" },
+      { "p": "nous", "v": "sauvons", "s": "le projet", "u": "ми рятуємо проект" },
+      { "p": "vous", "v": "sauvez", "s": "la mise", "u": "ви рятуєте становище" },
+      { "p": "elles", "v": "sauvent", "s": "les animaux", "u": "вони рятують тварин" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai sauvé", "s": "le monde", "u": "я врятував світ" },
+      { "p": "tu", "v": "as sauvé", "s": "une vie", "u": "ти врятував життя" },
+      { "p": "il", "v": "a sauvé", "s": "la situation", "u": "він врятував ситуацію" },
+      { "p": "nous", "v": "avons sauvé", "s": "le projet", "u": "ми врятували проект" },
+      { "p": "vous", "v": "avez sauvé", "s": "la mise", "u": "ви врятували становище" },
+      { "p": "elles", "v": "ont sauvé", "s": "les animaux", "u": "вони врятували тварин" }
+    ],
+    "futur": [
+      { "p": "je", "v": "sauverai", "s": "le monde", "u": "я врятую світ" },
+      { "p": "tu", "v": "sauveras", "s": "une vie", "u": "ти врятуєш життя" },
+      { "p": "il", "v": "sauvera", "s": "la situation", "u": "він врятує ситуацію" },
+      { "p": "nous", "v": "sauverons", "s": "le projet", "u": "ми врятуємо проект" },
+      { "p": "vous", "v": "sauverez", "s": "la mise", "u": "ви врятуєте становище" },
+      { "p": "elles", "v": "sauveront", "s": "les animaux", "u": "вони врятують тварин" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "sembler",
+    "infUk": "здаватися (на вигляд)",
+    "present": [
+      { "p": "je", "v": "semble", "s": "fatigué", "u": "я здаюся втомленим" },
+      { "p": "tu", "v": "sembles", "s": "triste", "u": "ти здаєшся сумним" },
+      { "p": "il", "v": "semble", "s": "d'accord", "u": "він, здається, згоден" },
+      { "p": "nous", "v": "semblons", "s": "perdus", "u": "ми здаємося загубленими" },
+      { "p": "vous", "v": "semblez", "s": "heureux", "u": "ви виглядаєте щасливими" },
+      { "p": "elles", "v": "semblent", "s": "calmes", "u": "вони здаються спокійними" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai semblé", "s": "fatigué", "u": "я здавався втомленим" },
+      { "p": "tu", "v": "as semblé", "s": "triste", "u": "ти здавався сумним" },
+      { "p": "il", "v": "a semblé", "s": "d'accord", "u": "він, здавалося, був згоден" },
+      { "p": "nous", "v": "avons semblé", "s": "perdus", "u": "ми здавалися загубленими" },
+      { "p": "vous", "v": "avez semblé", "s": "heureux", "u": "ви виглядали щасливими" },
+      { "p": "elles", "v": "ont semblé", "s": "calmes", "u": "вони здавалися спокійними" }
+    ],
+    "futur": [
+      { "p": "je", "v": "semblerai", "s": "fatigué", "u": "я буду здаватися втомленим" },
+      { "p": "tu", "v": "sembleras", "s": "triste", "u": "ти будеш здаватися сумним" },
+      { "p": "il", "v": "semblera", "s": "d'accord", "u": "він буде здаватися згодним" },
+      { "p": "nous", "v": "semblerons", "s": "perdus", "u": "ми будемо здаватися загубленими" },
+      { "p": "vous", "v": "semblerez", "s": "heureux", "u": "ви будете виглядати щасливими" },
+      { "p": "elles", "v": "sembleront", "s": "calmes", "u": "вони будуть здаватися спокійними" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "siffler",
+    "infUk": "свистіти",
+    "present": [
+      { "p": "je", "v": "siffle", "s": "un air", "u": "я насвистую мелодію" },
+      { "p": "tu", "v": "siffles", "s": "le chien", "u": "ти кличеш собаку свистом" },
+      { "p": "il", "v": "siffle", "s": "la fin", "u": "він свистить про кінець" },
+      { "p": "nous", "v": "sifflons", "s": "fort", "u": "ми свистимо голосно" },
+      { "p": "vous", "v": "sifflez", "s": "le joueur", "u": "ви освистуєте гравця" },
+      { "p": "ils", "v": "sifflent", "s": "dans la rue", "u": "вони свистять на вулиці" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai sifflé", "s": "un air", "u": "я насвистував мелодію" },
+      { "p": "tu", "v": "as sifflé", "s": "le chien", "u": "ти покликав собаку свистом" },
+      { "p": "il", "v": "a sifflé", "s": "la fin", "u": "він просвистів про кінець" },
+      { "p": "nous", "v": "avons sifflé", "s": "fort", "u": "ми свистіли голосно" },
+      { "p": "vous", "v": "avez sifflé", "s": "le joueur", "u": "ви освистали гравця" },
+      { "p": "ils", "v": "ont sifflé", "s": "dans la rue", "u": "вони свистіли на вулиці" }
+    ],
+    "futur": [
+      { "p": "je", "v": "sifflerai", "s": "un air", "u": "я буду насвистувати мелодію" },
+      { "p": "tu", "v": "siffleras", "s": "le chien", "u": "ти покличеш собаку свистом" },
+      { "p": "il", "v": "sifflera", "s": "la fin", "u": "він просвистить про кінець" },
+      { "p": "nous", "v": "sifflerons", "s": "fort", "u": "ми будемо свистіти голосно" },
+      { "p": "vous", "v": "sifflerez", "s": "le joueur", "u": "ви освистаєте гравця" },
+      { "p": "ils", "v": "siffleront", "s": "dans la rue", "u": "вони свистітимуть на вулиці" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "signer",
+    "infUk": "підписувати",
+    "present": [
+      { "p": "je", "v": "signe", "s": "le contrat", "u": "я підписую контракт" },
+      { "p": "tu", "v": "signes", "s": "ton nom", "u": "ти підписуєш своє ім'я" },
+      { "p": "elle", "v": "signe", "s": "le document", "u": "вона підписує документ" },
+      { "p": "nous", "v": "signons", "s": "un accord", "u": "ми підписуємо угоду" },
+      { "p": "vous", "v": "signez", "s": "ici", "u": "ви підписуєте тут" },
+      { "p": "ils", "v": "signent", "s": "le chèque", "u": "вони підписують чек" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai signé", "s": "le contrat", "u": "я підписав контракт" },
+      { "p": "tu", "v": "as signé", "s": "ton nom", "u": "ти підписав своє ім'я" },
+      { "p": "elle", "v": "a signé", "s": "le document", "u": "вона підписала документ" },
+      { "p": "nous", "v": "avons signé", "s": "un accord", "u": "ми підписали угоду" },
+      { "p": "vous", "v": "avez signé", "s": "ici", "u": "ви підписали тут" },
+      { "p": "ils", "v": "ont signé", "s": "le chèque", "u": "вони підписали чек" }
+    ],
+    "futur": [
+      { "p": "je", "v": "signerai", "s": "le contrat", "u": "я підпишу контракт" },
+      { "p": "tu", "v": "signeras", "s": "ton nom", "u": "ти підпишеш своє ім'я" },
+      { "p": "elle", "v": "signera", "s": "le document", "u": "вона підпише документ" },
+      { "p": "nous", "v": "signerons", "s": "un accord", "u": "ми підпишемо угоду" },
+      { "p": "vous", "v": "signerez", "s": "ici", "u": "ви підпишете тут" },
+      { "p": "ils", "v": "signeront", "s": "le chèque", "u": "вони підпишуть чек" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "skier",
+    "infUk": "кататися на лижах",
+    "present": [
+      { "p": "je", "v": "skie", "s": "en hiver", "u": "я катаюся на лижах взимку" },
+      { "p": "tu", "v": "skies", "s": "très bien", "u": "ти катаєшся на лижах дуже добре" },
+      { "p": "il", "v": "skie", "s": "sur la piste", "u": "він катається на трасі" },
+      { "p": "nous", "v": "skions", "s": "ensemble", "u": "ми катаємося разом" },
+      { "p": "vous", "v": "skiez", "s": "vite", "u": "ви катаєтесь швидко" },
+      { "p": "elles", "v": "skient", "s": "en montagne", "u": "вони катаються в горах" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai skié", "s": "en hiver", "u": "я катався на лижах взимку" },
+      { "p": "tu", "v": "as skié", "s": "très bien", "u": "ти катався на лижах дуже добре" },
+      { "p": "il", "v": "a skié", "s": "sur la piste", "u": "він катався на трасі" },
+      { "p": "nous", "v": "avons skié", "s": "ensemble", "u": "ми каталися разом" },
+      { "p": "vous", "v": "avez skié", "s": "vite", "u": "ви каталися швидко" },
+      { "p": "elles", "v": "ont skié", "s": "en montagne", "u": "вони каталися в горах" }
+    ],
+    "futur": [
+      { "p": "je", "v": "skierai", "s": "en hiver", "u": "я буду кататися на лижах взимку" },
+      { "p": "tu", "v": "skieras", "s": "très bien", "u": "ти будеш кататися на лижах дуже добре" },
+      { "p": "il", "v": "skiera", "s": "sur la piste", "u": "він буде кататися на трасі" },
+      { "p": "nous", "v": "skierons", "s": "ensemble", "u": "ми будемо кататися разом" },
+      { "p": "vous", "v": "skierez", "s": "vite", "u": "ви будете кататися швидко" },
+      { "p": "elles", "v": "skieront", "s": "en montagne", "u": "вони будуть кататися в горах" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "sonner",
+    "infUk": "дзвонити (про дзвінок), лунати",
+    "present": [
+      { "p": "je", "v": "sonne", "s": "à la porte", "u": "я дзвоню у двері" },
+      { "p": "tu", "v": "sonnes", "s": "fort", "u": "ти дзвониш голосно" },
+      { "p": "il", "v": "sonne", "s": "l'alarme", "u": "він б'є на сполох (дзвонить в сирену)" },
+      { "p": "nous", "v": "sonnons", "s": "chez lui", "u": "ми дзвонимо до нього" },
+      { "p": "vous", "v": "sonnez", "s": "en vain", "u": "ви дзвоните марно" },
+      { "p": "ils", "v": "sonnent", "s": "la cloche", "u": "вони дзвонять у дзвін" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai sonné", "s": "à la porte", "u": "я подзвонив у двері" },
+      { "p": "tu", "v": "as sonné", "s": "fort", "u": "ти дзвонив голосно" },
+      { "p": "il", "v": "a sonné", "s": "l'alarme", "u": "він бив на сполох" },
+      { "p": "nous", "v": "avons sonné", "s": "chez lui", "u": "ми дзвонили до нього" },
+      { "p": "vous", "v": "avez sonné", "s": "en vain", "u": "ви дзвонили марно" },
+      { "p": "ils", "v": "ont sonné", "s": "la cloche", "u": "вони дзвонили у дзвін" }
+    ],
+    "futur": [
+      { "p": "je", "v": "sonnerai", "s": "à la porte", "u": "я подзвоню у двері" },
+      { "p": "tu", "v": "sonneras", "s": "fort", "u": "ти будеш дзвонити голосно" },
+      { "p": "il", "v": "sonnera", "s": "l'alarme", "u": "він битиме на сполох" },
+      { "p": "nous", "v": "sonnerons", "s": "chez lui", "u": "ми будемо дзвонити до нього" },
+      { "p": "vous", "v": "sonnerez", "s": "en vain", "u": "ви будете дзвонити марно" },
+      { "p": "ils", "v": "sonneront", "s": "la cloche", "u": "вони будуть дзвонити у дзвін" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "souhaiter",
+    "infUk": "бажати",
+    "present": [
+      { "p": "je", "v": "souhaite", "s": "bonne chance", "u": "я бажаю удачі" },
+      { "p": "tu", "v": "souhaites", "s": "un joyeux Noël", "u": "ти бажаєш щасливого Різдва" },
+      { "p": "elle", "v": "souhaite", "s": "le meilleur", "u": "вона бажає найкращого" },
+      { "p": "nous", "v": "souhaitons", "s": "bon voyage", "u": "ми бажаємо щасливої дороги" },
+      { "p": "vous", "v": "souhaitez", "s": "partir", "u": "ви бажаєте поїхати" },
+      { "p": "ils", "v": "souhaitent", "s": "gagner", "u": "вони бажають виграти" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai souhaité", "s": "bonne chance", "u": "я побажав удачі" },
+      { "p": "tu", "v": "as souhaité", "s": "un joyeux Noël", "u": "ти побажав щасливого Різдва" },
+      { "p": "elle", "v": "a souhaité", "s": "le meilleur", "u": "вона побажала найкращого" },
+      { "p": "nous", "v": "avons souhaité", "s": "bon voyage", "u": "ми побажали щасливої дороги" },
+      { "p": "vous", "v": "avez souhaité", "s": "partir", "u": "ви забажали поїхати" },
+      { "p": "ils", "v": "ont souhaité", "s": "gagner", "u": "вони забажали виграти" }
+    ],
+    "futur": [
+      { "p": "je", "v": "souhaiterai", "s": "bonne chance", "u": "я побажаю удачі" },
+      { "p": "tu", "v": "souhaiteras", "s": "un joyeux Noël", "u": "ти побажаєш щасливого Різдва" },
+      { "p": "elle", "v": "souhaitera", "s": "le meilleur", "u": "вона побажає найкращого" },
+      { "p": "nous", "v": "souhaiterons", "s": "bon voyage", "u": "ми побажаємо щасливої дороги" },
+      { "p": "vous", "v": "souhaiterez", "s": "partir", "u": "ви забажаєте поїхати" },
+      { "p": "ils", "v": "souhaiteront", "s": "gagner", "u": "вони забажають виграти" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "taper",
+    "infUk": "бити, друкувати",
+    "present": [
+      { "p": "je", "v": "tape", "s": "à la porte", "u": "я стукаю у двері" },
+      { "p": "tu", "v": "tapes", "s": "un code", "u": "ти вводиш (друкуєш) код" },
+      { "p": "il", "v": "tape", "s": "fort", "u": "він б'є сильно" },
+      { "p": "nous", "v": "tapons", "s": "sur le clavier", "u": "ми друкуємо на клавіатурі" },
+      { "p": "vous", "v": "tapez", "s": "le texte", "u": "ви друкуєте текст" },
+      { "p": "elles", "v": "tapent", "s": "dans les mains", "u": "вони плескають в долоні" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai tapé", "s": "à la porte", "u": "я постукав у двері" },
+      { "p": "tu", "v": "as tapé", "s": "un code", "u": "ти ввів код" },
+      { "p": "il", "v": "a tapé", "s": "fort", "u": "він ударив сильно" },
+      { "p": "nous", "v": "avons tapé", "s": "sur le clavier", "u": "ми друкували на клавіатурі" },
+      { "p": "vous", "v": "avez tapé", "s": "le texte", "u": "ви надрукували текст" },
+      { "p": "elles", "v": "ont tapé", "s": "dans les mains", "u": "вони поплескали в долоні" }
+    ],
+    "futur": [
+      { "p": "je", "v": "taperai", "s": "à la porte", "u": "я постукаю у двері" },
+      { "p": "tu", "v": "taperas", "s": "un code", "u": "ти введеш код" },
+      { "p": "il", "v": "tapera", "s": "fort", "u": "він вдарить сильно" },
+      { "p": "nous", "v": "taperons", "s": "sur le clavier", "u": "ми будемо друкувати на клавіатурі" },
+      { "p": "vous", "v": "taperez", "s": "le texte", "u": "ви надрукуєте текст" },
+      { "p": "elles", "v": "taperont", "s": "dans les mains", "u": "вони поплескають в долоні" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "téléphoner",
+    "infUk": "телефонувати",
+    "present": [
+      { "p": "je", "v": "téléphone", "s": "à mon ami", "u": "я телефоную другу" },
+      { "p": "tu", "v": "téléphones", "s": "souvent", "u": "ти телефонуєш часто" },
+      { "p": "elle", "v": "téléphone", "s": "au médecin", "u": "вона телефонує лікарю" },
+      { "p": "nous", "v": "téléphonons", "s": "pour ça", "u": "ми телефонуємо щодо цього" },
+      { "p": "vous", "v": "téléphonez", "s": "plus tard", "u": "ви телефонуєте пізніше" },
+      { "p": "ils", "v": "téléphonent", "s": "à la police", "u": "вони дзвонять в поліцію" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai téléphoné", "s": "à mon ami", "u": "я зателефонував другу" },
+      { "p": "tu", "v": "as téléphoné", "s": "souvent", "u": "ти дзвонив часто" },
+      { "p": "elle", "v": "a téléphoné", "s": "au médecin", "u": "вона зателефонувала лікарю" },
+      { "p": "nous", "v": "avons téléphoné", "s": "pour ça", "u": "ми дзвонили щодо цього" },
+      { "p": "vous", "v": "avez téléphoné", "s": "plus tard", "u": "ви зателефонували пізніше" },
+      { "p": "ils", "v": "ont téléphoné", "s": "à la police", "u": "вони подзвонили в поліцію" }
+    ],
+    "futur": [
+      { "p": "je", "v": "téléphonerai", "s": "à mon ami", "u": "я зателефоную другу" },
+      { "p": "tu", "v": "téléphoneras", "s": "souvent", "u": "ти будеш дзвонити часто" },
+      { "p": "elle", "v": "téléphonera", "s": "au médecin", "u": "вона зателефонує лікарю" },
+      { "p": "nous", "v": "téléphonerons", "s": "pour ça", "u": "ми будемо дзвонити щодо цього" },
+      { "p": "vous", "v": "téléphonerez", "s": "plus tard", "u": "ви зателефонуєте пізніше" },
+      { "p": "ils", "v": "téléphoneront", "s": "à la police", "u": "вони подзвонять у поліцію" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "tirer",
+    "infUk": "тягнути, стріляти",
+    "present": [
+      { "p": "je", "v": "tire", "s": "la porte", "u": "я тягну двері" },
+      { "p": "tu", "v": "tires", "s": "sur la corde", "u": "ти тягнеш за мотузку" },
+      { "p": "il", "v": "tire", "s": "un trait", "u": "він підводить рису" },
+      { "p": "nous", "v": "tirons", "s": "des conclusions", "u": "ми робимо висновки" },
+      { "p": "vous", "v": "tirez", "s": "sur la cible", "u": "ви стріляєте в ціль" },
+      { "p": "elles", "v": "tirent", "s": "profit", "u": "вони отримують вигоду" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai tiré", "s": "la porte", "u": "я потягнув двері" },
+      { "p": "tu", "v": "as tiré", "s": "sur la corde", "u": "ти потягнув за мотузку" },
+      { "p": "il", "v": "a tiré", "s": "un trait", "u": "він підвів рису" },
+      { "p": "nous", "v": "avons tiré", "s": "des conclusions", "u": "ми зробили висновки" },
+      { "p": "vous", "v": "avez tiré", "s": "sur la cible", "u": "ви вистрілили в ціль" },
+      { "p": "elles", "v": "ont tiré", "s": "profit", "u": "вони отримали вигоду" }
+    ],
+    "futur": [
+      { "p": "je", "v": "tirerai", "s": "la porte", "u": "я потягну двері" },
+      { "p": "tu", "v": "tireras", "s": "sur la corde", "u": "ти потягнеш за мотузку" },
+      { "p": "il", "v": "tirera", "s": "un trait", "u": "він підведе рису" },
+      { "p": "nous", "v": "tirerons", "s": "des conclusions", "u": "ми зробимо висновки" },
+      { "p": "vous", "v": "tirerez", "s": "sur la cible", "u": "ви будете стріляти в ціль" },
+      { "p": "elles", "v": "tireront", "s": "profit", "u": "вони отримають вигоду" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "toucher",
+    "infUk": "торкатися",
+    "present": [
+      { "p": "je", "v": "touche", "s": "le fond", "u": "я торкаюся дна" },
+      { "p": "tu", "v": "touches", "s": "le salaire", "u": "ти отримуєш зарплату" },
+      { "p": "il", "v": "touche", "s": "à sa fin", "u": "це добігає кінця (торкається кінця)" },
+      { "p": "nous", "v": "touchons", "s": "le but", "u": "ми досягаємо мети" },
+      { "p": "vous", "v": "touchez", "s": "à tout", "u": "ви всього торкаєтесь" },
+      { "p": "elles", "v": "touchent", "s": "le mur", "u": "вони торкаються стіни" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai touché", "s": "le fond", "u": "я торкнувся дна" },
+      { "p": "tu", "v": "as touché", "s": "le salaire", "u": "ти отримав зарплату" },
+      { "p": "il", "v": "a touché", "s": "à sa fin", "u": "це добігло кінця" },
+      { "p": "nous", "v": "avons touché", "s": "le but", "u": "ми досягли мети" },
+      { "p": "vous", "v": "avez touché", "s": "à tout", "u": "ви всього торкалися" },
+      { "p": "elles", "v": "ont touché", "s": "le mur", "u": "вони торкнулися стіни" }
+    ],
+    "futur": [
+      { "p": "je", "v": "toucherai", "s": "le fond", "u": "я торкнуся дна" },
+      { "p": "tu", "v": "toucheras", "s": "le salaire", "u": "ти отримаєш зарплату" },
+      { "p": "il", "v": "touchera", "s": "à sa fin", "u": "це добігатиме кінця" },
+      { "p": "nous", "v": "toucherons", "s": "le but", "u": "ми досягнемо мети" },
+      { "p": "vous", "v": "toucherez", "s": "à tout", "u": "ви будете всього торкатися" },
+      { "p": "elles", "v": "toucheront", "s": "le mur", "u": "вони торкнуться стіни" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "tourner",
+    "infUk": "повертати, крутити",
+    "present": [
+      { "p": "je", "v": "tourne", "s": "à droite", "u": "я повертаю направо" },
+      { "p": "tu", "v": "tournes", "s": "en rond", "u": "ти ходиш по колу" },
+      { "p": "elle", "v": "tourne", "s": "la page", "u": "вона перегортає сторінку" },
+      { "p": "nous", "v": "tournons", "s": "un film", "u": "ми знімаємо (крутимо) фільм" },
+      { "p": "vous", "v": "tournez", "s": "la tête", "u": "ви повертаєте голову" },
+      { "p": "ils", "v": "tournent", "s": "le dos", "u": "вони відвертаються (повертають спину)" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai tourné", "s": "à droite", "u": "я повернув направо" },
+      { "p": "tu", "v": "as tourné", "s": "en rond", "u": "ти ходив по колу" },
+      { "p": "elle", "v": "a tourné", "s": "la page", "u": "вона перегорнула сторінку" },
+      { "p": "nous", "v": "avons tourné", "s": "un film", "u": "ми зняли фільм" },
+      { "p": "vous", "v": "avez tourné", "s": "la tête", "u": "ви повернули голову" },
+      { "p": "ils", "v": "ont tourné", "s": "le dos", "u": "вони відвернулися" }
+    ],
+    "futur": [
+      { "p": "je", "v": "tournerai", "s": "à droite", "u": "я поверну направо" },
+      { "p": "tu", "v": "tourneras", "s": "en rond", "u": "ти будеш ходити по колу" },
+      { "p": "elle", "v": "tournera", "s": "la page", "u": "вона перегорне сторінку" },
+      { "p": "nous", "v": "tournerons", "s": "un film", "u": "ми будемо знімати фільм" },
+      { "p": "vous", "v": "tournerez", "s": "la tête", "u": "ви повернете голову" },
+      { "p": "ils", "v": "tourneront", "s": "le dos", "u": "вони відвернуться" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "travailler",
+    "infUk": "працювати",
+    "present": [
+      { "p": "je", "v": "travaille", "s": "dur", "u": "я працюю важко" },
+      { "p": "tu", "v": "travailles", "s": "toute la nuit", "u": "ти працюєш усю ніч" },
+      { "p": "il", "v": "travaille", "s": "pour eux", "u": "він працює на них" },
+      { "p": "nous", "v": "travaillons", "s": "ensemble", "u": "ми працюємо разом" },
+      { "p": "vous", "v": "travaillez", "s": "le dimanche", "u": "ви працюєте в неділю" },
+      { "p": "elles", "v": "travaillent", "s": "bien", "u": "вони працюють добре" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai travaillé", "s": "dur", "u": "я працював важко" },
+      { "p": "tu", "v": "as travaillé", "s": "toute la nuit", "u": "ти працював усю ніч" },
+      { "p": "il", "v": "a travaillé", "s": "pour eux", "u": "він працював на них" },
+      { "p": "nous", "v": "avons travaillé", "s": "ensemble", "u": "ми працювали разом" },
+      { "p": "vous", "v": "avez travaillé", "s": "le dimanche", "u": "ви працювали в неділю" },
+      { "p": "elles", "v": "ont travaillé", "s": "bien", "u": "вони працювали добре" }
+    ],
+    "futur": [
+      { "p": "je", "v": "travaillerai", "s": "dur", "u": "я буду працювати важко" },
+      { "p": "tu", "v": "travailleras", "s": "toute la nuit", "u": "ти будеш працювати усю ніч" },
+      { "p": "il", "v": "travaillera", "s": "pour eux", "u": "він буде працювати на них" },
+      { "p": "nous", "v": "travaillerons", "s": "ensemble", "u": "ми будемо працювати разом" },
+      { "p": "vous", "v": "travaillerez", "s": "le dimanche", "u": "ви будете працювати в неділю" },
+      { "p": "elles", "v": "travailleront", "s": "bien", "u": "вони будуть працювати добре" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "traverser",
+    "infUk": "переходити, перетинати",
+    "present": [
+      { "p": "je", "v": "traverse", "s": "la rue", "u": "я переходжу вулицю" },
+      { "p": "tu", "v": "traverses", "s": "le pont", "u": "ти переходиш міст" },
+      { "p": "il", "v": "traverse", "s": "la crise", "u": "він переживає (перетинає) кризу" },
+      { "p": "nous", "v": "traversons", "s": "le désert", "u": "ми перетинаємо пустелю" },
+      { "p": "vous", "v": "traversez", "s": "la frontière", "u": "ви перетинаєте кордон" },
+      { "p": "ils", "v": "traversent", "s": "la ville", "u": "вони перетинають місто" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai traversé", "s": "la rue", "u": "я перейшов вулицю" },
+      { "p": "tu", "v": "as traversé", "s": "le pont", "u": "ти перейшов міст" },
+      { "p": "il", "v": "a traversé", "s": "la crise", "u": "він пережив кризу" },
+      { "p": "nous", "v": "avons traversé", "s": "le désert", "u": "ми перетнули пустелю" },
+      { "p": "vous", "v": "avez traversé", "s": "la frontière", "u": "ви перетнули кордон" },
+      { "p": "ils", "v": "ont traversé", "s": "la ville", "u": "вони перетнули місто" }
+    ],
+    "futur": [
+      { "p": "je", "v": "traverserai", "s": "la rue", "u": "я перейду вулицю" },
+      { "p": "tu", "v": "traverseras", "s": "le pont", "u": "ти перейдеш міст" },
+      { "p": "il", "v": "traversera", "s": "la crise", "u": "він переживе кризу" },
+      { "p": "nous", "v": "traverserons", "s": "le désert", "u": "ми перетнемо пустелю" },
+      { "p": "vous", "v": "traverserez", "s": "la frontière", "u": "ви перетнете кордон" },
+      { "p": "ils", "v": "traverseront", "s": "la ville", "u": "вони перетнуть місто" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "tromper",
+    "infUk": "обманювати",
+    "present": [
+      { "p": "je", "v": "trompe", "s": "mon ennemi", "u": "я обманюю свого ворога" },
+      { "p": "tu", "v": "trompes", "s": "tout le monde", "u": "ти обманюєш всіх" },
+      { "p": "elle", "v": "trompe", "s": "son mari", "u": "вона зраджує своєму чоловікові" },
+      { "p": "nous", "v": "trompons", "s": "la vigilance", "u": "ми приспали (обманули) пильність" },
+      { "p": "vous", "v": "trompez", "s": "le client", "u": "ви обманюєте клієнта" },
+      { "p": "ils", "v": "trompent", "s": "la loi", "u": "вони обходять (обманюють) закон" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai trompé", "s": "mon ennemi", "u": "я обманув свого ворога" },
+      { "p": "tu", "v": "as trompé", "s": "tout le monde", "u": "ти обманув усіх" },
+      { "p": "elle", "v": "a trompé", "s": "son mari", "u": "вона зрадила своєму чоловікові" },
+      { "p": "nous", "v": "avons trompé", "s": "la vigilance", "u": "ми обманули пильність" },
+      { "p": "vous", "v": "avez trompé", "s": "le client", "u": "ви обманули клієнта" },
+      { "p": "ils", "v": "ont trompé", "s": "la loi", "u": "вони обійшли закон" }
+    ],
+    "futur": [
+      { "p": "je", "v": "tromperai", "s": "mon ennemi", "u": "я обманю свого ворога" },
+      { "p": "tu", "v": "tromperas", "s": "tout le monde", "u": "ти будеш обманювати всіх" },
+      { "p": "elle", "v": "trompera", "s": "son mari", "u": "вона зрадить своєму чоловікові" },
+      { "p": "nous", "v": "tromperons", "s": "la vigilance", "u": "ми обдуримо пильність" },
+      { "p": "vous", "v": "tromperez", "s": "le client", "u": "ви обманете клієнта" },
+      { "p": "ils", "v": "tromperont", "s": "la loi", "u": "вони обійдуть закон" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "trouver",
+    "infUk": "знаходити",
+    "present": [
+      { "p": "je", "v": "trouve", "s": "la clé", "u": "я знаходжу ключ" },
+      { "p": "tu", "v": "trouves", "s": "ça drôle", "u": "ти вважаєш (знаходиш) це смішним" },
+      { "p": "il", "v": "trouve", "s": "une excuse", "u": "він знаходить виправдання" },
+      { "p": "nous", "v": "trouvons", "s": "la solution", "u": "ми знаходимо рішення" },
+      { "p": "vous", "v": "trouvez", "s": "le temps", "u": "ви знаходите час" },
+      { "p": "elles", "v": "trouvent", "s": "le chemin", "u": "вони знаходять дорогу" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai trouvé", "s": "la clé", "u": "я знайшов ключ" },
+      { "p": "tu", "v": "as trouvé", "s": "ça drôle", "u": "ти вважав це смішним" },
+      { "p": "il", "v": "a trouvé", "s": "une excuse", "u": "він знайшов виправдання" },
+      { "p": "nous", "v": "avons trouvé", "s": "la solution", "u": "ми знайшли рішення" },
+      { "p": "vous", "v": "avez trouvé", "s": "le temps", "u": "ви знайшли час" },
+      { "p": "elles", "v": "ont trouvé", "s": "le chemin", "u": "вони знайшли дорогу" }
+    ],
+    "futur": [
+      { "p": "je", "v": "trouverai", "s": "la clé", "u": "я знайду ключ" },
+      { "p": "tu", "v": "trouveras", "s": "ça drôle", "u": "ти вважатимеш це смішним" },
+      { "p": "il", "v": "trouvera", "s": "une excuse", "u": "він знайде виправдання" },
+      { "p": "nous", "v": "trouverons", "s": "la solution", "u": "ми знайдемо рішення" },
+      { "p": "vous", "v": "trouverez", "s": "le temps", "u": "ви знайдете час" },
+      { "p": "elles", "v": "trouveront", "s": "le chemin", "u": "вони знайдуть дорогу" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "tuer",
+    "infUk": "вбивати",
+    "present": [
+      { "p": "je", "v": "tue", "s": "le temps", "u": "я вбиваю час" },
+      { "p": "tu", "v": "tues", "s": "l'ennemi", "u": "ти вбиваєш ворога" },
+      { "p": "elle", "v": "tue", "s": "les insectes", "u": "вона вбиває комах" },
+      { "p": "nous", "v": "tuons", "s": "l'espoir", "u": "ми вбиваємо надію" },
+      { "p": "vous", "v": "tuez", "s": "le suspense", "u": "ви вбиваєте інтригу" },
+      { "p": "ils", "v": "tuent", "s": "en silence", "u": "вони вбивають мовчки" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai tué", "s": "le temps", "u": "я вбив час" },
+      { "p": "tu", "v": "as tué", "s": "l'ennemi", "u": "ти вбив ворога" },
+      { "p": "elle", "v": "a tué", "s": "les insectes", "u": "вона вбила комах" },
+      { "p": "nous", "v": "avons tué", "s": "l'espoir", "u": "ми вбили надію" },
+      { "p": "vous", "v": "avez tué", "s": "le suspense", "u": "ви вбили інтригу" },
+      { "p": "ils", "v": "ont tué", "s": "en silence", "u": "вони вбивали мовчки" }
+    ],
+    "futur": [
+      { "p": "je", "v": "tuerai", "s": "le temps", "u": "я буду вбивати час" },
+      { "p": "tu", "v": "tueras", "s": "l'ennemi", "u": "ти вб'єш ворога" },
+      { "p": "elle", "v": "tuera", "s": "les insectes", "u": "вона вб'є комах" },
+      { "p": "nous", "v": "tuerons", "s": "l'espoir", "u": "ми вб'ємо надію" },
+      { "p": "vous", "v": "tuerez", "s": "le suspense", "u": "ви вб'єте інтригу" },
+      { "p": "ils", "v": "tueront", "s": "en silence", "u": "вони вбиватимуть мовчки" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "utiliser",
+    "infUk": "використовувати",
+    "present": [
+      { "p": "j'", "v": "utilise", "s": "ce logiciel", "u": "я використовую цю програму" },
+      { "p": "tu", "v": "utilises", "s": "ton téléphone", "u": "ти використовуєш свій телефон" },
+      { "p": "il", "v": "utilise", "s": "une carte", "u": "він використовує карту" },
+      { "p": "nous", "v": "utilisons", "s": "les transports", "u": "ми користуємося транспортом" },
+      { "p": "vous", "v": "utilisez", "s": "cette méthode", "u": "ви використовуєте цей метод" },
+      { "p": "elles", "v": "utilisent", "s": "l'ordinateur", "u": "вони використовують комп'ютер" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai utilisé", "s": "ce logiciel", "u": "я використовував цю програму" },
+      { "p": "tu", "v": "as utilisé", "s": "ton téléphone", "u": "ти використав свій телефон" },
+      { "p": "il", "v": "a utilisé", "s": "une carte", "u": "він використав карту" },
+      { "p": "nous", "v": "avons utilisé", "s": "les transports", "u": "ми скористалися транспортом" },
+      { "p": "vous", "v": "avez utilisé", "s": "cette méthode", "u": "ви використали цей метод" },
+      { "p": "elles", "v": "ont utilisé", "s": "l'ordinateur", "u": "вони використали комп'ютер" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "utiliserai", "s": "ce logiciel", "u": "я буду використовувати цю програму" },
+      { "p": "tu", "v": "utiliseras", "s": "ton téléphone", "u": "ти будеш використовувати телефон" },
+      { "p": "il", "v": "utilisera", "s": "une carte", "u": "він використає карту" },
+      { "p": "nous", "v": "utiliserons", "s": "les transports", "u": "ми будемо користуватися транспортом" },
+      { "p": "vous", "v": "utiliserez", "s": "cette méthode", "u": "ви використаєте цей метод" },
+      { "p": "elles", "v": "utiliseront", "s": "l'ordinateur", "u": "вони використають комп'ютер" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "vérifier",
+    "infUk": "перевіряти",
+    "present": [
+      { "p": "je", "v": "vérifie", "s": "les faits", "u": "я перевіряю факти" },
+      { "p": "tu", "v": "vérifies", "s": "ton solde", "u": "ти перевіряєш свій баланс" },
+      { "p": "il", "v": "vérifie", "s": "le moteur", "u": "він перевіряє двигун" },
+      { "p": "nous", "v": "vérifions", "s": "les billets", "u": "ми перевіряємо квитки" },
+      { "p": "vous", "v": "vérifiez", "s": "l'adresse", "u": "ви перевіряєте адресу" },
+      { "p": "ils", "v": "vérifient", "s": "les documents", "u": "вони перевіряють документи" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai vérifié", "s": "les faits", "u": "я перевірив факти" },
+      { "p": "tu", "v": "as vérifié", "s": "ton solde", "u": "ти перевірив свій баланс" },
+      { "p": "il", "v": "a vérifié", "s": "le moteur", "u": "він перевірив двигун" },
+      { "p": "nous", "v": "avons vérifié", "s": "les billets", "u": "ми перевірили квитки" },
+      { "p": "vous", "v": "avez vérifié", "s": "l'adresse", "u": "ви перевірили адресу" },
+      { "p": "ils", "v": "ont vérifié", "s": "les documents", "u": "вони перевірили документи" }
+    ],
+    "futur": [
+      { "p": "je", "v": "vérifierai", "s": "les faits", "u": "я перевірю факти" },
+      { "p": "tu", "v": "vérifieras", "s": "ton solde", "u": "ти перевіриш свій баланс" },
+      { "p": "il", "v": "vérifiera", "s": "le moteur", "u": "він перевірить двигун" },
+      { "p": "nous", "v": "vérifierons", "s": "les billets", "u": "ми перевіримо квитки" },
+      { "p": "vous", "v": "vérifierez", "s": "l'adresse", "u": "ви перевірите адресу" },
+      { "p": "ils", "v": "vérifieront", "s": "les documents", "u": "вони перевірять документи" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "visiter",
+    "infUk": "відвідувати (місця)",
+    "present": [
+      { "p": "je", "v": "visite", "s": "le musée", "u": "я відвідую музей" },
+      { "p": "tu", "v": "visites", "s": "la ville", "u": "ти оглядаєш місто" },
+      { "p": "elle", "v": "visite", "s": "la cathédrale", "u": "вона відвідує собор" },
+      { "p": "nous", "v": "visitons", "s": "le pays", "u": "ми відвідуємо країну" },
+      { "p": "vous", "v": "visitez", "s": "l'appartement", "u": "ви оглядаєте квартиру" },
+      { "p": "ils", "v": "visitent", "s": "le château", "u": "вони відвідують замок" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai visité", "s": "le musée", "u": "я відвідав музей" },
+      { "p": "tu", "v": "as visité", "s": "la ville", "u": "ти оглянув місто" },
+      { "p": "elle", "v": "a visité", "s": "la cathédrale", "u": "вона відвідала собор" },
+      { "p": "nous", "v": "avons visité", "s": "le pays", "u": "ми відвідали країну" },
+      { "p": "vous", "v": "avez visité", "s": "l'appartement", "u": "ви оглянули квартиру" },
+      { "p": "ils", "v": "ont visité", "s": "le château", "u": "вони відвідали замок" }
+    ],
+    "futur": [
+      { "p": "je", "v": "visiterai", "s": "le musée", "u": "я відвідаю музей" },
+      { "p": "tu", "v": "visiteras", "s": "la ville", "u": "ти оглянеш місто" },
+      { "p": "elle", "v": "visitera", "s": "la cathédrale", "u": "вона відвідає собор" },
+      { "p": "nous", "v": "visiterons", "s": "le pays", "u": "ми відвідаємо країну" },
+      { "p": "vous", "v": "visiterez", "s": "l'appartement", "u": "ви оглянете квартиру" },
+      { "p": "ils", "v": "visiteront", "s": "le château", "u": "вони відвідають замок" }
+    ]
+  },
+  {
+    "category": "Базові правильні (Регулярні)",
+    "infFr": "voler",
+    "infUk": "літати / красти",
+    "present": [
+      { "p": "je", "v": "vole", "s": "un sac", "u": "я краду сумку" },
+      { "p": "tu", "v": "voles", "s": "dans le ciel", "u": "ти літаєш у небі" },
+      { "p": "il", "v": "vole", "s": "l'argent", "u": "він краде гроші" },
+      { "p": "nous", "v": "volons", "s": "de nuit", "u": "ми літаємо вночі" },
+      { "p": "vous", "v": "volez", "s": "la voiture", "u": "ви крадете машину" },
+      { "p": "elles", "v": "volent", "s": "très haut", "u": "вони (птахи) літають дуже високо" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai volé", "s": "un sac", "u": "я вкрав сумку" },
+      { "p": "tu", "v": "as volé", "s": "dans le ciel", "u": "ти літав у небі" },
+      { "p": "il", "v": "a volé", "s": "l'argent", "u": "він вкрав гроші" },
+      { "p": "nous", "v": "avons volé", "s": "de nuit", "u": "ми літали вночі" },
+      { "p": "vous", "v": "avez volé", "s": "la voiture", "u": "ви вкрали машину" },
+      { "p": "elles", "v": "ont volé", "s": "très haut", "u": "вони літали дуже високо" }
+    ],
+    "futur": [
+      { "p": "je", "v": "volerai", "s": "un sac", "u": "я вкраду сумку" },
+      { "p": "tu", "v": "voleras", "s": "dans le ciel", "u": "ти будеш літати в небі" },
+      { "p": "il", "v": "volera", "s": "l'argent", "u": "він вкраде гроші" },
+      { "p": "nous", "v": "volerons", "s": "de nuit", "u": "ми будемо літати вночі" },
+      { "p": "vous", "v": "volerez", "s": "la voiture", "u": "ви вкрадете машину" },
+      { "p": "elles", "v": "voleront", "s": "très haut", "u": "вони будуть літати дуже високо" }
+    ]
+  },
+  {
+    "category": "Мутація: -ger (g -> ge перед o/a)",
+    "infFr": "voyager",
+    "infUk": "подорожувати",
+    "present": [
+      { "p": "je", "v": "voyage", "s": "seul", "u": "я подорожую сам" },
+      { "p": "tu", "v": "voyages", "s": "en train", "u": "ти подорожуєш потягом" },
+      { "p": "elle", "v": "voyage", "s": "beaucoup", "u": "вона багато подорожує" },
+      { "p": "nous", "v": "voyageons", "s": "en Europe", "u": "ми подорожуємо Європою" },
+      { "p": "vous", "v": "voyagez", "s": "pour le travail", "u": "ви подорожуєте по роботі" },
+      { "p": "ils", "v": "voyagent", "s": "loin", "u": "вони подорожують далеко" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai voyagé", "s": "seul", "u": "я подорожував сам" },
+      { "p": "tu", "v": "as voyagé", "s": "en train", "u": "ти подорожував потягом" },
+      { "p": "elle", "v": "a voyagé", "s": "beaucoup", "u": "вона багато подорожувала" },
+      { "p": "nous", "v": "avons voyagé", "s": "en Europe", "u": "ми подорожували Європою" },
+      { "p": "vous", "v": "avez voyagé", "s": "pour le travail", "u": "ви подорожували по роботі" },
+      { "p": "ils", "v": "ont voyagé", "s": "loin", "u": "вони подорожували далеко" }
+    ],
+    "futur": [
+      { "p": "je", "v": "voyagerai", "s": "seul", "u": "я буду подорожувати сам" },
+      { "p": "tu", "v": "voyageras", "s": "en train", "u": "ти будеш подорожувати потягом" },
+      { "p": "elle", "v": "voyagera", "s": "beaucoup", "u": "вона буде багато подорожувати" },
+      { "p": "nous", "v": "voyagerons", "s": "en Europe", "u": "ми будемо подорожувати Європою" },
+      { "p": "vous", "v": "voyagerez", "s": "pour le travail", "u": "ви будете подорожувати по роботі" },
+      { "p": "ils", "v": "voyageront", "s": "loin", "u": "вони будуть подорожувати далеко" }
     ]
   }
 ]
