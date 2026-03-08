@@ -44,7 +44,7 @@
 
         <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
             <h3 class="text-base sm:text-lg font-black text-slate-700 mb-3 uppercase tracking-widest">Часи</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <label class="cursor-pointer relative block">
                     <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="saveSetup()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
@@ -61,6 +61,12 @@
                     <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="saveSetup()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Futur Simple
+                    </div>
+                </label>
+                <label class="cursor-pointer relative block">
+                    <input type="checkbox" value="futur_proche" class="tense-checkbox sr-only" onchange="saveSetup()">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
+                        Futur Proche
                     </div>
                 </label>
             </div>
@@ -159,7 +165,8 @@
         const tenseExplanations = {
             "present": "Présent: Закінчення -e, -es, -e, -ons, -ez, -ent.",
             "passe": "Passé Composé: Допоміжне (частіше Avoir) + Participe Passé (-é).",
-            "futur": "Futur Simple: Інфінітив + закінчення (-ai, -as, -a, -ons, -ez, -ont)."
+            "futur": "Futur Simple: Інфінітив + закінчення (-ai, -as, -a, -ons, -ez, -ont).",
+            "futur_proche": "Futur Proche: Дієслово Aller у теперішньому часі + Інфінітив."
         };
 
         const verbRules = {
@@ -205,7 +212,7 @@
         function getSavedSetup() {
             const saved = localStorage.getItem('frenchVerbsSetupGroup1'); 
             if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: [], tenses: ['present', 'passe', 'futur'] };
+            return { verbs: [], tenses: ['present', 'passe', 'futur', 'futur_proche'] };
         }
 
         function saveSetup() {
@@ -309,14 +316,56 @@
 
             const selectedVerbs = Array.from(verbCb).map(cb => cb.value);
             const selectedTenses = Array.from(tenseCb).map(cb => cb.value);
-            const tenseNames = { "present": "Présent", "passe": "Passé Composé", "futur": "Futur Simple" };
+            const tenseNames = { "present": "Présent", "passe": "Passé Composé", "futur": "Futur Simple", "futur_proche": "Futur Proche" };
             const srsMemory = getSRSMemory();
             
+            const allerMap = {
+                "je": { fr: "vais", uk: "я буду" },
+                "j'": { fr: "vais", uk: "я буду" },
+                "tu": { fr: "vas", uk: "ти будеш" },
+                "il": { fr: "va", uk: "він буде" },
+                "elle": { fr: "va", uk: "вона буде" },
+                "nous": { fr: "allons", uk: "ми будемо" },
+                "vous": { fr: "allez", uk: "ви будете" },
+                "ils": { fr: "vont", uk: "вони будуть" },
+                "elles": { fr: "vont", uk: "вони будуть" }
+            };
+
             allDatabaseCards = [];
             rawData.forEach(verbObj => {
                 if (selectedVerbs.includes(verbObj.infFr)) {
                     selectedTenses.forEach(tenseKey => {
-                        if (verbObj[tenseKey]) {
+                        if (tenseKey === 'futur_proche' && verbObj.present) {
+                            const conjugationTable = verbObj.present.map(f => {
+                                let rawP = f.p.replace(/'$/, "").toLowerCase();
+                                if (f.p === "j'") rawP = "j'";
+                                const dispP = f.p === "j'" ? "je" : f.p;
+                                const aux = allerMap[rawP] ? allerMap[rawP].fr : "va";
+                                return dispP + " " + aux + " " + verbObj.infFr.toLowerCase();
+                            });
+
+                            verbObj.present.forEach(form => {
+                                let rawP = form.p.replace(/'$/, "").toLowerCase();
+                                if (form.p === "j'") rawP = "j'";
+                                const dispP = form.p === "j'" ? "je" : form.p;
+                                
+                                const auxFr = allerMap[rawP] ? allerMap[rawP].fr : "va";
+                                const baseUk = allerMap[rawP] ? allerMap[rawP].uk : "буде";
+                                
+                                const cardId = `G1_${verbObj.infFr}_futur_proche_${dispP}`;
+                                const weight = srsMemory[cardId] ? srsMemory[cardId].errors : 0;
+
+                                allDatabaseCards.push({
+                                    id: cardId, weight: weight, infFr: verbObj.infFr, infUk: verbObj.infUk,
+                                    tenseKey: tenseKey, tenseName: tenseNames[tenseKey],
+                                    prefix: dispP, verb: auxFr + " " + verbObj.infFr.toLowerCase(), suffix: form.s, 
+                                    ukFull: `${baseUk} ${verbObj.infUk.toLowerCase()}`,
+                                    rule: tenseExplanations[tenseKey] + "<br><br>" + (verbRules[verbObj.infFr] || ""),
+                                    allForms: conjugationTable
+                                });
+                            });
+                        }
+                        else if (verbObj[tenseKey]) {
                             const conjugationTable = verbObj[tenseKey].map(f => (f.p.endsWith("'") ? f.p : f.p + " ") + f.v);
                             verbObj[tenseKey].forEach(form => {
                                 const cardId = `G1_${verbObj.infFr}_${tenseKey}_${form.p}`;
@@ -405,6 +454,7 @@
             if (currentCard.tenseKey === 'present') tenseHint.className = "text-[10px] sm:text-xs text-slate-700 font-black bg-slate-200 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
             if (currentCard.tenseKey === 'passe') tenseHint.className = "text-[10px] sm:text-xs text-white font-black bg-amber-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
             if (currentCard.tenseKey === 'futur') tenseHint.className = "text-[10px] sm:text-xs text-white font-black bg-indigo-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
+            if (currentCard.tenseKey === 'futur_proche') tenseHint.className = "text-[10px] sm:text-xs text-white font-black bg-emerald-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
 
             document.getElementById('wordDisplay').innerText = currentCard.ukFull;
             document.getElementById('prefixDisplay').innerText = currentCard.prefix.endsWith("'") ? currentCard.prefix : currentCard.prefix + " ";
