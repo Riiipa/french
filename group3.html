@@ -339,7 +339,8 @@
         let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
         let unmasteredCards = [];
         let frVoice = null;
-        let initialDeckSize = 0; // NEW: Відстежуємо початковий розмір колоди
+        let initialDeckSize = 0; 
+        let sessionTargetSize = 10; // НОВЕ: фіксуємо мету для поточного раунду
 
         function initSessionFromSetup() {
             const verbCb = document.querySelectorAll('.verb-checkbox:checked');
@@ -427,7 +428,6 @@
             document.getElementById('trainingScreen').classList.remove('hidden');
             
             if (unmasteredCards.length === 0) {
-                // Перевіряємо, чи залишились не до кінця вивчені слова у всій базі
                 const remaining = allDatabaseCards.filter(c => c.streak < 2);
                 if (remaining.length === 0) {
                     alert("Всі слова повністю вивчені! 🎉");
@@ -440,6 +440,7 @@
             
             unmasteredCards.sort((a, b) => (b.weight - a.weight) || (Math.random() - 0.5));
             const cardsToTake = Math.min(SESSION_LENGTH, unmasteredCards.length);
+            sessionTargetSize = cardsToTake; // Фіксуємо скільки карток треба пройти в цьому раунді
             sessionQueue = unmasteredCards.splice(0, cardsToTake);
             shuffle(sessionQueue);
             sessionQueue.forEach(card => card.mistakesThisSession = 0);
@@ -450,12 +451,18 @@
         }
 
         function updateUIStats() {
-            const curTot = sessionStats.completed + sessionQueue.length + (currentCard ? 1 : 0);
-            document.getElementById('sessionCounter').innerText = `${sessionStats.completed + 1}/${curTot || SESSION_LENGTH}`;
+            // --- КАРТКА (Верхній лівий лічильник) ---
+            // Прогрес у межах поточного раунду (наприклад, 1/10, 2/10)
+            let currentCardNum = sessionStats.completed + 1;
+            if (currentCardNum > sessionTargetSize) currentCardNum = sessionTargetSize; // Захист від переповнення
+            if (!currentCard && sessionQueue.length === 0) currentCardNum = sessionTargetSize; // Наприкінці раунду показуємо 10/10
+            
+            document.getElementById('sessionCounter').innerText = `${currentCardNum}/${sessionTargetSize}`;
             document.getElementById('mistakeCounter').innerText = sessionStats.totalErrors;
             
-            // Залишилось: рахуємо тільки ті, що ще не вивчені до кінця (streak < 2)
-            const remainingCount = unmasteredCards.length + sessionQueue.length + (currentCard && currentCard.streak < 2 ? 1 : 0);
+            // --- ВИВЧИТИ (Глобальний залишок) ---
+            // Абсолютно надійний підрахунок: беремо всю базу і рахуємо, скільки карток ще мають < 2 точок
+            const remainingCount = allDatabaseCards.filter(c => c.streak < 2).length;
             document.getElementById('globalDeckCounter').innerText = remainingCount;
         }
 
@@ -565,6 +572,7 @@
                 playCurrentAudio();
             }
 
+            updateUIStats(); // Миттєво оновлюємо всі лічильники (і помилки) після натискання
             document.getElementById('checkBtn').classList.add('hidden');
             const nextBtn = document.getElementById('nextBtn');
             nextBtn.classList.remove('hidden');
