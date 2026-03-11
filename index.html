@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Французькі дієслова: Тренажер</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Додаємо бібліотеку для стиснення тексту (LZ-String) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.5.0/lz-string.min.js"></script>
     <style>
         .modal-enter { animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .modal-leave { animation: modalOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
@@ -74,9 +76,9 @@
                 </button>
             </div>
             
-            <p class="text-slate-500 mb-6 text-sm">Скопіюйте код, щоб перенести свій прогрес на інший пристрій, або вставте код з іншого пристрою сюди.</p>
+            <p class="text-slate-500 mb-6 text-sm">Скопіюйте стиснений код, щоб перенести свій прогрес на інший пристрій.</p>
 
-            <textarea id="syncDataArea" class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-slate-700 text-xs font-mono h-24 mb-4 focus:outline-none focus:border-indigo-400 resize-none" placeholder="Натисніть «Експорт», щоб згенерувати код, або вставте сюди код для імпорту..."></textarea>
+            <textarea id="syncDataArea" class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-slate-700 text-xs font-mono h-24 mb-4 focus:outline-none focus:border-indigo-400 resize-none break-all" placeholder="Натисніть «Експорт», щоб згенерувати код, або вставте сюди код для імпорту..."></textarea>
 
             <div id="syncMessage" class="text-sm font-bold h-5 mb-4 text-green-500 hidden"></div>
 
@@ -109,7 +111,6 @@
             textArea.value = '';
             messageBox.classList.add('hidden');
             overlay.classList.remove('hidden');
-            // Маленька затримка для плавного CSS-переходу
             setTimeout(() => {
                 overlay.classList.remove('opacity-0');
                 modal.classList.remove('scale-95', 'opacity-0');
@@ -128,7 +129,6 @@
             const appData = {};
             let hasData = false;
             
-            // Збираємо всі ключі, які стосуються нашого тренажера
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i);
                 if (key.startsWith('frenchVerbs')) {
@@ -138,18 +138,17 @@
             }
 
             if (!hasData) {
-                showMessage("Немає даних для експорту (ви ще не грали)", true);
+                showMessage("Немає даних для експорту", true);
                 return;
             }
 
             try {
-                // Перетворюємо в JSON і шифруємо в Base64 для безпечної передачі через месенджери
+                // Використовуємо LZString для сильного стиснення
                 const jsonStr = JSON.stringify(appData);
-                const base64Str = btoa(encodeURIComponent(jsonStr));
+                const compressedBase64 = LZString.compressToBase64(jsonStr);
                 
-                textArea.value = base64Str;
+                textArea.value = compressedBase64;
                 
-                // Копіюємо в буфер обміну
                 textArea.select();
                 document.execCommand('copy');
                 showMessage("Код згенеровано та скопійовано!");
@@ -160,19 +159,20 @@
         }
 
         function importProgress() {
-            const base64Str = textArea.value.trim();
-            if (!base64Str) {
+            const compressedBase64 = textArea.value.trim();
+            if (!compressedBase64) {
                 showMessage("Спочатку вставте код в поле!", true);
                 return;
             }
 
             try {
-                // Дешифруємо
-                const jsonStr = decodeURIComponent(atob(base64Str));
+                // Розпаковуємо LZString
+                const jsonStr = LZString.decompressFromBase64(compressedBase64);
+                if (!jsonStr) throw new Error("Не вдалося розпакувати дані");
+
                 const appData = JSON.parse(jsonStr);
 
                 let importedCount = 0;
-                // Записуємо дані назад у localStorage
                 for (const key in appData) {
                     if (key.startsWith('frenchVerbs')) {
                         localStorage.setItem(key, appData[key]);
@@ -182,7 +182,7 @@
 
                 if (importedCount > 0) {
                     showMessage("Успішно імпортовано! Можете закривати.");
-                    textArea.value = ''; // очищаємо після успіху
+                    textArea.value = ''; 
                 } else {
                     showMessage("Код не містить даних тренажера", true);
                 }
@@ -192,7 +192,6 @@
             }
         }
 
-        // Закриття по кліку поза модалкою
         overlay.addEventListener('click', (e) => {
             if (e.target === overlay) closeSyncModal();
         });
