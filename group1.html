@@ -69,9 +69,15 @@
 
         <div class="flex justify-between w-full mb-4 px-2 border-b border-slate-100 pb-3 items-end">
             <h3 class="text-base sm:text-lg font-black text-slate-700 uppercase tracking-widest m-0">Пастки 1-ї групи</h3>
-            <div class="flex gap-3 sm:gap-4">
-                <button onclick="toggleAllVerbs(true)" class="text-xs sm:text-sm font-bold text-indigo-500 hover:text-indigo-700 uppercase tracking-wide">Всі</button>
-                <button onclick="toggleAllVerbs(false)" class="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wide">Скинути</button>
+            <div class="flex flex-col sm:flex-row items-end sm:items-center gap-2 sm:gap-4">
+                <label class="flex items-center gap-2 cursor-pointer bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+                    <input type="checkbox" id="includeLearnedCb" class="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" onchange="saveSetup()">
+                    <span class="text-xs sm:text-sm font-bold text-slate-600">Включати вивчені</span>
+                </label>
+                <div class="flex gap-3 sm:gap-4">
+                    <button onclick="toggleAllVerbs(true)" class="text-xs sm:text-sm font-bold text-indigo-500 hover:text-indigo-700 uppercase tracking-wide">Всі</button>
+                    <button onclick="toggleAllVerbs(false)" class="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wide">Скинути</button>
+                </div>
             </div>
         </div>
 
@@ -149,7 +155,13 @@
         <div class="w-full bg-slate-100 rounded-full h-4 mb-2">
             <div id="accuracyBar" class="bg-indigo-500 h-4 rounded-full" style="width: 0%"></div>
         </div>
-        <p class="text-indigo-700 font-bold mb-8">Точність: <span id="accuracyText">0%</span></p>
+        <p class="text-indigo-700 font-bold mb-4">Точність: <span id="accuracyText">0%</span></p>
+
+        <!-- Блок для списку помилок -->
+        <div id="mistakesListContainer" class="hidden w-full mb-6 text-left border-t border-slate-200 pt-4">
+            <h3 class="text-sm font-black text-slate-700 uppercase mb-3 text-center">Помилки в раунді:</h3>
+            <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2"></div>
+        </div>
 
         <button onclick="startSession()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">Наступна сесія</button>
         <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm sm:text-base uppercase">В меню</button>
@@ -205,7 +217,7 @@
         function getSavedSetup() {
             const saved = localStorage.getItem('frenchVerbsSetupGroup1'); 
             if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: [], tenses: ['present', 'passe', 'futur'] };
+            return { verbs: [], tenses: ['present', 'passe', 'futur'], includeLearned: false };
         }
 
         function saveSetup() {
@@ -213,7 +225,8 @@
             const verbs = Array.from(verbCb).filter(cb => cb.checked).map(cb => cb.value);
             const tenseCb = document.querySelectorAll('.tense-checkbox');
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
-            localStorage.setItem('frenchVerbsSetupGroup1', JSON.stringify({ verbs, tenses }));
+            const includeLearned = document.getElementById('includeLearnedCb') ? document.getElementById('includeLearnedCb').checked : false;
+            localStorage.setItem('frenchVerbsSetupGroup1', JSON.stringify({ verbs, tenses, includeLearned }));
         }
 
         function getSRSMemory() {
@@ -221,13 +234,16 @@
             return mem ? JSON.parse(mem) : {};
         }
 
-        function updateSRSCard(cardId, isCorrect) {
+        function updateSRSCard(cardId, isCorrect, isFirstAttempt) {
             let memory = getSRSMemory();
-            if (!memory[cardId]) memory[cardId] = { errors: 0 };
-            if (isCorrect) {
+            if (!memory[cardId]) memory[cardId] = { errors: 0, streak: 0 };
+            
+            if (isCorrect && isFirstAttempt) {
                 memory[cardId].errors = Math.max(0, memory[cardId].errors - 1);
-            } else {
+                memory[cardId].streak = (memory[cardId].streak || 0) + 1;
+            } else if (!isCorrect) {
                 memory[cardId].errors += 2;
+                memory[cardId].streak = 0;
             }
             localStorage.setItem('frenchVerbsSRS_G1', JSON.stringify(memory));
         }
@@ -238,6 +254,9 @@
             
             const savedSetup = getSavedSetup();
             document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
+            
+            const includeLearnedCb = document.getElementById('includeLearnedCb');
+            if(includeLearnedCb) includeLearnedCb.checked = savedSetup.includeLearned || false;
 
             const groupedVerbs = {};
             rawData.forEach(verb => {
@@ -245,8 +264,8 @@
                 groupedVerbs[verb.category].push(verb);
             });
 
-            // Якщо збережених дієслів немає (перший вхід), вибираємо всі
             const initialVerbs = savedSetup.verbs.length > 0 ? savedSetup.verbs : rawData.map(v => v.infFr);
+            const srsMemory = getSRSMemory();
 
             Object.keys(groupedVerbs).forEach(category => {
                 const categoryDiv = document.createElement('div');
@@ -258,13 +277,32 @@
 
                 groupedVerbs[category].forEach(verbObj => {
                     const isChecked = initialVerbs.includes(verbObj.infFr); 
+                    
+                    let totalForms = 0;
+                    let learnedForms = 0;
+                    ['present', 'passe', 'futur'].forEach(tense => {
+                        if(verbObj[tense]) {
+                            verbObj[tense].forEach(f => {
+                                totalForms++;
+                                const cardId = `G1_${verbObj.infFr}_${tense}_${f.p}`;
+                                if(srsMemory[cardId] && srsMemory[cardId].streak >= 2) learnedForms++;
+                            });
+                        }
+                    });
+                    const progressPercent = totalForms > 0 ? (learnedForms / totalForms) * 100 : 0;
+                    const isFullyLearned = totalForms > 0 && learnedForms === totalForms;
+                    const cardBg = isFullyLearned ? 'bg-green-50/50' : 'bg-white';
+
                     const label = document.createElement('label');
                     label.className = "cursor-pointer relative block h-full";
                     label.innerHTML = `
                         <input type="checkbox" value="${verbObj.infFr}" class="verb-checkbox custom-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSetup()">
-                        <div class="h-full px-2 py-2 sm:px-3 sm:py-3 rounded-xl border-2 border-slate-200 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 bg-white shadow-sm">
+                        <div class="h-full px-2 py-2 sm:px-3 sm:py-3 rounded-xl border-2 border-slate-200 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 ${cardBg} shadow-sm">
                             <span class="font-bold text-sm sm:text-lg mb-0.5 sm:mb-1">${verbObj.infFr}</span>
-                            <span class="translation-text text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight">${verbObj.infUk}</span>
+                            <span class="translation-text text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight mb-1">${verbObj.infUk}</span>
+                            <div class="w-full bg-slate-200 h-1 rounded-full overflow-hidden mt-auto">
+                                <div class="bg-green-400 h-1 rounded-full transition-all" style="width: ${progressPercent}%"></div>
+                            </div>
                         </div>`;
                     grid.appendChild(label);
                 });
@@ -293,7 +331,7 @@
         const SESSION_LENGTH = 15;
         let sessionQueue = [];
         let currentCard = null;
-        let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0 };
+        let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
         let unmasteredCards = [];
         let frVoice = null;
 
@@ -309,6 +347,7 @@
 
             const selectedVerbs = Array.from(verbCb).map(cb => cb.value);
             const selectedTenses = Array.from(tenseCb).map(cb => cb.value);
+            const includeLearned = document.getElementById('includeLearnedCb') ? document.getElementById('includeLearnedCb').checked : false;
             const tenseNames = { "present": "Présent", "passe": "Passé Composé", "futur": "Futur Simple" };
             const srsMemory = getSRSMemory();
             
@@ -320,9 +359,12 @@
                             const conjugationTable = verbObj[tenseKey].map(f => (f.p.endsWith("'") ? f.p : f.p + " ") + f.v);
                             verbObj[tenseKey].forEach(form => {
                                 const cardId = `G1_${verbObj.infFr}_${tenseKey}_${form.p}`;
-                                const weight = srsMemory[cardId] ? srsMemory[cardId].errors : 0;
+                                const memory = srsMemory[cardId] || { errors: 0, streak: 0 };
+                                
+                                if (!includeLearned && memory.streak >= 2) return; // Пропускаємо вивчені
+
                                 allDatabaseCards.push({
-                                    id: cardId, weight: weight, infFr: verbObj.infFr, infUk: verbObj.infUk,
+                                    id: cardId, weight: memory.errors, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
                                     tenseKey: tenseKey, tenseName: tenseNames[tenseKey],
                                     prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u,
                                     rule: tenseExplanations[tenseKey] + "<br><br>" + (verbRules[verbObj.infFr] || ""),
@@ -333,6 +375,12 @@
                     });
                 }
             });
+
+            if (allDatabaseCards.length === 0) {
+                alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉\nУвімкніть галочку 'Включати вивчені' (зверху), щоб повторити їх.");
+                return;
+            }
+
             unmasteredCards = [...allDatabaseCards];
             startSession();
         }
@@ -382,7 +430,7 @@
             shuffle(sessionQueue);
             sessionQueue.forEach(card => card.mistakesThisSession = 0);
             
-            sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0 };
+            sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
             updateUIStats();
             loadNextCard();
         }
@@ -442,7 +490,7 @@
                 input.className = "verb-input font-bold text-green-600 border-green-500";
                 
                 playCurrentAudio();
-                updateSRSCard(currentCard.id, true);
+                updateSRSCard(currentCard.id, true, currentCard.mistakesThisSession === 0);
 
                 const finishedCard = sessionQueue.shift();
                 if (currentCard.mistakesThisSession === 0) sessionStats.flawless++;
@@ -451,8 +499,22 @@
                 
                 if (finishedCard.mistakesThisSession > 0) unmasteredCards.push(finishedCard);
             } else {
-                sessionStats.totalErrors++; sessionStats.mistakes++; currentCard.mistakesThisSession++;
-                updateSRSCard(currentCard.id, false);
+                sessionStats.totalErrors++; sessionStats.mistakes++; 
+                
+                // Зберігаємо інформацію про помилку для списку в кінці (тільки першу помилку)
+                if (currentCard.mistakesThisSession === 0) {
+                    sessionStats.mistakesList.push({
+                        prefix: currentCard.prefix,
+                        verb: currentCard.verb,
+                        userVerb: userVerb,
+                        suffix: currentCard.suffix,
+                        inf: currentCard.infFr,
+                        tense: currentCard.tenseName
+                    });
+                }
+                
+                currentCard.mistakesThisSession++;
+                updateSRSCard(currentCard.id, false, false);
                 
                 input.value = currentCard.verb; 
                 feedbackText.innerHTML = `Помилка. Треба: <span class="text-indigo-600 font-black">${currentCard.verb}</span>`;
@@ -485,6 +547,30 @@
             const bar = document.getElementById('accuracyBar');
             bar.style.width = accuracy + '%';
             bar.className = accuracy >= 90 ? "bg-green-500 h-4 rounded-full" : (accuracy >= 70 ? "bg-yellow-500 h-4 rounded-full" : "bg-red-500 h-4 rounded-full");
+
+            // --- Відображення списку помилок ---
+            const mistakesContainer = document.getElementById('mistakesListContainer');
+            const mistakesListEl = document.getElementById('mistakesList');
+            mistakesListEl.innerHTML = '';
+            
+            if (sessionStats.mistakesList.length > 0) {
+                mistakesContainer.classList.remove('hidden');
+                sessionStats.mistakesList.forEach(m => {
+                    const prefixSpace = m.prefix.endsWith("'") ? m.prefix : m.prefix + " ";
+                    const html = `
+                        <div class="bg-red-50 p-3 rounded-xl border border-red-100 text-sm shadow-sm">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-slate-700">${m.inf} <span class="text-[10px] font-bold text-slate-400 uppercase">(${m.tense})</span></span>
+                            </div>
+                            <div class="text-slate-500 line-through decoration-red-400">${prefixSpace}<span class="text-red-500 font-bold">${m.userVerb}</span> ${m.suffix}</div>
+                            <div class="text-slate-800 font-medium">${prefixSpace}<span class="text-green-600 font-black">${m.verb}</span> ${m.suffix}</div>
+                        </div>
+                    `;
+                    mistakesListEl.insertAdjacentHTML('beforeend', html);
+                });
+            } else {
+                mistakesContainer.classList.add('hidden');
+            }
         }
 
         function toggleRule() {
