@@ -103,11 +103,11 @@
             <!-- Сесія -->
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Сесія</span>
-                <span id="sessionCounter" class="text-xs sm:text-sm font-black text-teal-600">1/15</span>
+                <span id="sessionCounter" class="text-xs sm:text-sm font-black text-teal-600">1/10</span>
             </div>
             <!-- Залишок у колоді -->
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
-                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Залишилось</span>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Вивчити</span>
                 <span id="globalDeckCounter" class="text-xs sm:text-sm font-black text-slate-500">?</span>
             </div>
             <!-- Прогрес (Точки) -->
@@ -333,7 +333,7 @@
         }
 
         let allDatabaseCards = [];
-        const SESSION_LENGTH = 15;
+        const SESSION_LENGTH = 10;
         let sessionQueue = [];
         let currentCard = null;
         let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
@@ -456,7 +456,7 @@
             
             // Залишилось: рахуємо тільки ті, що ще не вивчені до кінця (streak < 2)
             const remainingCount = unmasteredCards.length + sessionQueue.length + (currentCard && currentCard.streak < 2 ? 1 : 0);
-            document.getElementById('globalDeckCounter').innerText = `${remainingCount} / ${initialDeckSize}`;
+            document.getElementById('globalDeckCounter').innerText = remainingCount;
         }
 
         function loadNextCard() {
