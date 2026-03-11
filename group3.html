@@ -20,7 +20,6 @@
             transition: all 0.2s;
             font-size: 1.5rem; 
         }
-        /* Змінено на приємний бірюзовий */
         .verb-input:focus { outline: none; border-bottom-color: #0d9488; } 
         .verb-input:disabled { background-color: transparent; }
         .custom-checkbox:checked + div { background-color: #0d9488; color: white; border-color: #0d9488; }
@@ -38,7 +37,7 @@
                 <span class="font-bold hidden sm:inline">В лобі</span>
             </a>
             <h1 class="text-2xl sm:text-3xl font-black text-slate-800">3 Група (Винятки)</h1>
-            <div class="w-6"></div> <!-- Spacer for centering -->
+            <div class="w-6"></div>
         </div>
         
         <p class="text-slate-500 mb-6 text-sm sm:text-base">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
@@ -71,7 +70,6 @@
         <div class="flex flex-col sm:flex-row justify-between w-full mb-4 px-2 border-b border-slate-100 pb-4 items-start sm:items-end gap-3 sm:gap-0">
             <h3 class="text-base sm:text-lg font-black text-slate-700 uppercase tracking-widest m-0">Дієслова 3-ї групи</h3>
             
-            <!-- Оновлені кнопки меню: Сітка для мобільного, рядок для ПК -->
             <div class="grid grid-cols-2 sm:flex sm:flex-row gap-2 w-full sm:w-auto mt-1 sm:mt-0">
                 <label class="flex items-center justify-center gap-2 cursor-pointer bg-slate-100 hover:bg-slate-200 px-3 py-2.5 sm:py-2 rounded-xl border border-slate-200 transition-colors">
                     <input type="checkbox" id="includeLearnedCb" class="w-4 h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500" onchange="saveSetup()">
@@ -100,25 +98,37 @@
             </svg>
         </button>
 
-        <div class="flex justify-between w-full mb-4 sm:mb-6 items-center pl-8 sm:pl-10">
-            <span class="text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-widest">Сесія: <span id="sessionCounter" class="text-teal-500">1/15</span></span>
-            <span class="text-[10px] sm:text-xs font-bold text-slate-300 uppercase tracking-widest text-center">Залишок: <br><span id="globalDeckCounter" class="text-slate-500">?</span></span>
-            <span class="text-xs sm:text-sm font-bold text-red-400 uppercase tracking-widest">Помилок: <span id="mistakeCounter">0</span></span>
-        </div>
-
-        <div class="flex flex-col items-center justify-center w-full mb-4 sm:mb-6 min-h-[12rem] sm:min-h-[16rem]">
-            <div class="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4 flex-wrap">
-                <span id="infinitiveHint" class="text-[10px] sm:text-xs text-slate-600 font-bold bg-slate-200 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm"></span>
-                <span id="tenseHint" class="text-[10px] sm:text-xs text-white font-black bg-teal-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm"></span>
-                
-                <!-- Кружечки прогресу -->
-                <div class="flex gap-1.5 items-center bg-slate-100 px-2 py-1.5 rounded-full border border-slate-200 shadow-inner ml-1">
-                    <div id="streakDot1" class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-slate-300 transition-colors duration-300"></div>
-                    <div id="streakDot2" class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-slate-300 transition-colors duration-300"></div>
+        <!-- НОВА ВЕРХНЯ ПАНЕЛЬ СТАТИСТИКИ (Замість старого тексту) -->
+        <div class="grid grid-cols-4 gap-2 w-full mb-8 sm:mb-12 px-1 sm:px-6 mt-10 sm:mt-0">
+            <!-- Сесія -->
+            <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Сесія</span>
+                <span id="sessionCounter" class="text-xs sm:text-sm font-black text-teal-600">1/15</span>
+            </div>
+            <!-- Залишок у колоді -->
+            <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Всього</span>
+                <span id="globalDeckCounter" class="text-xs sm:text-sm font-black text-slate-500">?</span>
+            </div>
+            <!-- Прогрес (Точки) -->
+            <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Прогрес</span>
+                <div class="flex gap-1.5 items-center mt-0.5">
+                    <div id="streakDot1" class="w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                    <div id="streakDot2" class="w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
                 </div>
             </div>
+            <!-- Помилки -->
+            <div class="flex flex-col items-center justify-center bg-red-50 border border-red-100 rounded-xl py-2 shadow-sm">
+                <span class="text-[9px] sm:text-[10px] font-bold text-red-400 uppercase tracking-widest mb-1">Помилки</span>
+                <span id="mistakeCounter" class="text-xs sm:text-sm font-black text-red-500">0</span>
+            </div>
+        </div>
+
+        <!-- ЦЕНТРАЛЬНА ЧАСТИНА (Абсолютний мінімалізм) -->
+        <div class="flex flex-col items-center justify-center w-full mb-6 sm:mb-8 min-h-[10rem] sm:min-h-[12rem]">
             
-            <span id="wordDisplay" class="text-xl sm:text-3xl font-bold text-slate-800 mb-6 sm:mb-8 mt-1">???</span>
+            <span id="wordDisplay" class="text-2xl sm:text-4xl font-black text-slate-800 mb-8 sm:mb-10 text-center leading-tight">???</span>
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
@@ -126,24 +136,24 @@
                 <span id="suffixDisplay"></span>
             </div>
 
-            <div id="feedbackContainer" class="hidden flex flex-col items-center mt-6 w-full">
-                <span id="feedbackDisplay" class="text-lg sm:text-2xl font-bold mb-2"></span>
-                <button onclick="playCurrentAudio()" class="p-2 sm:p-3 bg-teal-100 hover:bg-teal-200 text-teal-700 rounded-full transition-colors focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.236l4.328 4.328a2 2 0 003.436-1.414V5.086a2 2 0 00-3.436-1.414L9.236 8H7a2 2 0 00-2 2z" /></svg>
+            <div id="feedbackContainer" class="hidden flex flex-col items-center mt-8 w-full">
+                <span id="feedbackDisplay" class="text-lg sm:text-2xl font-bold mb-3"></span>
+                <button onclick="playCurrentAudio()" class="p-3 sm:p-4 bg-teal-100 hover:bg-teal-200 text-teal-700 rounded-full transition-colors focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.236l4.328 4.328a2 2 0 003.436-1.414V5.086a2 2 0 00-3.436-1.414L9.236 8H7a2 2 0 00-2 2z" /></svg>
                 </button>
             </div>
         </div>
 
-        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
+        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Перевірити
         </button>
-        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
+        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
         <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
-        <div id="ruleBox" class="hidden mt-3 p-4 bg-teal-50 rounded-2xl border border-teal-100 text-left text-xs sm:text-sm text-teal-900 w-full shadow-inner"></div>
+        <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left text-sm text-teal-900 w-full shadow-inner"></div>
     </div>
 
     <!-- ЕКРАН 3: СТАТИСТИКА -->
@@ -182,7 +192,7 @@
             "futur": "Futur Simple: До інфінітива (без кінцевого -e) додаються закінчення -ai, -as, -a, -ons, -ez, -ont. У деяких дієслів корінь повністю змінюється (être -> ser-, avoir -> aur-, aller -> ir-)."
         };
 
-        const verbRules = {}; // Для 3-ї групи правила надто індивідуальні, тому залишаємо порожнім або можна додати за бажанням
+        const verbRules = {}; 
 
         let rawData = [];
 
@@ -372,7 +382,7 @@
             });
 
             if (allDatabaseCards.length === 0) {
-                alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉\nУвімкніть галочку 'Включати вивчені' (зверху), щоб повторити їх.");
+                alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉\nУвімкніть галочку 'Вивчені' (зверху), щоб повторити їх.");
                 return;
             }
 
@@ -442,14 +452,7 @@
             currentCard = sessionQueue[0];
             updateUIStats();
 
-            document.getElementById('infinitiveHint').innerText = `${currentCard.infFr} — ${currentCard.infUk}`;
-            const tenseHint = document.getElementById('tenseHint');
-            tenseHint.innerText = currentCard.tenseName;
-            if (currentCard.tenseKey === 'present') tenseHint.className = "text-[10px] sm:text-xs text-slate-700 font-black bg-slate-200 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
-            if (currentCard.tenseKey === 'passe') tenseHint.className = "text-[10px] sm:text-xs text-white font-black bg-amber-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
-            if (currentCard.tenseKey === 'futur') tenseHint.className = "text-[10px] sm:text-xs text-white font-black bg-teal-500 px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-sm";
-
-            // Логіка оновлення кружечків (Streak dots)
+            // Логіка оновлення кружечків у новій верхній панелі
             const dot1 = document.getElementById('streakDot1');
             const dot2 = document.getElementById('streakDot2');
             const currentStreak = currentCard.streak || 0;
@@ -497,7 +500,6 @@
                 playCurrentAudio();
                 updateSRSCard(currentCard.id, true, currentCard.mistakesThisSession === 0);
 
-                // Зафарбовуємо кружечки з анімацією
                 const newStreak = (currentCard.streak || 0) + 1;
                 if (newStreak >= 1) dot1.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
                 if (newStreak >= 2) dot2.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
@@ -525,7 +527,6 @@
                 currentCard.mistakesThisSession++;
                 updateSRSCard(currentCard.id, false, false);
                 
-                // Скидаємо кружечки в сірий колір
                 dot1.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-slate-300 transition-colors duration-300";
                 dot2.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-slate-300 transition-colors duration-300";
 
@@ -590,9 +591,17 @@
             const ruleBtn = document.getElementById('ruleToggleBtn');
             if (ruleBox.classList.contains('hidden')) {
                 const ruleText = currentCard ? currentCard.rule : "";
-                let html = `<p class="font-medium leading-relaxed">${ruleText}</p>`;
+                
+                // Додаємо інформацію про інфінітив та час у шапку правила
+                let html = `
+                    <div class="mb-4 pb-3 border-b border-teal-200">
+                        <p class="font-black text-teal-800 text-lg mb-1">${currentCard.infFr} <span class="text-teal-600 font-medium text-sm">— ${currentCard.infUk}</span></p>
+                        <p class="font-bold text-xs text-teal-600 uppercase tracking-wider">${currentCard.tenseName}</p>
+                    </div>
+                    <p class="font-medium leading-relaxed">${ruleText}</p>`;
+                    
                 if (currentCard && currentCard.allForms) {
-                    html += `<div class="mt-3 grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-3 sm:gap-y-2 text-slate-700 bg-white p-2 sm:p-3 rounded-xl border border-teal-100 shadow-sm font-medium">
+                    html += `<div class="mt-4 grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-3 sm:gap-y-2 text-slate-700 bg-white p-3 rounded-xl border border-teal-100 shadow-sm font-medium">
                                 ${currentCard.allForms.map(f => `<div>${f}</div>`).join('')}
                             </div>`;
                 }
@@ -611,7 +620,6 @@
 
         async function bootApp() {
             try {
-                // Група 3 використовує файл data.json
                 const response = await fetch('./data.json');
                 if (!response.ok) throw new Error("Файл data.json не знайдено");
                 rawData = await response.json();
