@@ -46,19 +46,19 @@
             <h3 class="text-base sm:text-lg font-black text-slate-700 mb-3 uppercase tracking-widest">Часи</h3>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="saveSetup()">
+                    <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="onTenseChange()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Présent
                     </div>
                 </label>
                 <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="saveSetup()">
+                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="onTenseChange()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Passé Composé
                     </div>
                 </label>
                 <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="saveSetup()">
+                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="onTenseChange()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Futur Simple
                     </div>
@@ -218,7 +218,8 @@
         function getSavedSetup() {
             const saved = localStorage.getItem('frenchVerbsSetupGroup1'); 
             if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: [], tenses: ['present', 'passe', 'futur'], includeLearned: false };
+            // null замість [] означає, що це перший вхід (щоб вибрати всі слова)
+            return { verbs: null, tenses: ['present', 'passe', 'futur'], includeLearned: false };
         }
 
         function saveSetup() {
@@ -228,6 +229,12 @@
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
             const includeLearned = document.getElementById('includeLearnedCb') ? document.getElementById('includeLearnedCb').checked : false;
             localStorage.setItem('frenchVerbsSetupGroup1', JSON.stringify({ verbs, tenses, includeLearned }));
+        }
+
+        // Нова функція: зберігає і одразу оновлює інтерфейс помилок
+        function onTenseChange() {
+            saveSetup();
+            initSetupScreen(); 
         }
 
         function getSRSMemory() {
@@ -265,8 +272,10 @@
                 groupedVerbs[verb.category].push(verb);
             });
 
-            const initialVerbs = savedSetup.verbs.length > 0 ? savedSetup.verbs : rawData.map(v => v.infFr);
+            const initialVerbs = savedSetup.verbs !== null ? savedSetup.verbs : rawData.map(v => v.infFr);
             const srsMemory = getSRSMemory();
+            // Беремо лише ті часи, які зараз вибрані галочками
+            const selectedTenses = savedSetup.tenses;
 
             Object.keys(groupedVerbs).forEach(category => {
                 const categoryDiv = document.createElement('div');
@@ -282,7 +291,9 @@
                     let totalForms = 0;
                     let learnedForms = 0;
                     let verbErrors = 0;
-                    ['present', 'passe', 'futur'].forEach(tense => {
+                    
+                    // Рахуємо помилки ТІЛЬКИ для обраних часів, а не для всіх трьох жорстко
+                    selectedTenses.forEach(tense => {
                         if(verbObj[tense]) {
                             verbObj[tense].forEach(f => {
                                 totalForms++;
@@ -294,6 +305,7 @@
                             });
                         }
                     });
+                    
                     const progressPercent = totalForms > 0 ? (learnedForms / totalForms) * 100 : 0;
                     const isFullyLearned = totalForms > 0 && learnedForms === totalForms;
                     const cardBg = isFullyLearned ? 'bg-green-50/50' : 'bg-white';
