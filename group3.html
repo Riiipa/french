@@ -107,7 +107,7 @@
             </div>
             <!-- Залишок у колоді -->
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
-                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Всього</span>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Залишилось</span>
                 <span id="globalDeckCounter" class="text-xs sm:text-sm font-black text-slate-500">?</span>
             </div>
             <!-- Прогрес (Точки) -->
@@ -339,6 +339,7 @@
         let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
         let unmasteredCards = [];
         let frVoice = null;
+        let initialDeckSize = 0; // NEW: Відстежуємо початковий розмір колоди
 
         function initSessionFromSetup() {
             const verbCb = document.querySelectorAll('.verb-checkbox:checked');
@@ -386,6 +387,7 @@
                 return;
             }
 
+            initialDeckSize = allDatabaseCards.length;
             unmasteredCards = [...allDatabaseCards];
             startSession();
         }
@@ -425,8 +427,15 @@
             document.getElementById('trainingScreen').classList.remove('hidden');
             
             if (unmasteredCards.length === 0) {
-                unmasteredCards = [...allDatabaseCards];
-                if (sessionStats.completed > 0) alert("Усі картки пройдено. Починаємо нове коло.");
+                // Перевіряємо, чи залишились не до кінця вивчені слова у всій базі
+                const remaining = allDatabaseCards.filter(c => c.streak < 2);
+                if (remaining.length === 0) {
+                    alert("Всі слова повністю вивчені! 🎉");
+                    returnToSetup();
+                    return;
+                }
+                unmasteredCards = [...remaining];
+                if (sessionStats.completed > 0) alert("Починаємо нове коло для закріплення слів!");
             }
             
             unmasteredCards.sort((a, b) => (b.weight - a.weight) || (Math.random() - 0.5));
@@ -444,7 +453,10 @@
             const curTot = sessionStats.completed + sessionQueue.length + (currentCard ? 1 : 0);
             document.getElementById('sessionCounter').innerText = `${sessionStats.completed + 1}/${curTot || SESSION_LENGTH}`;
             document.getElementById('mistakeCounter').innerText = sessionStats.totalErrors;
-            document.getElementById('globalDeckCounter').innerText = unmasteredCards.length + sessionQueue.length + (currentCard ? 1 : 0);
+            
+            // Залишилось: рахуємо тільки ті, що ще не вивчені до кінця (streak < 2)
+            const remainingCount = unmasteredCards.length + sessionQueue.length + (currentCard && currentCard.streak < 2 ? 1 : 0);
+            document.getElementById('globalDeckCounter').innerText = `${remainingCount} / ${initialDeckSize}`;
         }
 
         function loadNextCard() {
@@ -498,18 +510,30 @@
                 input.className = "verb-input font-bold text-green-600 border-green-500";
                 
                 playCurrentAudio();
-                updateSRSCard(currentCard.id, true, currentCard.mistakesThisSession === 0);
+                const isFirstAttempt = currentCard.mistakesThisSession === 0;
+                updateSRSCard(currentCard.id, true, isFirstAttempt);
 
-                const newStreak = (currentCard.streak || 0) + 1;
+                // Оновлюємо локальний streak для поточного слова
+                if (isFirstAttempt) {
+                    currentCard.streak = (currentCard.streak || 0) + 1;
+                }
+
+                const newStreak = currentCard.streak || 0;
                 if (newStreak >= 1) dot1.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
                 if (newStreak >= 2) dot2.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
 
                 const finishedCard = sessionQueue.shift();
-                if (currentCard.mistakesThisSession === 0) sessionStats.flawless++;
-                currentCard = null; 
+                if (isFirstAttempt) sessionStats.flawless++;
+                
+                // ВАЖЛИВО: Не зануляємо currentCard тут, щоб працювало "Показати правило"
                 sessionStats.completed++;
                 
-                if (finishedCard.mistakesThisSession > 0) unmasteredCards.push(finishedCard);
+                // Якщо слово ще не має 2 точок, повертаємо його в глобальну колоду
+                if (finishedCard.streak < 2) {
+                    unmasteredCards.push(finishedCard);
+                }
+                
+                updateUIStats(); // Миттєво оновлюємо лічильник "Залишилось" (він зменшиться, якщо отримали 2 точки)
             } else {
                 sessionStats.totalErrors++; sessionStats.mistakes++; 
                 
@@ -526,6 +550,7 @@
                 
                 currentCard.mistakesThisSession++;
                 updateSRSCard(currentCard.id, false, false);
+                currentCard.streak = 0; // Скидаємо локальний streak
                 
                 dot1.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-slate-300 transition-colors duration-300";
                 dot2.className = "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-slate-300 transition-colors duration-300";
@@ -546,7 +571,10 @@
             nextBtn.focus();
         }
 
-        function nextTask() { loadNextCard(); }
+        function nextTask() { 
+            currentCard = null; // Зануляємо картку ТІЛЬКИ перед переходом далі
+            loadNextCard(); 
+        }
 
         function showStatsScreen() {
             document.getElementById('trainingScreen').classList.add('hidden');
