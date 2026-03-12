@@ -310,6 +310,9 @@
                 memory[cardId].errors += 2;
                 memory[cardId].streak = 0;
             }
+            // Якщо isCorrect == true, але isFirstAttempt == false (наприклад, використовувалась підказка), 
+            // то ми не змінюємо errors і не збільшуємо streak (нейтрально).
+            
             localStorage.setItem('frenchVerbsSRS_G3', JSON.stringify(memory));
         }
 
@@ -521,7 +524,10 @@
             sessionTargetSize = cardsToTake; 
             sessionQueue = unmasteredCards.splice(0, cardsToTake);
             shuffle(sessionQueue);
-            sessionQueue.forEach(card => card.mistakesThisSession = 0);
+            sessionQueue.forEach(card => {
+                card.mistakesThisSession = 0;
+                card.ruleShown = false; // Скидаємо прапорець використання підказки
+            });
             
             sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
             updateUIStats();
@@ -585,15 +591,28 @@
             const dot2 = document.getElementById('streakDot2');
 
             if (userVerb === correctVerb) {
-                feedbackText.innerText = "Ідеально ✓";
-                feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
-                input.className = "verb-input font-bold text-green-600 border-green-500";
+                const isFirstAttempt = currentCard.mistakesThisSession === 0;
+                const usedHint = currentCard.ruleShown;
+                const isFlawless = isFirstAttempt && !usedHint; // Ідеально = без помилок І без підказок
+
+                if (isFlawless) {
+                    feedbackText.innerText = "Ідеально ✓";
+                    feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
+                    input.className = "verb-input font-bold text-green-600 border-green-500";
+                } else if (usedHint && isFirstAttempt) {
+                    feedbackText.innerText = "З підказкою ✓";
+                    feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-amber-500 pop-animation";
+                    input.className = "verb-input font-bold text-amber-500 border-amber-500";
+                } else {
+                    feedbackText.innerText = "Правильно ✓";
+                    feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
+                    input.className = "verb-input font-bold text-green-600 border-green-500";
+                }
                 
                 playCurrentAudio();
-                const isFirstAttempt = currentCard.mistakesThisSession === 0;
-                updateSRSCard(currentCard.id, true, isFirstAttempt);
+                updateSRSCard(currentCard.id, true, isFlawless);
 
-                if (isFirstAttempt) {
+                if (isFlawless) {
                     currentCard.streak = (currentCard.streak || 0) + 1;
                 }
 
@@ -602,7 +621,7 @@
                 if (newStreak >= 2) dot2.className = "w-2.5 h-2.5 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
 
                 const finishedCard = sessionQueue.shift();
-                if (isFirstAttempt) sessionStats.flawless++;
+                if (isFlawless) sessionStats.flawless++;
                 
                 sessionStats.completed++;
                 
@@ -693,6 +712,8 @@
             const ruleBox = document.getElementById('ruleBox');
             const ruleBtn = document.getElementById('ruleToggleBtn');
             if (ruleBox.classList.contains('hidden')) {
+                if (currentCard) currentCard.ruleShown = true; // Фіксуємо використання підказки
+                
                 const ruleText = currentCard ? currentCard.rule : "";
                 
                 let html = `
