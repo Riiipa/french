@@ -567,8 +567,9 @@
                 feedbackText.className = "text-lg sm:text-2xl mb-2 text-red-500 pop-animation";
                 input.className = "verb-input font-bold text-red-500 border-red-500";
 
-                const card = sessionQueue.shift();
-                sessionQueue.splice(Math.min(3, sessionQueue.length), 0, card);
+                // ЗМІНА ТУТ: Ми більше не робимо sessionQueue.shift().
+                // Картка залишається на першому місці в черзі. 
+                // Коли користувач натисне "Далі", вона завантажиться знову.
                 playCurrentAudio();
             }
 
