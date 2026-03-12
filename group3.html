@@ -100,7 +100,7 @@
                 <span class="font-bold text-sm sm:text-base hidden sm:inline">Назад</span>
             </button>
             <h2 class="text-lg sm:text-2xl font-black text-slate-800 uppercase tracking-widest">Вибір дієслів</h2>
-            <div class="w-6 sm:w-7"></div> <!-- Для балансу -->
+            <div class="w-6 sm:w-7"></div>
         </div>
 
         <!-- 3 Кнопки в ряд -->
@@ -110,7 +110,6 @@
             <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-2.5 sm:py-3 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
         </div>
 
-        <!-- Контейнер для списку (займає весь залишок висоти і скролиться) -->
         <div id="verbCategoriesContainer" class="w-full flex-1 overflow-y-auto px-1 sm:px-2 text-left mb-4 custom-scrollbar"></div>
 
         <button onclick="closeVerbSelection()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg tracking-widest uppercase shrink-0 mt-auto">
@@ -155,7 +154,22 @@
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <input type="text" id="userInput" name="verb_answer" class="verb-input text-teal-700 font-bold" autocomplete="nope" autocorrect="off" autocapitalize="none" spellcheck="false" data-form-type="other" data-lpignore="true">
+                <input
+                    type="text"
+                    id="userInput"
+                    class="verb-input text-teal-700 font-bold"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="none"
+                    autocomplete="off"
+                    spellcheck="false"
+                    data-form-type="other"
+                    data-lpignore="true"
+                    data-1p-ignore="true"
+                    data-bwignore="true"
+                    inputmode="text"
+                    role="presentation"
+                >
                 <span id="suffixDisplay"></span>
             </div>
 
@@ -198,7 +212,6 @@
         </div>
         <p class="text-teal-700 font-bold mb-4">Точність: <span id="accuracyText">0%</span></p>
 
-        <!-- Блок для списку помилок -->
         <div id="mistakesListContainer" class="hidden w-full mb-6 text-left border-t border-slate-200 pt-4">
             <h3 class="text-sm font-black text-slate-700 uppercase mb-3 text-center">Помилки в раунді:</h3>
             <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"></div>
@@ -239,7 +252,6 @@
             initSetupScreen(); 
         }
 
-        // --- НОВІ ФУНКЦІЇ ДЛЯ ЕКРАНУ ВИБОРУ ---
         function openVerbSelection() {
             document.getElementById('setupScreen').classList.add('hidden');
             document.getElementById('verbSelectionScreen').classList.remove('hidden');
@@ -256,7 +268,6 @@
             const checkedCount = Array.from(cbs).filter(cb => cb.checked).length;
             document.getElementById('selectedVerbsCount').innerText = `${checkedCount}/${cbs.length}`;
         }
-        // ----------------------------------------
 
         function getSRSMemory() {
             const mem = localStorage.getItem('frenchVerbsSRS_G3');
@@ -345,10 +356,8 @@
                 container.appendChild(categoryDiv);
             });
 
-            // Оновлюємо лічильник при старті
             updateSelectedVerbsCount();
 
-            // Переконуємось, що відкритий тільки головний екран лобі
             document.getElementById('setupScreen').classList.remove('hidden');
             document.getElementById('verbSelectionScreen').classList.add('hidden');
             document.getElementById('trainingScreen').classList.add('hidden');
@@ -411,7 +420,6 @@
                                 const cardId = `G3_${verbObj.infFr}_${tenseKey}_${form.p}`;
                                 const memory = srsMemory[cardId] || { errors: 0, streak: 0 };
                                 
-                                // Вивчені слова завжди приховуються автоматично
                                 if (memory.streak >= 2) return;
 
                                 allDatabaseCards.push({
@@ -539,7 +547,7 @@
             const input = document.getElementById('userInput');
             if (!input.value.trim()) return;
 
-            const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").trim();
+            const normalize = (str) => str.toLowerCase().replace(/['`]/g, "'").trim();
             const userVerb = normalize(input.value);
             const correctVerb = normalize(currentCard.verb);
 
