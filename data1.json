@@ -13,11 +13,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai mangé", "s": "une pomme", "u": "я з'їв яблуко" },
-      { "p": "nous", "v": "avons mangé", "s": "ensemble", "u": "ми поїли разом" }
+      { "p": "tu", "v": "as mangé", "s": "vite", "u": "ти поїв швидко" },
+      { "p": "il", "v": "a mangé", "s": "au resto", "u": "він поїв у ресторані" },
+      { "p": "nous", "v": "avons mangé", "s": "ensemble", "u": "ми поїли разом" },
+      { "p": "vous", "v": "avez mangé", "s": "tard", "u": "ви поїли пізно" },
+      { "p": "ils", "v": "ont mangé", "s": "beaucoup", "u": "вони поїли багато" }
     ],
     "futur": [
       { "p": "je", "v": "mangerai", "s": "une pomme", "u": "я з'їм яблуко" },
-      { "p": "nous", "v": "mangerons", "s": "ensemble", "u": "ми поїмо разом" }
+      { "p": "tu", "v": "mangeras", "s": "vite", "u": "ти з'їси швидко" },
+      { "p": "il", "v": "mangera", "s": "au resto", "u": "він поїсть у ресторані" },
+      { "p": "nous", "v": "mangerons", "s": "ensemble", "u": "ми поїмо разом" },
+      { "p": "vous", "v": "mangerez", "s": "tard", "u": "ви поїсте пізно" },
+      { "p": "ils", "v": "mangeront", "s": "beaucoup", "u": "вони поїдять багато" }
     ]
   },
   {
@@ -34,11 +42,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai changé", "s": "d'avis", "u": "я змінив думку" },
-      { "p": "nous", "v": "avons changé", "s": "de sujet", "u": "ми змінили тему" }
+      { "p": "tu", "v": "as changé", "s": "de train", "u": "ти пересів на інший потяг" },
+      { "p": "il", "v": "a changé", "s": "tout", "u": "він змінив усе" },
+      { "p": "nous", "v": "avons changé", "s": "de sujet", "u": "ми змінили тему" },
+      { "p": "vous", "v": "avez changé", "s": "d'adresse", "u": "ви змінили адресу" },
+      { "p": "ils", "v": "ont changé", "s": "les règles", "u": "вони змінили правила" }
     ],
     "futur": [
       { "p": "je", "v": "changerai", "s": "d'avis", "u": "я зміню думку" },
-      { "p": "nous", "v": "changerons", "s": "de sujet", "u": "ми змінимо тему" }
+      { "p": "tu", "v": "changeras", "s": "de train", "u": "ти пересядеш на інший потяг" },
+      { "p": "il", "v": "changera", "s": "tout", "u": "він змінить усе" },
+      { "p": "nous", "v": "changerons", "s": "de sujet", "u": "ми змінимо тему" },
+      { "p": "vous", "v": "changerez", "s": "d'adresse", "u": "ви зміните адресу" },
+      { "p": "ils", "v": "changeront", "s": "les règles", "u": "вони змінять правила" }
     ]
   },
   {
@@ -55,11 +71,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai commencé", "s": "à travailler", "u": "я почав працювати" },
-      { "p": "nous", "v": "avons commencé", "s": "la réunion", "u": "ми почали зустріч" }
+      { "p": "tu", "v": "as commencé", "s": "tôt", "u": "ти почав рано" },
+      { "p": "il", "v": "a commencé", "s": "le livre", "u": "він почав книгу" },
+      { "p": "nous", "v": "avons commencé", "s": "la réunion", "u": "ми почали зустріч" },
+      { "p": "vous", "v": "avez commencé", "s": "le projet", "u": "ви почали проект" },
+      { "p": "ils", "v": "ont commencé", "s": "à parler", "u": "вони почали говорити" }
     ],
     "futur": [
       { "p": "je", "v": "commencerai", "s": "à travailler", "u": "я почну працювати" },
-      { "p": "nous", "v": "commencerons", "s": "la réunion", "u": "ми почнемо зустріч" }
+      { "p": "tu", "v": "commenceras", "s": "tôt", "u": "ти почнеш рано" },
+      { "p": "il", "v": "commencera", "s": "le livre", "u": "він почне книгу" },
+      { "p": "nous", "v": "commencerons", "s": "la réunion", "u": "ми почнемо зустріч" },
+      { "p": "vous", "v": "commencerez", "s": "le projet", "u": "ви почнете проект" },
+      { "p": "ils", "v": "commenceront", "s": "à parler", "u": "вони почнуть говорити" }
     ]
   },
   {
@@ -68,15 +92,27 @@
     "infUk": "рухатися вперед",
     "present": [
       { "p": "j'", "v": "avance", "s": "lentement", "u": "я просуваюся повільно" },
-      { "p": "nous", "v": "avançons", "s": "vers le but", "u": "ми просуваємося до мети" }
+      { "p": "tu", "v": "avances", "s": "bien", "u": "ти просуваєшся добре" },
+      { "p": "il", "v": "avance", "s": "vite", "u": "він просувається швидко" },
+      { "p": "nous", "v": "avançons", "s": "vers le but", "u": "ми просуваємося до мети" },
+      { "p": "vous", "v": "avancez", "s": "prudemment", "u": "ви просуваєтеся обережно" },
+      { "p": "ils", "v": "avancent", "s": "ensemble", "u": "вони просуваються разом" }
     ],
     "passe": [
       { "p": "j'", "v": "ai avancé", "s": "lentement", "u": "я просунувся повільно" },
-      { "p": "nous", "v": "avons avancé", "s": "vers le but", "u": "ми просунулися до мети" }
+      { "p": "tu", "v": "as avancé", "s": "bien", "u": "ти просунувся добре" },
+      { "p": "il", "v": "a avancé", "s": "vite", "u": "він просунувся швидко" },
+      { "p": "nous", "v": "avons avancé", "s": "vers le but", "u": "ми просунулися до мети" },
+      { "p": "vous", "v": "avez avancé", "s": "prudemment", "u": "ви просунулися обережно" },
+      { "p": "ils", "v": "ont avancé", "s": "ensemble", "u": "вони просунулися разом" }
     ],
     "futur": [
       { "p": "j'", "v": "avancerai", "s": "lentement", "u": "я просуватимусь повільно" },
-      { "p": "nous", "v": "avancerons", "s": "vers le but", "u": "ми просуватимемось до мети" }
+      { "p": "tu", "v": "avanceras", "s": "bien", "u": "ти просуватимешся добре" },
+      { "p": "il", "v": "avancera", "s": "vite", "u": "він просуватиметься швидко" },
+      { "p": "nous", "v": "avancerons", "s": "vers le but", "u": "ми просуватимемось до мети" },
+      { "p": "vous", "v": "avancerez", "s": "prudemment", "u": "ви просуватиметесь обережно" },
+      { "p": "ils", "v": "avanceront", "s": "ensemble", "u": "вони просуватимуться разом" }
     ]
   },
   {
@@ -93,11 +129,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai acheté", "s": "du pain", "u": "я купив хліб" },
-      { "p": "nous", "v": "avons acheté", "s": "des fruits", "u": "ми купили фрукти" }
+      { "p": "tu", "v": "as acheté", "s": "une voiture", "u": "ти купив машину" },
+      { "p": "il", "v": "a acheté", "s": "un billet", "u": "він купив квиток" },
+      { "p": "nous", "v": "avons acheté", "s": "des fruits", "u": "ми купили фрукти" },
+      { "p": "vous", "v": "avez acheté", "s": "des vêtements", "u": "ви купили одяг" },
+      { "p": "ils", "v": "ont acheté", "s": "une maison", "u": "вони купили дім" }
     ],
     "futur": [
       { "p": "j'", "v": "achèterai", "s": "du pain", "u": "я куплю хліб" },
-      { "p": "nous", "v": "achèterons", "s": "des fruits", "u": "ми купимо фрукти" }
+      { "p": "tu", "v": "achèteras", "s": "une voiture", "u": "ти купиш машину" },
+      { "p": "il", "v": "achètera", "s": "un billet", "u": "він купить квиток" },
+      { "p": "nous", "v": "achèterons", "s": "des fruits", "u": "ми купимо фрукти" },
+      { "p": "vous", "v": "achèterez", "s": "des vêtements", "u": "ви купите одяг" },
+      { "p": "ils", "v": "achèteront", "s": "une maison", "u": "вони куплять дім" }
     ]
   },
   {
@@ -114,11 +158,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai espéré", "s": "réussir", "u": "я сподівався досягти успіху" },
-      { "p": "nous", "v": "avons espéré", "s": "le meilleur", "u": "ми сподівалися на краще" }
+      { "p": "tu", "v": "as espéré", "s": "gagner", "u": "ти сподівався виграти" },
+      { "p": "il", "v": "a espéré", "s": "te voir", "u": "він сподівався побачити тебе" },
+      { "p": "nous", "v": "avons espéré", "s": "le meilleur", "u": "ми сподівалися на краще" },
+      { "p": "vous", "v": "avez espéré", "s": "un miracle", "u": "ви сподівалися на диво" },
+      { "p": "ils", "v": "ont espéré", "s": "rentrer", "u": "вони сподівалися повернутися" }
     ],
     "futur": [
       { "p": "j'", "v": "espérerai", "s": "réussir", "u": "я сподіватимусь досягти успіху" },
-      { "p": "nous", "v": "espérerons", "s": "le meilleur", "u": "ми сподіватимемось на краще" }
+      { "p": "tu", "v": "espéreras", "s": "gagner", "u": "ти сподіватимешся виграти" },
+      { "p": "il", "v": "espérera", "s": "te voir", "u": "він сподіватиметься побачити тебе" },
+      { "p": "nous", "v": "espérerons", "s": "le meilleur", "u": "ми сподіватимемось на краще" },
+      { "p": "vous", "v": "espérerez", "s": "un miracle", "u": "ви сподіватиметесь на диво" },
+      { "p": "ils", "v": "espéreront", "s": "rentrer", "u": "вони сподіватимуться повернутися" }
     ]
   },
   {
@@ -135,11 +187,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai appelé", "s": "un ami", "u": "я подзвонив другу" },
-      { "p": "nous", "v": "avons appelé", "s": "le médecin", "u": "ми подзвонили лікарю" }
+      { "p": "tu", "v": "as appelé", "s": "ton père", "u": "ти подзвонив батькові" },
+      { "p": "il", "v": "a appelé", "s": "la police", "u": "він подзвонив у поліцію" },
+      { "p": "nous", "v": "avons appelé", "s": "le médecin", "u": "ми подзвонили лікарю" },
+      { "p": "vous", "v": "avez appelé", "s": "un taxi", "u": "ви викликали таксі" },
+      { "p": "ils", "v": "ont appelé", "s": "au secours", "u": "вони покликали на допомогу" }
     ],
     "futur": [
       { "p": "j'", "v": "appellerai", "s": "un ami", "u": "я подзвоню другу" },
-      { "p": "nous", "v": "appellerons", "s": "le médecin", "u": "ми подзвонимо лікарю" }
+      { "p": "tu", "v": "appelleras", "s": "ton père", "u": "ти подзвониш батькові" },
+      { "p": "il", "v": "appellera", "s": "la police", "u": "він подзвонить у поліцію" },
+      { "p": "nous", "v": "appellerons", "s": "le médecin", "u": "ми подзвонимо лікарю" },
+      { "p": "vous", "v": "appellerez", "s": "un taxi", "u": "ви викличете таксі" },
+      { "p": "ils", "v": "appelleront", "s": "au secours", "u": "вони покличуть на допомогу" }
     ]
   },
   {
@@ -156,11 +216,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai essayé", "s": "de comprendre", "u": "я намагався зрозуміти" },
-      { "p": "nous", "v": "avons essayé", "s": "encore", "u": "ми спробували ще раз" }
+      { "p": "tu", "v": "as essayé", "s": "ce pantalon", "u": "ти поміряв ці штани" },
+      { "p": "il", "v": "a essayé", "s": "de dormir", "u": "він намагався спати" },
+      { "p": "nous", "v": "avons essayé", "s": "encore", "u": "ми спробували ще раз" },
+      { "p": "vous", "v": "avez essayé", "s": "cette robe", "u": "ви поміряли цю сукню" },
+      { "p": "ils", "v": "ont essayé", "s": "de fuir", "u": "вони намагалися втекти" }
     ],
     "futur": [
       { "p": "j'", "v": "essaierai", "s": "de comprendre", "u": "я намагатимусь зрозуміти" },
-      { "p": "nous", "v": "essaierons", "s": "encore", "u": "ми спробуємо ще раз" }
+      { "p": "tu", "v": "essaieras", "s": "ce pantalon", "u": "ти поміряєш ці штани" },
+      { "p": "il", "v": "essaiera", "s": "de dormir", "u": "він намагатиметься спати" },
+      { "p": "nous", "v": "essaierons", "s": "encore", "u": "ми спробуємо ще раз" },
+      { "p": "vous", "v": "essaierez", "s": "cette robe", "u": "ви поміряєте цю сукню" },
+      { "p": "ils", "v": "essaieront", "s": "de fuir", "u": "вони намагатимуться втекти" }
     ]
   },
   {
@@ -169,17 +237,27 @@
     "infUk": "прибувати",
     "present": [
       { "p": "j'", "v": "arrive", "s": "à la gare", "u": "я прибуваю на вокзал" },
-      { "p": "nous", "v": "arrivons", "s": "en retard", "u": "ми прибуваємо із запізненням" }
+      { "p": "tu", "v": "arrives", "s": "tôt", "u": "ти прибуваєш рано" },
+      { "p": "il", "v": "arrive", "s": "en retard", "u": "він прибуває із запізненням" },
+      { "p": "nous", "v": "arrivons", "s": "ensemble", "u": "ми прибуваємо разом" },
+      { "p": "vous", "v": "arrivez", "s": "à l'heure", "u": "ви прибуваєте вчасно" },
+      { "p": "ils", "v": "arrivent", "s": "hier", "u": "вони прибувають учора" }
     ],
     "passe": [
       { "p": "je", "v": "suis arrivé", "s": "à la gare", "u": "я (ч.р.) прибув на вокзал" },
-      { "p": "elle", "v": "est arrivée", "s": "tôt", "u": "вона прибула рано" },
-      { "p": "nous", "v": "sommes arrivés", "s": "en retard", "u": "ми прибули із запізненням" },
-      { "p": "elles", "v": "sont arrivées", "s": "hier", "u": "вони прибули вчора (ж.р.)" }
+      { "p": "tu", "v": "es arrivé", "s": "tôt", "u": "ти прибув рано" },
+      { "p": "elle", "v": "est arrivée", "s": "en retard", "u": "вона прибула із запізненням" },
+      { "p": "nous", "v": "sommes arrivés", "s": "ensemble", "u": "ми прибули разом" },
+      { "p": "vous", "v": "êtes arrivés", "s": "à l'heure", "u": "ви прибули вчасно" },
+      { "p": "elles", "v": "sont arrivées", "s": "hier", "u": "вони (ж.р.) прибули вчора" }
     ],
     "futur": [
       { "p": "j'", "v": "arriverai", "s": "à la gare", "u": "я прибуду на вокзал" },
-      { "p": "nous", "v": "arriverons", "s": "en retard", "u": "ми прибудемо із запізненням" }
+      { "p": "tu", "v": "arriveras", "s": "tôt", "u": "ти прибудеш рано" },
+      { "p": "il", "v": "arrivera", "s": "en retard", "u": "він прибуде із запізненням" },
+      { "p": "nous", "v": "arriverons", "s": "ensemble", "u": "ми прибудемо разом" },
+      { "p": "vous", "v": "arriverez", "s": "à l'heure", "u": "ви прибудете вчасно" },
+      { "p": "ils", "v": "arriveront", "s": "hier", "u": "вони прибудуть учора" }
     ]
   },
   {
@@ -188,16 +266,27 @@
     "infUk": "входити",
     "present": [
       { "p": "j'", "v": "entre", "s": "dans la salle", "u": "я входжу в зал" },
-      { "p": "nous", "v": "entrons", "s": "en contact", "u": "ми вступаємо в контакт" }
+      { "p": "tu", "v": "entres", "s": "vite", "u": "ти входиш швидко" },
+      { "p": "il", "v": "entre", "s": "sans frapper", "u": "він входить без стуку" },
+      { "p": "nous", "v": "entrons", "s": "en contact", "u": "ми вступаємо в контакт" },
+      { "p": "vous", "v": "entrez", "s": "en silence", "u": "ви входите мовчки" },
+      { "p": "ils", "v": "entrent", "s": "en premier", "u": "вони входять першими" }
     ],
     "passe": [
       { "p": "je", "v": "suis entré", "s": "dans la salle", "u": "я (ч.р.) увійшов у зал" },
+      { "p": "tu", "v": "es entré", "s": "vite", "u": "ти увійшов швидко" },
       { "p": "elle", "v": "est entrée", "s": "sans frapper", "u": "вона увійшла без стуку" },
+      { "p": "nous", "v": "sommes entrés", "s": "en contact", "u": "ми вступили в контакт" },
+      { "p": "vous", "v": "êtes entrés", "s": "en silence", "u": "ви увійшли мовчки" },
       { "p": "ils", "v": "sont entrés", "s": "en premier", "u": "вони увійшли першими" }
     ],
     "futur": [
       { "p": "j'", "v": "entrerai", "s": "dans la salle", "u": "я увійду в зал" },
-      { "p": "nous", "v": "entrerons", "s": "en contact", "u": "ми вступимо в контакт" }
+      { "p": "tu", "v": "entreras", "s": "vite", "u": "ти увійдеш швидко" },
+      { "p": "il", "v": "entrera", "s": "sans frapper", "u": "він увійде без стуку" },
+      { "p": "nous", "v": "entrerons", "s": "en contact", "u": "ми вступимо в контакт" },
+      { "p": "vous", "v": "entrerez", "s": "en silence", "u": "ви увійдете мовчки" },
+      { "p": "ils", "v": "entreront", "s": "en premier", "u": "вони увійдуть першими" }
     ]
   },
   {
@@ -206,16 +295,27 @@
     "infUk": "повертатися (додому)",
     "present": [
       { "p": "je", "v": "rentre", "s": "chez moi", "u": "я повертаюся додому" },
-      { "p": "nous", "v": "rentrons", "s": "tard", "u": "ми повертаємося пізно" }
+      { "p": "tu", "v": "rentres", "s": "tard", "u": "ти повертаєшся пізно" },
+      { "p": "il", "v": "rentre", "s": "tôt", "u": "він повертається рано" },
+      { "p": "nous", "v": "rentrons", "s": "ensemble", "u": "ми повертаємося разом" },
+      { "p": "vous", "v": "rentrez", "s": "à pied", "u": "ви повертаєтеся пішки" },
+      { "p": "ils", "v": "rentrent", "s": "hier", "u": "вони повертаються вчора" }
     ],
     "passe": [
       { "p": "je", "v": "suis rentré", "s": "chez moi", "u": "я (ч.р.) повернувся додому" },
+      { "p": "tu", "v": "es rentré", "s": "tard", "u": "ти повернувся пізно" },
       { "p": "elle", "v": "est rentrée", "s": "tôt", "u": "вона повернулася рано" },
+      { "p": "nous", "v": "sommes rentrés", "s": "ensemble", "u": "ми повернулися разом" },
+      { "p": "vous", "v": "êtes rentrés", "s": "à pied", "u": "ви повернулися пішки" },
       { "p": "ils", "v": "sont rentrés", "s": "hier", "u": "вони повернулися вчора" }
     ],
     "futur": [
       { "p": "je", "v": "rentrerai", "s": "chez moi", "u": "я повернуся додому" },
-      { "p": "nous", "v": "rentrerons", "s": "tard", "u": "ми повернемося пізно" }
+      { "p": "tu", "v": "rentreras", "s": "tard", "u": "ти повернешся пізно" },
+      { "p": "il", "v": "rentrera", "s": "tôt", "u": "він повернеться рано" },
+      { "p": "nous", "v": "rentrerons", "s": "ensemble", "u": "ми повернемося разом" },
+      { "p": "vous", "v": "rentrerez", "s": "à pied", "u": "ви повернетеся пішки" },
+      { "p": "ils", "v": "rentreront", "s": "hier", "u": "вони повернуться вчора" }
     ]
   },
   {
@@ -224,16 +324,27 @@
     "infUk": "залишатися",
     "present": [
       { "p": "je", "v": "reste", "s": "ici", "u": "я залишаюся тут" },
-      { "p": "nous", "v": "restons", "s": "calmes", "u": "ми залишаємося спокійними" }
+      { "p": "tu", "v": "restes", "s": "calme", "u": "ти залишаєшся спокійним" },
+      { "p": "il", "v": "reste", "s": "à la maison", "u": "він залишається вдома" },
+      { "p": "nous", "v": "restons", "s": "amis", "u": "ми залишаємося друзями" },
+      { "p": "vous", "v": "restez", "s": "longtemps", "u": "ви залишаєтеся надовго" },
+      { "p": "ils", "v": "restent", "s": "debout", "u": "вони залишаються стояти" }
     ],
     "passe": [
       { "p": "je", "v": "suis resté", "s": "ici", "u": "я (ч.р.) залишився тут" },
+      { "p": "tu", "v": "es resté", "s": "calme", "u": "ти залишився спокійним" },
       { "p": "elle", "v": "est restée", "s": "à la maison", "u": "вона залишилася вдома" },
+      { "p": "nous", "v": "sommes restés", "s": "amis", "u": "ми залишилися друзями" },
+      { "p": "vous", "v": "êtes restés", "s": "longtemps", "u": "ви залишилися надовго" },
       { "p": "ils", "v": "sont restés", "s": "debout", "u": "вони залишилися стояти" }
     ],
     "futur": [
       { "p": "je", "v": "resterai", "s": "ici", "u": "я залишуся тут" },
-      { "p": "nous", "v": "resterons", "s": "calmes", "u": "ми залишимося спокійними" }
+      { "p": "tu", "v": "resteras", "s": "calme", "u": "ти залишишся спокійним" },
+      { "p": "il", "v": "restera", "s": "à la maison", "u": "він залишиться вдома" },
+      { "p": "nous", "v": "resterons", "s": "amis", "u": "ми залишимося друзями" },
+      { "p": "vous", "v": "resterez", "s": "longtemps", "u": "ви залишитеся надовго" },
+      { "p": "ils", "v": "resteront", "s": "debout", "u": "вони залишаться стояти" }
     ]
   },
   {
@@ -242,16 +353,27 @@
     "infUk": "падати",
     "present": [
       { "p": "je", "v": "tombe", "s": "malade", "u": "я хворію (падаю хворим)" },
-      { "p": "nous", "v": "tombons", "s": "par terre", "u": "ми падаємо на землю" }
+      { "p": "tu", "v": "tombes", "s": "par terre", "u": "ти падаєш на землю" },
+      { "p": "il", "v": "tombe", "s": "dans la rue", "u": "він падає на вулиці" },
+      { "p": "nous", "v": "tombons", "s": "d'accord", "u": "ми доходимо згоди" },
+      { "p": "vous", "v": "tombez", "s": "dans le piège", "u": "ви потрапляєте в пастку" },
+      { "p": "ils", "v": "tombent", "s": "amoureux", "u": "вони закохуються" }
     ],
     "passe": [
       { "p": "je", "v": "suis tombé", "s": "malade", "u": "я (ч.р.) захворів" },
+      { "p": "tu", "v": "es tombé", "s": "par terre", "u": "ти впав на землю" },
       { "p": "elle", "v": "est tombée", "s": "dans la rue", "u": "вона впала на вулиці" },
+      { "p": "nous", "v": "sommes tombés", "s": "d'accord", "u": "ми дійшли згоди" },
+      { "p": "vous", "v": "êtes tombés", "s": "dans le piège", "u": "ви потрапили в пастку" },
       { "p": "ils", "v": "sont tombés", "s": "amoureux", "u": "вони закохалися" }
     ],
     "futur": [
       { "p": "je", "v": "tomberai", "s": "malade", "u": "я захворію" },
-      { "p": "nous", "v": "tomberons", "s": "par terre", "u": "ми впадемо на землю" }
+      { "p": "tu", "v": "tomberas", "s": "par terre", "u": "ти впадеш на землю" },
+      { "p": "il", "v": "tombera", "s": "dans la rue", "u": "він впаде на вулиці" },
+      { "p": "nous", "v": "tomberons", "s": "d'accord", "u": "ми дійдемо згоди" },
+      { "p": "vous", "v": "tomberez", "s": "dans le piège", "u": "ви потрапите в пастку" },
+      { "p": "ils", "v": "tomberont", "s": "amoureux", "u": "вони закохаються" }
     ]
   },
   {
@@ -268,11 +390,19 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai donné", "s": "ma parole", "u": "я дав слово" },
-      { "p": "nous", "v": "avons donné", "s": "notre accord", "u": "ми дали згоду" }
+      { "p": "tu", "v": "as donné", "s": "trop", "u": "ти дав забагато" },
+      { "p": "il", "v": "a donné", "s": "l'exemple", "u": "він подав приклад" },
+      { "p": "nous", "v": "avons donné", "s": "notre accord", "u": "ми дали згоду" },
+      { "p": "vous", "v": "avez donné", "s": "un avis", "u": "ви дали пораду" },
+      { "p": "ils", "v": "ont donné", "s": "leur sang", "u": "вони здали кров" }
     ],
     "futur": [
       { "p": "je", "v": "donnerai", "s": "ma parole", "u": "я дам слово" },
-      { "p": "nous", "v": "donnerons", "s": "notre accord", "u": "ми дамо згоду" }
+      { "p": "tu", "v": "donneras", "s": "trop", "u": "ти даси забагато" },
+      { "p": "il", "v": "donnera", "s": "l'exemple", "u": "він подасть приклад" },
+      { "p": "nous", "v": "donnerons", "s": "notre accord", "u": "ми дамо згоду" },
+      { "p": "vous", "v": "donnerez", "s": "un avis", "u": "ви дасте пораду" },
+      { "p": "ils", "v": "donneront", "s": "leur sang", "u": "вони здадуть кров" }
     ]
   },
   {
@@ -281,15 +411,27 @@
     "infUk": "любити",
     "present": [
       { "p": "j'", "v": "aime", "s": "ce film", "u": "я люблю цей фільм" },
-      { "p": "nous", "v": "aimons", "s": "voyager", "u": "ми любимо подорожувати" }
+      { "p": "tu", "v": "aimes", "s": "lire", "u": "ти любиш читати" },
+      { "p": "il", "v": "aime", "s": "la musique", "u": "він любить музику" },
+      { "p": "nous", "v": "aimons", "s": "voyager", "u": "ми любимо подорожувати" },
+      { "p": "vous", "v": "aimez", "s": "danser", "u": "ви любите танцювати" },
+      { "p": "ils", "v": "aiment", "s": "le sport", "u": "вони люблять спорт" }
     ],
     "passe": [
       { "p": "j'", "v": "ai aimé", "s": "ce film", "u": "мені сподобався цей фільм" },
-      { "p": "nous", "v": "avons aimé", "s": "le repas", "u": "нам сподобалася їжа" }
+      { "p": "tu", "v": "as aimé", "s": "lire", "u": "тобі сподобалося читати" },
+      { "p": "il", "v": "a aimé", "s": "la musique", "u": "йому сподобалася музика" },
+      { "p": "nous", "v": "avons aimé", "s": "voyager", "u": "ми полюбили подорожувати" },
+      { "p": "vous", "v": "avez aimé", "s": "danser", "u": "ви полюбили танцювати" },
+      { "p": "ils", "v": "ont aimé", "s": "le sport", "u": "їм сподобався спорт" }
     ],
     "futur": [
       { "p": "j'", "v": "aimerai", "s": "ce film", "u": "мені сподобається цей фільм" },
-      { "p": "nous", "v": "aimerons", "s": "voyager", "u": "ми любитимемо подорожувати" }
+      { "p": "tu", "v": "aimeras", "s": "lire", "u": "тобі сподобається читати" },
+      { "p": "il", "v": "aimera", "s": "la musique", "u": "йому сподобається музика" },
+      { "p": "nous", "v": "aimerons", "s": "voyager", "u": "ми будемо любити подорожувати" },
+      { "p": "vous", "v": "aimerez", "s": "danser", "u": "ви будете любити танцювати" },
+      { "p": "ils", "v": "aimeront", "s": "le sport", "u": "їм сподобається спорт" }
     ]
   }
 ]
