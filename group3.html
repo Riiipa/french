@@ -25,80 +25,66 @@
         .custom-checkbox:checked + div { background-color: #0d9488; color: white; border-color: #0d9488; }
         .custom-checkbox:checked + div .translation-text { color: #ccfbf1; } 
         .tense-checkbox:checked + div { background-color: #10b981; color: white; border-color: #10b981; }
-        
-        /* Додатковий стиль для кастомного скролу в лобі (опціонально, щоб виглядало чистіше) */
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-2 sm:pt-8 pb-4 text-slate-800">
+<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
-    <div id="setupScreen" class="bg-white p-4 sm:p-8 rounded-3xl shadow-xl text-center max-w-4xl w-full mx-2 sm:mx-4 border border-slate-200 flex flex-col items-center">
+    <div id="setupScreen" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-4xl w-full mx-4 border border-slate-200 flex flex-col items-center">
         
-        <!-- Шапка лобі -->
-        <div class="flex items-center justify-between w-full mb-2 sm:mb-4">
-            <a href="index.html" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-1 sm:gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                <span class="font-bold text-sm hidden sm:inline">В лобі</span>
+        <div class="flex items-center justify-between w-full mb-6">
+            <a href="index.html" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                <span class="font-bold hidden sm:inline">В лобі</span>
             </a>
-            <h1 class="text-xl sm:text-3xl font-black text-slate-800">3 Група (Винятки)</h1>
-            <div class="w-5 sm:w-6"></div>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">3 Група (Винятки)</h1>
+            <div class="w-6"></div>
         </div>
         
-        <p class="text-slate-500 mb-4 text-xs sm:text-base leading-tight px-2">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
+        <p class="text-slate-500 mb-6 text-sm sm:text-base">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
 
-        <!-- БЛОК: Часи (зроблено компактніше) -->
-        <div class="w-full mb-3 bg-slate-50 p-2 sm:p-4 rounded-2xl border border-slate-200">
-            <h3 class="text-xs sm:text-sm font-black text-slate-700 mb-1.5 uppercase tracking-widest">Часи</h3>
-            <div class="grid grid-cols-3 gap-1.5 sm:gap-3">
+        <!-- БЛОК: Часи -->
+        <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
+            <h3 class="text-base sm:text-lg font-black text-slate-700 mb-3 uppercase tracking-widest text-left">Часи</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <label class="cursor-pointer relative block">
                     <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="onTenseChange()">
-                    <div class="px-1 py-1.5 sm:py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-[10px] sm:text-sm text-center transition-all shadow-sm">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Présent
                     </div>
                 </label>
                 <label class="cursor-pointer relative block">
                     <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="onTenseChange()">
-                    <div class="px-1 py-1.5 sm:py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-[10px] sm:text-sm text-center transition-all shadow-sm">
-                        P. Composé
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
+                        Passé Composé
                     </div>
                 </label>
                 <label class="cursor-pointer relative block">
                     <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="onTenseChange()">
-                    <div class="px-1 py-1.5 sm:py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-[10px] sm:text-sm text-center transition-all shadow-sm">
+                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Futur Simple
                     </div>
                 </label>
             </div>
-            <div id="tenseError" class="hidden text-red-500 font-bold mt-2 text-[10px] sm:text-sm pop-animation">Виберіть хоча б один час!</div>
+            <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Виберіть хоча б один час!</div>
         </div>
 
-        <!-- БЛОК: Управління дієсловами (Один ряд + галочка в заголовку) -->
-        <div class="flex flex-col w-full mb-2 border-b border-slate-100 pb-3 gap-2 px-1">
-            <div class="flex justify-between items-center w-full">
-                <h3 class="text-sm sm:text-lg font-black text-slate-700 uppercase tracking-widest m-0">Дієслова</h3>
-                <!-- Компактна галочка замість великої кнопки -->
-                <label class="flex items-center gap-1.5 cursor-pointer bg-slate-50 hover:bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200 transition-colors">
-                    <input type="checkbox" id="includeLearnedCb" class="w-3 h-3 sm:w-4 sm:h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500" onchange="saveSetup()">
-                    <span class="text-[10px] sm:text-xs font-bold text-slate-600 uppercase tracking-wide">+ Вивчені</span>
-                </label>
-            </div>
+        <!-- БЛОК: Управління дієсловами -->
+        <div class="flex flex-col w-full mb-4 px-2 border-b border-slate-100 pb-4 gap-3 text-left">
+            <h3 class="text-base sm:text-lg font-black text-slate-700 uppercase tracking-widest m-0">Дієслова 3-ї групи</h3>
             
-            <div class="flex gap-1.5 sm:gap-2 w-full">
-                <button onclick="selectVerbsWithMistakes()" class="flex-1 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 py-1.5 sm:py-2 rounded-xl border border-red-100 transition-colors text-[10px] sm:text-xs font-bold uppercase tracking-wide">Помилки</button>
-                <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-1.5 sm:py-2 rounded-xl border border-teal-100 transition-colors text-[10px] sm:text-xs font-bold uppercase tracking-wide">Всі</button>
-                <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-1.5 sm:py-2 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-xs font-bold uppercase tracking-wide">Скинути</button>
+            <div class="flex gap-2 w-full">
+                <button onclick="selectVerbsWithMistakes()" class="flex-1 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 py-2.5 sm:py-3 rounded-xl border border-red-100 transition-colors text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Помилки</button>
+                <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-2.5 sm:py-3 rounded-xl border border-teal-100 transition-colors text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Всі</button>
+                <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-2.5 sm:py-3 rounded-xl border border-slate-200 transition-colors text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Скинути</button>
             </div>
         </div>
 
-        <!-- БЛОК: Контейнер зі словами (Більше місця) -->
-        <div id="verbCategoriesContainer" class="w-full mb-4 max-h-[55vh] overflow-y-auto custom-scrollbar px-1 sm:px-2 text-left"></div>
-        <div id="setupError" class="hidden text-red-500 font-bold mb-3 text-sm pop-animation">Виберіть хоча б одне дієслово.</div>
+        <div id="verbCategoriesContainer" class="w-full mb-6 max-h-[40vh] overflow-y-auto px-1 sm:px-2 text-left"></div>
+        <div id="setupError" class="hidden text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одне дієслово.</div>
 
-        <button onclick="initSessionFromSetup()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-black py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-xl tracking-widest uppercase mt-auto">
-            Почати
+        <button onclick="initSessionFromSetup()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
+            Почати тренування
         </button>
     </div>
 
@@ -111,7 +97,6 @@
             </svg>
         </button>
 
-        <!-- ВЕРХНЯ ПАНЕЛЬ СТАТИСТИКИ -->
         <div class="grid grid-cols-4 gap-2 w-full mb-8 sm:mb-12 px-1 sm:px-6 mt-10 sm:mt-0">
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Картка</span>
@@ -134,7 +119,6 @@
             </div>
         </div>
 
-        <!-- ЦЕНТРАЛЬНА ЧАСТИНА -->
         <div class="flex flex-col items-center justify-center w-full mb-6 sm:mb-8 min-h-[10rem] sm:min-h-[12rem]">
             
             <span id="wordDisplay" class="text-2xl sm:text-4xl font-black text-slate-800 mb-8 sm:mb-10 text-center leading-tight">???</span>
@@ -187,7 +171,7 @@
         <!-- Блок для списку помилок -->
         <div id="mistakesListContainer" class="hidden w-full mb-6 text-left border-t border-slate-200 pt-4">
             <h3 class="text-sm font-black text-slate-700 uppercase mb-3 text-center">Помилки в раунді:</h3>
-            <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"></div>
+            <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2"></div>
         </div>
 
         <button onclick="startSession()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">Наступна сесія</button>
@@ -208,7 +192,7 @@
         function getSavedSetup() {
             const saved = localStorage.getItem('frenchVerbsSetupGroup3'); 
             if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: null, tenses: ['present', 'passe', 'futur'], includeLearned: false };
+            return { verbs: null, tenses: ['present', 'passe', 'futur'] };
         }
 
         function saveSetup() {
@@ -216,8 +200,7 @@
             const verbs = Array.from(verbCb).filter(cb => cb.checked).map(cb => cb.value);
             const tenseCb = document.querySelectorAll('.tense-checkbox');
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
-            const includeLearned = document.getElementById('includeLearnedCb') ? document.getElementById('includeLearnedCb').checked : false;
-            localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses, includeLearned }));
+            localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses }));
         }
 
         function onTenseChange() {
@@ -250,9 +233,6 @@
             
             const savedSetup = getSavedSetup();
             document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
-            
-            const includeLearnedCb = document.getElementById('includeLearnedCb');
-            if(includeLearnedCb) includeLearnedCb.checked = savedSetup.includeLearned || false;
 
             const groupedVerbs = {};
             rawData.forEach(verb => {
@@ -266,12 +246,11 @@
 
             Object.keys(groupedVerbs).forEach(category => {
                 const categoryDiv = document.createElement('div');
-                categoryDiv.className = "mb-5 sm:mb-8";
-                categoryDiv.innerHTML = `<h3 class="text-[11px] sm:text-sm font-bold text-slate-500 mb-2 sm:mb-3 border-b-2 border-teal-50 inline-block pb-1">${category}</h3>`;
+                categoryDiv.className = "mb-6 sm:mb-8";
+                categoryDiv.innerHTML = `<h3 class="text-sm sm:text-base font-bold text-slate-700 mb-2 sm:mb-3 border-b-2 border-teal-100 inline-block pb-1">${category}</h3>`;
                 
                 const grid = document.createElement('div');
-                // Зробили картки значно меншими, тепер 2 або 3 в ряд на телефоні
-                grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5 sm:gap-2.5";
+                grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3";
 
                 groupedVerbs[category].forEach(verbObj => {
                     const isChecked = initialVerbs.includes(verbObj.infFr); 
@@ -295,18 +274,18 @@
                     
                     const progressPercent = totalForms > 0 ? (learnedForms / totalForms) * 100 : 0;
                     const isFullyLearned = totalForms > 0 && learnedForms === totalForms;
-                    const cardBg = isFullyLearned ? 'bg-green-50/50 border-green-200' : 'bg-white border-slate-200';
-                    const badgeHtml = verbErrors > 0 ? `<div class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[9px] sm:text-[10px] font-black w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow-sm border border-red-200 z-10">${verbErrors}</div>` : '';
+                    const cardStyle = isFullyLearned ? 'bg-green-50/50 border-green-200' : 'bg-white border-slate-200';
+                    const badgeHtml = verbErrors > 0 ? `<div class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-sm border border-red-200 z-10">${verbErrors}</div>` : '';
 
                     const label = document.createElement('label');
                     label.className = "cursor-pointer relative block h-full";
                     label.innerHTML = `
                         <input type="checkbox" value="${verbObj.infFr}" data-has-errors="${verbErrors > 0}" class="verb-checkbox custom-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSetup()">
-                        <div class="h-full px-1.5 py-1.5 sm:px-3 sm:py-3 rounded-xl border border-slate-200 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 ${cardBg} shadow-sm relative">
+                        <div class="h-full px-2 py-2 sm:px-3 sm:py-3 rounded-xl border-2 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 ${cardStyle} shadow-sm relative">
                             ${badgeHtml}
-                            <span class="font-bold text-xs sm:text-base mb-0.5">${verbObj.infFr}</span>
-                            <span class="translation-text text-[8px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight mb-1.5">${verbObj.infUk}</span>
-                            <div class="w-full bg-slate-200 h-[3px] sm:h-1 rounded-full overflow-hidden mt-auto">
+                            <span class="font-bold text-sm sm:text-lg mb-0.5 sm:mb-1">${verbObj.infFr}</span>
+                            <span class="translation-text text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight mb-1">${verbObj.infUk}</span>
+                            <div class="w-full bg-slate-200 h-1 rounded-full overflow-hidden mt-auto">
                                 <div class="bg-green-400 h-full rounded-full transition-all" style="width: ${progressPercent}%"></div>
                             </div>
                         </div>`;
@@ -364,7 +343,6 @@
 
             const selectedVerbs = Array.from(verbCb).map(cb => cb.value);
             const selectedTenses = Array.from(tenseCb).map(cb => cb.value);
-            const includeLearned = document.getElementById('includeLearnedCb') ? document.getElementById('includeLearnedCb').checked : false;
             const tenseNames = { "present": "Présent", "passe": "Passé Composé", "futur": "Futur Simple" };
             const srsMemory = getSRSMemory();
             
@@ -378,7 +356,8 @@
                                 const cardId = `G3_${verbObj.infFr}_${tenseKey}_${form.p}`;
                                 const memory = srsMemory[cardId] || { errors: 0, streak: 0 };
                                 
-                                if (!includeLearned && memory.streak >= 2) return;
+                                // Вивчені слова завжди приховуються автоматично
+                                if (memory.streak >= 2) return;
 
                                 allDatabaseCards.push({
                                     id: cardId, weight: memory.errors, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
@@ -394,7 +373,7 @@
             });
 
             if (allDatabaseCards.length === 0) {
-                alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉");
+                alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉 Скиньте прогрес, щоб повторити.");
                 return;
             }
 
