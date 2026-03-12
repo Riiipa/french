@@ -45,7 +45,19 @@
             <div class="w-6"></div>
         </div>
         
-        <p class="text-slate-500 mb-8 text-sm sm:text-base">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
+        <p class="text-slate-500 mb-6 text-sm sm:text-base">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
+
+        <!-- БЛОК: Перемикач вивчених слів -->
+        <div class="w-full mb-6 bg-teal-50 p-4 sm:p-5 rounded-2xl border border-teal-100 flex justify-between items-center shadow-sm">
+            <div class="text-left pr-4">
+                <span class="font-black text-teal-900 text-sm sm:text-base uppercase tracking-widest block mb-0.5">Пропускати вивчені</span>
+                <span class="text-[10px] sm:text-xs text-teal-600 font-bold">Не показувати слова, що мають 2+ точки прогресу</span>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer shrink-0">
+              <input type="checkbox" id="skipLearnedToggle" class="sr-only peer" checked onchange="saveSetup()">
+              <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600 shadow-inner"></div>
+            </label>
+        </div>
 
         <!-- БЛОК: Часи -->
         <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
@@ -103,11 +115,10 @@
             <div class="w-6 sm:w-7"></div> <!-- Для балансу -->
         </div>
 
-        <!-- 3 Кнопки в ряд -->
-        <div class="flex gap-1.5 sm:gap-2 w-full mb-4 shrink-0">
-            <button onclick="selectVerbsWithMistakes()" class="flex-1 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 py-2.5 sm:py-3 rounded-xl border border-red-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Помилки</button>
-            <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-2.5 sm:py-3 rounded-xl border border-teal-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Всі</button>
-            <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-2.5 sm:py-3 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
+        <!-- 2 Кнопки в ряд -->
+        <div class="flex gap-2 sm:gap-3 w-full mb-4 shrink-0">
+            <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-3 sm:py-4 rounded-xl border border-teal-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Вибрати всі</button>
+            <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-3 sm:py-4 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
         </div>
 
         <!-- Контейнер для списку (займає весь залишок висоти і скролиться) -->
@@ -127,25 +138,23 @@
             </svg>
         </button>
 
-        <div class="grid grid-cols-4 gap-2 w-full mb4 sm:mb-6 px-1 sm:px-2 mt-10 sm:mt-8">
+        <div class="grid grid-cols-3 gap-2 w-full mb-4 sm:mb-6 px-1 sm:px-2 mt-10 sm:mt-8">
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Картка</span>
                 <span id="sessionCounter" class="text-xs sm:text-sm font-black text-teal-600">1/10</span>
             </div>
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
-                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Вивчити</span>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Залишилося</span>
                 <span id="globalDeckCounter" class="text-xs sm:text-sm font-black text-slate-500">?</span>
             </div>
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
-                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Прогрес</span>
-                <div class="flex gap-1.5 items-center mt-0.5">
-                    <div id="streakDot1" class="w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
-                    <div id="streakDot2" class="w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Прогрес слова</span>
+                <div class="flex gap-1 items-center mt-0.5">
+                    <div id="streakDot1" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                    <div id="streakDot2" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                    <div id="streakDot3" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                    <div id="streakDot4" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
                 </div>
-            </div>
-            <div class="flex flex-col items-center justify-center bg-red-50 border border-red-100 rounded-xl py-2 shadow-sm">
-                <span class="text-[9px] sm:text-[10px] font-bold text-red-400 uppercase tracking-widest mb-1">Помилки</span>
-                <span id="mistakeCounter" class="text-xs sm:text-sm font-black text-red-500">0</span>
             </div>
         </div>
 
@@ -182,7 +191,7 @@
     <!-- ЕКРАН 3: СТАТИСТИКА -->
     <div id="statsScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Раунд завершено</h2>
-        <p class="text-slate-500 mb-8 text-sm sm:text-base">Ваги карток оновлено.</p>
+        <p class="text-slate-500 mb-8 text-sm sm:text-base">Прогрес слів збережено.</p>
         <div class="grid grid-cols-2 gap-4 w-full mb-8">
             <div class="bg-green-50 rounded-2xl p-4 border border-green-100">
                 <span class="block text-3xl sm:text-4xl font-black text-green-500 mb-1" id="statCorrect">0</span>
@@ -260,7 +269,8 @@
         function getSavedSetup() {
             const saved = localStorage.getItem('frenchVerbsSetupGroup3'); 
             if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: null, tenses: ['present', 'passe', 'futur'] };
+            // За замовчуванням перемикач "пропускати вивчені" увімкнений (true)
+            return { verbs: null, tenses: ['present', 'passe', 'futur'], skipLearned: true };
         }
 
         function saveSetup() {
@@ -268,7 +278,9 @@
             const verbs = Array.from(verbCb).filter(cb => cb.checked).map(cb => cb.value);
             const tenseCb = document.querySelectorAll('.tense-checkbox');
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
-            localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses }));
+            const skipLearned = document.getElementById('skipLearnedToggle').checked;
+            
+            localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses, skipLearned }));
             updateSelectedVerbsCount();
         }
 
@@ -299,19 +311,17 @@
             return mem ? JSON.parse(mem) : {};
         }
 
-        function updateSRSCard(cardId, isCorrect, isFirstAttempt) {
+        function updateSRSCard(cardId, isCorrect, isFlawless) {
             let memory = getSRSMemory();
-            if (!memory[cardId]) memory[cardId] = { errors: 0, streak: 0 };
+            if (!memory[cardId]) memory[cardId] = { streak: 0 };
             
-            if (isCorrect && isFirstAttempt) {
-                memory[cardId].errors = Math.max(0, memory[cardId].errors - 1);
-                memory[cardId].streak = (memory[cardId].streak || 0) + 1;
+            if (isCorrect && isFlawless) {
+                // Збільшуємо прогрес максимум до 4
+                memory[cardId].streak = Math.min(4, (memory[cardId].streak || 0) + 1);
             } else if (!isCorrect) {
-                memory[cardId].errors += 2;
                 memory[cardId].streak = 0;
             }
-            // Якщо isCorrect == true, але isFirstAttempt == false (наприклад, використовувалась підказка), 
-            // то ми не змінюємо errors і не збільшуємо streak (нейтрально).
+            // Якщо isCorrect = true, але !isFlawless (використана підказка), прогрес не змінюється
             
             localStorage.setItem('frenchVerbsSRS_G3', JSON.stringify(memory));
         }
@@ -322,6 +332,7 @@
             
             const savedSetup = getSavedSetup();
             document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
+            document.getElementById('skipLearnedToggle').checked = savedSetup.skipLearned !== false;
 
             const groupedVerbs = {};
             rawData.forEach(verb => {
@@ -347,16 +358,15 @@
                     
                     let totalForms = 0;
                     let learnedForms = 0;
-                    let verbErrors = 0;
                     
                     selectedTenses.forEach(tense => {
                         if(verbObj[tense]) {
                             verbObj[tense].forEach(f => {
                                 totalForms++;
                                 const cardId = `G3_${verbObj.infFr}_${tense}_${f.p}`;
-                                if(srsMemory[cardId]) {
-                                    if(srsMemory[cardId].streak >= 2) learnedForms++;
-                                    if(srsMemory[cardId].errors > 0) verbErrors++;
+                                if(srsMemory[cardId] && srsMemory[cardId].streak >= 2) {
+                                    // Для базового прогресу достатньо досягти стрійку 2
+                                    learnedForms++;
                                 }
                             });
                         }
@@ -365,14 +375,12 @@
                     const progressPercent = totalForms > 0 ? (learnedForms / totalForms) * 100 : 0;
                     const isFullyLearned = totalForms > 0 && learnedForms === totalForms;
                     const cardStyle = isFullyLearned ? 'bg-green-50/50 border-green-200' : 'bg-white border-slate-200';
-                    const badgeHtml = verbErrors > 0 ? `<div class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-sm border border-red-200 z-10">${verbErrors}</div>` : '';
 
                     const label = document.createElement('label');
                     label.className = "cursor-pointer relative block h-full";
                     label.innerHTML = `
-                        <input type="checkbox" value="${verbObj.infFr}" data-has-errors="${verbErrors > 0}" class="verb-checkbox custom-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSetup()">
+                        <input type="checkbox" value="${verbObj.infFr}" class="verb-checkbox custom-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSetup()">
                         <div class="h-full px-2 py-2 sm:px-3 sm:py-3 rounded-xl border-2 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 ${cardStyle} shadow-sm relative">
-                            ${badgeHtml}
                             <span class="font-bold text-sm sm:text-lg mb-0.5 sm:mb-1">${verbObj.infFr}</span>
                             <span class="translation-text text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight mb-1">${verbObj.infUk}</span>
                             <div class="w-full bg-slate-200 h-1 rounded-full overflow-hidden mt-auto">
@@ -398,17 +406,6 @@
             saveSetup();
         }
 
-        function selectVerbsWithMistakes() {
-            let foundMistakes = false;
-            document.querySelectorAll('.verb-checkbox').forEach(cb => {
-                const hasErrors = cb.getAttribute('data-has-errors') === 'true';
-                cb.checked = hasErrors;
-                if(hasErrors) foundMistakes = true;
-            });
-            saveSetup();
-            if(!foundMistakes) alert("У вас немає слів із помилками! Ви молодець 🎉");
-        }
-
         function returnToSetup() {
             unmasteredCards = []; 
             initSetupScreen();
@@ -421,12 +418,13 @@
         let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
         let unmasteredCards = [];
         let frVoice = null;
-        let initialDeckSize = 0; 
         let sessionTargetSize = 10;
+        let skipLearnedActive = true;
 
         function initSessionFromSetup() {
             const verbCb = document.querySelectorAll('.verb-checkbox:checked');
             const tenseCb = document.querySelectorAll('.tense-checkbox:checked');
+            skipLearnedActive = document.getElementById('skipLearnedToggle').checked;
             
             document.getElementById('tenseError').classList.add('hidden');
             document.getElementById('setupError').classList.add('hidden');
@@ -447,12 +445,13 @@
                             const conjugationTable = verbObj[tenseKey].map(f => (f.p.endsWith("'") ? f.p : f.p + " ") + f.v);
                             verbObj[tenseKey].forEach(form => {
                                 const cardId = `G3_${verbObj.infFr}_${tenseKey}_${form.p}`;
-                                const memory = srsMemory[cardId] || { errors: 0, streak: 0 };
+                                const memory = srsMemory[cardId] || { streak: 0 };
                                 
-                                if (memory.streak >= 2) return;
+                                // Якщо увімкнено "Пропускати вивчені", не додаємо картки зі стрійком 2 і більше
+                                if (skipLearnedActive && memory.streak >= 2) return;
 
                                 allDatabaseCards.push({
-                                    id: cardId, weight: memory.errors, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
+                                    id: cardId, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
                                     tenseKey: tenseKey, tenseName: tenseNames[tenseKey],
                                     prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u,
                                     rule: tenseExplanations[tenseKey] + "<br><br>" + (verbRules[verbObj.infFr] || ""),
@@ -465,11 +464,10 @@
             });
 
             if (allDatabaseCards.length === 0) {
-                alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉 Скиньте прогрес, щоб повторити.");
+                alert("Усі обрані дієслова вже вивчені! 🎉 Вимкніть перемикач «Пропускати вивчені», щоб повторити їх.");
                 return;
             }
 
-            initialDeckSize = allDatabaseCards.length;
             unmasteredCards = [...allDatabaseCards];
             startSession();
         }
@@ -495,38 +493,30 @@
             }
         }
 
-        function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
         function startSession() {
             document.getElementById('setupScreen').classList.add('hidden');
             document.getElementById('statsScreen').classList.add('hidden');
             document.getElementById('trainingScreen').classList.remove('hidden');
             
             if (unmasteredCards.length === 0) {
-                const remaining = allDatabaseCards.filter(c => c.streak < 2);
-                if (remaining.length === 0) {
-                    alert("Всі слова повністю вивчені! 🎉");
+                if (allDatabaseCards.length === 0) {
+                    alert("Сесію завершено!");
                     returnToSetup();
                     return;
                 }
-                unmasteredCards = [...remaining];
-                if (sessionStats.completed > 0) alert("Починаємо нове коло для закріплення слів!");
+                unmasteredCards = [...allDatabaseCards];
+                if (sessionStats.completed > 0) alert("Починаємо нове коло!");
             }
             
-            unmasteredCards.sort((a, b) => (b.weight - a.weight) || (Math.random() - 0.5));
+            // Сортуємо так, щоб найслабші слова (streak 0) йшли першими
+            unmasteredCards.sort((a, b) => (a.streak - b.streak) || (Math.random() - 0.5));
             const cardsToTake = Math.min(SESSION_LENGTH, unmasteredCards.length);
             sessionTargetSize = cardsToTake; 
             sessionQueue = unmasteredCards.splice(0, cardsToTake);
-            shuffle(sessionQueue);
+            
             sessionQueue.forEach(card => {
                 card.mistakesThisSession = 0;
-                card.ruleShown = false; // Скидаємо прапорець використання підказки
+                card.ruleShown = false; 
             });
             
             sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
@@ -540,22 +530,25 @@
             if (!currentCard && sessionQueue.length === 0) currentCardNum = sessionTargetSize; 
             
             document.getElementById('sessionCounter').innerText = `${currentCardNum}/${sessionTargetSize}`;
-            document.getElementById('mistakeCounter').innerText = sessionStats.totalErrors;
             
-            const remainingCount = allDatabaseCards.filter(c => c.streak < 2).length;
+            // "Залишилось" показує кількість слів, які ще не досягли базового стрійку (2) під час сесії
+            const targetThreshold = 2;
+            const remainingCount = allDatabaseCards.filter(c => c.streak < targetThreshold).length;
             document.getElementById('globalDeckCounter').innerText = remainingCount;
+        }
+
+        function updateDotsUI(streak) {
+            document.getElementById('streakDot1').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 1 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
+            document.getElementById('streakDot2').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 2 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
+            document.getElementById('streakDot3').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 3 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
+            document.getElementById('streakDot4').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 4 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
         }
 
         function loadNextCard() {
             if (sessionQueue.length === 0) { showStatsScreen(); return; }
             currentCard = sessionQueue[0];
             updateUIStats();
-
-            const dot1 = document.getElementById('streakDot1');
-            const dot2 = document.getElementById('streakDot2');
-            const currentStreak = currentCard.streak || 0;
-            dot1.className = "w-2.5 h-2.5 rounded-full transition-colors duration-300 " + (currentStreak >= 1 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
-            dot2.className = "w-2.5 h-2.5 rounded-full transition-colors duration-300 " + (currentStreak >= 2 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
+            updateDotsUI(currentCard.streak || 0);
 
             document.getElementById('wordDisplay').innerText = currentCard.ukFull;
             document.getElementById('prefixDisplay').innerText = currentCard.prefix.endsWith("'") ? currentCard.prefix : currentCard.prefix + " ";
@@ -587,18 +580,16 @@
             document.getElementById('feedbackContainer').classList.remove('hidden');
             const feedbackText = document.getElementById('feedbackDisplay');
             
-            const dot1 = document.getElementById('streakDot1');
-            const dot2 = document.getElementById('streakDot2');
-
             if (userVerb === correctVerb) {
                 const isFirstAttempt = currentCard.mistakesThisSession === 0;
                 const usedHint = currentCard.ruleShown;
-                const isFlawless = isFirstAttempt && !usedHint; // Ідеально = без помилок І без підказок
+                const isFlawless = isFirstAttempt && !usedHint; 
 
                 if (isFlawless) {
                     feedbackText.innerText = "Ідеально ✓";
                     feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
                     input.className = "verb-input font-bold text-green-600 border-green-500";
+                    currentCard.streak = Math.min(4, (currentCard.streak || 0) + 1);
                 } else if (usedHint && isFirstAttempt) {
                     feedbackText.innerText = "З підказкою ✓";
                     feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-amber-500 pop-animation";
@@ -611,20 +602,14 @@
                 
                 playCurrentAudio();
                 updateSRSCard(currentCard.id, true, isFlawless);
-
-                if (isFlawless) {
-                    currentCard.streak = (currentCard.streak || 0) + 1;
-                }
-
-                const newStreak = currentCard.streak || 0;
-                if (newStreak >= 1) dot1.className = "w-2.5 h-2.5 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
-                if (newStreak >= 2) dot2.className = "w-2.5 h-2.5 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
+                updateDotsUI(currentCard.streak);
 
                 const finishedCard = sessionQueue.shift();
                 if (isFlawless) sessionStats.flawless++;
                 
                 sessionStats.completed++;
                 
+                // Якщо стрійк все ще менше 2 (базовий рівень для проходження кола), відправляємо назад в чергу пулу
                 if (finishedCard.streak < 2) {
                     unmasteredCards.push(finishedCard);
                 }
@@ -644,11 +629,9 @@
                 }
                 
                 currentCard.mistakesThisSession++;
-                updateSRSCard(currentCard.id, false, false);
                 currentCard.streak = 0; 
-                
-                dot1.className = "w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300";
-                dot2.className = "w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300";
+                updateSRSCard(currentCard.id, false, false);
+                updateDotsUI(0);
 
                 input.value = currentCard.verb; 
                 feedbackText.innerHTML = `Помилка. Треба: <span class="text-teal-600 font-black">${currentCard.verb}</span>`;
