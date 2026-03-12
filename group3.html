@@ -136,8 +136,8 @@
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <!-- УВАГА: Додано атрибути для повного блокування підказок iOS -->
-                <input type="text" id="userInput" name="french_verb_answer" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" data-form-type="other" data-lpignore="true" data-1p-ignore="true">
+                <!-- УВАГА: Змінено id на answerInput, щоб Safari не реагував на слово "user" -->
+                <input type="text" id="answerInput" name="verb_answer_input" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="text" data-form-type="other" data-lpignore="true" data-1p-ignore="true">
                 <span id="suffixDisplay"></span>
             </div>
 
@@ -477,7 +477,8 @@
             document.getElementById('prefixDisplay').innerText = currentCard.prefix.endsWith("'") ? currentCard.prefix : currentCard.prefix + " ";
             document.getElementById('suffixDisplay').innerText = " " + currentCard.suffix;
             
-            const input = document.getElementById('userInput');
+            // Замінено userInput на answerInput
+            const input = document.getElementById('answerInput');
             input.value = ''; input.disabled = false;
             input.style.width = Math.max(120, currentCard.verb.length * 16) + 'px';
             input.className = "verb-input text-teal-700 font-bold border-slate-300";
@@ -492,7 +493,8 @@
         }
 
         function checkAnswer() {
-            const input = document.getElementById('userInput');
+            // Замінено userInput на answerInput
+            const input = document.getElementById('answerInput');
             if (!input.value.trim()) return;
 
             const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").trim();
@@ -638,7 +640,8 @@
             }
         }
 
-        document.getElementById('userInput').addEventListener('keypress', function(e) {
+        // Замінено userInput на answerInput
+        document.getElementById('answerInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') { e.preventDefault(); checkAnswer(); }
         });
 
