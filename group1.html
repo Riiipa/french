@@ -127,7 +127,7 @@
             </svg>
         </button>
 
-        <div class="grid grid-cols-4 gap-2 w-full mb4 sm:mb-6 px-1 sm:px-2 mt-10 sm:mt-8">
+        <div class="grid grid-cols-4 gap-2 w-full mb-4 sm:mb-6 px-1 sm:px-2 mt-10 sm:mt-8">
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Картка</span>
                 <span id="sessionCounter" class="text-xs sm:text-sm font-black text-indigo-600">1/10</span>
@@ -231,23 +231,23 @@
             "appeler": "Особливість -eler: подвоєння 'l', коли закінчення німе (j'appelle, ils appellent), але nous appelons.",
             "rappeler": "Як appeler (je rappelle, nous rappelons).",
             "jeter": "Особливість -eter: подвоєння 't', коли закінчення німе (je jette, ils jettent), але nous jetons.",
-            "acheter": "Особливість e_er: зміна 'e' на 'è', коли закінчення німе (j'achète). Ніякого подвоєння 't'!",
-            "geler": "Особливість e_er: зміна 'e' на 'è' (il gèle).",
-            "lever": "Особливість e_er: зміна 'e' на 'è' (je lève, nous levons).",
-            "espérer": "Особливість é_er: зміна 'é' на 'è', коли закінчення німе (j'espère), але nous espérons.",
+            "acheter": "Зміна основи e_er: зміна 'e' на 'è', коли закінчення німе (j'achète). Ніякого подвоєння 't'!",
+            "geler": "Зміна основи e_er: зміна 'e' на 'è' (il gèle).",
+            "lever": "Зміна основи e_er: зміна 'e' на 'è' (je lève, nous levons).",
+            "espérer": "Зміна основи é_er: зміна 'é' на 'è', коли закінчення німе (j'espère), але nous espérons.",
             "préférer": "Як espérer (je préfère, nous préférons).",
             "répéter": "Як espérer (je répète, nous répétons).",
-            "essayer": "Особливість -yer: 'y' змінюється на 'i', коли закінчення німе (j'essaie, ils essaient).",
+            "essayer": "Зміна основи -yer: 'y' змінюється на 'i', коли закінчення німе (j'essaie, ils essaient).",
             "essuyer": "Як essayer (j'essuie, nous essuyons).",
             "payer": "Як essayer (je paie, nous payons).",
             "employer": "Як essayer (j'emploie, nous employons).",
             "envoyer": "Як essayer. Але у Futur: j'enverrai (повна зміна основи).",
-            "arriver": "Особливість PC: відмінюється з дієсловом ÊTRE (je suis arrivé(e)).",
-            "entrer": "Особливість PC: відмінюється з дієсловом ÊTRE (je suis entré(e)).",
-            "rentrer": "Особливість PC: відмінюється з дієсловом ÊTRE (je suis rentré(e)).",
-            "rester": "Особливість PC: відмінюється з дієсловом ÊTRE (je suis resté(e)).",
-            "tomber": "Особливість PC: відмінюється з дієсловом ÊTRE (je suis tombé(e)).",
-            "retourner": "Особливість PC: відмінюється з дієсловом ÊTRE (je suis retourné(e)).",
+            "arriver": "Особливість Passé Composé: відмінюється з дієсловом ÊTRE (je suis arrivé(e)).",
+            "entrer": "Особливість Passé Composé: відмінюється з дієсловом ÊTRE (je suis entré(e)).",
+            "rentrer": "Особливість Passé Composé: відмінюється з дієсловом ÊTRE (je suis rentré(e)).",
+            "rester": "Особливість Passé Composé: відмінюється з дієсловом ÊTRE (je suis resté(e)).",
+            "tomber": "Особливість Passé Composé: відмінюється з дієсловом ÊTRE (je suis tombé(e)).",
+            "retourner": "Особливість Passé Composé: відмінюється з дієсловом ÊTRE (je suis retourné(e)).",
             "accepter": "Абсолютно правильне дієслово 1 групи.",
             "aimer": "Абсолютно правильне дієслово 1 групи.",
             "donner": "Абсолютно правильне дієслово 1 групи."
@@ -308,6 +308,9 @@
                 memory[cardId].errors += 2;
                 memory[cardId].streak = 0;
             }
+            // Якщо isCorrect == true, але isFirstAttempt == false (наприклад, використовувалась підказка), 
+            // то ми не змінюємо errors і не збільшуємо streak (нейтрально).
+            
             localStorage.setItem('frenchVerbsSRS_G1', JSON.stringify(memory));
         }
 
@@ -518,7 +521,10 @@
             sessionTargetSize = cardsToTake; 
             sessionQueue = unmasteredCards.splice(0, cardsToTake);
             shuffle(sessionQueue);
-            sessionQueue.forEach(card => card.mistakesThisSession = 0);
+            sessionQueue.forEach(card => {
+                card.mistakesThisSession = 0;
+                card.ruleShown = false; // Скидаємо прапорець використання підказки
+            });
             
             sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
             updateUIStats();
@@ -582,15 +588,28 @@
             const dot2 = document.getElementById('streakDot2');
 
             if (userVerb === correctVerb) {
-                feedbackText.innerText = "Ідеально ✓";
-                feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
-                input.className = "verb-input font-bold text-green-600 border-green-500";
+                const isFirstAttempt = currentCard.mistakesThisSession === 0;
+                const usedHint = currentCard.ruleShown;
+                const isFlawless = isFirstAttempt && !usedHint; // Ідеально = без помилок І без підказок
+
+                if (isFlawless) {
+                    feedbackText.innerText = "Ідеально ✓";
+                    feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
+                    input.className = "verb-input font-bold text-green-600 border-green-500";
+                } else if (usedHint && isFirstAttempt) {
+                    feedbackText.innerText = "З підказкою ✓";
+                    feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-amber-500 pop-animation";
+                    input.className = "verb-input font-bold text-amber-500 border-amber-500";
+                } else {
+                    feedbackText.innerText = "Правильно ✓";
+                    feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
+                    input.className = "verb-input font-bold text-green-600 border-green-500";
+                }
                 
                 playCurrentAudio();
-                const isFirstAttempt = currentCard.mistakesThisSession === 0;
-                updateSRSCard(currentCard.id, true, isFirstAttempt);
+                updateSRSCard(currentCard.id, true, isFlawless);
 
-                if (isFirstAttempt) {
+                if (isFlawless) {
                     currentCard.streak = (currentCard.streak || 0) + 1;
                 }
 
@@ -599,7 +618,7 @@
                 if (newStreak >= 2) dot2.className = "w-2.5 h-2.5 rounded-full bg-indigo-500 shadow-sm pop-animation transition-colors duration-300";
 
                 const finishedCard = sessionQueue.shift();
-                if (isFirstAttempt) sessionStats.flawless++;
+                if (isFlawless) sessionStats.flawless++;
                 
                 sessionStats.completed++;
                 
@@ -690,8 +709,9 @@
             const ruleBox = document.getElementById('ruleBox');
             const ruleBtn = document.getElementById('ruleToggleBtn');
             if (ruleBox.classList.contains('hidden')) {
-                const ruleText = currentCard ? currentCard.rule : "";
+                if (currentCard) currentCard.ruleShown = true; // Фіксуємо використання підказки
                 
+                const ruleText = currentCard ? currentCard.rule : "";
                 let html = `
                     <div class="mb-4 pb-3 border-b border-indigo-200">
                         <p class="font-black text-indigo-800 text-lg mb-1">${currentCard.infFr} <span class="text-indigo-600 font-medium text-sm">— ${currentCard.infUk}</span></p>
