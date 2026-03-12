@@ -34,7 +34,7 @@
 <body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
-    <div id="setupScreen" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-lg w-full mx-4 border border-slate-200 flex flex-col items-center">
+    <div id="setupScreen" class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-lg w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
         
         <div class="flex items-center justify-between w-full mb-6">
             <a href="index.html" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-2">
@@ -92,7 +92,7 @@
     </div>
 
     <!-- ЕКРАН 1.5: ВИБІР ДІЄСЛІВ (ОКРЕМИЙ ЕКРАН) -->
-    <div id="verbSelectionScreen" class="hidden bg-white p-4 sm:p-8 rounded-3xl shadow-xl text-center max-w-4xl w-[calc(100%-1rem)] sm:w-full mx-2 sm:mx-4 border border-slate-200 flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh]">
+    <div id="verbSelectionScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-lg w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh]">
         
         <div class="flex items-center justify-between w-full mb-4 sm:mb-6 shrink-0">
             <button onclick="closeVerbSelection()" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-1 sm:gap-2">
@@ -119,15 +119,15 @@
     </div>
 
     <!-- ЕКРАН 2: ТРЕНУВАННЯ -->
-    <div id="trainingScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-2xl w-full mx-4 border border-slate-200 flex flex-col items-center relative">
-        <button onclick="returnToSetup()" class="absolute top-4 left-4 sm:top-6 sm:left-6 text-slate-400 hover:text-slate-600 transition-colors" title="Налаштування">
+    <div id="trainingScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-lg w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center relative">
+        <button onclick="returnToSetup()" class="absolute top-6 left-6 sm:top-8 sm:left-8 text-slate-400 hover:text-slate-600 transition-colors" title="Налаштування">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
         </button>
 
-        <div class="grid grid-cols-4 gap-2 w-full mb-8 sm:mb-12 px-1 sm:px-6 mt-10 sm:mt-0">
+        <div class="grid grid-cols-4 gap-2 w-full mb-8 sm:mb-12 px-1 sm:px-2 mt-10 sm:mt-0">
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Картка</span>
                 <span id="sessionCounter" class="text-xs sm:text-sm font-black text-teal-600">1/10</span>
@@ -180,7 +180,7 @@
     </div>
 
     <!-- ЕКРАН 3: СТАТИСТИКА -->
-    <div id="statsScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-md w-full mx-4 border border-slate-200 flex flex-col items-center">
+    <div id="statsScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-lg w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Раунд завершено</h2>
         <p class="text-slate-500 mb-8 text-sm sm:text-base">Ваги карток оновлено.</p>
         <div class="grid grid-cols-2 gap-4 w-full mb-8">
@@ -239,7 +239,6 @@
             initSetupScreen(); 
         }
 
-        // --- НОВІ ФУНКЦІЇ ДЛЯ ЕКРАНУ ВИБОРУ ---
         function openVerbSelection() {
             document.getElementById('setupScreen').classList.add('hidden');
             document.getElementById('verbSelectionScreen').classList.remove('hidden');
@@ -256,7 +255,6 @@
             const checkedCount = Array.from(cbs).filter(cb => cb.checked).length;
             document.getElementById('selectedVerbsCount').innerText = `${checkedCount}/${cbs.length}`;
         }
-        // ----------------------------------------
 
         function getSRSMemory() {
             const mem = localStorage.getItem('frenchVerbsSRS_G3');
@@ -300,6 +298,7 @@
                 categoryDiv.innerHTML = `<h3 class="text-sm sm:text-base font-bold text-slate-700 mb-2 sm:mb-3 border-b-2 border-teal-100 inline-block pb-1">${category}</h3>`;
                 
                 const grid = document.createElement('div');
+                // Використовуємо адаптивну сітку до 4 колонок для ширшого екрану
                 grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3";
 
                 groupedVerbs[category].forEach(verbObj => {
@@ -345,10 +344,8 @@
                 container.appendChild(categoryDiv);
             });
 
-            // Оновлюємо лічильник при старті
             updateSelectedVerbsCount();
 
-            // Переконуємось, що відкритий тільки головний екран лобі
             document.getElementById('setupScreen').classList.remove('hidden');
             document.getElementById('verbSelectionScreen').classList.add('hidden');
             document.getElementById('trainingScreen').classList.add('hidden');
@@ -411,7 +408,6 @@
                                 const cardId = `G3_${verbObj.infFr}_${tenseKey}_${form.p}`;
                                 const memory = srsMemory[cardId] || { errors: 0, streak: 0 };
                                 
-                                // Вивчені слова завжди приховуються автоматично
                                 if (memory.streak >= 2) return;
 
                                 allDatabaseCards.push({
