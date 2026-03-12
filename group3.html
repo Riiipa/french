@@ -13,100 +13,90 @@
             100% { transform: scale(1); opacity: 1; }
         }
         .verb-input {
-            min-width: 120px;
-            max-width: 300px;
+            width: 140px;
             text-align: center;
             border-bottom: 3px solid #cbd5e1;
             background: transparent;
             transition: all 0.2s;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0f766e;
-            padding: 2px 8px;
-            display: inline-block;
-            outline: none;
-            -webkit-user-select: text;
-            user-select: text;
-            cursor: text;
-            white-space: nowrap;
-            overflow: hidden;
-            empty-cells: show;
+            font-size: 1.5rem; 
         }
-        .verb-input:focus { border-bottom-color: #0d9488; }
-        .verb-input.correct { color: #16a34a; border-bottom-color: #16a34a; }
-        .verb-input.wrong { color: #ef4444; border-bottom-color: #ef4444; }
-        .verb-input.disabled { pointer-events: none; }
-        .verb-input:empty:before {
-            content: attr(data-placeholder);
-            color: #cbd5e1;
-        }
+        .verb-input:focus { outline: none; border-bottom-color: #0d9488; } 
+        .verb-input:disabled { background-color: transparent; }
         .custom-checkbox:checked + div { background-color: #0d9488; color: white; border-color: #0d9488; }
         .custom-checkbox:checked + div .translation-text { color: #ccfbf1; } 
         .tense-checkbox:checked + div { background-color: #10b981; color: white; border-color: #10b981; }
+        
         .custom-scrollbar::-webkit-scrollbar { width: 5px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
+<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-2 sm:pt-8 pb-4 text-slate-800">
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
-    <div id="setupScreen" class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-2xl w-full mx-4 border border-slate-200 flex flex-col items-center">
-        <div class="flex items-center justify-between w-full mb-6">
-            <a href="index.html" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                <span class="font-bold hidden sm:inline">В лобі</span>
-            </a>
-            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">3 Група</h1>
-            <div class="w-6"></div>
-        </div>
-        <p class="text-slate-500 mb-8 text-sm sm:text-base">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
-        <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
-            <h3 class="text-base sm:text-lg font-black text-slate-700 mb-4 uppercase tracking-widest text-center">Часи</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="onTenseChange()">
-                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">Présent</div>
-                </label>
-                <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="onTenseChange()">
-                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">Passé Composé</div>
-                </label>
-                <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="onTenseChange()">
-                    <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">Futur Simple</div>
-                </label>
+    <!-- h-[calc(100dvh-1rem)] фіксує висоту на мобільному, щоб кнопка була внизу -->
+    <div id="setupScreen" class="bg-white p-4 sm:p-10 rounded-3xl shadow-xl text-center max-w-4xl w-[calc(100%-1rem)] sm:w-full mx-2 sm:mx-4 border border-slate-200 flex flex-col h-[calc(100dvh-1rem)] sm:h-auto sm:max-h-[90vh]">
+        
+        <!-- ВЕРХНЯ ЧАСТИНА (Ширина як у тренуванні: max-w-2xl) -->
+        <div class="w-full max-w-2xl mx-auto shrink-0 flex flex-col items-center">
+            <div class="flex items-center justify-between w-full mb-4 sm:mb-6">
+                <a href="index.html" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    <span class="font-bold hidden sm:inline">В лобі</span>
+                </a>
+                <h1 class="text-2xl sm:text-3xl font-black text-slate-800">3 Група (Винятки)</h1>
+                <div class="w-6"></div>
             </div>
-            <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Виберіть хоча б один час!</div>
-        </div>
-        <div class="w-full mb-8 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
-            <div class="text-left">
-                <h3 class="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest">Дієслова</h3>
-                <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Вибрано: <span id="selectedVerbsCount" class="text-teal-600 font-black">0/0</span></p>
-            </div>
-            <button onclick="openVerbSelection()" class="bg-white border-2 border-teal-100 hover:border-teal-400 text-teal-600 font-bold py-2 px-4 sm:px-5 rounded-xl transition-all shadow-sm active:scale-95 text-sm sm:text-base">Змінити</button>
-        </div>
-        <div id="setupError" class="hidden w-full text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одне дієслово.</div>
-        <button onclick="initSessionFromSetup()" class="w-full mt-auto bg-teal-600 hover:bg-teal-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">Почати тренування</button>
-    </div>
+            
+            <p class="text-slate-500 mb-4 sm:mb-6 text-sm sm:text-base">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
 
-    <!-- ЕКРАН 1.5: ВИБІР ДІЄСЛІВ -->
-    <div id="verbSelectionScreen" class="hidden bg-white p-4 sm:p-8 rounded-3xl shadow-xl text-center max-w-4xl w-[calc(100%-1rem)] sm:w-full mx-2 sm:mx-4 border border-slate-200 flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh]">
-        <div class="flex items-center justify-between w-full mb-4 sm:mb-6 shrink-0">
-            <button onclick="closeVerbSelection()" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-1 sm:gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                <span class="font-bold text-sm sm:text-base hidden sm:inline">Назад</span>
+            <!-- БЛОК: Часи -->
+            <div class="w-full mb-4 sm:mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
+                <h3 class="text-base sm:text-lg font-black text-slate-700 mb-3 uppercase tracking-widest text-center">Часи</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <!-- Додано whitespace-nowrap щоб Passé Composé не переносилось на 2 рядки -->
+                    <label class="cursor-pointer relative block">
+                        <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="onTenseChange()">
+                        <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm whitespace-nowrap">
+                            Présent
+                        </div>
+                    </label>
+                    <label class="cursor-pointer relative block">
+                        <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="onTenseChange()">
+                        <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm whitespace-nowrap">
+                            Passé Composé
+                        </div>
+                    </label>
+                    <label class="cursor-pointer relative block">
+                        <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="onTenseChange()">
+                        <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm whitespace-nowrap">
+                            Futur Simple
+                        </div>
+                    </label>
+                </div>
+                <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Виберіть хоча б один час!</div>
+            </div>
+
+            <!-- БЛОК: Управління дієсловами -->
+            <div class="flex flex-col w-full mb-2 px-2 border-b border-slate-100 pb-3 gap-3 text-left">   
+                <div class="flex gap-2 w-full">
+                    <button onclick="selectVerbsWithMistakes()" class="flex-1 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 py-2.5 sm:py-3 rounded-xl border border-red-100 transition-colors text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Помилки</button>
+                    <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-2.5 sm:py-3 rounded-xl border border-teal-100 transition-colors text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Вибрати всі</button>
+                    <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-2.5 sm:py-3 rounded-xl border border-slate-200 transition-colors text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
+                </div>
+            </div>
+            <div id="setupError" class="hidden text-red-500 font-bold mb-2 pop-animation w-full text-center">Виберіть хоча б одне дієслово.</div>
+        </div>
+
+        <!-- БЛОК: Дієслова (Ширина на весь екран max-w-4xl, скролиться) -->
+        <div id="verbCategoriesContainer" class="w-full flex-1 min-h-0 overflow-y-auto px-1 sm:px-2 text-left mt-2 mb-3 custom-scrollbar"></div>
+
+        <!-- КНОПКА СТАРТУ (Ширина як у тренуванні: max-w-2xl, завжди внизу) -->
+        <div class="w-full max-w-2xl mx-auto mt-auto pt-2 shrink-0 bg-white">
+            <button onclick="initSessionFromSetup()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
+                Почати тренування
             </button>
-            <h2 class="text-lg sm:text-2xl font-black text-slate-800 uppercase tracking-widest">Вибір дієслів</h2>
-            <div class="w-6 sm:w-7"></div>
         </div>
-        <div class="flex gap-1.5 sm:gap-2 w-full mb-4 shrink-0">
-            <button onclick="selectVerbsWithMistakes()" class="flex-1 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 py-2.5 sm:py-3 rounded-xl border border-red-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Помилки</button>
-            <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-2.5 sm:py-3 rounded-xl border border-teal-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Всі</button>
-            <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-2.5 sm:py-3 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
-        </div>
-        <div id="verbCategoriesContainer" class="w-full flex-1 overflow-y-auto px-1 sm:px-2 text-left mb-4 custom-scrollbar"></div>
-        <button onclick="closeVerbSelection()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg tracking-widest uppercase shrink-0 mt-auto">Готово</button>
     </div>
 
     <!-- ЕКРАН 2: ТРЕНУВАННЯ -->
@@ -141,18 +131,16 @@
         </div>
 
         <div class="flex flex-col items-center justify-center w-full mb-6 sm:mb-8 min-h-[10rem] sm:min-h-[12rem]">
+            
             <span id="wordDisplay" class="text-2xl sm:text-4xl font-black text-slate-800 mb-8 sm:mb-10 text-center leading-tight">???</span>
+            
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <!-- contenteditable замість <input> — iOS не показує панель автозаповнення -->
-                <div
-                    id="userInput"
-                    contenteditable="true"
-                    class="verb-input"
-                    data-placeholder="..."
-                ></div>
+                <!-- УВАГА: Додано атрибути для повного блокування підказок iOS -->
+                <input type="text" id="userInput" name="french_verb_answer" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" data-form-type="other" data-lpignore="true" data-1p-ignore="true">
                 <span id="suffixDisplay"></span>
             </div>
+
             <div id="feedbackContainer" class="hidden flex flex-col items-center mt-8 w-full">
                 <span id="feedbackDisplay" class="text-lg sm:text-2xl font-bold mb-3"></span>
                 <button onclick="playCurrentAudio()" class="p-3 sm:p-4 bg-teal-100 hover:bg-teal-200 text-teal-700 rounded-full transition-colors focus:outline-none">
@@ -161,9 +149,15 @@
             </div>
         </div>
 
-        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">Перевірити</button>
-        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">Далі</button>
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">Показати правило</button>
+        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
+            Перевірити
+        </button>
+        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
+            Далі
+        </button>
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
+            Показати правило
+        </button>
         <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left text-sm text-teal-900 w-full shadow-inner"></div>
     </div>
 
@@ -185,61 +179,30 @@
             <div id="accuracyBar" class="bg-teal-500 h-4 rounded-full" style="width: 0%"></div>
         </div>
         <p class="text-teal-700 font-bold mb-4">Точність: <span id="accuracyText">0%</span></p>
+
+        <!-- Блок для списку помилок -->
         <div id="mistakesListContainer" class="hidden w-full mb-6 text-left border-t border-slate-200 pt-4">
             <h3 class="text-sm font-black text-slate-700 uppercase mb-3 text-center">Помилки в раунді:</h3>
             <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"></div>
         </div>
+
         <button onclick="startSession()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">Наступна сесія</button>
         <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm sm:text-base uppercase">В меню</button>
     </div>
 
     <script>
-        // Хелпери для роботи з contenteditable замість <input>
-        function getInputValue() {
-            return document.getElementById('userInput').innerText.trim();
-        }
-        function setInputValue(val) {
-            const el = document.getElementById('userInput');
-            el.innerText = val;
-        }
-        function clearInput() {
-            const el = document.getElementById('userInput');
-            el.innerText = '';
-        }
-        function focusInput() {
-            const el = document.getElementById('userInput');
-            el.focus();
-            // Ставимо курсор в кінець
-            const range = document.createRange();
-            const sel = window.getSelection();
-            range.selectNodeContents(el);
-            range.collapse(false);
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
-        function disableInput() {
-            const el = document.getElementById('userInput');
-            el.contentEditable = 'false';
-            el.classList.add('disabled');
-        }
-        function enableInput() {
-            const el = document.getElementById('userInput');
-            el.contentEditable = 'true';
-            el.classList.remove('disabled');
-            el.classList.remove('correct');
-            el.classList.remove('wrong');
-        }
-
         const tenseExplanations = {
             "present": "Présent: У 3-й групі закінчення найчастіше -s, -s, -t (або -d), -ons, -ez, -ent.",
             "passe": "Passé Composé: Допоміжне Être/Avoir + Participe Passé (часто нерегулярний: -u, -is, -it, -ert).",
             "futur": "Futur Simple: До інфінітива (без кінцевого -e) додаються закінчення -ai, -as, -a, -ons, -ez, -ont. У деяких дієслів корінь повністю змінюється (être -> ser-, avoir -> aur-, aller -> ir-)."
         };
-        const verbRules = {};
+
+        const verbRules = {}; 
+
         let rawData = [];
 
         function getSavedSetup() {
-            const saved = localStorage.getItem('frenchVerbsSetupGroup3');
+            const saved = localStorage.getItem('frenchVerbsSetupGroup3'); 
             if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
             return { verbs: null, tenses: ['present', 'passe', 'futur'] };
         }
@@ -250,33 +213,22 @@
             const tenseCb = document.querySelectorAll('.tense-checkbox');
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
             localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses }));
-            updateSelectedVerbsCount();
         }
 
-        function onTenseChange() { saveSetup(); initSetupScreen(); }
-
-        function openVerbSelection() {
-            document.getElementById('setupScreen').classList.add('hidden');
-            document.getElementById('verbSelectionScreen').classList.remove('hidden');
-        }
-        function closeVerbSelection() {
-            document.getElementById('verbSelectionScreen').classList.add('hidden');
-            document.getElementById('setupScreen').classList.remove('hidden');
-        }
-        function updateSelectedVerbsCount() {
-            const cbs = document.querySelectorAll('.verb-checkbox');
-            if (cbs.length === 0) return;
-            const checkedCount = Array.from(cbs).filter(cb => cb.checked).length;
-            document.getElementById('selectedVerbsCount').innerText = `${checkedCount}/${cbs.length}`;
+        function onTenseChange() {
+            saveSetup();
+            initSetupScreen(); 
         }
 
         function getSRSMemory() {
             const mem = localStorage.getItem('frenchVerbsSRS_G3');
             return mem ? JSON.parse(mem) : {};
         }
+
         function updateSRSCard(cardId, isCorrect, isFirstAttempt) {
             let memory = getSRSMemory();
             if (!memory[cardId]) memory[cardId] = { errors: 0, streak: 0 };
+            
             if (isCorrect && isFirstAttempt) {
                 memory[cardId].errors = Math.max(0, memory[cardId].errors - 1);
                 memory[cardId].streak = (memory[cardId].streak || 0) + 1;
@@ -290,13 +242,16 @@
         function initSetupScreen() {
             const container = document.getElementById('verbCategoriesContainer');
             container.innerHTML = '';
+            
             const savedSetup = getSavedSetup();
             document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
+
             const groupedVerbs = {};
             rawData.forEach(verb => {
                 if (!groupedVerbs[verb.category]) groupedVerbs[verb.category] = [];
                 groupedVerbs[verb.category].push(verb);
             });
+
             const initialVerbs = savedSetup.verbs !== null ? savedSetup.verbs : rawData.map(v => v.infFr);
             const srsMemory = getSRSMemory();
             const selectedTenses = savedSetup.tenses;
@@ -305,27 +260,35 @@
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = "mb-6 sm:mb-8";
                 categoryDiv.innerHTML = `<h3 class="text-sm sm:text-base font-bold text-slate-700 mb-2 sm:mb-3 border-b-2 border-teal-100 inline-block pb-1">${category}</h3>`;
+                
                 const grid = document.createElement('div');
                 grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3";
+
                 groupedVerbs[category].forEach(verbObj => {
-                    const isChecked = initialVerbs.includes(verbObj.infFr);
-                    let totalForms = 0, learnedForms = 0, verbErrors = 0;
+                    const isChecked = initialVerbs.includes(verbObj.infFr); 
+                    
+                    let totalForms = 0;
+                    let learnedForms = 0;
+                    let verbErrors = 0;
+                    
                     selectedTenses.forEach(tense => {
-                        if (verbObj[tense]) {
+                        if(verbObj[tense]) {
                             verbObj[tense].forEach(f => {
                                 totalForms++;
                                 const cardId = `G3_${verbObj.infFr}_${tense}_${f.p}`;
-                                if (srsMemory[cardId]) {
-                                    if (srsMemory[cardId].streak >= 2) learnedForms++;
-                                    if (srsMemory[cardId].errors > 0) verbErrors++;
+                                if(srsMemory[cardId]) {
+                                    if(srsMemory[cardId].streak >= 2) learnedForms++;
+                                    if(srsMemory[cardId].errors > 0) verbErrors++;
                                 }
                             });
                         }
                     });
+                    
                     const progressPercent = totalForms > 0 ? (learnedForms / totalForms) * 100 : 0;
                     const isFullyLearned = totalForms > 0 && learnedForms === totalForms;
                     const cardStyle = isFullyLearned ? 'bg-green-50/50 border-green-200' : 'bg-white border-slate-200';
                     const badgeHtml = verbErrors > 0 ? `<div class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-sm border border-red-200 z-10">${verbErrors}</div>` : '';
+
                     const label = document.createElement('label');
                     label.className = "cursor-pointer relative block h-full";
                     label.innerHTML = `
@@ -343,9 +306,8 @@
                 categoryDiv.appendChild(grid);
                 container.appendChild(categoryDiv);
             });
-            updateSelectedVerbsCount();
+
             document.getElementById('setupScreen').classList.remove('hidden');
-            document.getElementById('verbSelectionScreen').classList.add('hidden');
             document.getElementById('trainingScreen').classList.add('hidden');
             document.getElementById('statsScreen').classList.add('hidden');
         }
@@ -354,17 +316,22 @@
             document.querySelectorAll('.verb-checkbox').forEach(cb => cb.checked = state);
             saveSetup();
         }
+
         function selectVerbsWithMistakes() {
             let foundMistakes = false;
             document.querySelectorAll('.verb-checkbox').forEach(cb => {
                 const hasErrors = cb.getAttribute('data-has-errors') === 'true';
                 cb.checked = hasErrors;
-                if (hasErrors) foundMistakes = true;
+                if(hasErrors) foundMistakes = true;
             });
             saveSetup();
-            if (!foundMistakes) alert("У вас немає слів із помилками! Ви молодець 🎉");
+            if(!foundMistakes) alert("У вас немає слів із помилками! Ви молодець 🎉");
         }
-        function returnToSetup() { unmasteredCards = []; initSetupScreen(); }
+
+        function returnToSetup() {
+            unmasteredCards = []; 
+            initSetupScreen();
+        }
 
         let allDatabaseCards = [];
         const SESSION_LENGTH = 10;
@@ -373,20 +340,24 @@
         let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
         let unmasteredCards = [];
         let frVoice = null;
-        let initialDeckSize = 0;
+        let initialDeckSize = 0; 
         let sessionTargetSize = 10;
 
         function initSessionFromSetup() {
             const verbCb = document.querySelectorAll('.verb-checkbox:checked');
             const tenseCb = document.querySelectorAll('.tense-checkbox:checked');
+            
             document.getElementById('tenseError').classList.add('hidden');
             document.getElementById('setupError').classList.add('hidden');
+
             if (tenseCb.length === 0) { document.getElementById('tenseError').classList.remove('hidden'); return; }
             if (verbCb.length === 0) { document.getElementById('setupError').classList.remove('hidden'); return; }
+
             const selectedVerbs = Array.from(verbCb).map(cb => cb.value);
             const selectedTenses = Array.from(tenseCb).map(cb => cb.value);
             const tenseNames = { "present": "Présent", "passe": "Passé Composé", "futur": "Futur Simple" };
             const srsMemory = getSRSMemory();
+            
             allDatabaseCards = [];
             rawData.forEach(verbObj => {
                 if (selectedVerbs.includes(verbObj.infFr)) {
@@ -396,11 +367,12 @@
                             verbObj[tenseKey].forEach(form => {
                                 const cardId = `G3_${verbObj.infFr}_${tenseKey}_${form.p}`;
                                 const memory = srsMemory[cardId] || { errors: 0, streak: 0 };
+                                
                                 if (memory.streak >= 2) return;
+
                                 allDatabaseCards.push({
-                                    id: cardId, weight: memory.errors, streak: memory.streak,
-                                    infFr: verbObj.infFr, infUk: verbObj.infUk,
-                                    tenseKey, tenseName: tenseNames[tenseKey],
+                                    id: cardId, weight: memory.errors, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
+                                    tenseKey: tenseKey, tenseName: tenseNames[tenseKey],
                                     prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u,
                                     rule: tenseExplanations[tenseKey] + "<br><br>" + (verbRules[verbObj.infFr] || ""),
                                     allForms: conjugationTable
@@ -410,7 +382,12 @@
                     });
                 }
             });
-            if (allDatabaseCards.length === 0) { alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉"); return; }
+
+            if (allDatabaseCards.length === 0) {
+                alert("Ви вже вивчили всі обрані дієслова у цих часах! 🎉 Скиньте прогрес, щоб повторити.");
+                return;
+            }
+
             initialDeckSize = allDatabaseCards.length;
             unmasteredCards = [...allDatabaseCards];
             startSession();
@@ -426,7 +403,7 @@
             if (!window.speechSynthesis) return;
             window.speechSynthesis.cancel();
             const utter = new SpeechSynthesisUtterance(text);
-            utter.lang = 'fr-FR'; utter.rate = 0.85;
+            utter.lang = 'fr-FR'; utter.rate = 0.85; 
             if (!frVoice) loadVoices(); if (frVoice) utter.voice = frVoice;
             window.speechSynthesis.speak(utter);
         }
@@ -449,18 +426,25 @@
             document.getElementById('setupScreen').classList.add('hidden');
             document.getElementById('statsScreen').classList.add('hidden');
             document.getElementById('trainingScreen').classList.remove('hidden');
+            
             if (unmasteredCards.length === 0) {
                 const remaining = allDatabaseCards.filter(c => c.streak < 2);
-                if (remaining.length === 0) { alert("Всі слова повністю вивчені! 🎉"); returnToSetup(); return; }
+                if (remaining.length === 0) {
+                    alert("Всі слова повністю вивчені! 🎉");
+                    returnToSetup();
+                    return;
+                }
                 unmasteredCards = [...remaining];
                 if (sessionStats.completed > 0) alert("Починаємо нове коло для закріплення слів!");
             }
+            
             unmasteredCards.sort((a, b) => (b.weight - a.weight) || (Math.random() - 0.5));
             const cardsToTake = Math.min(SESSION_LENGTH, unmasteredCards.length);
-            sessionTargetSize = cardsToTake;
+            sessionTargetSize = cardsToTake; 
             sessionQueue = unmasteredCards.splice(0, cardsToTake);
             shuffle(sessionQueue);
             sessionQueue.forEach(card => card.mistakesThisSession = 0);
+            
             sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
             updateUIStats();
             loadNextCard();
@@ -468,10 +452,12 @@
 
         function updateUIStats() {
             let currentCardNum = sessionStats.completed + 1;
-            if (currentCardNum > sessionTargetSize) currentCardNum = sessionTargetSize;
-            if (!currentCard && sessionQueue.length === 0) currentCardNum = sessionTargetSize;
+            if (currentCardNum > sessionTargetSize) currentCardNum = sessionTargetSize; 
+            if (!currentCard && sessionQueue.length === 0) currentCardNum = sessionTargetSize; 
+            
             document.getElementById('sessionCounter').innerText = `${currentCardNum}/${sessionTargetSize}`;
             document.getElementById('mistakeCounter').innerText = sessionStats.totalErrors;
+            
             const remainingCount = allDatabaseCards.filter(c => c.streak < 2).length;
             document.getElementById('globalDeckCounter').innerText = remainingCount;
         }
@@ -490,104 +476,135 @@
             document.getElementById('wordDisplay').innerText = currentCard.ukFull;
             document.getElementById('prefixDisplay').innerText = currentCard.prefix.endsWith("'") ? currentCard.prefix : currentCard.prefix + " ";
             document.getElementById('suffixDisplay').innerText = " " + currentCard.suffix;
-
+            
             const input = document.getElementById('userInput');
-            clearInput();
-            enableInput();
-            input.style.minWidth = Math.max(120, currentCard.verb.length * 16) + 'px';
-
+            input.value = ''; input.disabled = false;
+            input.style.width = Math.max(120, currentCard.verb.length * 16) + 'px';
+            input.className = "verb-input text-teal-700 font-bold border-slate-300";
+            
             document.getElementById('feedbackContainer').classList.add('hidden');
             document.getElementById('checkBtn').classList.remove('hidden');
             document.getElementById('nextBtn').classList.add('hidden');
             document.getElementById('ruleBox').classList.add('hidden');
             document.getElementById('ruleToggleBtn').innerText = "Показати правило";
 
-            focusInput();
+            input.focus();
         }
 
         function checkAnswer() {
-            const userVerb = getInputValue().toLowerCase().replace(/['`]/g, "'");
-            if (!userVerb) return;
+            const input = document.getElementById('userInput');
+            if (!input.value.trim()) return;
 
-            const correctVerb = currentCard.verb.toLowerCase().replace(/['`]/g, "'").trim();
+            const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").trim();
+            const userVerb = normalize(input.value);
+            const correctVerb = normalize(currentCard.verb);
 
-            disableInput();
+            input.disabled = true;
             document.getElementById('feedbackContainer').classList.remove('hidden');
             const feedbackText = document.getElementById('feedbackDisplay');
+            
             const dot1 = document.getElementById('streakDot1');
             const dot2 = document.getElementById('streakDot2');
-            const input = document.getElementById('userInput');
 
             if (userVerb === correctVerb) {
                 feedbackText.innerText = "Ідеально ✓";
                 feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
-                input.classList.add('correct');
+                input.className = "verb-input font-bold text-green-600 border-green-500";
+                
                 playCurrentAudio();
                 const isFirstAttempt = currentCard.mistakesThisSession === 0;
                 updateSRSCard(currentCard.id, true, isFirstAttempt);
-                if (isFirstAttempt) currentCard.streak = (currentCard.streak || 0) + 1;
+
+                if (isFirstAttempt) {
+                    currentCard.streak = (currentCard.streak || 0) + 1;
+                }
+
                 const newStreak = currentCard.streak || 0;
                 if (newStreak >= 1) dot1.className = "w-2.5 h-2.5 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
                 if (newStreak >= 2) dot2.className = "w-2.5 h-2.5 rounded-full bg-teal-500 shadow-sm pop-animation transition-colors duration-300";
+
                 const finishedCard = sessionQueue.shift();
                 if (isFirstAttempt) sessionStats.flawless++;
+                
                 sessionStats.completed++;
-                if (finishedCard.streak < 2) unmasteredCards.push(finishedCard);
+                
+                if (finishedCard.streak < 2) {
+                    unmasteredCards.push(finishedCard);
+                }
+                
             } else {
-                sessionStats.totalErrors++; sessionStats.mistakes++;
+                sessionStats.totalErrors++; sessionStats.mistakes++; 
+                
                 if (currentCard.mistakesThisSession === 0) {
                     sessionStats.mistakesList.push({
-                        prefix: currentCard.prefix, verb: currentCard.verb,
-                        userVerb, suffix: currentCard.suffix,
-                        inf: currentCard.infFr, tense: currentCard.tenseName
+                        prefix: currentCard.prefix,
+                        verb: currentCard.verb,
+                        userVerb: userVerb,
+                        suffix: currentCard.suffix,
+                        inf: currentCard.infFr,
+                        tense: currentCard.tenseName
                     });
                 }
+                
                 currentCard.mistakesThisSession++;
                 updateSRSCard(currentCard.id, false, false);
-                currentCard.streak = 0;
+                currentCard.streak = 0; 
+                
                 dot1.className = "w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300";
                 dot2.className = "w-2.5 h-2.5 rounded-full bg-slate-300 transition-colors duration-300";
-                setInputValue(currentCard.verb);
-                input.classList.add('wrong');
+
+                input.value = currentCard.verb; 
                 feedbackText.innerHTML = `Помилка. Треба: <span class="text-teal-600 font-black">${currentCard.verb}</span>`;
                 feedbackText.className = "text-lg sm:text-2xl mb-2 text-red-500 pop-animation";
+                input.className = "verb-input font-bold text-red-500 border-red-500";
+
                 playCurrentAudio();
             }
 
-            updateUIStats();
+            updateUIStats(); 
             document.getElementById('checkBtn').classList.add('hidden');
             const nextBtn = document.getElementById('nextBtn');
             nextBtn.classList.remove('hidden');
             nextBtn.focus();
         }
 
-        function nextTask() { currentCard = null; loadNextCard(); }
+        function nextTask() { 
+            currentCard = null; 
+            loadNextCard(); 
+        }
 
         function showStatsScreen() {
             document.getElementById('trainingScreen').classList.add('hidden');
             document.getElementById('statsScreen').classList.remove('hidden');
+
             document.getElementById('statCorrect').innerText = sessionStats.flawless;
             document.getElementById('statMistakes').innerText = sessionStats.totalErrors;
+
             const accuracy = sessionStats.completed > 0 ? Math.round((sessionStats.flawless / sessionStats.completed) * 100) : 0;
             document.getElementById('accuracyText').innerText = accuracy + '%';
+            
             const bar = document.getElementById('accuracyBar');
             bar.style.width = accuracy + '%';
             bar.className = accuracy >= 90 ? "bg-green-500 h-4 rounded-full" : (accuracy >= 70 ? "bg-yellow-500 h-4 rounded-full" : "bg-red-500 h-4 rounded-full");
+
             const mistakesContainer = document.getElementById('mistakesListContainer');
             const mistakesListEl = document.getElementById('mistakesList');
             mistakesListEl.innerHTML = '';
+            
             if (sessionStats.mistakesList.length > 0) {
                 mistakesContainer.classList.remove('hidden');
                 sessionStats.mistakesList.forEach(m => {
                     const prefixSpace = m.prefix.endsWith("'") ? m.prefix : m.prefix + " ";
-                    mistakesListEl.insertAdjacentHTML('beforeend', `
+                    const html = `
                         <div class="bg-red-50 p-3 rounded-xl border border-red-100 text-sm shadow-sm">
                             <div class="flex justify-between items-start mb-1">
                                 <span class="font-bold text-slate-700">${m.inf} <span class="text-[10px] font-bold text-slate-400 uppercase">(${m.tense})</span></span>
                             </div>
                             <div class="text-slate-500 line-through decoration-red-400">${prefixSpace}<span class="text-red-500 font-bold">${m.userVerb}</span> ${m.suffix}</div>
                             <div class="text-slate-800 font-medium">${prefixSpace}<span class="text-green-600 font-black">${m.verb}</span> ${m.suffix}</div>
-                        </div>`);
+                        </div>
+                    `;
+                    mistakesListEl.insertAdjacentHTML('beforeend', html);
                 });
             } else {
                 mistakesContainer.classList.add('hidden');
@@ -598,13 +615,16 @@
             const ruleBox = document.getElementById('ruleBox');
             const ruleBtn = document.getElementById('ruleToggleBtn');
             if (ruleBox.classList.contains('hidden')) {
+                const ruleText = currentCard ? currentCard.rule : "";
+                
                 let html = `
                     <div class="mb-4 pb-3 border-b border-teal-200">
                         <p class="font-black text-teal-800 text-lg mb-1">${currentCard.infFr} <span class="text-teal-600 font-medium text-sm">— ${currentCard.infUk}</span></p>
                         <p class="font-bold text-xs text-teal-600 uppercase tracking-wider">${currentCard.tenseName}</p>
                     </div>
-                    <p class="font-medium leading-relaxed">${currentCard.rule}</p>`;
-                if (currentCard.allForms) {
+                    <p class="font-medium leading-relaxed">${ruleText}</p>`;
+                    
+                if (currentCard && currentCard.allForms) {
                     html += `<div class="mt-4 grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-3 sm:gap-y-2 text-slate-700 bg-white p-3 rounded-xl border border-teal-100 shadow-sm font-medium">
                                 ${currentCard.allForms.map(f => `<div>${f}</div>`).join('')}
                             </div>`;
@@ -618,15 +638,8 @@
             }
         }
 
-        // Enter для перевірки, заборона переносу рядка в contenteditable
-        document.getElementById('userInput').addEventListener('keydown', function(e) {
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') { e.preventDefault(); checkAnswer(); }
-        });
-        // Заборона вставки форматованого тексту
-        document.getElementById('userInput').addEventListener('paste', function(e) {
-            e.preventDefault();
-            const text = (e.clipboardData || window.clipboardData).getData('text/plain');
-            document.execCommand('insertText', false, text);
         });
 
         async function bootApp() {
