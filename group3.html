@@ -41,6 +41,8 @@
             <h1 class="text-2xl sm:text-3xl font-black text-slate-800">3 Група (Винятки)</h1>
             <div class="w-6"></div>
         </div>
+        
+        <p class="text-slate-500 mb-4 sm:mb-6 text-sm sm:text-base shrink-0">Фокус на неправильних дієсловах, зміні коренів та нестандартних закінченнях.</p>
 
         <!-- БЛОК: Часи -->
         <div class="w-full mb-4 sm:mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 shrink-0">
@@ -209,6 +211,30 @@
             initSetupScreen(); 
         }
 
+        // Функції для відкриття/закриття екрану вибору дієслів
+        function openVerbSelection() {
+            document.getElementById('setupScreen').classList.add('hidden');
+            document.getElementById('verbSelectionScreen').classList.remove('hidden');
+        }
+
+        function closeVerbSelection() {
+            document.getElementById('verbSelectionScreen').classList.add('hidden');
+            document.getElementById('setupScreen').classList.remove('hidden');
+            updateSelectedVerbsCount(); // Оновлюємо лічильник при поверненні
+        }
+
+        function updateSelectedVerbsCount() {
+            const verbCb = document.querySelectorAll('.verb-checkbox:checked');
+            const totalVerbs = rawData.length; // Вважаємо, що кожне дієслово зустрічається 1 раз у rawData (або рахуємо унікальні infFr)
+            
+            // Якщо rawData містить дублікати infFr, краще рахувати унікальні
+            const uniqueVerbs = new Set(rawData.map(v => v.infFr));
+            const totalUniqueVerbs = uniqueVerbs.size;
+
+            document.getElementById('selectedVerbsCount').innerText = `${verbCb.length}/${totalUniqueVerbs}`;
+        }
+
+
         function getSRSMemory() {
             const mem = localStorage.getItem('frenchVerbsSRS_G3');
             return mem ? JSON.parse(mem) : {};
@@ -296,7 +322,12 @@
                 container.appendChild(categoryDiv);
             });
 
+            // Оновлюємо лічильник після малювання чекбоксів
+            updateSelectedVerbsCount();
+
+            // Переконуємось, що екран вибору дієслів прихований при ініціалізації лобі
             document.getElementById('setupScreen').classList.remove('hidden');
+            document.getElementById('verbSelectionScreen').classList.add('hidden');
             document.getElementById('trainingScreen').classList.add('hidden');
             document.getElementById('statsScreen').classList.add('hidden');
         }
@@ -304,6 +335,7 @@
         function toggleAllVerbs(state) {
             document.querySelectorAll('.verb-checkbox').forEach(cb => cb.checked = state);
             saveSetup();
+            updateSelectedVerbsCount(); // Оновлюємо лічильник
         }
 
         function selectVerbsWithMistakes() {
@@ -314,6 +346,7 @@
                 if(hasErrors) foundMistakes = true;
             });
             saveSetup();
+            updateSelectedVerbsCount(); // Оновлюємо лічильник
             if(!foundMistakes) alert("У вас немає слів із помилками! Ви молодець 🎉");
         }
 
