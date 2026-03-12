@@ -215,7 +215,45 @@
             "futur": "Futur Simple: До інфінітива (без кінцевого -e) додаються закінчення -ai, -as, -a, -ons, -ez, -ont. У деяких дієслів корінь повністю змінюється (être -> ser-, avoir -> aur-, aller -> ir-)."
         };
 
-        const verbRules = {}; 
+        const verbRules = {
+            "Offrir": "Особливість -frir/-vrir: У Présent відмінюється як дієслово 1-ї групи (закінчення -e, -es, -e, -ons, -ez, -ent). Participe Passé: offert.",
+            "Souffrir": "Особливість -frir/-vrir: У Présent відмінюється як дієслово 1-ї групи. Participe Passé: souffert.",
+            "Ouvrir": "Особливість -frir/-vrir: У Présent відмінюється як дієслово 1-ї групи. Participe Passé: ouvert.",
+            "Couvrir": "Особливість -frir/-vrir: У Présent відмінюється як дієслово 1-ї групи. Participe Passé: couvert.",
+            "Découvrir": "Особливість -frir/-vrir: У Présent відмінюється як дієслово 1-ї групи. Participe Passé: découvert.",
+            "Sortir": "Особливість -tir/-mir/-vir: В однині відкидається остання приголосна кореня (je sors), у множині вона повертається (nous sortons). PC відмінюється з Être.",
+            "Partir": "Особливість -tir/-mir/-vir: В однині відкидається 't' (je pars), у множині повертається (nous partons). PC відмінюється з Être.",
+            "Sentir": "Особливість -tir/-mir/-vir: В однині відкидається 't' (je sens), у множині повертається (nous sentons).",
+            "Dormir": "Особливість -tir/-mir/-vir: В однині відкидається 'm' (je dors), у множині повертається (nous dormons).",
+            "Servir": "Особливість -tir/-mir/-vir: В однині відкидається 'v' (je sers), у множині повертається (nous servons).",
+            "Mentir": "Особливість -tir/-mir/-vir: В однині відкидається 't' (je mens), у множині повертається (nous mentons).",
+            "Venir": "Особливість -enir: Три основи у Présent (viens, venons, viennent). У PC відмінюється з Être.",
+            "Tenir": "Особливість -enir: Три основи у Présent (tiens, tenons, tiennent). У PC відмінюється з Avoir.",
+            "Devenir": "Особливість -enir: Відмінюється як Venir. У PC відмінюється з Être.",
+            "Obtenir": "Особливість -enir: Відмінюється як Tenir. У PC відмінюється з Avoir.",
+            "Retenir": "Особливість -enir: Відмінюється як Tenir. У PC відмінюється з Avoir.",
+            "Prendre": "Особливість -prendre: 'd' зберігається в однині, але зникає у множині. Подвоєння 'n' у 3-й особі множини (prennent).",
+            "Apprendre": "Відмінюється як Prendre (apprends, apprenons, apprennent).",
+            "Comprendre": "Відмінюється як Prendre (comprends, comprenons, comprennent).",
+            "Attendre": "Особливість -dre (регулярні): 'd' зберігається у всіх формах (attends, attendons...).",
+            "Répondre": "Особливість -dre (регулярні): 'd' зберігається у всіх формах (réponds, répondons...).",
+            "Pouvoir": "Особливість -oir: Закінчення -x, -x, -t в однині (peux, peux, peut). Зміна основи у множині.",
+            "Vouloir": "Особливість -oir: Закінчення -x, -x, -t в однині (veux, veux, veut). Зміна основи у множині.",
+            "Devoir": "Особливість -oir: Зміна основи (dois, devons, doivent). Participe Passé: dû.",
+            "Savoir": "Особливість -oir: Зміна основи (sais, savons). Participe Passé: su.",
+            "Voir": "Особливість -oir: Зміна 'i' на 'y' перед -ons, -ez (vois, voyons, voient).",
+            "Recevoir": "Особливість -oir: Поява 'ç' перед 'o' та 'u' (reçois, recevons, reçoivent).",
+            "Être": "Абсолютний виняток (suis, es, est, sommes, êtes, sont).",
+            "Avoir": "Абсолютний виняток (ai, as, a, avons, avez, ont).",
+            "Aller": "Абсолютний виняток (vais, vas, va, allons, allez, vont). PC з Être.",
+            "Faire": "Особливість: нестандартні форми множини (faisons, faites, font).",
+            "Dire": "Особливість: унікальна форма на vous — dites.",
+            "Mettre": "Особливість: в однині одне 't' (mets), у множині подвоєння 'tt' (mettons).",
+            "Boire": "Особливість: дві основи (bois, buvons, boivent).",
+            "Lire": "Особливість: поява 's' у множині (lis, lisons).",
+            "Écrire": "Особливість: поява 'v' у множині (écris, écrivons).",
+            "Croire": "Особливість: зміна 'i' на 'y' перед -ons, -ez (crois, croyons, croient)."
+        };
 
         let rawData = [];
 
