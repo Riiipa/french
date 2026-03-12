@@ -118,43 +118,16 @@
         </button>
     </div>
 
-    <!-- ЕКРАН 1.5: ВИБІР ДІЄСЛІВ (ОКРЕМИЙ ЕКРАН) -->
-    <div id="verbSelectionScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-lg w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh]">
-        
-        <div class="flex items-center justify-between w-full mb-4 sm:mb-6 shrink-0">
-            <button onclick="closeVerbSelection()" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-1 sm:gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                <span class="font-bold text-sm sm:text-base hidden sm:inline">Назад</span>
-            </button>
-            <h2 class="text-lg sm:text-2xl font-black text-slate-800 uppercase tracking-widest">Вибір дієслів</h2>
-            <div class="w-6 sm:w-7"></div> <!-- Для балансу -->
-        </div>
-
-        <!-- 3 Кнопки в ряд -->
-        <div class="flex gap-1.5 sm:gap-2 w-full mb-4 shrink-0">
-            <button onclick="selectVerbsWithMistakes()" class="flex-1 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 py-2.5 sm:py-3 rounded-xl border border-red-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Помилки</button>
-            <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-2.5 sm:py-3 rounded-xl border border-teal-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Всі</button>
-            <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-2.5 sm:py-3 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
-        </div>
-
-        <!-- Контейнер для списку (займає весь залишок висоти і скролиться) -->
-        <div id="verbCategoriesContainer" class="w-full flex-1 overflow-y-auto px-1 sm:px-2 text-left mb-4 custom-scrollbar"></div>
-
-        <button onclick="closeVerbSelection()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg tracking-widest uppercase shrink-0 mt-auto">
-            Готово
-        </button>
-    </div>
-
     <!-- ЕКРАН 2: ТРЕНУВАННЯ -->
-    <div id="trainingScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-lg w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center relative">
-        <button onclick="returnToSetup()" class="absolute top-4 left-4 sm:top-5 sm:left-5 text-slate-400 hover:text-slate-600 transition-colors" title="Налаштування">
+    <div id="trainingScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center relative">
+        <button onclick="returnToSetup()" class="absolute top-6 left-6 sm:top-8 sm:left-8 text-slate-400 hover:text-slate-600 transition-colors" title="Налаштування">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
         </button>
 
-        <div class="grid grid-cols-4 gap-2 w-full mb-3 sm:mb-4 px-1 sm:px-2 mt-6 sm:mt-0">
+        <div class="grid grid-cols-4 gap-2 w-full mb-8 sm:mb-10 px-1 sm:px-2 mt-10 sm:mt-0">
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Картка</span>
                 <span id="sessionCounter" class="text-xs sm:text-sm font-black text-teal-600">1/10</span>
@@ -176,34 +149,34 @@
             </div>
         </div>
 
-        <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[7rem] sm:min-h-[8rem]">
+        <div class="flex flex-col items-center justify-center w-full mb-6 sm:mb-8 min-h-[10rem] sm:min-h-[12rem]">
             
-            <span id="wordDisplay" class="text-2xl sm:text-4xl font-black text-slate-800 mb-2 sm:mb-4 text-center leading-tight">???</span>
+            <span id="wordDisplay" class="text-2xl sm:text-4xl font-black text-slate-800 mb-8 sm:mb-10 text-center leading-tight">???</span>
             
-            <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-2 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
+            <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
                 <input type="text" id="userInput" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 <span id="suffixDisplay"></span>
             </div>
 
-            <div id="feedbackContainer" class="hidden flex flex-col items-center mt-3 w-full">
-                <span id="feedbackDisplay" class="text-lg sm:text-xl font-bold mb-2"></span>
-                <button onclick="playCurrentAudio()" class="p-2 sm:p-3 bg-teal-100 hover:bg-teal-200 text-teal-700 rounded-full transition-colors focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.236l4.328 4.328a2 2 0 003.436-1.414V5.086a2 2 0 00-3.436-1.414L9.236 8H7a2 2 0 00-2 2z" /></svg>
+            <div id="feedbackContainer" class="hidden flex flex-col items-center mt-8 w-full">
+                <span id="feedbackDisplay" class="text-lg sm:text-2xl font-bold mb-3"></span>
+                <button onclick="playCurrentAudio()" class="p-3 sm:p-4 bg-teal-100 hover:bg-teal-200 text-teal-700 rounded-full transition-colors focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.236l4.328 4.328a2 2 0 003.436-1.414V5.086a2 2 0 00-3.436-1.414L9.236 8H7a2 2 0 00-2 2z" /></svg>
                 </button>
             </div>
         </div>
 
-        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-2">
+        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Перевірити
         </button>
-        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-2">
+        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-1 px-4 rounded-lg">
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
-        <div id="ruleBox" class="hidden mt-1 p-3 sm:p-4 bg-teal-50 rounded-2xl border border-teal-100 text-left text-sm text-teal-900 w-full shadow-inner"></div>
+        <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left text-sm text-teal-900 w-full shadow-inner"></div>
     </div>
 
     <!-- ЕКРАН 3: СТАТИСТИКА -->
