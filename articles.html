@@ -13,7 +13,7 @@
             100% { transform: scale(1); opacity: 1; }
         }
         .article-input {
-            width: 80px; /* Менше поле, бо вводимо тільки артикль */
+            width: 80px; 
             text-align: center;
             border-bottom: 3px solid #cbd5e1;
             background: transparent;
@@ -28,9 +28,15 @@
         .custom-scrollbar::-webkit-scrollbar { width: 5px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+
+        .modal-enter { animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes modalIn {
+            0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
     </style>
 </head>
-<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
+<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800 relative">
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
     <div id="setupScreen" class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
@@ -43,6 +49,12 @@
             <h1 class="text-2xl sm:text-3xl font-black text-slate-800">Артиклі</h1>
             <div class="w-6"></div>
         </div>
+
+        <!-- Кнопка Шпаргалки -->
+        <button onclick="openCheatSheet()" class="w-full mb-6 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-sm uppercase flex items-center justify-center gap-2 tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>
+            Шпаргалка: Правила Артиклів
+        </button>
         
         <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 text-left rounded-r-xl w-full">
             <p class="text-yellow-700 font-bold text-sm uppercase tracking-widest mb-1">Головне правило</p>
@@ -73,6 +85,72 @@
         <button onclick="initSessionFromSetup()" class="w-full mt-auto bg-yellow-500 hover:bg-yellow-600 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
             Почати тренування
         </button>
+    </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО ШПАРГАЛКИ -->
+    <div id="cheatSheetModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-2xl max-w-2xl w-full border border-slate-200 flex flex-col max-h-[90vh] transform scale-95 transition-all duration-300">
+            
+            <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-200 shrink-0">
+                <h2 class="text-2xl font-black text-slate-800 uppercase tracking-widest flex items-center gap-2">
+                    <span class="text-yellow-500">💡</span> Шпаргалка
+                </h2>
+                <button onclick="closeCheatSheet()" class="text-slate-400 hover:text-slate-700 transition-colors p-1 bg-slate-100 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            
+            <div class="overflow-y-auto custom-scrollbar pr-2 space-y-6 text-left">
+                
+                <div>
+                    <h3 class="font-black text-lg text-slate-800 mb-2">1. Концепт vs. Частина</h3>
+                    <p class="text-sm text-slate-600 mb-2">Ми використовуємо <b>le, la, les</b>, коли говоримо про явище взагалі (особливо після <i>aimer, adorer, détester, préférer</i>).</p>
+                    <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm">
+                        <span class="text-green-600 font-bold">J'aime le café.</span> (Я люблю каву як напій загалом).
+                    </div>
+                    <p class="text-sm text-slate-600 mt-3 mb-2">Ми використовуємо <b>du, de la, de l', des</b> (частковий артикль), коли споживаємо або беремо частину чогось незлічуваного.</p>
+                    <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm">
+                        <span class="text-green-600 font-bold">Je bois du café.</span> (Я п'ю якусь кількість кави зараз).
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-black text-lg text-red-600 mb-2">2. Чорна діра заперечення (Тільки DE)</h3>
+                    <p class="text-sm text-slate-600 mb-2">Конструкція <code class="bg-slate-200 px-1 rounded text-red-600">ne ... pas</code> знищує артиклі <b>un, une, des, du, de la</b> і перетворює їх на голе <b>de / d'</b>.</p>
+                    <div class="bg-red-50 p-3 rounded-lg border border-red-100 text-sm">
+                        <div class="mb-1"><span class="line-through text-slate-400">Je n'ai pas un chien.</span> ❌</div>
+                        <div><span class="text-red-600 font-bold">Je n'ai pas de chien.</span> ✅</div>
+                        <div class="mt-2 text-xs text-slate-500"><b>Виняток:</b> з дієсловом <i>Être</i> артикль залишається (Ce n'est pas <u>un</u> problème). А також <i>le/la/les</i> не змінюються (Je n'aime pas <u>le</u> fromage).</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-black text-lg text-blue-600 mb-2">3. Слова кількості (Тільки DE)</h3>
+                    <p class="text-sm text-slate-600 mb-2">Слова, що виражають міру або кількість (<i>beaucoup, peu, un peu, trop, un kilo, un verre</i>), завжди вимагають <b>de / d'</b>. Ніяких <b>des</b>!</p>
+                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-100 text-sm">
+                        <div class="mb-1"><span class="line-through text-slate-400">Beaucoup des gens.</span> ❌ (Популярна помилка)</div>
+                        <div><span class="text-blue-600 font-bold">Beaucoup de gens.</span> ✅</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-black text-lg text-purple-600 mb-2">4. Злиття прийменників</h3>
+                    <p class="text-sm text-slate-600 mb-2">Прийменники <b>à</b> (до/в/на) та <b>de</b> (з/від) зливаються з означеними артиклями <b>le</b> та <b>les</b>.</p>
+                    <div class="grid grid-cols-2 gap-2 text-sm font-medium">
+                        <div class="bg-purple-50 p-2 rounded border border-purple-100 text-center">à + le = <b class="text-purple-700">au</b></div>
+                        <div class="bg-purple-50 p-2 rounded border border-purple-100 text-center">à + les = <b class="text-purple-700">aux</b></div>
+                        <div class="bg-purple-50 p-2 rounded border border-purple-100 text-center">de + le = <b class="text-purple-700">du</b></div>
+                        <div class="bg-purple-50 p-2 rounded border border-purple-100 text-center">de + les = <b class="text-purple-700">des</b></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2"><i>З жіночим родом злиття немає: à la, de la.</i></p>
+                </div>
+
+            </div>
+
+            <button onclick="closeCheatSheet()" class="w-full mt-6 bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 text-base uppercase tracking-widest shrink-0">
+                Зрозуміло, до бою
+            </button>
+        </div>
     </div>
 
     <!-- ЕКРАН 1.5: ВИБІР КАТЕГОРІЙ -->
@@ -194,6 +272,25 @@
             const skipLearned = document.getElementById('skipLearnedToggle').checked;
             localStorage.setItem('frenchVerbsSetupArticles', JSON.stringify({ categories, skipLearned }));
             updateSelectedVerbsCount();
+        }
+
+        // Керування Шпаргалкою
+        function openCheatSheet() {
+            const modal = document.getElementById('cheatSheetModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.firstElementChild.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeCheatSheet() {
+            const modal = document.getElementById('cheatSheetModal');
+            modal.classList.add('opacity-0');
+            modal.firstElementChild.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
         }
 
         function openVerbSelection() {
@@ -494,6 +591,11 @@
 
         document.getElementById('userInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') { e.preventDefault(); checkAnswer(); }
+        });
+
+        // Закриття модалки по кліку поза нею
+        document.getElementById('cheatSheetModal').addEventListener('click', (e) => {
+            if (e.target.id === 'cheatSheetModal') closeCheatSheet();
         });
 
         async function bootApp() {
