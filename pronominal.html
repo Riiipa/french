@@ -723,15 +723,15 @@
 
         async function bootApp() {
             try {
-                const response = await fetch('./data3.json');
-                if (!response.ok) throw new Error("Файл data3.json не знайдено");
+                const response = await fetch('./data_pronominal.json');
+                if (!response.ok) throw new Error("Файл data_pronominal.json не знайдено");
                 rawData = await response.json();
                 initSetupScreen();
             } catch (error) {
                 console.error("Критична помилка завантаження:", error);
                 document.getElementById('setupScreen').innerHTML = `
                     <h2 class="text-2xl sm:text-3xl font-black text-red-500 mb-4">Помилка архітектури!</h2>
-                    <p class="text-slate-600 font-medium">Не можу знайти файл <b>data3.json</b>.</p>`;
+                    <p class="text-slate-600 font-medium">Не можу знайти файл <b>data_pronominal.json</b>.</p>`;
                 document.getElementById('setupScreen').classList.remove('hidden');
             }
         }
