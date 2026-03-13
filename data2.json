@@ -810,33 +810,6 @@
     ]
   },
   {
-    "category": "Регулярні (-ir)", "infFr": "ralentir", "infUk": "уповільнювати",
-    "present": [
-      { "p": "je", "v": "ralentis", "s": "le rythme", "u": "я уповільнюю темп" },
-      { "p": "tu", "v": "ralentis", "s": "le rythme", "u": "ти уповільнюєш темп" },
-      { "p": "il", "v": "ralentit", "s": "le rythme", "u": "він уповільнює темп" },
-      { "p": "nous", "v": "ralentissons", "s": "le rythme", "u": "ми уповільнюємо темп" },
-      { "p": "vous", "v": "ralentissez", "s": "le rythme", "u": "ви уповільнюєте темп" },
-      { "p": "ils", "v": "ralentissent", "s": "le rythme", "u": "вони уповільнюють темп" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai ralenti", "s": "le rythme", "u": "я уповільнив темп" },
-      { "p": "tu", "v": "as ralenti", "s": "le rythme", "u": "ти уповільнив темп" },
-      { "p": "il", "v": "a ralenti", "s": "le rythme", "u": "він уповільнив темп" },
-      { "p": "nous", "v": "avons ralenti", "s": "le rythme", "u": "ми уповільнили темп" },
-      { "p": "vous", "v": "avez ralenti", "s": "le rythme", "u": "ви уповільнили темп" },
-      { "p": "ils", "v": "ont ralenti", "s": "le rythme", "u": "вони уповільнили темп" }
-    ],
-    "futur": [
-      { "p": "je", "v": "ralentirai", "s": "le rythme", "u": "я уповільню темп" },
-      { "p": "tu", "v": "ralentiras", "s": "le rythme", "u": "ти уповільниш темп" },
-      { "p": "il", "v": "ralentira", "s": "le rythme", "u": "він уповільнить темп" },
-      { "p": "nous", "v": "ralentirons", "s": "le rythme", "u": "ми уповільнимо темп" },
-      { "p": "vous", "v": "ralentirez", "s": "le rythme", "u": "ви уповільните темп" },
-      { "p": "ils", "v": "ralentiront", "s": "le rythme", "u": "вони уповільнять темп" }
-    ]
-  },
-  {
     "category": "Регулярні (-ir)", "infFr": "maigrir", "infUk": "худнути",
     "present": [
       { "p": "je", "v": "maigris", "s": "vite", "u": "я худну швидко" },
@@ -1050,6 +1023,33 @@
       { "p": "nous", "v": "raccourcirons", "s": "le texte", "u": "ми скоротимо текст" },
       { "p": "vous", "v": "raccourcirez", "s": "le texte", "u": "ви скоротите текст" },
       { "p": "ils", "v": "raccourciront", "s": "le texte", "u": "вони скоротять текст" }
+    ]
+  },
+    {
+    "category": "Регулярні (-ir)", "infFr": "ralentir", "infUk": "уповільнювати",
+    "present": [
+      { "p": "je", "v": "ralentis", "s": "le rythme", "u": "я уповільнюю темп" },
+      { "p": "tu", "v": "ralentis", "s": "le rythme", "u": "ти уповільнюєш темп" },
+      { "p": "il", "v": "ralentit", "s": "le rythme", "u": "він уповільнює темп" },
+      { "p": "nous", "v": "ralentissons", "s": "le rythme", "u": "ми уповільнюємо темп" },
+      { "p": "vous", "v": "ralentissez", "s": "le rythme", "u": "ви уповільнюєте темп" },
+      { "p": "ils", "v": "ralentissent", "s": "le rythme", "u": "вони уповільнюють темп" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai ralenti", "s": "le rythme", "u": "я уповільнив темп" },
+      { "p": "tu", "v": "as ralenti", "s": "le rythme", "u": "ти уповільнив темп" },
+      { "p": "il", "v": "a ralenti", "s": "le rythme", "u": "він уповільнив темп" },
+      { "p": "nous", "v": "avons ralenti", "s": "le rythme", "u": "ми уповільнили темп" },
+      { "p": "vous", "v": "avez ralenti", "s": "le rythme", "u": "ви уповільнили темп" },
+      { "p": "ils", "v": "ont ralenti", "s": "le rythme", "u": "вони уповільнили темп" }
+    ],
+    "futur": [
+      { "p": "je", "v": "ralentirai", "s": "le rythme", "u": "я уповільню темп" },
+      { "p": "tu", "v": "ralentiras", "s": "le rythme", "u": "ти уповільниш темп" },
+      { "p": "il", "v": "ralentira", "s": "le rythme", "u": "він уповільнить темп" },
+      { "p": "nous", "v": "ralentirons", "s": "le rythme", "u": "ми уповільнимо темп" },
+      { "p": "vous", "v": "ralentirez", "s": "le rythme", "u": "ви уповільните темп" },
+      { "p": "ils", "v": "ralentiront", "s": "le rythme", "u": "вони уповільнять темп" }
     ]
   },
   {
