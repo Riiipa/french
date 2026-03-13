@@ -1,0 +1,205 @@
+[
+  {
+    "category": "Щоденна рутина (1 група)",
+    "infFr": "Se lever",
+    "infUk": "вставати / підніматися",
+    "present": [
+      { "p": "je", "v": "me lève", "s": "tôt", "u": "я встаю рано" },
+      { "p": "tu", "v": "te lèves", "s": "tard", "u": "ти встаєш пізно" },
+      { "p": "elle", "v": "se lève", "s": "vite", "u": "вона встає швидко" },
+      { "p": "nous", "v": "nous levons", "s": "à 7h", "u": "ми встаємо о 7-й" },
+      { "p": "vous", "v": "vous levez", "s": "difficilement", "u": "ви встаєте важко" },
+      { "p": "ils", "v": "se lèvent", "s": "en même temps", "u": "вони встають одночасно" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis levé", "s": "tôt", "u": "я (ч.р.) встав рано" },
+      { "p": "tu", "v": "t'es levé", "s": "tard", "u": "ти (ч.р.) встав пізно" },
+      { "p": "elle", "v": "s'est levée", "s": "vite", "u": "вона встала швидко" },
+      { "p": "nous", "v": "nous sommes levés", "s": "à 7h", "u": "ми встали о 7-й" },
+      { "p": "vous", "v": "vous êtes levés", "s": "difficilement", "u": "ви встали важко" },
+      { "p": "elles", "v": "se sont levées", "s": "en même temps", "u": "вони (ж.р.) встали одночасно" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me lèverai", "s": "tôt", "u": "я встану рано" },
+      { "p": "tu", "v": "te lèveras", "s": "tard", "u": "ти встанеш пізно" },
+      { "p": "elle", "v": "se lèvera", "s": "vite", "u": "вона встане швидко" },
+      { "p": "nous", "v": "nous lèverons", "s": "à 7h", "u": "ми встанемо о 7-й" },
+      { "p": "vous", "v": "vous lèverez", "s": "difficilement", "u": "ви встанете важко" },
+      { "p": "ils", "v": "se lèveront", "s": "en même temps", "u": "вони встануть одночасно" }
+    ]
+  },
+  {
+    "category": "Щоденна рутина (Елізія)",
+    "infFr": "S'habiller",
+    "infUk": "одягатися",
+    "present": [
+      { "p": "je", "v": "m'habille", "s": "chaudement", "u": "я одягаюся тепло" },
+      { "p": "tu", "v": "t'habilles", "s": "en noir", "u": "ти одягаєшся в чорне" },
+      { "p": "il", "v": "s'habille", "s": "bien", "u": "він одягається добре" },
+      { "p": "nous", "v": "nous habillons", "s": "pour sortir", "u": "ми одягаємося, щоб вийти" },
+      { "p": "vous", "v": "vous habillez", "s": "vite", "u": "ви одягаєтеся швидко" },
+      { "p": "elles", "v": "s'habillent", "s": "élégamment", "u": "вони одягаються елегантно" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis habillé", "s": "chaudement", "u": "я (ч.р.) одягнувся тепло" },
+      { "p": "tu", "v": "t'es habillé", "s": "en noir", "u": "ти (ч.р.) одягнувся в чорне" },
+      { "p": "elle", "v": "s'est habillée", "s": "bien", "u": "вона одягнулася добре" },
+      { "p": "nous", "v": "nous sommes habillés", "s": "pour sortir", "u": "ми одягнулися, щоб вийти" },
+      { "p": "vous", "v": "vous êtes habillés", "s": "vite", "u": "ви одягнулися швидко" },
+      { "p": "elles", "v": "se sont habillées", "s": "élégamment", "u": "вони (ж.р.) одягнулися елегантно" }
+    ],
+    "futur": [
+      { "p": "je", "v": "m'habillerai", "s": "chaudement", "u": "я одягнуся тепло" },
+      { "p": "tu", "v": "t'habilleras", "s": "en noir", "u": "ти одягнешся в чорне" },
+      { "p": "il", "v": "s'habillera", "s": "bien", "u": "він одягнеться добре" },
+      { "p": "nous", "v": "nous habillerons", "s": "pour sortir", "u": "ми одягнемося, щоб вийти" },
+      { "p": "vous", "v": "vous habillerez", "s": "vite", "u": "ви одягнетеся швидко" },
+      { "p": "elles", "v": "s'habilleront", "s": "élégamment", "u": "вони одягнуться елегантно" }
+    ]
+  },
+  {
+    "category": "Керування дієслів (s'occuper de)",
+    "infFr": "S'occuper",
+    "infUk": "займатися (кимось/чимось)",
+    "present": [
+      { "p": "je", "v": "m'occupe", "s": "des enfants", "u": "я займаюся дітьми" },
+      { "p": "tu", "v": "t'occupes", "s": "du projet", "u": "ти займаєшся проєктом" },
+      { "p": "elle", "v": "s'occupe", "s": "de tout", "u": "вона займається всім" },
+      { "p": "nous", "v": "nous occupons", "s": "du client", "u": "ми займаємося клієнтом" },
+      { "p": "vous", "v": "vous occupez", "s": "de la maison", "u": "ви займаєтеся будинком" },
+      { "p": "ils", "v": "s'occupent", "s": "des détails", "u": "вони займаються деталями" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis occupé", "s": "des enfants", "u": "я (ч.р.) займався дітьми" },
+      { "p": "tu", "v": "t'es occupé", "s": "du projet", "u": "ти (ч.р.) займався проєктом" },
+      { "p": "elle", "v": "s'est occupée", "s": "de tout", "u": "вона займалася всім" },
+      { "p": "nous", "v": "nous sommes occupés", "s": "du client", "u": "ми займалися клієнтом" },
+      { "p": "vous", "v": "vous êtes occupés", "s": "de la maison", "u": "ви займалися будинком" },
+      { "p": "ils", "v": "se sont occupés", "s": "des détails", "u": "вони займалися деталями" }
+    ],
+    "futur": [
+      { "p": "je", "v": "m'occuperai", "s": "des enfants", "u": "я буду займатися дітьми" },
+      { "p": "tu", "v": "t'occuperas", "s": "du projet", "u": "ти будеш займатися проєктом" },
+      { "p": "elle", "v": "s'occupera", "s": "de tout", "u": "вона буде займатися всім" },
+      { "p": "nous", "v": "nous occuperons", "s": "du client", "u": "ми будемо займатися клієнтом" },
+      { "p": "vous", "v": "vous occuperez", "s": "de la maison", "u": "ви будете займатися будинком" },
+      { "p": "ils", "v": "s'occuperont", "s": "des détails", "u": "вони будуть займатися деталями" }
+    ]
+  },
+  {
+    "category": "Керування дієслів (s'intéresser à)",
+    "infFr": "S'intéresser",
+    "infUk": "цікавитися (чимось)",
+    "present": [
+      { "p": "je", "v": "m'intéresse", "s": "à l'art", "u": "я цікавлюся мистецтвом" },
+      { "p": "tu", "v": "t'intéresses", "s": "à la politique", "u": "ти цікавишся політикою" },
+      { "p": "il", "v": "s'intéresse", "s": "à l'histoire", "u": "він цікавиться історією" },
+      { "p": "nous", "v": "nous intéressons", "s": "à ce sujet", "u": "ми цікавимося цією темою" },
+      { "p": "vous", "v": "vous intéressez", "s": "à ça ?", "u": "ви цікавитеся цим?" },
+      { "p": "elles", "v": "s'intéressent", "s": "aux langues", "u": "вони цікавляться мовами" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis intéressé", "s": "à l'art", "u": "я (ч.р.) зацікавився мистецтвом" },
+      { "p": "tu", "v": "t'es intéressé", "s": "à la politique", "u": "ти (ч.р.) зацікавився політикою" },
+      { "p": "elle", "v": "s'est intéressée", "s": "à l'histoire", "u": "вона зацікавилася історією" },
+      { "p": "nous", "v": "nous sommes intéressés", "s": "à ce sujet", "u": "ми зацікавилися цією темою" },
+      { "p": "vous", "v": "vous êtes intéressés", "s": "à ça ?", "u": "ви зацікавилися цим?" },
+      { "p": "elles", "v": "se sont intéressées", "s": "aux langues", "u": "вони (ж.р.) зацікавилися мовами" }
+    ],
+    "futur": [
+      { "p": "je", "v": "m'intéresserai", "s": "à l'art", "u": "я буду цікавитися мистецтвом" },
+      { "p": "tu", "v": "t'intéresseras", "s": "à la politique", "u": "ти будеш цікавитися політикою" },
+      { "p": "il", "v": "s'intéressera", "s": "à l'histoire", "u": "він буде цікавитися історією" },
+      { "p": "nous", "v": "nous intéresserons", "s": "à ce sujet", "u": "ми будемо цікавитися цією темою" },
+      { "p": "vous", "v": "vous intéresserez", "s": "à ça ?", "u": "ви будете цікавитися цим?" },
+      { "p": "elles", "v": "s'intéresseront", "s": "aux langues", "u": "вони будуть цікавитися мовами" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "Se souvenir",
+    "infUk": "пам'ятати / згадувати",
+    "present": [
+      { "p": "je", "v": "me souviens", "s": "de toi", "u": "я пам'ятаю тебе" },
+      { "p": "tu", "v": "te souviens", "s": "de ce jour", "u": "ти пам'ятаєш цей день" },
+      { "p": "elle", "v": "se souvient", "s": "de tout", "u": "вона пам'ятає все" },
+      { "p": "nous", "v": "nous souvenons", "s": "de notre enfance", "u": "ми пам'ятаємо наше дитинство" },
+      { "p": "vous", "v": "vous souvenez", "s": "de lui ?", "u": "ви пам'ятаєте його?" },
+      { "p": "ils", "v": "se souviennent", "s": "des détails", "u": "вони пам'ятають деталі" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis souvenu", "s": "de toi", "u": "я (ч.р.) згадав тебе" },
+      { "p": "tu", "v": "t'es souvenu", "s": "de ce jour", "u": "ти (ч.р.) згадав цей день" },
+      { "p": "elle", "v": "s'est souvenue", "s": "de tout", "u": "вона згадала все" },
+      { "p": "nous", "v": "nous sommes souvenus", "s": "de notre enfance", "u": "ми згадали наше дитинство" },
+      { "p": "vous", "v": "vous êtes souvenus", "s": "de lui ?", "u": "ви згадали його?" },
+      { "p": "elles", "v": "se sont souvenues", "s": "des détails", "u": "вони (ж.р.) згадали деталі" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me souviendrai", "s": "de toi", "u": "я буду пам'ятати тебе" },
+      { "p": "tu", "v": "te souviendras", "s": "de ce jour", "u": "ти будеш пам'ятати цей день" },
+      { "p": "elle", "v": "se souviendra", "s": "de tout", "u": "вона буде пам'ятати все" },
+      { "p": "nous", "v": "nous souviendrons", "s": "de notre enfance", "u": "ми будемо пам'ятати наше дитинство" },
+      { "p": "vous", "v": "vous souviendrez", "s": "de lui ?", "u": "ви будете пам'ятати його?" },
+      { "p": "ils", "v": "se souviendront", "s": "des détails", "u": "вони будуть пам'ятати деталі" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "S'asseoir",
+    "infUk": "сідати",
+    "present": [
+      { "p": "je", "v": "m'assois", "s": "ici", "u": "я сідаю тут" },
+      { "p": "tu", "v": "t'assois", "s": "sur le canapé", "u": "ти сідаєш на диван" },
+      { "p": "il", "v": "s'assoit", "s": "à côté", "u": "він сідає поруч" },
+      { "p": "nous", "v": "nous asseyons", "s": "à table", "u": "ми сідаємо за стіл" },
+      { "p": "vous", "v": "vous asseyez", "s": "par terre", "u": "ви сідаєте на підлогу" },
+      { "p": "elles", "v": "s'assoient", "s": "au fond", "u": "вони сідають в кінці" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis assis", "s": "ici", "u": "я (ч.р.) сів тут" },
+      { "p": "tu", "v": "t'es assis", "s": "sur le canapé", "u": "ти (ч.р.) сів на диван" },
+      { "p": "elle", "v": "s'est assise", "s": "à côté", "u": "вона сіла поруч" },
+      { "p": "nous", "v": "nous sommes assis", "s": "à table", "u": "ми сіли за стіл" },
+      { "p": "vous", "v": "vous êtes assis", "s": "par terre", "u": "ви сіли на підлогу" },
+      { "p": "elles", "v": "se sont assises", "s": "au fond", "u": "вони (ж.р.) сіли в кінці" }
+    ],
+    "futur": [
+      { "p": "je", "v": "m'assoirai", "s": "ici", "u": "я сяду тут" },
+      { "p": "tu", "v": "t'assoiras", "s": "sur le canapé", "u": "ти сядеш на диван" },
+      { "p": "il", "v": "s'assoira", "s": "à côté", "u": "він сяде поруч" },
+      { "p": "nous", "v": "nous assoirons", "s": "à table", "u": "ми сядемо за стіл" },
+      { "p": "vous", "v": "vous assoirez", "s": "par terre", "u": "ви сядете на підлогу" },
+      { "p": "elles", "v": "s'assoiront", "s": "au fond", "u": "вони сядуть в кінці" }
+    ]
+  },
+  {
+    "category": "Складні ідіоми (B1)",
+    "infFr": "Se rendre compte",
+    "infUk": "усвідомлювати / розуміти",
+    "present": [
+      { "p": "je", "v": "me rends compte", "s": "de ça", "u": "я усвідомлюю це" },
+      { "p": "tu", "v": "te rends compte", "s": "de l'erreur", "u": "ти усвідомлюєш помилку" },
+      { "p": "elle", "v": "se rend compte", "s": "du danger", "u": "вона усвідомлює небезпеку" },
+      { "p": "nous", "v": "nous rendons compte", "s": "du problème", "u": "ми усвідомлюємо проблему" },
+      { "p": "vous", "v": "vous rendez compte", "s": "de la situation", "u": "ви усвідомлюєте ситуацію" },
+      { "p": "ils", "v": "se rendent compte", "s": "de tout", "u": "вони усвідомлюють усе" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis rendu compte", "s": "de ça", "u": "я усвідомив це" },
+      { "p": "tu", "v": "t'es rendu compte", "s": "de l'erreur", "u": "ти усвідомив помилку" },
+      { "p": "elle", "v": "s'est rendu compte", "s": "du danger", "u": "вона усвідомила небезпеку" },
+      { "p": "nous", "v": "nous sommes rendu compte", "s": "du problème", "u": "ми усвідомили проблему" },
+      { "p": "vous", "v": "vous êtes rendu compte", "s": "de la situation", "u": "ви усвідомили ситуацію" },
+      { "p": "ils", "v": "se sont rendu compte", "s": "de tout", "u": "вони усвідомили усе" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me rendrai compte", "s": "de ça", "u": "я усвідомлю це" },
+      { "p": "tu", "v": "te rendras compte", "s": "de l'erreur", "u": "ти усвідомиш помилку" },
+      { "p": "elle", "v": "se rendra compte", "s": "du danger", "u": "вона усвідомить небезпеку" },
+      { "p": "nous", "v": "nous rendrons compte", "s": "du problème", "u": "ми усвідомимо проблему" },
+      { "p": "vous", "v": "vous rendrez compte", "s": "de la situation", "u": "ви усвідомите ситуацію" },
+      { "p": "ils", "v": "se rendront compte", "s": "de tout", "u": "вони усвідомлять усе" }
+    ]
+  }
+]
