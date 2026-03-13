@@ -164,28 +164,28 @@
   {
     "category": "Регулярні (-ir)", "infFr": "atterrir", "infUk": "приземлятися",
     "present": [
-      { "p": "j'", "v": "atterris", "s": "en ville", "u": "я приземляюся в місті" },
-      { "p": "tu", "v": "atterris", "s": "en ville", "u": "ти приземляєшся в місті" },
-      { "p": "il", "v": "atterrit", "s": "en ville", "u": "він приземляється в місті" },
-      { "p": "nous", "v": "atterrissons", "s": "en ville", "u": "ми приземляємося в місті" },
-      { "p": "vous", "v": "atterrissez", "s": "en ville", "u": "ви приземляєтеся в місті" },
-      { "p": "ils", "v": "atterrissent", "s": "en ville", "u": "вони приземляються в місті" }
+      { "p": "j'", "v": "atterris", "s": "à l'aéroport", "u": "я приземляюся в аеропорту" },
+      { "p": "tu", "v": "atterris", "s": "à l'aéroport", "u": "ти приземляєшся в аеропорту" },
+      { "p": "il", "v": "atterrit", "s": "à l'aéroport", "u": "він приземляється в аеропорту" },
+      { "p": "nous", "v": "atterrissons", "s": "à l'aéroport", "u": "ми приземляємося в аеропорту" },
+      { "p": "vous", "v": "atterrissez", "s": "à l'aéroport", "u": "ви приземляєтеся в аеропорту" },
+      { "p": "ils", "v": "atterrissent", "s": "à l'aéroport", "u": "вони приземляються в аеропорту" }
     ],
     "passe": [
-      { "p": "j'", "v": "ai atterri", "s": "en ville", "u": "я приземлився в місті" },
-      { "p": "tu", "v": "as atterri", "s": "en ville", "u": "ти приземлився в місті" },
-      { "p": "il", "v": "a atterri", "s": "en ville", "u": "він приземлився в місті" },
-      { "p": "nous", "v": "avons atterri", "s": "en ville", "u": "ми приземлилися в місті" },
-      { "p": "vous", "v": "avez atterri", "s": "en ville", "u": "ви приземлилися в місті" },
-      { "p": "ils", "v": "ont atterri", "s": "en ville", "u": "вони приземлилися в місті" }
+      { "p": "j'", "v": "ai atterri", "s": "à l'aéroport", "u": "я приземлився в аеропорту" },
+      { "p": "tu", "v": "as atterri", "s": "à l'aéroport", "u": "ти приземлився в аеропорту" },
+      { "p": "il", "v": "a atterri", "s": "à l'aéroport", "u": "він приземлився в аеропорту" },
+      { "p": "nous", "v": "avons atterri", "s": "à l'aéroport", "u": "ми приземлилися в аеропорту" },
+      { "p": "vous", "v": "avez atterri", "s": "à l'aéroport", "u": "ви приземлилися в аеропорту" },
+      { "p": "ils", "v": "ont atterri", "s": "à l'aéroport", "u": "вони приземлилися в аеропорту" }
     ],
     "futur": [
-      { "p": "j'", "v": "atterrirai", "s": "en ville", "u": "я приземлюся в місті" },
-      { "p": "tu", "v": "atterriras", "s": "en ville", "u": "ти приземлишся в місті" },
-      { "p": "il", "v": "atterrira", "s": "en ville", "u": "він приземлиться в місті" },
-      { "p": "nous", "v": "atterrirons", "s": "en ville", "u": "ми приземлимося в місті" },
-      { "p": "vous", "v": "atterrirez", "s": "en ville", "u": "ви приземлитеся в місті" },
-      { "p": "ils", "v": "atterriront", "s": "en ville", "u": "вони приземляться в місті" }
+      { "p": "j'", "v": "atterrirai", "s": "à l'aéroport", "u": "я приземлюся в аеропорту" },
+      { "p": "tu", "v": "atterriras", "s": "à l'aéroport", "u": "ти приземлишся в аеропорту" },
+      { "p": "il", "v": "atterrira", "s": "à l'aéroport", "u": "він приземлиться в аеропорту" },
+      { "p": "nous", "v": "atterrirons", "s": "à l'aéroport", "u": "ми приземлимося в аеропорту" },
+      { "p": "vous", "v": "atterrirez", "s": "à l'aéroport", "u": "ви приземлитеся в аеропорту" },
+      { "p": "ils", "v": "atterriront", "s": "à l'aéroport", "u": "вони приземляться в аеропорту" }
     ]
   },
   {
@@ -330,7 +330,7 @@
       { "p": "tu", "v": "définis", "s": "les règles", "u": "ти визначаєш правила" },
       { "p": "il", "v": "définit", "s": "les règles", "u": "він визначає правила" },
       { "p": "nous", "v": "définissons", "s": "les règles", "u": "ми визначаємо правила" },
-      { "p": "vous", "v": "définissez", "s": "les règles", "u": "ви визначаєте правила" },
+      { "p": "vous", "v": "définissez", "s": "les règles", "u": "ви визначаете правила" },
       { "p": "ils", "v": "définissent", "s": "les règles", "u": "вони визначають правила" }
     ],
     "passe": [
@@ -621,30 +621,30 @@
     ]
   },
   {
-    "category": "Регулярні (-ir)", "infFr": "fraîchir", "infUk": "свіжішати",
+    "category": "Регулярні (-ir)", "infFr": "franchir", "infUk": "перетинати / долати",
     "present": [
-      { "p": "je", "v": "fraîchis", "s": "un peu", "u": "я трохи свіжішаю" },
-      { "p": "tu", "v": "fraîchis", "s": "un peu", "u": "ти трохи свіжішаєш" },
-      { "p": "il", "v": "fraîchit", "s": "un peu", "u": "він трохи свіжішає" },
-      { "p": "nous", "v": "fraîchissons", "s": "un peu", "u": "ми трохи свіжішаємо" },
-      { "p": "vous", "v": "fraîchissez", "s": "un peu", "u": "ви трохи свіжішаєте" },
-      { "p": "ils", "v": "fraîchissent", "s": "un peu", "u": "вони трохи свіжішають" }
+      { "p": "je", "v": "franchis", "s": "la ligne", "u": "я перетинаю лінію" },
+      { "p": "tu", "v": "franchis", "s": "la ligne", "u": "ти перетинаєш лінію" },
+      { "p": "il", "v": "franchit", "s": "la ligne", "u": "він перетинає лінію" },
+      { "p": "nous", "v": "franchissons", "s": "la ligne", "u": "ми перетинаємо лінію" },
+      { "p": "vous", "v": "franchissez", "s": "la ligne", "u": "ви перетинаєте лінію" },
+      { "p": "ils", "v": "franchissent", "s": "la ligne", "u": "вони перетинають лінію" }
     ],
     "passe": [
-      { "p": "j'", "v": "ai fraîchi", "s": "un peu", "u": "я трохи посвіжішав" },
-      { "p": "tu", "v": "as fraîchi", "s": "un peu", "u": "ти трохи посвіжішав" },
-      { "p": "il", "v": "a fraîchi", "s": "un peu", "u": "він трохи посвіжішав" },
-      { "p": "nous", "v": "avons fraîchi", "s": "un peu", "u": "ми трохи посвіжішали" },
-      { "p": "vous", "v": "avez fraîchi", "s": "un peu", "u": "ви трохи посвіжішали" },
-      { "p": "ils", "v": "ont fraîchi", "s": "un peu", "u": "вони трохи посвіжішали" }
+      { "p": "j'", "v": "ai franchi", "s": "la ligne", "u": "я перетнув лінію" },
+      { "p": "tu", "v": "as franchi", "s": "la ligne", "u": "ти перетнув лінію" },
+      { "p": "il", "v": "a franchi", "s": "la ligne", "u": "він перетнув лінію" },
+      { "p": "nous", "v": "avons franchi", "s": "la ligne", "u": "ми перетнули лінію" },
+      { "p": "vous", "v": "avez franchi", "s": "la ligne", "u": "ви перетнули лінію" },
+      { "p": "ils", "v": "ont franchi", "s": "la ligne", "u": "вони перетнули лінію" }
     ],
     "futur": [
-      { "p": "je", "v": "fraîchirai", "s": "un peu", "u": "я трохи посвіжішаю" },
-      { "p": "tu", "v": "fraîchiras", "s": "un peu", "u": "ти трохи посвіжішаєш" },
-      { "p": "il", "v": "fraîchira", "s": "un peu", "u": "він трохи посвіжішає" },
-      { "p": "nous", "v": "fraîchirons", "s": "un peu", "u": "ми трохи посвіжішаємо" },
-      { "p": "vous", "v": "fraîchirez", "s": "un peu", "u": "ви трохи посвіжішаєте" },
-      { "p": "ils", "v": "fraîchiront", "s": "un peu", "u": "вони трохи посвіжішають" }
+      { "p": "je", "v": "franchirai", "s": "la ligne", "u": "я перетну лінію" },
+      { "p": "tu", "v": "franchiras", "s": "la ligne", "u": "ти перетнеш лінію" },
+      { "p": "il", "v": "franchira", "s": "la ligne", "u": "він перетне лінію" },
+      { "p": "nous", "v": "franchirons", "s": "la ligne", "u": "ми перетнемо лінію" },
+      { "p": "vous", "v": "franchirez", "s": "la ligne", "u": "ви перетнете лінію" },
+      { "p": "ils", "v": "franchiront", "s": "la ligne", "u": "вони перетнуть лінію" }
     ]
   },
   {
@@ -810,30 +810,30 @@
     ]
   },
   {
-    "category": "Регулярні (-ir)", "infFr": "jaunir", "infUk": "жовтіти",
+    "category": "Регулярні (-ir)", "infFr": "ralentir", "infUk": "уповільнювати",
     "present": [
-      { "p": "je", "v": "jaunis", "s": "avec le temps", "u": "я жовтію з часом" },
-      { "p": "tu", "v": "jaunis", "s": "avec le temps", "u": "ти жовтієш з часом" },
-      { "p": "il", "v": "jaunit", "s": "avec le temps", "u": "він жовтіє з часом" },
-      { "p": "nous", "v": "jaunissons", "s": "avec le temps", "u": "ми жовтіємо з часом" },
-      { "p": "vous", "v": "jaunissez", "s": "avec le temps", "u": "ви жовтієте з часом" },
-      { "p": "ils", "v": "jaunissent", "s": "avec le temps", "u": "вони жовтіють з часом" }
+      { "p": "je", "v": "ralentis", "s": "le rythme", "u": "я уповільнюю темп" },
+      { "p": "tu", "v": "ralentis", "s": "le rythme", "u": "ти уповільнюєш темп" },
+      { "p": "il", "v": "ralentit", "s": "le rythme", "u": "він уповільнює темп" },
+      { "p": "nous", "v": "ralentissons", "s": "le rythme", "u": "ми уповільнюємо темп" },
+      { "p": "vous", "v": "ralentissez", "s": "le rythme", "u": "ви уповільнюєте темп" },
+      { "p": "ils", "v": "ralentissent", "s": "le rythme", "u": "вони уповільнюють темп" }
     ],
     "passe": [
-      { "p": "j'", "v": "ai jauni", "s": "avec le temps", "u": "я пожовтів з часом" },
-      { "p": "tu", "v": "as jauni", "s": "avec le temps", "u": "ти пожовтів з часом" },
-      { "p": "il", "v": "a jauni", "s": "avec le temps", "u": "він пожовтів з часом" },
-      { "p": "nous", "v": "avons jauni", "s": "avec le temps", "u": "ми пожовтіли з часом" },
-      { "p": "vous", "v": "avez jauni", "s": "avec le temps", "u": "ви пожовтіли з часом" },
-      { "p": "ils", "v": "ont jauni", "s": "avec le temps", "u": "вони пожовтіли з часом" }
+      { "p": "j'", "v": "ai ralenti", "s": "le rythme", "u": "я уповільнив темп" },
+      { "p": "tu", "v": "as ralenti", "s": "le rythme", "u": "ти уповільнив темп" },
+      { "p": "il", "v": "a ralenti", "s": "le rythme", "u": "він уповільнив темп" },
+      { "p": "nous", "v": "avons ralenti", "s": "le rythme", "u": "ми уповільнили темп" },
+      { "p": "vous", "v": "avez ralenti", "s": "le rythme", "u": "ви уповільнили темп" },
+      { "p": "ils", "v": "ont ralenti", "s": "le rythme", "u": "вони уповільнили темп" }
     ],
     "futur": [
-      { "p": "je", "v": "jaunirai", "s": "avec le temps", "u": "я пожовтію з часом" },
-      { "p": "tu", "v": "jauniras", "s": "avec le temps", "u": "ти пожовтієш з часом" },
-      { "p": "il", "v": "jaunira", "s": "avec le temps", "u": "він пожовтіє з часом" },
-      { "p": "nous", "v": "jaunirons", "s": "avec le temps", "u": "ми пожовтіємо з часом" },
-      { "p": "vous", "v": "jaunirez", "s": "avec le temps", "u": "ви пожовтієте з часом" },
-      { "p": "ils", "v": "jauniront", "s": "avec le temps", "u": "вони пожовтіють з часом" }
+      { "p": "je", "v": "ralentirai", "s": "le rythme", "u": "я уповільню темп" },
+      { "p": "tu", "v": "ralentiras", "s": "le rythme", "u": "ти уповільниш темп" },
+      { "p": "il", "v": "ralentira", "s": "le rythme", "u": "він уповільнить темп" },
+      { "p": "nous", "v": "ralentirons", "s": "le rythme", "u": "ми уповільнимо темп" },
+      { "p": "vous", "v": "ralentirez", "s": "le rythme", "u": "ви уповільните темп" },
+      { "p": "ils", "v": "ralentiront", "s": "le rythme", "u": "вони уповільнять темп" }
     ]
   },
   {
@@ -864,7 +864,7 @@
     ]
   },
   {
-    "category": "Регулярні (-ir)", "infFr": "mûrir", "infUk": "дозрівати / дорослішати",
+    "category": "Регулярні (-ir)", "infFr": "mûrir", "infUk": "дорослішати / дозрівати",
     "present": [
       { "p": "je", "v": "mûris", "s": "chaque jour", "u": "я дорослішаю щодня" },
       { "p": "tu", "v": "mûris", "s": "chaque jour", "u": "ти дорослішаєш щодня" },
@@ -1066,7 +1066,7 @@
       { "p": "j'", "v": "ai réagi", "s": "calmement", "u": "я відреагував спокійно" },
       { "p": "tu", "v": "as réagi", "s": "calmement", "u": "ти відреагував спокійно" },
       { "p": "il", "v": "a réagi", "s": "calmement", "u": "він відреагував спокійно" },
-      { "p": "nous", "v": "avons réagi", "s": "calmement", "u": "ми відреагунули спокійно" },
+      { "p": "nous", "v": "avons réagi", "s": "calmement", "u": "ми відреагували спокійно" },
       { "p": "vous", "v": "avez réagi", "s": "calmement", "u": "ви відреагували спокійно" },
       { "p": "ils", "v": "ont réagi", "s": "calmement", "u": "вони відреагували спокійно" }
     ],
