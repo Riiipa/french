@@ -566,4 +566,73 @@
             const mistakesListEl = document.getElementById('mistakesList');
             mistakesListEl.innerHTML = '';
             
-            if (sessionStats
+            if (sessionStats.mistakesList.length > 0) {
+                mistakesContainer.classList.remove('hidden');
+                sessionStats.mistakesList.forEach(m => {
+                    const prefixSpace = m.prefix.endsWith("'") ? m.prefix : m.prefix + " ";
+                    const html = `
+                        <div class="bg-red-50 p-3 rounded-xl border border-red-100 text-sm shadow-sm">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-slate-700">${m.inf} <span class="text-[10px] font-bold text-slate-400 uppercase">(${m.tense})</span></span>
+                            </div>
+                            <div class="text-slate-500 line-through decoration-red-400">${prefixSpace}<span class="text-red-500 font-bold">${m.userVerb}</span> ${m.suffix}</div>
+                            <div class="text-slate-800 font-medium">${prefixSpace}<span class="text-green-600 font-black">${m.verb}</span> ${m.suffix}</div>
+                        </div>
+                    `;
+                    mistakesListEl.insertAdjacentHTML('beforeend', html);
+                });
+            } else {
+                mistakesContainer.classList.add('hidden');
+            }
+        }
+
+        function toggleRule() {
+            const ruleBox = document.getElementById('ruleBox');
+            const ruleBtn = document.getElementById('ruleToggleBtn');
+            if (ruleBox.classList.contains('hidden')) {
+                if (currentCard) currentCard.ruleShown = true;
+                
+                const ruleText = currentCard ? currentCard.rule : "";
+                let html = `
+                    <div class="mb-4 pb-3 border-b border-rose-200">
+                        <p class="font-black text-rose-800 text-lg mb-1">${currentCard.infFr} <span class="text-rose-600 font-medium text-sm">— ${currentCard.infUk}</span></p>
+                        <p class="font-bold text-xs text-rose-600 uppercase tracking-wider">${currentCard.tenseName}</p>
+                    </div>
+                    <p class="font-medium leading-relaxed">${ruleText}</p>`;
+                    
+                if (currentCard && currentCard.allForms) {
+                    html += `<div class="mt-4 grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-3 sm:gap-y-2 text-slate-700 bg-white p-3 rounded-xl border border-rose-100 shadow-sm font-medium">
+                                ${currentCard.allForms.map(f => `<div>${f}</div>`).join('')}
+                            </div>`;
+                }
+                ruleBox.innerHTML = html;
+                ruleBox.classList.remove('hidden');
+                ruleBtn.innerText = "Сховати правило";
+            } else {
+                ruleBox.classList.add('hidden');
+                ruleBtn.innerText = "Показати правило";
+            }
+        }
+
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') { e.preventDefault(); checkAnswer(); }
+        });
+
+        async function bootApp() {
+            try {
+                const response = await fetch('./data2.json');
+                if (!response.ok) throw new Error("Файл data2.json не знайдено");
+                rawData = await response.json();
+                initSetupScreen();
+            } catch (error) {
+                console.error("Критична помилка завантаження:", error);
+                document.getElementById('setupScreen').innerHTML = `
+                    <h2 class="text-2xl sm:text-3xl font-black text-red-500 mb-4">Помилка архітектури!</h2>
+                    <p class="text-slate-600 font-medium">Не можу знайти файл <b>data2.json</b>.</p>`;
+                document.getElementById('setupScreen').classList.remove('hidden');
+            }
+        }
+        window.onload = bootApp;
+    </script>
+</body>
+</html>
