@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Тренажер: Артиклі</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pop-animation { animation: pop 0.3s ease-out forwards; }
+        @keyframes pop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .article-input {
+            width: 80px; /* Менше поле, бо вводимо тільки артикль */
+            text-align: center;
+            border-bottom: 3px solid #cbd5e1;
+            background: transparent;
+            transition: all 0.2s;
+            font-size: 1.5rem; 
+        }
+        .article-input:focus { outline: none; border-bottom-color: #eab308; } 
+        .article-input:disabled { background-color: transparent; }
+        .custom-checkbox:checked + div { background-color: #eab308; color: white; border-color: #eab308; }
+        .custom-checkbox:checked + div .translation-text { color: #fef08a; } 
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
+
+    <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
+    <div id="setupScreen" class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
+        
+        <div class="flex items-center justify-between w-full mb-6">
+            <a href="index.html" class="text-slate-400 hover:text-yellow-600 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                <span class="font-bold hidden sm:inline">В лобі</span>
+            </a>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">Артиклі</h1>
+            <div class="w-6"></div>
+        </div>
+        
+        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 text-left rounded-r-xl w-full">
+            <p class="text-yellow-700 font-bold text-sm uppercase tracking-widest mb-1">Головне правило</p>
+            <p class="text-slate-600 text-sm">Не перекладай слова. Аналізуй контекст: це концепт, частина чогось, заперечення чи фіксована кількість?</p>
+        </div>
+
+        <!-- БЛОК: Інформація про вибрані категорії -->
+        <div class="w-full mb-8 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
+            <div class="text-left">
+                <h3 class="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest">Категорії пасток</h3>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Вибрано: <span id="selectedVerbsCount" class="text-yellow-600 font-black">0/0</span></p>
+            </div>
+            <button onclick="openVerbSelection()" class="bg-white border-2 border-yellow-200 hover:border-yellow-500 text-yellow-600 font-bold py-2 px-4 sm:px-5 rounded-xl transition-all shadow-sm active:scale-95 text-sm sm:text-base">
+                Вибрати
+            </button>
+        </div>
+
+        <div class="flex items-center justify-center gap-3 w-full mb-6">
+            <span class="font-bold text-slate-600 text-sm uppercase tracking-widest">Пропускати вивчені</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="skipLearnedToggle" class="sr-only peer" checked onchange="saveSetup()">
+              <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-500 shadow-inner"></div>
+            </label>
+        </div>
+
+        <div id="setupError" class="hidden w-full text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одну категорію.</div>
+
+        <button onclick="initSessionFromSetup()" class="w-full mt-auto bg-yellow-500 hover:bg-yellow-600 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
+            Почати тренування
+        </button>
+    </div>
+
+    <!-- ЕКРАН 1.5: ВИБІР КАТЕГОРІЙ -->
+    <div id="verbSelectionScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh]">
+        
+        <div class="flex items-center justify-between w-full mb-4 sm:mb-6 shrink-0">
+            <button onclick="closeVerbSelection()" class="text-slate-400 hover:text-yellow-600 transition-colors flex items-center gap-1 sm:gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                <span class="font-bold text-sm sm:text-base hidden sm:inline">Назад</span>
+            </button>
+            <h2 class="text-lg sm:text-2xl font-black text-slate-800 uppercase tracking-widest">Вибір пасток</h2>
+            <div class="w-6 sm:w-7"></div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full mb-4 shrink-0">
+            <button onclick="toggleAllVerbs(true)" class="flex-1 bg-yellow-50 hover:bg-yellow-100 text-yellow-700 py-3 rounded-xl border border-yellow-200 transition-colors font-bold uppercase tracking-wide text-sm">Всі</button>
+            <button onclick="toggleAllVerbs(false)" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-500 py-3 rounded-xl border border-slate-200 transition-colors font-bold uppercase tracking-wide text-sm">Жодного</button>
+        </div>
+
+        <div id="verbCategoriesContainer" class="w-full flex-1 overflow-y-auto px-1 sm:px-2 text-left mb-4 custom-scrollbar flex flex-col gap-3"></div>
+
+        <button onclick="closeVerbSelection()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg tracking-widest uppercase shrink-0 mt-auto">
+            Готово
+        </button>
+    </div>
+
+    <!-- ЕКРАН 2: ТРЕНУВАННЯ -->
+    <div id="trainingScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center relative">
+        <button onclick="returnToSetup()" class="absolute top-6 left-6 sm:top-8 sm:left-8 text-slate-400 hover:text-slate-600 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+        </button>
+
+        <div class="grid grid-cols-3 gap-2 w-full mb-4 sm:mb-6 px-1 sm:px-2 mt-10 sm:mt-8">
+            <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Картка</span>
+                <span id="sessionCounter" class="text-xs sm:text-sm font-black text-yellow-600">1/10</span>
+            </div>
+            <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Залишилося</span>
+                <span id="globalDeckCounter" class="text-xs sm:text-sm font-black text-slate-500">?</span>
+            </div>
+            <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Прогрес</span>
+                <div class="flex gap-1 items-center mt-0.5">
+                    <div id="streakDot1" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                    <div id="streakDot2" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                    <div id="streakDot3" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                    <div id="streakDot4" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[10rem] sm:min-h-[12rem]">
+            
+            <div class="w-full bg-slate-800 text-white rounded-2xl p-4 mb-6 shadow-md relative">
+                <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-slate-900 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Контекст</span>
+                <span id="contextDisplay" class="text-lg sm:text-xl font-bold text-center leading-tight block text-slate-300 mb-1">???</span>
+                <span id="wordDisplay" class="text-sm font-medium text-slate-400 text-center block">???</span>
+            </div>
+            
+            <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-2xl sm:text-4xl font-bold text-slate-700 w-full">
+                <span id="prefixDisplay"></span>
+                <input type="text" id="userInput" class="article-input text-yellow-600 font-black" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="...">
+                <span id="suffixDisplay"></span>
+            </div>
+
+            <div id="feedbackContainer" class="hidden flex flex-col items-center mt-8 w-full">
+                <span id="feedbackDisplay" class="text-lg sm:text-2xl font-bold mb-3"></span>
+                <button onclick="playCurrentAudio()" class="p-3 sm:p-4 bg-yellow-100 hover:bg-yellow-200 text-yellow-700 rounded-full transition-colors focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.236l4.328 4.328a2 2 0 003.436-1.414V5.086a2 2 0 00-3.436-1.414L9.236 8H7a2 2 0 00-2 2z" /></svg>
+                </button>
+            </div>
+        </div>
+
+        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
+            Перевірити
+        </button>
+        <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
+            Далі
+        </button>
+        
+        <!-- Правило показується автоматично при помилці -->
+        <div id="ruleBox" class="hidden mt-2 p-4 bg-red-50 border-l-4 border-red-500 text-left text-sm text-red-900 w-full shadow-sm rounded-r-xl"></div>
+    </div>
+
+    <!-- ЕКРАН 3: СТАТИСТИКА -->
+    <div id="statsScreen" class="hidden bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">Раунд завершено</h2>
+        <div class="grid grid-cols-2 gap-4 w-full mb-8 mt-4">
+            <div class="bg-green-50 rounded-2xl p-4 border border-green-100">
+                <span class="block text-3xl sm:text-4xl font-black text-green-500 mb-1" id="statCorrect">0</span>
+                <span class="text-[10px] sm:text-xs font-bold text-green-700 uppercase">Ідеально</span>
+            </div>
+            <div class="bg-red-50 rounded-2xl p-4 border border-red-100">
+                <span class="block text-3xl sm:text-4xl font-black text-red-500 mb-1" id="statMistakes">0</span>
+                <span class="text-[10px] sm:text-xs font-bold text-red-700 uppercase">Помилок</span>
+            </div>
+        </div>
+
+        <button onclick="startSession()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">Наступна сесія</button>
+        <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm sm:text-base uppercase">В меню</button>
+    </div>
+
+    <script>
+        let rawData = [];
+
+        function getSavedSetup() {
+            const saved = localStorage.getItem('frenchVerbsSetupArticles'); 
+            if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
+            return { categories: null, skipLearned: true };
+        }
+
+        function saveSetup() {
+            const cb = document.querySelectorAll('.verb-checkbox');
+            const categories = Array.from(cb).filter(c => c.checked).map(c => c.value);
+            const skipLearned = document.getElementById('skipLearnedToggle').checked;
+            localStorage.setItem('frenchVerbsSetupArticles', JSON.stringify({ categories, skipLearned }));
+            updateSelectedVerbsCount();
+        }
+
+        function openVerbSelection() {
+            document.getElementById('setupScreen').classList.add('hidden');
+            document.getElementById('verbSelectionScreen').classList.remove('hidden');
+        }
+
+        function closeVerbSelection() {
+            document.getElementById('verbSelectionScreen').classList.add('hidden');
+            document.getElementById('setupScreen').classList.remove('hidden');
+        }
+
+        function updateSelectedVerbsCount() {
+            const cbs = document.querySelectorAll('.verb-checkbox');
+            if (cbs.length === 0) return;
+            const checkedCount = Array.from(cbs).filter(cb => cb.checked).length;
+            document.getElementById('selectedVerbsCount').innerText = `${checkedCount}/${cbs.length}`;
+        }
+
+        function getSRSMemory() {
+            const mem = localStorage.getItem('frenchVerbsSRS_Articles');
+            return mem ? JSON.parse(mem) : {};
+        }
+
+        function updateSRSCard(cardId, isCorrect, isFlawless) {
+            let memory = getSRSMemory();
+            if (!memory[cardId]) memory[cardId] = { streak: 0 };
+            if (isCorrect && isFlawless) {
+                memory[cardId].streak = Math.min(4, (memory[cardId].streak || 0) + 1);
+            } else if (!isCorrect) {
+                memory[cardId].streak = 0;
+            }
+            localStorage.setItem('frenchVerbsSRS_Articles', JSON.stringify(memory));
+        }
+
+        function initSetupScreen() {
+            const container = document.getElementById('verbCategoriesContainer');
+            container.innerHTML = '';
+            
+            const savedSetup = getSavedSetup();
+            document.getElementById('skipLearnedToggle').checked = savedSetup.skipLearned !== false;
+
+            const initialCategories = savedSetup.categories !== null ? savedSetup.categories : rawData.map(v => v.category);
+            const srsMemory = getSRSMemory();
+
+            rawData.forEach(catObj => {
+                const isChecked = initialCategories.includes(catObj.category); 
+                
+                let totalForms = 0;
+                let learnedForms = 0;
+                
+                ['present', 'passe', 'futur'].forEach(tense => {
+                    if(catObj[tense]) {
+                        catObj[tense].forEach(f => {
+                            totalForms++;
+                            const cardId = `ART_${catObj.category}_${f.p}_${f.v}_${f.s}`;
+                            if(srsMemory[cardId] && srsMemory[cardId].streak >= 2) {
+                                learnedForms++;
+                            }
+                        });
+                    }
+                });
+                
+                const progressPercent = totalForms > 0 ? (learnedForms / totalForms) * 100 : 0;
+                const isFullyLearned = totalForms > 0 && learnedForms === totalForms;
+                const cardStyle = isFullyLearned ? 'bg-green-50/50 border-green-200' : 'bg-white border-slate-200';
+
+                const label = document.createElement('label');
+                label.className = "cursor-pointer relative block w-full";
+                label.innerHTML = `
+                    <input type="checkbox" value="${catObj.category}" class="verb-checkbox custom-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSetup()">
+                    <div class="w-full px-4 py-3 rounded-xl border-2 text-slate-600 flex flex-col transition-all hover:bg-slate-50 ${cardStyle} shadow-sm relative text-left">
+                        <span class="font-black text-sm sm:text-base mb-1">${catObj.category}</span>
+                        <span class="translation-text text-[10px] sm:text-xs uppercase font-bold tracking-wider text-slate-400 mb-2">${catObj.infFr}</span>
+                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mt-auto">
+                            <div class="bg-green-400 h-full rounded-full transition-all" style="width: ${progressPercent}%"></div>
+                        </div>
+                    </div>`;
+                container.appendChild(label);
+            });
+
+            updateSelectedVerbsCount();
+            document.getElementById('setupScreen').classList.remove('hidden');
+            document.getElementById('verbSelectionScreen').classList.add('hidden');
+            document.getElementById('trainingScreen').classList.add('hidden');
+            document.getElementById('statsScreen').classList.add('hidden');
+        }
+
+        function toggleAllVerbs(state) {
+            document.querySelectorAll('.verb-checkbox').forEach(cb => cb.checked = state);
+            saveSetup();
+        }
+
+        function returnToSetup() {
+            unmasteredCards = []; 
+            initSetupScreen();
+        }
+
+        let allDatabaseCards = [];
+        const SESSION_LENGTH = 10;
+        let sessionQueue = [];
+        let currentCard = null;
+        let sessionStats = { mistakes: 0, completed: 0, flawless: 0 };
+        let unmasteredCards = [];
+        let frVoice = null;
+        let sessionTargetSize = 10;
+
+        function initSessionFromSetup() {
+            const catCb = document.querySelectorAll('.verb-checkbox:checked');
+            const skipLearnedActive = document.getElementById('skipLearnedToggle').checked;
+            
+            document.getElementById('setupError').classList.add('hidden');
+            if (catCb.length === 0) { document.getElementById('setupError').classList.remove('hidden'); return; }
+
+            const selectedCats = Array.from(catCb).map(cb => cb.value);
+            const srsMemory = getSRSMemory();
+            
+            allDatabaseCards = [];
+            rawData.forEach(catObj => {
+                if (selectedCats.includes(catObj.category)) {
+                    ['present', 'passe', 'futur'].forEach(tenseKey => {
+                        if (catObj[tenseKey]) {
+                            catObj[tenseKey].forEach(form => {
+                                const cardId = `ART_${catObj.category}_${form.p}_${form.v}_${form.s}`;
+                                const memory = srsMemory[cardId] || { streak: 0 };
+                                
+                                if (skipLearnedActive && memory.streak >= 2) return;
+
+                                allDatabaseCards.push({
+                                    id: cardId, streak: memory.streak,
+                                    context: form.c, prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u,
+                                    ruleTrap: form.trap
+                                });
+                            });
+                        }
+                    });
+                }
+            });
+
+            if (allDatabaseCards.length === 0) {
+                alert("Усі картки вивчені! 🎉 Вимкніть перемикач «Пропускати вивчені», щоб повторити.");
+                return;
+            }
+
+            unmasteredCards = [...allDatabaseCards];
+            startSession();
+        }
+
+        function loadVoices() {
+            if (!window.speechSynthesis) return;
+            frVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('fr-') || v.lang === 'fr_FR');
+        }
+        if (window.speechSynthesis) { window.speechSynthesis.onvoiceschanged = loadVoices; loadVoices(); }
+
+        function playAudio(text) {
+            if (!window.speechSynthesis) return;
+            window.speechSynthesis.cancel();
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = 'fr-FR'; utter.rate = 0.85; 
+            if (!frVoice) loadVoices(); if (frVoice) utter.voice = frVoice;
+            window.speechSynthesis.speak(utter);
+        }
+        function playCurrentAudio() {
+            if (currentCard) {
+                const fullPhrase = `${currentCard.prefix} ${currentCard.verb} ${currentCard.suffix}`.replace(/' /g, "'");
+                playAudio(fullPhrase);
+            }
+        }
+
+        function startSession() {
+            document.getElementById('setupScreen').classList.add('hidden');
+            document.getElementById('statsScreen').classList.add('hidden');
+            document.getElementById('trainingScreen').classList.remove('hidden');
+            
+            if (unmasteredCards.length === 0) {
+                if (allDatabaseCards.length === 0) { returnToSetup(); return; }
+                unmasteredCards = [...allDatabaseCards];
+            }
+            
+            unmasteredCards.sort((a, b) => (a.streak - b.streak) || (Math.random() - 0.5));
+            const cardsToTake = Math.min(SESSION_LENGTH, unmasteredCards.length);
+            sessionTargetSize = cardsToTake; 
+            sessionQueue = unmasteredCards.splice(0, cardsToTake);
+            
+            sessionQueue.forEach(card => { card.mistakesThisSession = 0; });
+            sessionStats = { mistakes: 0, completed: 0, flawless: 0 };
+            
+            updateUIStats();
+            loadNextCard();
+        }
+
+        function updateUIStats() {
+            let currentCardNum = sessionStats.completed + 1;
+            if (currentCardNum > sessionTargetSize) currentCardNum = sessionTargetSize; 
+            if (!currentCard && sessionQueue.length === 0) currentCardNum = sessionTargetSize; 
+            
+            document.getElementById('sessionCounter').innerText = `${currentCardNum}/${sessionTargetSize}`;
+            const targetThreshold = 2;
+            const remainingCount = allDatabaseCards.filter(c => c.streak < targetThreshold).length;
+            document.getElementById('globalDeckCounter').innerText = remainingCount;
+        }
+
+        function updateDotsUI(streak) {
+            for(let i=1; i<=4; i++) {
+                document.getElementById('streakDot'+i).className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= i ? "bg-yellow-500 shadow-sm" : "bg-slate-300");
+            }
+        }
+
+        function loadNextCard() {
+            if (sessionQueue.length === 0) { showStatsScreen(); return; }
+            currentCard = sessionQueue[0];
+            updateUIStats();
+            updateDotsUI(currentCard.streak || 0);
+
+            document.getElementById('contextDisplay').innerText = currentCard.context;
+            document.getElementById('wordDisplay').innerText = currentCard.ukFull;
+            
+            document.getElementById('prefixDisplay').innerText = currentCard.prefix.endsWith("'") ? currentCard.prefix : currentCard.prefix + " ";
+            document.getElementById('suffixDisplay').innerText = " " + currentCard.suffix;
+            
+            const input = document.getElementById('userInput');
+            input.value = ''; input.disabled = false;
+            // Динамічна ширина: мінімум 60px, максимум під контент
+            input.style.width = Math.max(60, currentCard.verb.length * 18) + 'px';
+            input.className = "article-input text-yellow-700 font-bold border-slate-300";
+            
+            document.getElementById('feedbackContainer').classList.add('hidden');
+            document.getElementById('checkBtn').classList.remove('hidden');
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('ruleBox').classList.add('hidden');
+
+            setTimeout(() => { input.focus(); }, 50);
+        }
+
+        function checkAnswer() {
+            const input = document.getElementById('userInput');
+            if (!input.value.trim()) return;
+
+            const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").trim();
+            const userVerb = normalize(input.value);
+            const correctVerb = normalize(currentCard.verb);
+
+            input.disabled = true;
+            document.getElementById('feedbackContainer').classList.remove('hidden');
+            const feedbackText = document.getElementById('feedbackDisplay');
+            
+            if (userVerb === correctVerb) {
+                const isFlawless = currentCard.mistakesThisSession === 0;
+                
+                feedbackText.innerText = "Правильно ✓";
+                feedbackText.className = "text-lg sm:text-2xl font-bold mb-2 text-green-600 pop-animation";
+                input.className = "article-input font-bold text-green-600 border-green-500";
+                
+                currentCard.streak = Math.min(4, (currentCard.streak || 0) + 1);
+                updateSRSCard(currentCard.id, true, isFlawless);
+                updateDotsUI(currentCard.streak);
+
+                const finishedCard = sessionQueue.shift();
+                if (isFlawless) sessionStats.flawless++;
+                sessionStats.completed++;
+                
+                if (finishedCard.streak < 2) unmasteredCards.push(finishedCard);
+                playCurrentAudio();
+            } else {
+                sessionStats.mistakes++; 
+                currentCard.mistakesThisSession++;
+                currentCard.streak = 0; 
+                updateSRSCard(currentCard.id, false, false);
+                updateDotsUI(0);
+
+                input.value = currentCard.verb; 
+                feedbackText.innerHTML = `Помилка. Треба: <span class="text-yellow-600 font-black">${currentCard.verb}</span>`;
+                feedbackText.className = "text-lg sm:text-2xl mb-2 text-red-500 pop-animation";
+                input.className = "article-input font-bold text-red-500 border-red-500";
+
+                // Автоматично показуємо правило при помилці
+                const ruleBox = document.getElementById('ruleBox');
+                ruleBox.innerHTML = `<strong>Пам'ятай:</strong> ${currentCard.ruleTrap}`;
+                ruleBox.classList.remove('hidden');
+                
+                playCurrentAudio();
+            }
+
+            updateUIStats(); 
+            document.getElementById('checkBtn').classList.add('hidden');
+            document.getElementById('nextBtn').classList.remove('hidden');
+            document.getElementById('nextBtn').focus();
+        }
+
+        function nextTask() { currentCard = null; loadNextCard(); }
+
+        function showStatsScreen() {
+            document.getElementById('trainingScreen').classList.add('hidden');
+            document.getElementById('statsScreen').classList.remove('hidden');
+            document.getElementById('statCorrect').innerText = sessionStats.flawless;
+            document.getElementById('statMistakes').innerText = sessionStats.mistakes;
+        }
+
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') { e.preventDefault(); checkAnswer(); }
+        });
+
+        async function bootApp() {
+            try {
+                const response = await fetch('./data_articles.json');
+                if (!response.ok) throw new Error("Файл data_articles.json не знайдено");
+                rawData = await response.json();
+                initSetupScreen();
+            } catch (error) {
+                console.error("Помилка:", error);
+                document.getElementById('setupScreen').innerHTML = `<h2 class="text-xl font-black text-red-500">Помилка завантаження бази артиклів.</h2>`;
+                document.getElementById('setupScreen').classList.remove('hidden');
+            }
+        }
+        window.onload = bootApp;
+    </script>
+</body>
+</html>
