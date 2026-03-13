@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Тренажер: Займенники (COD, COI, Y, EN)</title>
+    <title>Тренажер: Займенники </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .pop-animation { animation: pop 0.3s ease-out forwards; }
@@ -22,8 +22,6 @@
         }
         .verb-input:focus { outline: none; border-bottom-color: #0d9488; } 
         .verb-input:disabled { background-color: transparent; }
-        .custom-checkbox:checked + div { background-color: #0d9488; color: white; border-color: #0d9488; }
-        .custom-checkbox:checked + div .translation-text { color: #ccfbf1; } 
         .tense-checkbox:checked + div { background-color: #10b981; color: white; border-color: #10b981; }
         
         .custom-scrollbar::-webkit-scrollbar { width: 5px; }
@@ -31,7 +29,7 @@
         .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
+<body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800 relative">
 
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
     <div id="setupScreen" class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
@@ -41,30 +39,39 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 <span class="font-bold hidden sm:inline">В лобі</span>
             </a>
-            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">Займенники (COD/COI/Y/EN)</h1>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">Займенники (Мікс)</h1>
             <div class="w-6"></div>
         </div>
+
+        <!-- Кнопка Шпаргалки -->
+        <button onclick="openCheatSheet()" class="w-full mb-6 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-sm uppercase flex items-center justify-center gap-2 tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-rose-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>
+            Шпаргалка: Алгоритм Займенників
+        </button>
         
-        <p class="text-slate-500 mb-6 text-sm sm:text-base">Заміна додатків. Стережись узгоджень Participe Passé з COD!</p>
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 text-left rounded-r-xl w-full">
+            <p class="text-red-700 font-bold text-sm uppercase tracking-widest mb-1">Хардкор режим</p>
+            <p class="text-slate-600 text-sm">Усі категорії (COD, COI, Y, EN) змішані. Уважно читай контекст! Звертай увагу на узгодження у Passé Composé з прямим додатком (COD).</p>
+        </div>
 
         <!-- БЛОК: Часи -->
-        <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
-            <h3 class="text-base sm:text-lg font-black text-slate-700 mb-4 uppercase tracking-widest text-center">Часи</h3>
+        <div class="w-full mb-8 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
+            <h3 class="text-base sm:text-lg font-black text-slate-700 mb-4 uppercase tracking-widest text-center">Вибір часів</h3>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="onTenseChange()">
+                    <input type="checkbox" value="present" class="tense-checkbox sr-only" checked onchange="saveSetup()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Présent
                     </div>
                 </label>
                 <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="onTenseChange()">
+                    <input type="checkbox" value="passe" class="tense-checkbox sr-only" onchange="saveSetup()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Passé Composé
                     </div>
                 </label>
                 <label class="cursor-pointer relative block">
-                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="onTenseChange()">
+                    <input type="checkbox" value="futur" class="tense-checkbox sr-only" onchange="saveSetup()">
                     <div class="px-2 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-center transition-all shadow-sm">
                         Futur Simple
                     </div>
@@ -73,55 +80,101 @@
             <div id="tenseError" class="hidden text-red-500 font-bold mt-3 text-sm pop-animation">Виберіть хоча б один час!</div>
         </div>
 
-        <!-- БЛОК: Інформація про вибрані категорії -->
-        <div class="w-full mb-8 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
-            <div class="text-left">
-                <h3 class="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest">Категорії / Дієслова</h3>
-                <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Вибрано: <span id="selectedVerbsCount" class="text-teal-600 font-black">0/0</span></p>
-            </div>
-            <button onclick="openVerbSelection()" class="bg-white border-2 border-teal-100 hover:border-teal-400 text-teal-600 font-bold py-2 px-4 sm:px-5 rounded-xl transition-all shadow-sm active:scale-95 text-sm sm:text-base">
-                Змінити
-            </button>
+        <div class="flex items-center justify-center gap-3 w-full mb-6">
+            <span class="font-bold text-slate-600 text-sm uppercase tracking-widest">Пропускати вивчені</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="skipLearnedToggle" class="sr-only peer" checked onchange="saveSetup()">
+              <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500 shadow-inner"></div>
+            </label>
         </div>
-
-        <div id="setupError" class="hidden w-full text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одну категорію.</div>
 
         <button onclick="initSessionFromSetup()" class="w-full mt-auto bg-teal-600 hover:bg-teal-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
             Почати тренування
         </button>
     </div>
 
-    <!-- ЕКРАН 1.5: ВИБІР ДІЄСЛІВ -->
-    <div id="verbSelectionScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh]">
-        
-        <div class="flex items-center justify-between w-full mb-4 sm:mb-6 shrink-0">
-            <button onclick="closeVerbSelection()" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-1 sm:gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                <span class="font-bold text-sm sm:text-base hidden sm:inline">Назад</span>
+    <!-- МОДАЛЬНЕ ВІКНО ШПАРГАЛКИ ЗАЙМЕННИКІВ -->
+    <div id="cheatSheetModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-2xl max-w-2xl w-full border border-slate-200 flex flex-col max-h-[90vh] transform scale-95 transition-all duration-300">
+            
+            <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-200 shrink-0">
+                <h2 class="text-2xl font-black text-slate-800 uppercase tracking-widest flex items-center gap-2">
+                    <span class="text-rose-500">💡</span> Алгоритм Займенників
+                </h2>
+                <button onclick="closeCheatSheet()" class="text-slate-400 hover:text-slate-700 transition-colors p-1 bg-slate-100 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            
+            <div class="overflow-y-auto custom-scrollbar pr-2 space-y-6 text-left">
+                
+                <!-- COD -->
+                <div>
+                    <h3 class="font-black text-lg text-blue-600 mb-2">1. COD (Прямий додаток: LE, LA, L', LES)</h3>
+                    <p class="text-sm text-slate-600 mb-2">Замінює іменники <b>БЕЗ прийменника</b>. Відповідає на питання <i>Кого? Що?</i></p>
+                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-200 text-sm">
+                        <div>Tu regardes <u class="font-bold">le film</u> ? -> Je <b class="text-blue-700">le</b> regarde.</div>
+                        <div>Tu invites <u class="font-bold">Marie</u> ? -> Je <b class="text-blue-700">l'</b>invite.</div>
+                        <div class="mt-2 text-xs text-red-600 font-bold bg-red-100 p-2 rounded">
+                            🚨 ПАСТКА PASSÉ COMPOSÉ: Якщо COD стоїть ПЕРЕД дієсловом, Participe Passé УЗГОДЖУЄТЬСЯ з ним!<br>
+                            <i>Tu as vu Marie ? -> Je l'ai vu<b>e</b>.</i><br>
+                            <i>Tu as pris les clés ? -> Je les ai pris<b>es</b>.</i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COI -->
+                <div>
+                    <h3 class="font-black text-lg text-emerald-600 mb-2">2. COI (Непрямий додаток: LUI, LEUR)</h3>
+                    <p class="text-sm text-slate-600 mb-2">Замінює <b>ЛЮДЕЙ з прийменником À</b>. Відповідає на питання <i>Кому?</i></p>
+                    <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-sm">
+                        <div>Tu parles <u class="font-bold">à ton père</u> ? -> Je <b class="text-emerald-700">lui</b> parle. (Lui = і для нього, і для неї)</div>
+                        <div>Tu réponds <u class="font-bold">aux clients</u> ? -> Je <b class="text-emerald-700">leur</b> réponds. (Leur НІКОЛИ не має '-s'!)</div>
+                        <div class="mt-2 text-xs text-emerald-800 font-bold bg-emerald-100 p-2 rounded">
+                            🛡️ ТУТ НЕМАЄ УЗГОДЖЕННЯ в Passé Composé!<br>
+                            <i>J'ai téléphoné à Marie -> Je lui ai téléphoné. (Без '-e'!)</i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Y -->
+                <div>
+                    <h3 class="font-black text-lg text-purple-600 mb-2">3. Займенник Y (Туди / Про це)</h3>
+                    <p class="text-sm text-slate-600 mb-2">Замінює <b>МІСЦЕ</b> або <b>НЕІСТОТУ з прийменником À</b>.</p>
+                    <div class="bg-purple-50 p-3 rounded-lg border border-purple-200 text-sm">
+                        <div>Tu vas <u class="font-bold">à Paris</u> ? -> J'<b class="text-purple-700">y</b> vais.</div>
+                        <div>Tu penses <u class="font-bold">à ton examen</u> ? -> J'<b class="text-purple-700">y</b> pense.</div>
+                    </div>
+                </div>
+
+                <!-- EN -->
+                <div>
+                    <h3 class="font-black text-lg text-amber-600 mb-2">4. Займенник EN (Цього / Про це / Звідти)</h3>
+                    <p class="text-sm text-slate-600 mb-2">Замінює <b>КІЛЬКІСТЬ</b> (du, de la, des, un, trois) або <b>НЕІСТОТУ з прийменником DE</b>.</p>
+                    <div class="bg-amber-50 p-3 rounded-lg border border-amber-200 text-sm">
+                        <div>Tu veux <u class="font-bold">du café</u> ? -> J'<b class="text-amber-700">en</b> veux.</div>
+                        <div>Tu as des pommes ? -> J'<b class="text-amber-700">en</b> ai <u class="font-bold">deux</u>. (Кількість залишається в кінці!)</div>
+                        <div>Tu parles <u class="font-bold">de ton voyage</u> ? -> J'<b class="text-amber-700">en</b> parle.</div>
+                    </div>
+                </div>
+
+                <!-- ПОЗИЦІЯ -->
+                <div>
+                    <h3 class="font-black text-lg text-slate-800 mb-2">📍 Де ставити займенник?</h3>
+                    <p class="text-sm text-slate-700 bg-slate-100 p-3 rounded-lg border border-slate-300">
+                        <b>Présent / Futur:</b> ПЕРЕД головним дієсловом.<br>
+                        <i>Je <span class="text-rose-600 font-bold">le</span> vois. / Je <span class="text-rose-600 font-bold">lui</span> parlerai.</i><br><br>
+                        <b>Passé Composé:</b> ПЕРЕД допоміжним дієсловом (avoir/être).<br>
+                        <i>Je <span class="text-rose-600 font-bold">l'</span>ai vu. / J'<span class="text-rose-600 font-bold">y</span> suis allé.</i>
+                    </p>
+                </div>
+
+            </div>
+
+            <button onclick="closeCheatSheet()" class="w-full mt-6 bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 text-base uppercase tracking-widest shrink-0">
+                Запам'ятав, до бою
             </button>
-            <h2 class="text-lg sm:text-2xl font-black text-slate-800 uppercase tracking-widest">Вибір категорій</h2>
-            <div class="w-6 sm:w-7"></div>
         </div>
-
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full mb-4 shrink-0">
-            <div class="flex gap-2 sm:gap-3 flex-1">
-                <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-3 sm:py-4 rounded-xl border border-teal-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Вибрати всі</button>
-                <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-3 sm:py-4 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
-            </div>
-            <div class="flex items-center justify-between gap-3 bg-white px-4 py-3 sm:py-0 rounded-xl border border-slate-200 shadow-sm sm:w-auto">
-                <span class="font-bold text-slate-600 text-[10px] sm:text-xs uppercase tracking-widest whitespace-nowrap">Пропускати вивчені</span>
-                <label class="relative inline-flex items-center cursor-pointer shrink-0">
-                  <input type="checkbox" id="skipLearnedToggle" class="sr-only peer" checked onchange="saveSetup()">
-                  <div class="w-9 h-5 sm:w-11 sm:h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-teal-500 shadow-inner"></div>
-                </label>
-            </div>
-        </div>
-
-        <div id="verbCategoriesContainer" class="w-full flex-1 overflow-y-auto px-1 sm:px-2 text-left mb-4 custom-scrollbar"></div>
-
-        <button onclick="closeVerbSelection()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg tracking-widest uppercase shrink-0 mt-auto">
-            Готово
-        </button>
     </div>
 
     <!-- ЕКРАН 2: ТРЕНУВАННЯ -->
@@ -155,7 +208,6 @@
 
         <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[10rem] sm:min-h-[12rem]">
             
-            <!-- Контекст запитання (Вкрай важливо для займенників) -->
             <div class="w-full bg-slate-800 text-white rounded-2xl p-4 mb-6 shadow-md relative">
                 <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Контекст</span>
                 <span id="contextDisplay" class="text-xl sm:text-2xl font-black text-center leading-tight block">???</span>
@@ -164,7 +216,7 @@
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <input type="text" id="userInput" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <input type="text" id="userInput" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="займенник + дієслово">
                 <span id="suffixDisplay"></span>
             </div>
 
@@ -226,43 +278,67 @@
         let rawData = [];
 
         function getSavedSetup() {
-            const saved = localStorage.getItem('frenchVerbsSetupPronouns'); 
+            const saved = localStorage.getItem('frenchVerbsSetupPronounsHardcore'); 
             if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: null, tenses: ['present', 'passe', 'futur'], skipLearned: true };
+            return { tenses: ['present', 'passe', 'futur'], skipLearned: true };
         }
 
         function saveSetup() {
-            const verbCb = document.querySelectorAll('.verb-checkbox');
-            const verbs = Array.from(verbCb).filter(cb => cb.checked).map(cb => cb.value);
             const tenseCb = document.querySelectorAll('.tense-checkbox');
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
             const skipLearned = document.getElementById('skipLearnedToggle').checked;
             
-            localStorage.setItem('frenchVerbsSetupPronouns', JSON.stringify({ verbs, tenses, skipLearned }));
-            updateSelectedVerbsCount();
+            localStorage.setItem('frenchVerbsSetupPronounsHardcore', JSON.stringify({ tenses, skipLearned }));
         }
 
-        function onTenseChange() {
-            saveSetup();
-            initSetupScreen(); 
+        // Логіка шпаргалки
+        function openCheatSheet() {
+            const modal = document.getElementById('cheatSheetModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.firstElementChild.classList.remove('scale-95');
+            }, 10);
         }
 
-        function openVerbSelection() {
-            document.getElementById('setupScreen').classList.add('hidden');
-            document.getElementById('verbSelectionScreen').classList.remove('hidden');
+        function closeCheatSheet() {
+            const modal = document.getElementById('cheatSheetModal');
+            modal.classList.add('opacity-0');
+            modal.firstElementChild.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
         }
 
-        function closeVerbSelection() {
-            document.getElementById('verbSelectionScreen').classList.add('hidden');
+        // Закриття по кліку поза модалкою
+        document.getElementById('cheatSheetModal').addEventListener('click', (e) => {
+            if (e.target.id === 'cheatSheetModal') closeCheatSheet();
+        });
+
+        function initSetupScreen() {
+            const savedSetup = getSavedSetup();
+            document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
+            document.getElementById('skipLearnedToggle').checked = savedSetup.skipLearned !== false;
+
             document.getElementById('setupScreen').classList.remove('hidden');
+            document.getElementById('trainingScreen').classList.add('hidden');
+            document.getElementById('statsScreen').classList.add('hidden');
         }
 
-        function updateSelectedVerbsCount() {
-            const cbs = document.querySelectorAll('.verb-checkbox');
-            if (cbs.length === 0) return;
-            const checkedCount = Array.from(cbs).filter(cb => cb.checked).length;
-            document.getElementById('selectedVerbsCount').innerText = `${checkedCount}/${cbs.length}`;
+        function returnToSetup() {
+            unmasteredCards = []; 
+            initSetupScreen();
         }
+
+        let allDatabaseCards = [];
+        const SESSION_LENGTH = 10;
+        let sessionQueue = [];
+        let currentCard = null;
+        let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
+        let unmasteredCards = [];
+        let frVoice = null;
+        let sessionTargetSize = 10;
+        let skipLearnedActive = true;
 
         function getSRSMemory() {
             const mem = localStorage.getItem('frenchVerbsSRS_Pronouns');
@@ -282,143 +358,44 @@
             localStorage.setItem('frenchVerbsSRS_Pronouns', JSON.stringify(memory));
         }
 
-        function initSetupScreen() {
-            const container = document.getElementById('verbCategoriesContainer');
-            container.innerHTML = '';
-            
-            const savedSetup = getSavedSetup();
-            document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
-            document.getElementById('skipLearnedToggle').checked = savedSetup.skipLearned !== false;
-
-            const groupedVerbs = {};
-            rawData.forEach(verb => {
-                if (!groupedVerbs[verb.category]) groupedVerbs[verb.category] = [];
-                groupedVerbs[verb.category].push(verb);
-            });
-
-            const initialVerbs = savedSetup.verbs !== null ? savedSetup.verbs : rawData.map(v => v.infFr);
-            const srsMemory = getSRSMemory();
-            const selectedTenses = savedSetup.tenses;
-
-            Object.keys(groupedVerbs).forEach(category => {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.className = "mb-6 sm:mb-8";
-                categoryDiv.innerHTML = `<h3 class="text-sm sm:text-base font-bold text-slate-700 mb-2 sm:mb-3 border-b-2 border-teal-100 inline-block pb-1">${category}</h3>`;
-                
-                const grid = document.createElement('div');
-                grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3";
-
-                groupedVerbs[category].forEach(verbObj => {
-                    const isChecked = initialVerbs.includes(verbObj.infFr); 
-                    
-                    let totalForms = 0;
-                    let learnedForms = 0;
-                    
-                    selectedTenses.forEach(tense => {
-                        if(verbObj[tense]) {
-                            verbObj[tense].forEach(f => {
-                                totalForms++;
-                                const cardId = `PRONOUN_${verbObj.infFr}_${tense}_${f.p}_${f.v}`;
-                                if(srsMemory[cardId] && srsMemory[cardId].streak >= 2) {
-                                    learnedForms++;
-                                }
-                            });
-                        }
-                    });
-                    
-                    const progressPercent = totalForms > 0 ? (learnedForms / totalForms) * 100 : 0;
-                    const isFullyLearned = totalForms > 0 && learnedForms === totalForms;
-                    const cardStyle = isFullyLearned ? 'bg-green-50/50 border-green-200' : 'bg-white border-slate-200';
-
-                    const label = document.createElement('label');
-                    label.className = "cursor-pointer relative block h-full";
-                    label.innerHTML = `
-                        <input type="checkbox" value="${verbObj.infFr}" class="verb-checkbox custom-checkbox sr-only" ${isChecked ? 'checked' : ''} onchange="saveSetup()">
-                        <div class="h-full px-2 py-2 sm:px-3 sm:py-3 rounded-xl border-2 text-slate-600 flex flex-col items-center justify-center transition-all hover:bg-slate-50 ${cardStyle} shadow-sm relative">
-                            <span class="font-bold text-sm sm:text-base mb-0.5 sm:mb-1 text-center leading-tight">${verbObj.infFr}</span>
-                            <span class="translation-text text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-400 text-center leading-tight mb-1">${verbObj.infUk}</span>
-                            <div class="w-full bg-slate-200 h-1 rounded-full overflow-hidden mt-auto">
-                                <div class="bg-green-400 h-full rounded-full transition-all" style="width: ${progressPercent}%"></div>
-                            </div>
-                        </div>`;
-                    grid.appendChild(label);
-                });
-                categoryDiv.appendChild(grid);
-                container.appendChild(categoryDiv);
-            });
-
-            updateSelectedVerbsCount();
-
-            document.getElementById('setupScreen').classList.remove('hidden');
-            document.getElementById('verbSelectionScreen').classList.add('hidden');
-            document.getElementById('trainingScreen').classList.add('hidden');
-            document.getElementById('statsScreen').classList.add('hidden');
-        }
-
-        function toggleAllVerbs(state) {
-            document.querySelectorAll('.verb-checkbox').forEach(cb => cb.checked = state);
-            saveSetup();
-        }
-
-        function returnToSetup() {
-            unmasteredCards = []; 
-            initSetupScreen();
-        }
-
-        let allDatabaseCards = [];
-        const SESSION_LENGTH = 10;
-        let sessionQueue = [];
-        let currentCard = null;
-        let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
-        let unmasteredCards = [];
-        let frVoice = null;
-        let sessionTargetSize = 10;
-        let skipLearnedActive = true;
-
         function initSessionFromSetup() {
-            const verbCb = document.querySelectorAll('.verb-checkbox:checked');
             const tenseCb = document.querySelectorAll('.tense-checkbox:checked');
             skipLearnedActive = document.getElementById('skipLearnedToggle').checked;
             
             document.getElementById('tenseError').classList.add('hidden');
-            document.getElementById('setupError').classList.add('hidden');
-
             if (tenseCb.length === 0) { document.getElementById('tenseError').classList.remove('hidden'); return; }
-            if (verbCb.length === 0) { document.getElementById('setupError').classList.remove('hidden'); return; }
 
-            const selectedVerbs = Array.from(verbCb).map(cb => cb.value);
             const selectedTenses = Array.from(tenseCb).map(cb => cb.value);
             const tenseNames = { "present": "Présent", "passe": "Passé Composé", "futur": "Futur Simple" };
             const srsMemory = getSRSMemory();
             
             allDatabaseCards = [];
+            
+            // Хардкор: беремо ВСІ категорії, що є у файлі
             rawData.forEach(verbObj => {
-                if (selectedVerbs.includes(verbObj.infFr)) {
-                    selectedTenses.forEach(tenseKey => {
-                        if (verbObj[tenseKey]) {
-                            verbObj[tenseKey].forEach(form => {
-                                // Generating a unique ID based on context since verbs are shared
-                                const cardId = `PRONOUN_${verbObj.infFr}_${tenseKey}_${form.p}_${form.v}`;
-                                const memory = srsMemory[cardId] || { streak: 0 };
-                                
-                                if (skipLearnedActive && memory.streak >= 2) return;
+                selectedTenses.forEach(tenseKey => {
+                    if (verbObj[tenseKey]) {
+                        verbObj[tenseKey].forEach(form => {
+                            const cardId = `PRONOUN_${verbObj.infFr}_${tenseKey}_${form.p}_${form.v}`;
+                            const memory = srsMemory[cardId] || { streak: 0 };
+                            
+                            if (skipLearnedActive && memory.streak >= 2) return;
 
-                                allDatabaseCards.push({
-                                    id: cardId, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
-                                    tenseKey: tenseKey, tenseName: tenseNames[tenseKey],
-                                    context: form.c,
-                                    prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u,
-                                    ruleTrap: form.trap || "",
-                                    rule: tenseExplanations[tenseKey]
-                                });
+                            allDatabaseCards.push({
+                                id: cardId, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
+                                tenseKey: tenseKey, tenseName: tenseNames[tenseKey],
+                                context: form.c,
+                                prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u,
+                                ruleTrap: form.trap || "",
+                                rule: tenseExplanations[tenseKey]
                             });
-                        }
-                    });
-                }
+                        });
+                    }
+                });
             });
 
             if (allDatabaseCards.length === 0) {
-                alert("Усі обрані категорії вже вивчені! 🎉 Вимкніть перемикач «Пропускати вивчені», щоб повторити їх.");
+                alert("Усі картки для обраних часів вже вивчені! 🎉 Вимкніть перемикач «Пропускати вивчені», щоб повторити їх.");
                 return;
             }
 
@@ -519,7 +496,6 @@
             document.getElementById('ruleBox').classList.add('hidden');
             document.getElementById('ruleToggleBtn').innerText = "Показати правило";
 
-            // Focus timeout to ensure transition rendering doesn't steal it
             setTimeout(() => { input.focus(); }, 50);
         }
 
