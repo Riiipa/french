@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Тренажер: Аудіо-Рефлекси</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pop-animation { animation: pop 0.3s ease-out forwards; }
+        @keyframes pop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .shake-animation { animation: shake 0.4s ease-in-out; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        .verb-input {
+            width: 100%;
+            text-align: center;
+            border: none;
+            border-bottom: 3px solid #334155;
+            background: transparent;
+            transition: all 0.2s;
+            font-size: 1.5rem; 
+            color: #f8fafc;
+            padding-bottom: 5px;
+        }
+        .verb-input:focus { outline: none; border-bottom-color: #ef4444; } 
+        .verb-input:disabled { background-color: transparent; border-bottom-color: transparent; }
+        
+        /* Гравітація для прогрес-бару */
+        #timerBar { transition: width 0.1s linear, background-color 0.3s; }
+    </style>
+</head>
+<body class="bg-slate-900 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-200 selection:bg-red-500 selection:text-white">
+
+    <!-- ЕКРАН 1: ЛОБІ -->
+    <div id="setupScreen" class="bg-slate-800 p-8 sm:p-12 rounded-3xl shadow-2xl text-center max-w-xl w-[calc(100%-2rem)] mx-auto border border-slate-700 flex flex-col items-center relative overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-48 h-48 bg-red-500 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
+
+        <div class="flex items-center justify-between w-full mb-6 relative z-10">
+            <a href="index.html" class="text-slate-400 hover:text-red-400 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                <span class="font-bold hidden sm:inline">Меню</span>
+            </a>
+            <h1 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-widest">Рефлекси</h1>
+            <div class="w-6"></div>
+        </div>
+        
+        <div class="bg-slate-900 border-l-4 border-red-500 p-5 mb-8 text-left rounded-r-xl relative z-10 w-full shadow-inner">
+            <h2 class="text-red-500 font-black text-sm uppercase tracking-widest mb-2 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" /></svg>
+                Правила виживання
+            </h2>
+            <ul class="text-slate-300 text-sm space-y-2 font-medium">
+                <li>1. Жодної української мови.</li>
+                <li>2. Ти почуєш запитання.</li>
+                <li>3. У тебе є <b class="text-white">8 секунд</b>, щоб надрукувати логічну відповідь (з використанням займенника).</li>
+                <li>4. Не встиг — помилка.</li>
+            </ul>
+        </div>
+
+        <button onclick="startTraining()" class="w-full relative z-10 bg-red-600 hover:bg-red-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-[0_0_15px_rgba(220,38,38,0.5)] transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
+            Почати симуляцію
+        </button>
+    </div>
+
+    <!-- ЕКРАН 2: ТРЕНУВАННЯ -->
+    <div id="trainingScreen" class="hidden bg-slate-800 p-6 sm:p-10 rounded-3xl shadow-2xl text-center max-w-xl w-[calc(100%-2rem)] mx-auto border border-slate-700 flex flex-col items-center relative">
+        <button onclick="returnToSetup()" class="absolute top-5 left-5 sm:top-6 sm:left-6 text-slate-500 hover:text-slate-300 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+
+        <div class="w-full flex justify-between items-center px-2 mb-6 mt-8 sm:mt-4">
+            <span class="text-slate-400 font-bold text-xs uppercase tracking-widest">Залишилось: <span id="cardsLeft" class="text-white">10</span></span>
+            <div class="flex gap-1" id="streakDots">
+                <!-- Dots injected via JS -->
+            </div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div class="w-full bg-slate-900 rounded-full h-2 mb-8 overflow-hidden shadow-inner">
+            <div id="timerBar" class="bg-emerald-500 h-full w-full"></div>
+        </div>
+
+        <!-- Audio Context -->
+        <div class="flex flex-col items-center justify-center w-full mb-8 min-h-[12rem]">
+            
+            <!-- Big Play Button -->
+            <button id="playAudioBtn" onclick="playQuestion()" class="w-20 h-20 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center shadow-lg transition-transform active:scale-90 mb-4 focus:outline-none ring-4 ring-slate-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+            <!-- Written question (hidden initially or shown if they need help) -->
+            <div id="questionText" class="text-xl sm:text-2xl font-black text-slate-300 mb-2 opacity-0 transition-opacity duration-300 h-8">
+                <!-- Question appears here -->
+            </div>
+            <button id="showTextBtn" onclick="showQuestionText()" class="text-xs text-slate-500 font-bold uppercase tracking-widest hover:text-slate-300 underline mt-2 transition-colors">
+                Показати текст
+            </button>
+            
+        </div>
+
+        <!-- Answer Input -->
+        <div class="w-full relative mb-4">
+            <div class="flex items-baseline justify-center text-2xl sm:text-3xl font-bold text-white w-full gap-2">
+                <span id="prefixDisplay" class="text-slate-400">Oui,</span>
+                <input type="text" id="userInput" class="verb-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="je l'ai vu...">
+            </div>
+        </div>
+
+        <div id="feedbackBox" class="hidden w-full p-4 rounded-xl mt-4 text-left shadow-lg">
+            <p class="text-xs font-bold uppercase tracking-widest mb-1 opacity-70">Правильна відповідь:</p>
+            <p id="correctAnswerDisplay" class="text-xl font-black text-white"></p>
+            <p id="trapExplanation" class="text-sm font-medium mt-2 pt-2 border-t border-white/20"></p>
+        </div>
+
+        <button id="checkBtn" onclick="checkAnswer()" class="w-full mt-6 bg-slate-700 hover:bg-slate-600 text-white font-bold py-4 px-6 rounded-2xl transition-all active:scale-95 text-lg uppercase tracking-widest hidden">
+            Enter
+        </button>
+        <button id="nextBtn" onclick="nextCard()" class="w-full mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-2xl shadow-[0_0_15px_rgba(220,38,38,0.4)] transition-all active:scale-95 text-lg uppercase tracking-widest hidden">
+            Далі
+        </button>
+
+    </div>
+
+    <!-- ЕКРАН 3: РЕЗУЛЬТАТИ -->
+    <div id="statsScreen" class="hidden bg-slate-800 p-8 sm:p-12 rounded-3xl shadow-2xl text-center max-w-xl w-[calc(100%-2rem)] mx-auto border border-slate-700 flex flex-col items-center">
+        <h2 class="text-3xl font-black text-white mb-2">Кінець симуляції</h2>
+        <p class="text-slate-400 mb-8 text-sm">Твій мозок щойно трохи розігрівся.</p>
+        
+        <div class="flex items-center justify-center gap-6 mb-8 w-full">
+            <div class="flex flex-col items-center">
+                <span id="statScore" class="text-5xl font-black text-emerald-500 mb-1">0</span>
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Вижило</span>
+            </div>
+            <div class="h-12 w-px bg-slate-700"></div>
+            <div class="flex flex-col items-center">
+                <span id="statFailed" class="text-5xl font-black text-red-500 mb-1">0</span>
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Померло</span>
+            </div>
+        </div>
+
+        <button onclick="startTraining()" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 px-6 rounded-2xl shadow-lg transition-all active:scale-95 text-lg uppercase tracking-widest mb-3">
+            Ще раз
+        </button>
+        <button onclick="returnToSetup()" class="w-full bg-slate-900 hover:bg-slate-700 text-slate-300 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm uppercase">
+            В меню
+        </button>
+    </div>
+
+    <script>
+        // База розмовних рефлексів (без перекладу, тільки контекст і пастки)
+        const db = [
+            { q: "Tu regardes ce film ?", p: "Oui,", a: "je le regarde", trap: "COD 'le' ставиться ПЕРЕД дієсловом." },
+            { q: "Tu as regardé ce film ?", p: "Oui,", a: "je l'ai regardé", trap: "Елізія (le -> l'). Узгодження немає (film - ч.р.)." },
+            { q: "Il voit la voiture ?", p: "Oui,", a: "il la voit", trap: "COD 'la' перед дієсловом." },
+            { q: "Tu as vu la voiture ?", p: "Oui,", a: "je l'ai vue", trap: "ПАСТКА! 'voiture' - ж.р. COD перед дієсловом = додаємо '-e' (vue)." },
+            { q: "Vous avez vu les filles ?", p: "Oui,", a: "nous les avons vues", trap: "ПАСТКА! COD 'les' (ж.р., множина) перед дієсловом = додаємо '-es' (vues)." },
+            
+            { q: "Tu parles à ton père ?", p: "Oui,", a: "je lui parle", trap: "COI 'lui' (однина). Перед дієсловом." },
+            { q: "Elle a téléphoné à sa mère ?", p: "Oui,", a: "elle lui a téléphoné", trap: "COI 'lui'. ЖОДНОГО УЗГОДЖЕННЯ з непрямим додатком!" },
+            { q: "Tu as répondu aux clients ?", p: "Oui,", a: "je leur ai répondu", trap: "COI 'leur' (множина). Без '-s' на кінці." },
+            
+            { q: "Tu vas à Paris ?", p: "Oui,", a: "j'y vais", trap: "'Y' замінює 'à + місце'." },
+            { q: "Tu es allé au bureau ?", p: "Oui,", a: "j'y suis allé", trap: "'Y' ставиться перед допоміжним дієсловом (y suis allé)." },
+            { q: "Tu as pensé à ton examen ?", p: "Oui,", a: "j'y ai pensé", trap: "'Penser à + неістота' замінюється на 'Y'." },
+            
+            { q: "Tu veux du café ?", p: "Oui,", a: "j'en veux", trap: "'EN' замінює 'du / de la / des' (частинний артикль)." },
+            { q: "Elle a des frères ?", p: "Oui,", a: "elle en a deux", trap: "Якщо є кількість, ми все одно використовуємо 'EN' перед дієсловом." },
+            { q: "Tu as acheté des pommes ?", p: "Oui,", a: "j'en ai acheté", trap: "З 'EN' узгодження в Passé Composé зазвичай НЕ робиться (немає '-es')." },
+            
+            { q: "Tu te lèves tôt ?", p: "Oui,", a: "je me lève tôt", trap: "Зворотне дієслово. 'me' перед 'lève'." },
+            { q: "Elle s'est lavée ?", p: "Oui,", a: "elle s'est lavée", trap: "Зворотне в Passé Composé = Être + узгодження '-e'." },
+            { q: "Elle s'est lavé les mains ?", p: "Oui,", a: "elle s'est lavé les mains", trap: "ПАСТКА! Якщо є прямий додаток (les mains), узгодження ЗНИКАЄ." },
+            { q: "Ils se sont téléphoné ?", p: "Oui,", a: "ils se sont téléphoné", trap: "Téléphoner À. Це непрямий додаток (COI). Узгодження немає!" }
+        ];
+
+        let sessionQueue = [];
+        let currentCard = null;
+        let frVoice = null;
+        let timerInterval;
+        let timeLeft = 0;
+        const MAX_TIME = 8; // 8 seconds per question
+        let score = { pass: 0, fail: 0 };
+        let hasFailedCurrent = false;
+
+        // Init Speech
+        function loadVoices() {
+            if (!window.speechSynthesis) return;
+            const voices = window.speechSynthesis.getVoices();
+            frVoice = voices.find(v => v.lang === 'fr-FR' || v.lang.startsWith('fr-')) || voices[0];
+        }
+        if (window.speechSynthesis) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            loadVoices();
+        }
+
+        function playAudioText(text, rate = 0.9) {
+            if (!window.speechSynthesis) return;
+            window.speechSynthesis.cancel();
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = 'fr-FR';
+            utter.rate = rate; 
+            if (!frVoice) loadVoices();
+            if (frVoice) utter.voice = frVoice;
+            window.speechSynthesis.speak(utter);
+        }
+
+        function returnToSetup() {
+            clearInterval(timerInterval);
+            document.getElementById('trainingScreen').classList.add('hidden');
+            document.getElementById('statsScreen').classList.add('hidden');
+            document.getElementById('setupScreen').classList.remove('hidden');
+        }
+
+        function startTraining() {
+            // Randomize 10 questions
+            let shuffled = [...db].sort(() => 0.5 - Math.random());
+            sessionQueue = shuffled.slice(0, 10);
+            score = { pass: 0, fail: 0 };
+            
+            document.getElementById('setupScreen').classList.add('hidden');
+            document.getElementById('statsScreen').classList.add('hidden');
+            document.getElementById('trainingScreen').classList.remove('hidden');
+            
+            updateDots();
+            loadNextCard();
+        }
+
+        function updateDots() {
+            document.getElementById('cardsLeft').innerText = sessionQueue.length + (currentCard ? 1 : 0);
+            
+            // Generate visual dots based on remaining questions
+            const dotsContainer = document.getElementById('streakDots');
+            dotsContainer.innerHTML = '';
+            for(let i=0; i< (sessionQueue.length + (currentCard?1:0)); i++) {
+                dotsContainer.innerHTML += `<div class="w-1.5 h-1.5 rounded-full bg-slate-600"></div>`;
+            }
+        }
+
+        function loadNextCard() {
+            if (sessionQueue.length === 0) {
+                showStats();
+                return;
+            }
+            currentCard = sessionQueue.shift();
+            hasFailedCurrent = false;
+            updateDots();
+
+            document.getElementById('questionText').innerText = currentCard.q;
+            document.getElementById('questionText').classList.add('opacity-0');
+            document.getElementById('showTextBtn').classList.remove('hidden');
+            
+            document.getElementById('prefixDisplay').innerText = currentCard.p;
+            
+            const input = document.getElementById('userInput');
+            input.value = '';
+            input.disabled = false;
+            input.classList.remove('border-red-500', 'text-red-500', 'border-emerald-500', 'text-emerald-500');
+            input.classList.add('border-slate-700', 'text-white');
+            
+            document.getElementById('feedbackBox').classList.add('hidden');
+            document.getElementById('nextBtn').classList.add('hidden');
+            
+            // Stop previous timer
+            clearInterval(timerInterval);
+            const bar = document.getElementById('timerBar');
+            bar.style.width = '100%';
+            bar.classList.replace('bg-red-500', 'bg-emerald-500');
+            bar.classList.replace('bg-amber-500', 'bg-emerald-500');
+            
+            // Auto play audio after short delay
+            setTimeout(() => {
+                playQuestion();
+                startTimer();
+                input.focus();
+            }, 500);
+        }
+
+        function playQuestion() {
+            if(currentCard) playAudioText(currentCard.q, 0.85); // slightly slower to hear
+        }
+
+        function showQuestionText() {
+            document.getElementById('questionText').classList.remove('opacity-0');
+            document.getElementById('showTextBtn').classList.add('hidden');
+            // Penalty for showing text (optional, but let's just let them see it for now)
+        }
+
+        function startTimer() {
+            timeLeft = MAX_TIME;
+            const bar = document.getElementById('timerBar');
+            
+            timerInterval = setInterval(() => {
+                timeLeft -= 0.1;
+                const percentage = (timeLeft / MAX_TIME) * 100;
+                bar.style.width = `${percentage}%`;
+                
+                if (percentage < 50 && percentage > 20) {
+                    bar.classList.replace('bg-emerald-500', 'bg-amber-500');
+                } else if (percentage <= 20) {
+                    bar.classList.replace('bg-amber-500', 'bg-red-500');
+                }
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    handleTimeOut();
+                }
+            }, 100);
+        }
+
+        function handleTimeOut() {
+            hasFailedCurrent = true;
+            const input = document.getElementById('userInput');
+            input.disabled = true;
+            document.getElementById('trainingScreen').classList.add('shake-animation');
+            setTimeout(() => document.getElementById('trainingScreen').classList.remove('shake-animation'), 400);
+            
+            showFeedback(false, "Час вичерпано!");
+        }
+
+        function checkAnswer() {
+            if(hasFailedCurrent) return; // already failed by timeout
+            
+            clearInterval(timerInterval);
+            const input = document.getElementById('userInput');
+            const userAnswer = input.value.trim().toLowerCase().replace(/[’`]/g, "'").replace(/\s+/g, ' ');
+            const correctAnswer = currentCard.a.toLowerCase();
+            
+            input.disabled = true;
+            
+            if (userAnswer === correctAnswer) {
+                showFeedback(true);
+            } else {
+                hasFailedCurrent = true;
+                showFeedback(false);
+            }
+        }
+
+        function showFeedback(isSuccess, customMsg = null) {
+            const input = document.getElementById('userInput');
+            const feedbackBox = document.getElementById('feedbackBox');
+            
+            // Show text always at the end
+            document.getElementById('questionText').classList.remove('opacity-0');
+            document.getElementById('showTextBtn').classList.add('hidden');
+
+            if (isSuccess) {
+                score.pass++;
+                input.classList.replace('border-slate-700', 'border-emerald-500');
+                input.classList.add('text-emerald-500');
+                feedbackBox.className = "w-full p-4 rounded-xl mt-4 text-left shadow-lg bg-emerald-900/40 border border-emerald-800 pop-animation block";
+                document.getElementById('correctAnswerDisplay').innerText = "✓ " + currentCard.a;
+                document.getElementById('trapExplanation').innerHTML = currentCard.trap ? `<span class="text-emerald-300">${currentCard.trap}</span>` : "";
+                
+                // Play full correct sentence
+                playAudioText(currentCard.p + " " + currentCard.a, 1.0);
+            } else {
+                score.fail++;
+                input.classList.replace('border-slate-700', 'border-red-500');
+                input.classList.add('text-red-500');
+                feedbackBox.className = "w-full p-4 rounded-xl mt-4 text-left shadow-lg bg-red-900/40 border border-red-800 pop-animation block";
+                document.getElementById('correctAnswerDisplay').innerText = "✕ " + currentCard.a;
+                let trapHtml = customMsg ? `<span class="text-red-300 font-bold block mb-1">${customMsg}</span>` : "";
+                trapHtml += `<span class="text-slate-300">${currentCard.trap}</span>`;
+                document.getElementById('trapExplanation').innerHTML = trapHtml;
+                
+                // Just play the correct answer
+                playAudioText(currentCard.a, 1.0);
+            }
+            
+            document.getElementById('nextBtn').classList.remove('hidden');
+            document.getElementById('nextBtn').focus();
+        }
+
+        function nextCard() {
+            loadNextCard();
+        }
+
+        function showStats() {
+            document.getElementById('trainingScreen').classList.add('hidden');
+            document.getElementById('statsScreen').classList.remove('hidden');
+            
+            document.getElementById('statScore').innerText = score.pass;
+            document.getElementById('statFailed').innerText = score.fail;
+        }
+
+        // Listen for Enter key
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if(document.getElementById('nextBtn').classList.contains('hidden')){
+                    checkAnswer();
+                } else {
+                    nextCard();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
