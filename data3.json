@@ -7,7 +7,7 @@
       { "p": "j'", "v": "offre", "s": "un cadeau", "u": "я дарую подарунок" },
       { "p": "tu", "v": "offres", "s": "ça", "u": "ти даруєш це" },
       { "p": "elle", "v": "offre", "s": "un café", "u": "вона пропонує каву" },
-      { "p": "nous", "v": "offrons", "s": "l'aide", "u": "ми пропонуємо допомогу" },
+      { "p": "nous", "v": "offrons", "s": "notre aide", "u": "ми пропонуємо нашу допомогу" },
       { "p": "vous", "v": "offrez", "s": "un verre", "u": "ви пропонуєте напій" },
       { "p": "ils", "v": "offrent", "s": "tout", "u": "вони дарують все" }
     ],
@@ -15,7 +15,7 @@
       { "p": "j'", "v": "ai offert", "s": "un cadeau", "u": "я подарував подарунок" },
       { "p": "tu", "v": "as offert", "s": "ça", "u": "ти подарував це" },
       { "p": "elle", "v": "a offert", "s": "un café", "u": "вона запропонувала каву" },
-      { "p": "nous", "v": "avons offert", "s": "l'aide", "u": "ми запропонували допомогу" },
+      { "p": "nous", "v": "avons offert", "s": "notre aide", "u": "ми запропонували нашу допомогу" },
       { "p": "vous", "v": "avez offert", "s": "un verre", "u": "ви запропонували напій" },
       { "p": "ils", "v": "ont offert", "s": "tout", "u": "вони подарували все" }
     ],
@@ -23,7 +23,7 @@
       { "p": "j'", "v": "offrirai", "s": "un cadeau", "u": "я подарую подарунок" },
       { "p": "tu", "v": "offriras", "s": "ça", "u": "ти подаруєш це" },
       { "p": "elle", "v": "offrira", "s": "un café", "u": "вона запропонує каву" },
-      { "p": "nous", "v": "offrirons", "s": "l'aide", "u": "ми запропонуємо допомогу" },
+      { "p": "nous", "v": "offrirons", "s": "notre aide", "u": "ми запропонуємо нашу допомогу" },
       { "p": "vous", "v": "offrirez", "s": "un verre", "u": "ви запропонуєте напій" },
       { "p": "ils", "v": "offriront", "s": "tout", "u": "вони подарують все" }
     ]
@@ -33,7 +33,7 @@
     "infFr": "Souffrir",
     "infUk": "страждати",
     "present": [
-      { "p": "je", "v": "souffre", "s": "du dos", "u": "я страждаю від спини" },
+      { "p": "je", "v": "souffre", "s": "du dos", "u": "у мене болить спина" },
       { "p": "tu", "v": "souffres", "s": "en silence", "u": "ти страждаєш мовчки" },
       { "p": "il", "v": "souffre", "s": "du froid", "u": "він страждає від холоду" },
       { "p": "nous", "v": "souffrons", "s": "de la chaleur", "u": "ми страждаємо від спеки" },
@@ -41,7 +41,7 @@
       { "p": "elles", "v": "souffrent", "s": "de la faim", "u": "вони страждають від голоду" }
     ],
     "passe": [
-      { "p": "j'", "v": "ai souffert", "s": "du dos", "u": "я страждав від спини" },
+      { "p": "j'", "v": "ai souffert", "s": "du dos", "u": "я страждав від болю у спині" },
       { "p": "tu", "v": "as souffert", "s": "en silence", "u": "ти страждав мовчки" },
       { "p": "il", "v": "a souffert", "s": "du froid", "u": "він страждав від холоду" },
       { "p": "nous", "v": "avons souffert", "s": "de la chaleur", "u": "ми страждали від спеки" },
@@ -49,7 +49,7 @@
       { "p": "elles", "v": "ont souffert", "s": "de la faim", "u": "вони страждали від голоду" }
     ],
     "futur": [
-      { "p": "je", "v": "souffrirai", "s": "du dos", "u": "я страждатиму від спини" },
+      { "p": "je", "v": "souffrirai", "s": "du dos", "u": "у мене болітиме спина" },
       { "p": "tu", "v": "souffriras", "s": "en silence", "u": "ти страждатимеш мовчки" },
       { "p": "il", "v": "souffrira", "s": "du froid", "u": "він страждатиме від холоду" },
       { "p": "nous", "v": "souffrirons", "s": "de la chaleur", "u": "ми страждатимемо від спеки" },
@@ -124,7 +124,7 @@
       { "p": "tu", "v": "découvres", "s": "la vérité", "u": "ти дізнаєшся правду" },
       { "p": "il", "v": "découvre", "s": "un talent", "u": "він відкриває талант" },
       { "p": "nous", "v": "découvrons", "s": "le monde", "u": "ми відкриваємо світ" },
-      { "p": "vous", "v": "découvez", "s": "ce secret", "u": "ви відкриваєте цей секрет" },
+      { "p": "vous", "v": "découvrez", "s": "ce secret", "u": "ви відкриваєте цей секрет" },
       { "p": "elles", "v": "découvrent", "s": "l'amour", "u": "вони відкривають кохання" }
     ],
     "passe": [
@@ -207,7 +207,7 @@
     "infFr": "Sentir",
     "infUk": "відчувати",
     "present": [
-      { "p": "je", "v": "sens", "s": "la rose", "u": "я відчуваю запах троянди" },
+      { "p": "je", "v": "sens", "s": "cette fleur", "u": "я відчуваю запах цієї квітки" },
       { "p": "tu", "v": "sens", "s": "bon", "u": "ти гарно пахнеш" },
       { "p": "il", "v": "sent", "s": "la fatigue", "u": "він відчуває втому" },
       { "p": "nous", "v": "sentons", "s": "le danger", "u": "ми відчуваємо небезпеку" },
@@ -215,7 +215,7 @@
       { "p": "elles", "v": "sentent", "s": "la pluie", "u": "вони відчувають дощ" }
     ],
     "passe": [
-      { "p": "j'", "v": "ai senti", "s": "la rose", "u": "я відчув запах троянди" },
+      { "p": "j'", "v": "ai senti", "s": "cette fleur", "u": "я відчув запах цієї квітки" },
       { "p": "tu", "v": "as senti", "s": "bon", "u": "ти гарно пахнув" },
       { "p": "il", "v": "a senti", "s": "la fatigue", "u": "він відчув втому" },
       { "p": "nous", "v": "avons senti", "s": "le danger", "u": "ми відчули небезпеку" },
@@ -223,7 +223,7 @@
       { "p": "elles", "v": "ont senti", "s": "la pluie", "u": "вони відчули дощ" }
     ],
     "futur": [
-      { "p": "je", "v": "sentirai", "s": "la rose", "u": "я відчуватиму запах троянди" },
+      { "p": "je", "v": "sentirai", "s": "cette fleur", "u": "я відчуватиму запах цієї квітки" },
       { "p": "tu", "v": "sentiras", "s": "bon", "u": "ти гарно пахнутимеш" },
       { "p": "il", "v": "sentira", "s": "la fatigue", "u": "він відчуватиме втому" },
       { "p": "nous", "v": "sentirons", "s": "le danger", "u": "ми відчуватимемо небезпеку" },
@@ -498,7 +498,7 @@
     "infUk": "вчити",
     "present": [
       { "p": "j'", "v": "apprends", "s": "le français", "u": "я вчу французьку" },
-      { "p": "tu", "v": "apprends", "s": "vite", "u": "ти вчишся швидко" },
+      { "p": "tu", "v": "apprends", "s": "vite", "u": "ти швидко вчишся" },
       { "p": "il", "v": "apprend", "s": "sa leçon", "u": "він вчить свій урок" },
       { "p": "nous", "v": "apprenons", "s": "à lire", "u": "ми вчимося читати" },
       { "p": "vous", "v": "apprenez", "s": "la nouvelle", "u": "ви дізнаєтесь новину" },
@@ -506,7 +506,7 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai appris", "s": "le français", "u": "я вивчив французьку" },
-      { "p": "tu", "v": "as appris", "s": "vite", "u": "ти вивчився швидко" },
+      { "p": "tu", "v": "as appris", "s": "vite", "u": "ти швидко навчився" },
       { "p": "il", "v": "a appris", "s": "sa leçon", "u": "він вивчив свій урок" },
       { "p": "nous", "v": "avons appris", "s": "à lire", "u": "ми навчилися читати" },
       { "p": "vous", "v": "avez appris", "s": "la nouvelle", "u": "ви дізналися новину" },
@@ -514,7 +514,7 @@
     ],
     "futur": [
       { "p": "j'", "v": "apprendrai", "s": "le français", "u": "я вчитиму французьку" },
-      { "p": "tu", "v": "apprendras", "s": "vite", "u": "ти вчитимешся швидко" },
+      { "p": "tu", "v": "apprendras", "s": "vite", "u": "ти швидко навчишся" },
       { "p": "il", "v": "apprendra", "s": "sa leçon", "u": "він вчитиме свій урок" },
       { "p": "nous", "v": "apprendrons", "s": "à lire", "u": "ми вчитимемося читати" },
       { "p": "vous", "v": "apprendrez", "s": "la nouvelle", "u": "ви дізнаєтесь новину" },
@@ -788,7 +788,7 @@
     "infUk": "бути",
     "present": [
       { "p": "je", "v": "suis", "s": "prêt", "u": "я готовий" },
-      { "p": "tu", "v": "es", "s": "en retard", "u": "ти із запізненням" },
+      { "p": "tu", "v": "es", "s": "en retard", "u": "ти запізнюєшся" },
       { "p": "elle", "v": "est", "s": "belle", "u": "вона красива" },
       { "p": "nous", "v": "sommes", "s": "fatigués", "u": "ми втомлені" },
       { "p": "vous", "v": "êtes", "s": "ici", "u": "ви тут" },
@@ -796,7 +796,7 @@
     ],
     "passe": [
       { "p": "j'", "v": "ai été", "s": "prêt", "u": "я був готовий" },
-      { "p": "tu", "v": "as été", "s": "en retard", "u": "ти був із запізненням" },
+      { "p": "tu", "v": "as été", "s": "en retard", "u": "ти запізнився" },
       { "p": "elle", "v": "a été", "s": "belle", "u": "вона була красива" },
       { "p": "nous", "v": "avons été", "s": "fatigués", "u": "ми були втомлені" },
       { "p": "vous", "v": "avez été", "s": "ici", "u": "ви були тут" },
@@ -804,7 +804,7 @@
     ],
     "futur": [
       { "p": "je", "v": "serai", "s": "prêt", "u": "я буду готовий" },
-      { "p": "tu", "v": "seras", "s": "en retard", "u": "ти будеш із запізненням" },
+      { "p": "tu", "v": "seras", "s": "en retard", "u": "ти запізнишся" },
       { "p": "elle", "v": "sera", "s": "belle", "u": "вона буде красива" },
       { "p": "nous", "v": "serons", "s": "fatigués", "u": "ми будемо втомлені" },
       { "p": "vous", "v": "serez", "s": "ici", "u": "ви будете тут" },
