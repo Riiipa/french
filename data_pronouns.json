@@ -1,0 +1,78 @@
+[
+  {
+    "category": "COD (Прямий додаток: le, la, l', les)",
+    "infFr": "Regarder / Voir",
+    "infUk": "дивитися / бачити",
+    "present": [
+      { "c": "Tu regardes le film ?", "p": "Oui, je", "v": "le regarde", "s": "", "u": "Так, я його дивлюся", "trap": "COD 'le' (чоловічий рід). Завжди ставиться ПЕРЕД дієсловом." },
+      { "c": "Il voit la voiture ?", "p": "Oui, il", "v": "la voit", "s": "", "u": "Так, він її бачить", "trap": "COD 'la' (жіночий рід). Ставиться перед дієсловом." },
+      { "c": "Vous regardez les enfants ?", "p": "Oui, nous", "v": "les regardons", "s": "", "u": "Так, ми на них дивимося", "trap": "COD 'les' (множина)." }
+    ],
+    "passe": [
+      { "c": "Tu as regardé le film ?", "p": "Oui, je", "v": "l'ai regardé", "s": "", "u": "Так, я його подивився", "trap": "Елізія: le + ai = l'ai. Узгодження немає, бо 'film' - ч.р." },
+      { "c": "Tu as vu la voiture ?", "p": "Oui, je", "v": "l'ai vue", "s": "", "u": "Так, я її побачив", "trap": "ПАСТКА! 'voiture' - ж.р. COD стоїть перед дієсловом, тому participe passé отримує '-e' (vue)." },
+      { "c": "Vous avez vu les filles ?", "p": "Oui, nous", "v": "les avons vues", "s": "", "u": "Так, ми їх побачили", "trap": "ПАСТКА! 'filles' - ж.р., множина. COD 'les' перед дієсловом -> додаємо '-es' (vues)." }
+    ],
+    "futur": [
+      { "c": "Tu regarderas ce film ?", "p": "Oui, je", "v": "le regarderai", "s": "demain", "u": "Так, я подивлюся його завтра", "trap": "Займенник залишається перед дієсловом." },
+      { "c": "Il verra la maison ?", "p": "Oui, il", "v": "la verra", "s": "plus tard", "u": "Так, він побачить її пізніше", "trap": "Займенник 'la' перед verra." }
+    ]
+  },
+  {
+    "category": "COI (Непрямий додаток: lui, leur)",
+    "infFr": "Parler / Téléphoner",
+    "infUk": "говорити / дзвонити",
+    "present": [
+      { "c": "Tu parles à ton père ?", "p": "Oui, je", "v": "lui parle", "s": "souvent", "u": "Так, я з ним часто говорю", "trap": "COI 'lui' замінює 'à + людина' (однина). Ставиться перед дієсловом." },
+      { "c": "Elle téléphone à sa mère ?", "p": "Oui, elle", "v": "lui téléphone", "s": "chaque jour", "u": "Так, вона їй дзвонить щодня", "trap": "COI 'lui' використовується І ДЛЯ ЧОЛОВІКІВ, І ДЛЯ ЖІНОК." },
+      { "c": "Vous parlez aux clients ?", "p": "Oui, nous", "v": "leur parlons", "s": "maintenant", "u": "Так, ми з ними говоримо зараз", "trap": "COI 'leur' замінює 'à + люди' (множина). Ніколи не має '-s' в кінці!" }
+    ],
+    "passe": [
+      { "c": "Tu as parlé à ton père ?", "p": "Oui, je", "v": "lui ai parlé", "s": "hier", "u": "Так, я з ним говорив вчора", "trap": "COI 'lui'. Узгодження в Passé Composé з COI НІКОЛИ НЕМАЄ!" },
+      { "c": "Elle a téléphoné à sa mère ?", "p": "Oui, elle", "v": "lui a téléphoné", "s": "ce matin", "u": "Так, вона їй дзвонила цього ранку", "trap": "COI 'lui'. Ніякого '-e' в кінці дієприкметника, бо це непрямий додаток." },
+      { "c": "Vous avez répondu aux clients ?", "p": "Oui, nous", "v": "leur avons répondu", "s": "", "u": "Так, ми їм відповіли", "trap": "COI 'leur'. Ніякого узгодження." }
+    ],
+    "futur": [
+      { "c": "Tu parleras à ton père ?", "p": "Oui, je", "v": "lui parlerai", "s": "demain", "u": "Так, я поговорю з ним завтра", "trap": "'lui' перед дієсловом." },
+      { "c": "Vous téléphonerez aux clients ?", "p": "Oui, nous", "v": "leur téléphonerons", "s": "bientôt", "u": "Так, ми їм подзвонимо скоро", "trap": "'leur' перед дієсловом." }
+    ]
+  },
+  {
+    "category": "Займенник Y (Місце або 'à + неістота')",
+    "infFr": "Aller / Penser",
+    "infUk": "йти / думати",
+    "present": [
+      { "c": "Tu vas à Paris ?", "p": "Oui, j'", "v": "y vais", "s": "demain", "u": "Так, я туди їду завтра", "trap": "'Y' замінює місце ('à Paris'). Ставиться перед дієсловом." },
+      { "c": "Ils sont au bureau ?", "p": "Oui, ils", "v": "y sont", "s": "déjà", "u": "Так, вони вже там", "trap": "'Y' замінює 'au bureau'." },
+      { "c": "Tu penses à ton examen ?", "p": "Oui, j'", "v": "y pense", "s": "tout le temps", "u": "Так, я про нього думаю постійно", "trap": "ПАСТКА! 'Penser à + неістота' замінюється на 'Y'." }
+    ],
+    "passe": [
+      { "c": "Tu es allé à Paris ?", "p": "Oui, j'", "v": "y suis allé", "s": "hier", "u": "Так, я (ч.р.) туди їздив вчора", "trap": "У Passé Composé 'Y' ставиться ПЕРЕД допоміжним дієсловом (y suis allé)." },
+      { "c": "Elle est restée au lit ?", "p": "Oui, elle", "v": "y est restée", "s": "toute la journée", "u": "Так, вона там залишалася весь день", "trap": "'y' перед 'est'. Узгодження '-e' зберігається, бо дієслово з Être." },
+      { "c": "Tu as pensé à l'examen ?", "p": "Oui, j'", "v": "y ai pensé", "s": "", "u": "Так, я про нього думав", "trap": "'y' перед 'ai'. Злиття не відбувається (j'y ai)." }
+    ],
+    "futur": [
+      { "c": "Tu iras à Paris ?", "p": "Oui, j'", "v": "y irai", "s": "l'année prochaine", "u": "Так, я туди поїду наступного року", "trap": "'Y' перед дієсловом. Увага на вимову: [j'y irai]." },
+      { "c": "Tu penseras à ça ?", "p": "Oui, j'", "v": "y penserai", "s": "promis", "u": "Так, я про це подумаю, обіцяю", "trap": "'Y' замінює 'à ça'." }
+    ]
+  },
+  {
+    "category": "Займенник EN (Кількість або 'de + неістота')",
+    "infFr": "Avoir / Manger / Venir",
+    "infUk": "мати / їсти / приходити",
+    "present": [
+      { "c": "Tu veux du café ?", "p": "Oui, j'", "v": "en veux", "s": "un peu", "u": "Так, я його хочу трохи", "trap": "'EN' замінює частинний артикль (du/de la/des)." },
+      { "c": "Elle a des frères ?", "p": "Oui, elle", "v": "en a", "s": "deux", "u": "Так, вона їх має двох", "trap": "Якщо є кількість (deux), 'EN' все одно потрібен перед дієсловом!" },
+      { "c": "Tu viens de la gare ?", "p": "Oui, j'", "v": "en viens", "s": "", "u": "Так, я звідти йду", "trap": "'EN' замінює 'de + місце' (звідкись)." }
+    ],
+    "passe": [
+      { "c": "Tu as acheté des pommes ?", "p": "Oui, j'", "v": "en ai acheté", "s": "trois", "u": "Так, я їх купив три", "trap": "'EN' перед допоміжним дієсловом. З 'EN' узгодження в Passé Composé ЗАЗВИЧАЙ НЕ РОБИТЬСЯ (ніякого '-es' для pommes)." },
+      { "c": "Il a bu de l'eau ?", "p": "Oui, il", "v": "en a bu", "s": "", "u": "Так, він її пив", "trap": "'en' перед 'a'. Participe Passé не змінюється." },
+      { "c": "Vous êtes revenus de Paris ?", "p": "Oui, nous", "v": "en sommes revenus", "s": "hier", "u": "Так, ми звідти повернулися вчора", "trap": "'en' перед 'sommes'. Узгодження '-s' залишається, бо це дієслово з Être." }
+    ],
+    "futur": [
+      { "c": "Tu mangeras de la viande ?", "p": "Oui, j'", "v": "en mangerai", "s": "ce soir", "u": "Так, я її їстиму сьогодні ввечері", "trap": "'EN' перед дієсловом." },
+      { "c": "Tu auras besoin d'aide ?", "p": "Oui, j'", "v": "en aurai", "s": "besoin", "u": "Так, вона мені буде потрібна", "trap": "ПАСТКА! Вираз 'avoir besoin DE'. 'de l'aide' замінюється на 'EN'." }
+    ]
+  }
+]
