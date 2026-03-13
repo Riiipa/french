@@ -1,10 +1,10 @@
 [
   {
-    "category": "COD (Прямий додаток: le, la, l', les)",
+    "category": "COD",
     "infFr": "Regarder / Voir",
     "infUk": "дивитися / бачити",
     "present": [
-      { "c": "Tu regardes le film ?", "p": "Oui, je", "v": "le regarde", "s": "", "u": "Так, я його дивлюся", "trap": "COD 'le' (чоловічий рід). Завжди ставиться ПЕРЕД дієсловом." },
+      { "c": "Tu regardes le film ?", "p": "Oui, je", "v": "le regarde", "s": "", "u": "Так, я його дивлюся", "trap": "COD 'le' (чоловічий рід). Ставиться ПЕРЕД дієсловом." },
       { "c": "Il voit la voiture ?", "p": "Oui, il", "v": "la voit", "s": "", "u": "Так, він її бачить", "trap": "COD 'la' (жіночий рід). Ставиться перед дієсловом." },
       { "c": "Vous regardez les enfants ?", "p": "Oui, nous", "v": "les regardons", "s": "", "u": "Так, ми на них дивимося", "trap": "COD 'les' (множина)." }
     ],
@@ -19,7 +19,24 @@
     ]
   },
   {
-    "category": "COI (Непрямий додаток: lui, leur)",
+    "category": "COD",
+    "infFr": "Inviter / Attendre",
+    "infUk": "запрошувати / чекати",
+    "present": [
+      { "c": "Tu attends le bus ?", "p": "Oui, je", "v": "l'attends", "s": "", "u": "Так, я його чекаю", "trap": "Елізія перед голосною: le -> l'." },
+      { "c": "Elle invite ses amis ?", "p": "Oui, elle", "v": "les invite", "s": "ce soir", "u": "Так, вона їх запрошує сьогодні", "trap": "COD 'les' для множини." }
+    ],
+    "passe": [
+      { "c": "Tu as invité Marie ?", "p": "Oui, je", "v": "l'ai invitée", "s": "", "u": "Так, я її запросив", "trap": "ПАСТКА! Marie - жіночий рід. COD стоїть перед avoir, тому 'invitée'." },
+      { "c": "Ils ont attendu les résultats ?", "p": "Oui, ils", "v": "les ont attendus", "s": "", "u": "Так, вони їх дочекалися", "trap": "ПАСТКА! 'résultats' - ч.р. множина. Додаємо '-s' до дієприкметника." }
+    ],
+    "futur": [
+      { "c": "Tu inviteras Paul ?", "p": "Oui, je", "v": "l'inviterai", "s": "", "u": "Так, я його запрошу", "trap": "Елізія зберігається." },
+      { "c": "Vous attendrez la réponse ?", "p": "Oui, nous", "v": "l'attendrons", "s": "", "u": "Так, ми її чекатимемо", "trap": "Елізія la -> l'." }
+    ]
+  },
+  {
+    "category": "COI",
     "infFr": "Parler / Téléphoner",
     "infUk": "говорити / дзвонити",
     "present": [
@@ -30,7 +47,7 @@
     "passe": [
       { "c": "Tu as parlé à ton père ?", "p": "Oui, je", "v": "lui ai parlé", "s": "hier", "u": "Так, я з ним говорив вчора", "trap": "COI 'lui'. Узгодження в Passé Composé з COI НІКОЛИ НЕМАЄ!" },
       { "c": "Elle a téléphoné à sa mère ?", "p": "Oui, elle", "v": "lui a téléphoné", "s": "ce matin", "u": "Так, вона їй дзвонила цього ранку", "trap": "COI 'lui'. Ніякого '-e' в кінці дієприкметника, бо це непрямий додаток." },
-      { "c": "Vous avez répondu aux clients ?", "p": "Oui, nous", "v": "leur avons répondu", "s": "", "u": "Так, ми їм відповіли", "trap": "COI 'leur'. Ніякого узгодження." }
+      { "c": "Vous avez téléphoné aux clients ?", "p": "Oui, nous", "v": "leur avons téléphoné", "s": "", "u": "Так, ми їм подзвонили", "trap": "COI 'leur'. Ніякого узгодження." }
     ],
     "futur": [
       { "c": "Tu parleras à ton père ?", "p": "Oui, je", "v": "lui parlerai", "s": "demain", "u": "Так, я поговорю з ним завтра", "trap": "'lui' перед дієсловом." },
@@ -38,7 +55,25 @@
     ]
   },
   {
-    "category": "Займенник Y (Місце або 'à + неістота')",
+    "category": "COI",
+    "infFr": "Écrire / Répondre",
+    "infUk": "писати / відповідати",
+    "present": [
+      { "c": "Tu écris à Julie ?", "p": "Oui, je", "v": "lui écris", "s": "un message", "u": "Так, я їй пишу повідомлення", "trap": "Écrire À quelqu'un. Замінюємо на lui." },
+      { "c": "Ils répondent au professeur ?", "p": "Oui, ils", "v": "lui répondent", "s": "", "u": "Так, вони йому відповідають", "trap": "Répondre À quelqu'un -> lui." },
+      { "c": "Tu écris à tes grands-parents ?", "p": "Oui, je", "v": "leur écris", "s": "", "u": "Так, я їм пишу", "trap": "Множина -> leur." }
+    ],
+    "passe": [
+      { "c": "Tu as écrit à Julie ?", "p": "Oui, je", "v": "lui ai écrit", "s": "", "u": "Так, я їй написав", "trap": "Жодного узгодження! Це COI." },
+      { "c": "Ils ont répondu aux questions ?", "p": "Oui, ils", "v": "y ont répondu", "s": "", "u": "Так, вони на них відповіли", "trap": "СУПЕР-ПАСТКА! Répondre À + НЕІСТОТА (питання) замінюється на Y, а не на leur!" }
+    ],
+    "futur": [
+      { "c": "Tu écriras à Paul ?", "p": "Oui, je", "v": "lui écrirai", "s": "demain", "u": "Так, я йому напишу завтра", "trap": "Стандартний COI." },
+      { "c": "Tu répondras au client ?", "p": "Oui, je", "v": "lui répondrai", "s": "plus tard", "u": "Так, я йому відповім пізніше", "trap": "Клієнт - людина, тому lui." }
+    ]
+  },
+  {
+    "category": "Займенник Y",
     "infFr": "Aller / Penser",
     "infUk": "йти / думати",
     "present": [
@@ -57,7 +92,23 @@
     ]
   },
   {
-    "category": "Займенник EN (Кількість або 'de + неістота')",
+    "category": "Займенник Y",
+    "infFr": "Jouer / Participer",
+    "infUk": "грати / брати участь",
+    "present": [
+      { "c": "Tu joues au tennis ?", "p": "Oui, j'", "v": "y joue", "s": "le samedi", "u": "Так, я в нього граю по суботах", "trap": "Jouer À + спорт/гра = Y." },
+      { "c": "Vous participez au tournoi ?", "p": "Oui, nous", "v": "y participons", "s": "", "u": "Так, ми в ньому беремо участь", "trap": "Participer À + неістота = Y." }
+    ],
+    "passe": [
+      { "c": "Tu as joué au foot ?", "p": "Oui, j'", "v": "y ai joué", "s": "hier", "u": "Так, я в нього грав учора", "trap": "Jouer à -> Y перед avoir." },
+      { "c": "Ils ont participé à la réunion ?", "p": "Oui, ils", "v": "y ont participé", "s": "", "u": "Так, вони в ній взяли участь", "trap": "Y перед допоміжним дієсловом." }
+    ],
+    "futur": [
+      { "c": "Tu joueras au poker ?", "p": "Oui, j'", "v": "y jouerai", "s": "ce soir", "u": "Так, я в нього гратиму сьогодні", "trap": "Jouer à -> Y." }
+    ]
+  },
+  {
+    "category": "Займенник EN",
     "infFr": "Avoir / Manger / Venir",
     "infUk": "мати / їсти / приходити",
     "present": [
@@ -73,6 +124,22 @@
     "futur": [
       { "c": "Tu mangeras de la viande ?", "p": "Oui, j'", "v": "en mangerai", "s": "ce soir", "u": "Так, я її їстиму сьогодні ввечері", "trap": "'EN' перед дієсловом." },
       { "c": "Tu auras besoin d'aide ?", "p": "Oui, j'", "v": "en aurai", "s": "besoin", "u": "Так, вона мені буде потрібна", "trap": "ПАСТКА! Вираз 'avoir besoin DE'. 'de l'aide' замінюється на 'EN'." }
+    ]
+  },
+  {
+    "category": "Займенник EN",
+    "infFr": "Parler de / Avoir peur de",
+    "infUk": "говорити про / боятися",
+    "present": [
+      { "c": "Tu parles de ton voyage ?", "p": "Oui, j'", "v": "en parle", "s": "souvent", "u": "Так, я про нього часто говорю", "trap": "Parler DE + неістота = EN." },
+      { "c": "Tu as peur des chiens ?", "p": "Oui, j'", "v": "en ai", "s": "peur", "u": "Так, я їх боюся", "trap": "Avoir peur DE = EN. 'en' ставиться перед дієсловом avoir." }
+    ],
+    "passe": [
+      { "c": "Tu as parlé de ce problème ?", "p": "Oui, j'", "v": "en ai parlé", "s": "", "u": "Так, я про нього говорив", "trap": "Parler de -> EN. Без узгодження." },
+      { "c": "Elle a eu besoin d'argent ?", "p": "Oui, elle", "v": "en a eu", "s": "besoin", "u": "Так, він їй був потрібен", "trap": "Avoir besoin DE -> EN. Ставиться перед avoir." }
+    ],
+    "futur": [
+      { "c": "Tu parleras de ton projet ?", "p": "Oui, j'", "v": "en parlerai", "s": "demain", "u": "Так, я про нього говоритиму завтра", "trap": "Parler de -> EN." }
     ]
   }
 ]
