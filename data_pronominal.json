@@ -1,31 +1,89 @@
 [
   {
-    "category": "Щоденна рутина (1 група)",
-    "infFr": "Se lever",
-    "infUk": "вставати / підніматися",
+    "category": "Щоденна рутина (База)",
+    "infFr": "Se réveiller",
+    "infUk": "прокидатися",
     "present": [
-      { "p": "je", "v": "me lève", "s": "tôt", "u": "я встаю рано" },
-      { "p": "tu", "v": "te lèves", "s": "tard", "u": "ти встаєш пізно" },
-      { "p": "elle", "v": "se lève", "s": "vite", "u": "вона встає швидко" },
-      { "p": "nous", "v": "nous levons", "s": "à 7h", "u": "ми встаємо о 7-й" },
-      { "p": "vous", "v": "vous levez", "s": "difficilement", "u": "ви встаєте важко" },
-      { "p": "ils", "v": "se lèvent", "s": "en même temps", "u": "вони встають одночасно" }
+      { "p": "je", "v": "me réveille", "s": "tôt", "u": "я прокидаюся рано" },
+      { "p": "tu", "v": "te réveilles", "s": "tard", "u": "ти прокидаєшся пізно" },
+      { "p": "elle", "v": "se réveille", "s": "en sursaut", "u": "вона прокидається раптово" },
+      { "p": "nous", "v": "nous réveillons", "s": "à 7h", "u": "ми прокидаємося о 7-й" },
+      { "p": "vous", "v": "vous réveillez", "s": "difficilement", "u": "ви прокидаєтеся важко" },
+      { "p": "ils", "v": "se réveillent", "s": "en forme", "u": "вони прокидаються бадьорими" }
     ],
     "passe": [
-      { "p": "je", "v": "me suis levé", "s": "tôt", "u": "я (ч.р.) встав рано" },
-      { "p": "tu", "v": "t'es levé", "s": "tard", "u": "ти (ч.р.) встав пізно" },
-      { "p": "elle", "v": "s'est levée", "s": "vite", "u": "вона встала швидко" },
-      { "p": "nous", "v": "nous sommes levés", "s": "à 7h", "u": "ми встали о 7-й" },
-      { "p": "vous", "v": "vous êtes levés", "s": "difficilement", "u": "ви встали важко" },
-      { "p": "elles", "v": "se sont levées", "s": "en même temps", "u": "вони (ж.р.) встали одночасно" }
+      { "p": "je", "v": "me suis réveillé", "s": "tôt", "u": "я (ч.р.) прокинувся рано" },
+      { "p": "tu", "v": "t'es réveillé", "s": "tard", "u": "ти (ч.р.) прокинувся пізно" },
+      { "p": "elle", "v": "s'est réveillée", "s": "en sursaut", "u": "вона прокинулася раптово" },
+      { "p": "nous", "v": "nous sommes réveillés", "s": "à 7h", "u": "ми прокинулися о 7-й" },
+      { "p": "vous", "v": "vous êtes réveillés", "s": "difficilement", "u": "ви прокинулися важко" },
+      { "p": "elles", "v": "se sont réveillées", "s": "en forme", "u": "вони (ж.р.) прокинулися бадьорими" }
     ],
     "futur": [
-      { "p": "je", "v": "me lèverai", "s": "tôt", "u": "я встану рано" },
-      { "p": "tu", "v": "te lèveras", "s": "tard", "u": "ти встанеш пізно" },
-      { "p": "elle", "v": "se lèvera", "s": "vite", "u": "вона встане швидко" },
-      { "p": "nous", "v": "nous lèverons", "s": "à 7h", "u": "ми встанемо о 7-й" },
-      { "p": "vous", "v": "vous lèverez", "s": "difficilement", "u": "ви встанете важко" },
-      { "p": "ils", "v": "se lèveront", "s": "en même temps", "u": "вони встануть одночасно" }
+      { "p": "je", "v": "me réveillerai", "s": "tôt", "u": "я прокинуся рано" },
+      { "p": "tu", "v": "te réveilleras", "s": "tard", "u": "ти прокинешся пізно" },
+      { "p": "elle", "v": "se réveillera", "s": "en sursaut", "u": "вона прокинеться раптово" },
+      { "p": "nous", "v": "nous réveillerons", "s": "à 7h", "u": "ми прокинемося о 7-й" },
+      { "p": "vous", "v": "vous réveillerez", "s": "difficilement", "u": "ви прокинетеся важко" },
+      { "p": "ils", "v": "se réveilleront", "s": "en forme", "u": "вони прокинуться бадьорими" }
+    ]
+  },
+  {
+    "category": "Щоденна рутина (База)",
+    "infFr": "Se doucher",
+    "infUk": "приймати душ",
+    "present": [
+      { "p": "je", "v": "me douche", "s": "le matin", "u": "я приймаю душ вранці" },
+      { "p": "tu", "v": "te douches", "s": "vite", "u": "ти приймаєш душ швидко" },
+      { "p": "il", "v": "se douche", "s": "tous les jours", "u": "він приймає душ щодня" },
+      { "p": "nous", "v": "nous douchons", "s": "le soir", "u": "ми приймаємо душ ввечері" },
+      { "p": "vous", "v": "vous douchez", "s": "à l'eau froide", "u": "ви приймаєте душ холодною водою" },
+      { "p": "elles", "v": "se douchent", "s": "avant de sortir", "u": "вони приймають душ перед виходом" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis douché", "s": "le matin", "u": "я (ч.р.) прийняв душ вранці" },
+      { "p": "tu", "v": "t'es douché", "s": "vite", "u": "ти (ч.р.) прийняв душ швидко" },
+      { "p": "il", "v": "s'est douché", "s": "tous les jours", "u": "він прийняв душ щодня" },
+      { "p": "nous", "v": "nous sommes douchés", "s": "le soir", "u": "ми прийняли душ ввечері" },
+      { "p": "vous", "v": "vous êtes douchés", "s": "à l'eau froide", "u": "ви прийняли душ холодною водою" },
+      { "p": "elles", "v": "se sont douchées", "s": "avant de sortir", "u": "вони (ж.р.) прийняли душ перед виходом" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me doucherai", "s": "le matin", "u": "я прийматиму душ вранці" },
+      { "p": "tu", "v": "te doucheras", "s": "vite", "u": "ти прийматимеш душ швидко" },
+      { "p": "il", "v": "se douchera", "s": "tous les jours", "u": "він прийматиме душ щодня" },
+      { "p": "nous", "v": "nous doucherons", "s": "le soir", "u": "ми прийматимемо душ ввечері" },
+      { "p": "vous", "v": "vous doucherez", "s": "à l'eau froide", "u": "ви прийматимете душ холодною водою" },
+      { "p": "elles", "v": "se doucheront", "s": "avant de sortir", "u": "вони прийматимуть душ перед виходом" }
+    ]
+  },
+  {
+    "category": "Щоденна рутина (Без узгодження в PC)",
+    "infFr": "Se laver (les mains)",
+    "infUk": "мити (руки)",
+    "present": [
+      { "p": "je", "v": "me lave", "s": "les mains", "u": "я мию руки" },
+      { "p": "tu", "v": "te laves", "s": "les mains", "u": "ти миєш руки" },
+      { "p": "elle", "v": "se lave", "s": "les cheveux", "u": "вона миє волосся" },
+      { "p": "nous", "v": "nous lavons", "s": "le visage", "u": "ми миємо обличчя" },
+      { "p": "vous", "v": "vous lavez", "s": "les mains", "u": "ви миєте руки" },
+      { "p": "ils", "v": "se lavent", "s": "les mains", "u": "вони миють руки" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis lavé", "s": "les mains", "u": "я помив руки" },
+      { "p": "tu", "v": "t'es lavé", "s": "les mains", "u": "ти помив руки" },
+      { "p": "elle", "v": "s'est lavé", "s": "les cheveux", "u": "вона помила волосся (без 'e' в кінці!)" },
+      { "p": "nous", "v": "nous sommes lavé", "s": "le visage", "u": "ми помили обличчя (без 's'!)" },
+      { "p": "vous", "v": "vous êtes lavé", "s": "les mains", "u": "ви помили руки" },
+      { "p": "elles", "v": "se sont lavé", "s": "les mains", "u": "вони помили руки" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me laverai", "s": "les mains", "u": "я помию руки" },
+      { "p": "tu", "v": "te laveras", "s": "les mains", "u": "ти помиєш руки" },
+      { "p": "elle", "v": "se lavera", "s": "les cheveux", "u": "вона помиє волосся" },
+      { "p": "nous", "v": "nous laverons", "s": "le visage", "u": "ми помиємо обличчя" },
+      { "p": "vous", "v": "vous laverez", "s": "les mains", "u": "ви помиєте руки" },
+      { "p": "ils", "v": "se laveront", "s": "les mains", "u": "вони помиють руки" }
     ]
   },
   {
@@ -58,61 +116,240 @@
     ]
   },
   {
-    "category": "Керування дієслів (s'occuper de)",
-    "infFr": "S'occuper",
-    "infUk": "займатися (кимось/чимось)",
+    "category": "Щоденна рутина (База)",
+    "infFr": "Se coucher",
+    "infUk": "лягати спати",
     "present": [
-      { "p": "je", "v": "m'occupe", "s": "des enfants", "u": "я займаюся дітьми" },
-      { "p": "tu", "v": "t'occupes", "s": "du projet", "u": "ти займаєшся проєктом" },
-      { "p": "elle", "v": "s'occupe", "s": "de tout", "u": "вона займається всім" },
-      { "p": "nous", "v": "nous occupons", "s": "du client", "u": "ми займаємося клієнтом" },
-      { "p": "vous", "v": "vous occupez", "s": "de la maison", "u": "ви займаєтеся будинком" },
-      { "p": "ils", "v": "s'occupent", "s": "des détails", "u": "вони займаються деталями" }
+      { "p": "je", "v": "me couche", "s": "tard", "u": "я лягаю спати пізно" },
+      { "p": "tu", "v": "te couches", "s": "tôt", "u": "ти лягаєш спати рано" },
+      { "p": "elle", "v": "se couche", "s": "à minuit", "u": "вона лягає спати опівночі" },
+      { "p": "nous", "v": "nous couchons", "s": "fatigués", "u": "ми лягаємо спати втомленими" },
+      { "p": "vous", "v": "vous couchez", "s": "maintenant", "u": "ви лягаєте спати зараз" },
+      { "p": "ils", "v": "se couchent", "s": "souvent tard", "u": "вони часто лягають пізно" }
     ],
     "passe": [
-      { "p": "je", "v": "me suis occupé", "s": "des enfants", "u": "я (ч.р.) займався дітьми" },
-      { "p": "tu", "v": "t'es occupé", "s": "du projet", "u": "ти (ч.р.) займався проєктом" },
-      { "p": "elle", "v": "s'est occupée", "s": "de tout", "u": "вона займалася всім" },
-      { "p": "nous", "v": "nous sommes occupés", "s": "du client", "u": "ми займалися клієнтом" },
-      { "p": "vous", "v": "vous êtes occupés", "s": "de la maison", "u": "ви займалися будинком" },
-      { "p": "ils", "v": "se sont occupés", "s": "des détails", "u": "вони займалися деталями" }
+      { "p": "je", "v": "me suis couché", "s": "tard", "u": "я (ч.р.) ліг спати пізно" },
+      { "p": "tu", "v": "t'es couché", "s": "tôt", "u": "ти (ч.р.) ліг спати рано" },
+      { "p": "elle", "v": "s'est couchée", "s": "à minuit", "u": "вона лягла спати опівночі" },
+      { "p": "nous", "v": "nous sommes couchés", "s": "fatigués", "u": "ми лягли спати втомленими" },
+      { "p": "vous", "v": "vous êtes couchés", "s": "maintenant", "u": "ви лягли спати зараз" },
+      { "p": "elles", "v": "se sont couchées", "s": "souvent tard", "u": "вони (ж.р.) часто лягали пізно" }
     ],
     "futur": [
-      { "p": "je", "v": "m'occuperai", "s": "des enfants", "u": "я буду займатися дітьми" },
-      { "p": "tu", "v": "t'occuperas", "s": "du projet", "u": "ти будеш займатися проєктом" },
-      { "p": "elle", "v": "s'occupera", "s": "de tout", "u": "вона буде займатися всім" },
-      { "p": "nous", "v": "nous occuperons", "s": "du client", "u": "ми будемо займатися клієнтом" },
-      { "p": "vous", "v": "vous occuperez", "s": "de la maison", "u": "ви будете займатися будинком" },
-      { "p": "ils", "v": "s'occuperont", "s": "des détails", "u": "вони будуть займатися деталями" }
+      { "p": "je", "v": "me coucherai", "s": "tard", "u": "я ляжу спати пізно" },
+      { "p": "tu", "v": "te coucheras", "s": "tôt", "u": "ти ляжеш спати рано" },
+      { "p": "elle", "v": "se couchera", "s": "à minuit", "u": "вона ляже спати опівночі" },
+      { "p": "nous", "v": "nous coucherons", "s": "fatigués", "u": "ми ляжемо спати втомленими" },
+      { "p": "vous", "v": "vous coucherez", "s": "maintenant", "u": "ви ляжете спати зараз" },
+      { "p": "ils", "v": "se coucheront", "s": "souvent tard", "u": "вони часто лягатимуть пізно" }
     ]
   },
   {
-    "category": "Керування дієслів (s'intéresser à)",
-    "infFr": "S'intéresser",
-    "infUk": "цікавитися (чимось)",
+    "category": "Інші зворотні (Зміна кореня)",
+    "infFr": "S'appeler",
+    "infUk": "називатися",
     "present": [
-      { "p": "je", "v": "m'intéresse", "s": "à l'art", "u": "я цікавлюся мистецтвом" },
-      { "p": "tu", "v": "t'intéresses", "s": "à la politique", "u": "ти цікавишся політикою" },
-      { "p": "il", "v": "s'intéresse", "s": "à l'histoire", "u": "він цікавиться історією" },
-      { "p": "nous", "v": "nous intéressons", "s": "à ce sujet", "u": "ми цікавимося цією темою" },
-      { "p": "vous", "v": "vous intéressez", "s": "à ça ?", "u": "ви цікавитеся цим?" },
-      { "p": "elles", "v": "s'intéressent", "s": "aux langues", "u": "вони цікавляться мовами" }
+      { "p": "je", "v": "m'appelle", "s": "Pierre", "u": "я називаюся П'єр" },
+      { "p": "tu", "v": "t'appelles", "s": "comment ?", "u": "як тебе звати?" },
+      { "p": "elle", "v": "s'appelle", "s": "Marie", "u": "її звати Марі" },
+      { "p": "nous", "v": "nous appelons", "s": "Martin", "u": "наше прізвище Мартен" },
+      { "p": "vous", "v": "vous appelez", "s": "comment ?", "u": "як вас звати?" },
+      { "p": "ils", "v": "s'appellent", "s": "les Dupont", "u": "їх звати Дюпони" }
     ],
     "passe": [
-      { "p": "je", "v": "me suis intéressé", "s": "à l'art", "u": "я (ч.р.) зацікавився мистецтвом" },
-      { "p": "tu", "v": "t'es intéressé", "s": "à la politique", "u": "ти (ч.р.) зацікавився політикою" },
-      { "p": "elle", "v": "s'est intéressée", "s": "à l'histoire", "u": "вона зацікавилася історією" },
-      { "p": "nous", "v": "nous sommes intéressés", "s": "à ce sujet", "u": "ми зацікавилися цією темою" },
-      { "p": "vous", "v": "vous êtes intéressés", "s": "à ça ?", "u": "ви зацікавилися цим?" },
-      { "p": "elles", "v": "se sont intéressées", "s": "aux langues", "u": "вони (ж.р.) зацікавилися мовами" }
+      { "p": "je", "v": "me suis appelé", "s": "Pierre", "u": "я (ч.р.) назвався П'єром" },
+      { "p": "tu", "v": "t'es appelé", "s": "comme ça", "u": "ти (ч.р.) так назвався" },
+      { "p": "elle", "v": "s'est appelée", "s": "Marie", "u": "вона назвалася Марі" },
+      { "p": "nous", "v": "nous sommes appelés", "s": "Martin", "u": "ми назвалися Мартен" },
+      { "p": "vous", "v": "vous êtes appelés", "s": "comme ça", "u": "ви так назвалися" },
+      { "p": "elles", "v": "se sont appelées", "s": "les Dupont", "u": "вони назвалися Дюпонами" }
     ],
     "futur": [
-      { "p": "je", "v": "m'intéresserai", "s": "à l'art", "u": "я буду цікавитися мистецтвом" },
-      { "p": "tu", "v": "t'intéresseras", "s": "à la politique", "u": "ти будеш цікавитися політикою" },
-      { "p": "il", "v": "s'intéressera", "s": "à l'histoire", "u": "він буде цікавитися історією" },
-      { "p": "nous", "v": "nous intéresserons", "s": "à ce sujet", "u": "ми будемо цікавитися цією темою" },
-      { "p": "vous", "v": "vous intéresserez", "s": "à ça ?", "u": "ви будете цікавитися цим?" },
-      { "p": "elles", "v": "s'intéresseront", "s": "aux langues", "u": "вони будуть цікавитися мовами" }
+      { "p": "je", "v": "m'appellerai", "s": "Pierre", "u": "я буду називатися П'єр" },
+      { "p": "tu", "v": "t'appelleras", "s": "comment ?", "u": "як тебе зватимуть?" },
+      { "p": "elle", "v": "s'appellera", "s": "Marie", "u": "вона називатиметься Марі" },
+      { "p": "nous", "v": "nous appellerons", "s": "Martin", "u": "ми називатимемося Мартен" },
+      { "p": "vous", "v": "vous appellerez", "s": "comment ?", "u": "як ви будете називатися?" },
+      { "p": "ils", "v": "s'appelleront", "s": "les Dupont", "u": "вони називатимуться Дюпонами" }
+    ]
+  },
+  {
+    "category": "Інші зворотні (Зміна кореня)",
+    "infFr": "S'ennuyer",
+    "infUk": "нудьгувати",
+    "present": [
+      { "p": "je", "v": "m'ennuie", "s": "ici", "u": "я нудьгую тут" },
+      { "p": "tu", "v": "t'ennuies", "s": "souvent", "u": "ти нудьгуєш часто" },
+      { "p": "il", "v": "s'ennuie", "s": "au travail", "u": "він нудьгує на роботі" },
+      { "p": "nous", "v": "nous ennuyons", "s": "ferme", "u": "ми страшенно нудьгуємо" },
+      { "p": "vous", "v": "vous ennuyez", "s": "jamais", "u": "ви ніколи не нудьгуєте" },
+      { "p": "elles", "v": "s'ennuient", "s": "en cours", "u": "вони нудьгують на уроці" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis ennuyé", "s": "ici", "u": "я (ч.р.) нудьгував тут" },
+      { "p": "tu", "v": "t'es ennuyé", "s": "souvent", "u": "ти (ч.р.) нудьгував часто" },
+      { "p": "il", "v": "s'est ennuyé", "s": "au travail", "u": "він нудьгував на роботі" },
+      { "p": "nous", "v": "nous sommes ennuyés", "s": "ferme", "u": "ми страшенно нудьгували" },
+      { "p": "vous", "v": "vous êtes ennuyés", "s": "jamais", "u": "ви ніколи не нудьгували" },
+      { "p": "elles", "v": "se sont ennuyées", "s": "en cours", "u": "вони (ж.р.) нудьгували на уроці" }
+    ],
+    "futur": [
+      { "p": "je", "v": "m'ennuierai", "s": "ici", "u": "я буду нудьгувати тут" },
+      { "p": "tu", "v": "t'ennuieras", "s": "souvent", "u": "ти будеш нудьгувати часто" },
+      { "p": "il", "v": "s'ennuiera", "s": "au travail", "u": "він буде нудьгувати на роботі" },
+      { "p": "nous", "v": "nous ennuierons", "s": "ferme", "u": "ми будемо страшенно нудьгувати" },
+      { "p": "vous", "v": "vous ennuierez", "s": "jamais", "u": "ви ніколи не будете нудьгувати" },
+      { "p": "elles", "v": "s'ennuieront", "s": "en cours", "u": "вони будуть нудьгувати на уроці" }
+    ]
+  },
+  {
+    "category": "Інші зворотні (Зміна кореня)",
+    "infFr": "Se promener",
+    "infUk": "гуляти",
+    "present": [
+      { "p": "je", "v": "me promène", "s": "au parc", "u": "я гуляю в парку" },
+      { "p": "tu", "v": "te promènes", "s": "souvent", "u": "ти гуляєш часто" },
+      { "p": "elle", "v": "se promène", "s": "en ville", "u": "вона гуляє в місті" },
+      { "p": "nous", "v": "nous promenons", "s": "le soir", "u": "ми гуляємо ввечері" },
+      { "p": "vous", "v": "vous promenez", "s": "avec le chien", "u": "ви гуляєте з собакою" },
+      { "p": "ils", "v": "se promènent", "s": "sur la plage", "u": "вони гуляють на пляжі" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis promené", "s": "au parc", "u": "я (ч.р.) погуляв у парку" },
+      { "p": "tu", "v": "t'es promené", "s": "souvent", "u": "ти (ч.р.) гуляв часто" },
+      { "p": "elle", "v": "s'est promenée", "s": "en ville", "u": "вона погуляла в місті" },
+      { "p": "nous", "v": "nous sommes promenés", "s": "le soir", "u": "ми погуляли ввечері" },
+      { "p": "vous", "v": "vous êtes promenés", "s": "avec le chien", "u": "ви погуляли з собакою" },
+      { "p": "elles", "v": "se sont promenées", "s": "sur la plage", "u": "вони (ж.р.) погуляли на пляжі" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me promènerai", "s": "au parc", "u": "я буду гуляти в парку" },
+      { "p": "tu", "v": "te promèneras", "s": "souvent", "u": "ти будеш гуляти часто" },
+      { "p": "elle", "v": "se promènera", "s": "en ville", "u": "вона буде гуляти в місті" },
+      { "p": "nous", "v": "nous promènerons", "s": "le soir", "u": "ми будемо гуляти ввечері" },
+      { "p": "vous", "v": "vous promènerez", "s": "avec le chien", "u": "ви будете гуляти з собакою" },
+      { "p": "ils", "v": "se promèneront", "s": "sur la plage", "u": "вони будуть гуляти на пляжі" }
+    ]
+  },
+  {
+    "category": "Інші зворотні (Без узгодження в PC)",
+    "infFr": "Se demander",
+    "infUk": "запитувати себе / дивуватися",
+    "present": [
+      { "p": "je", "v": "me demande", "s": "pourquoi", "u": "я запитую себе чому" },
+      { "p": "tu", "v": "te demandes", "s": "si c'est vrai", "u": "ти запитуєш себе, чи це правда" },
+      { "p": "elle", "v": "se demande", "s": "quoi faire", "u": "вона дивується, що робити" },
+      { "p": "nous", "v": "nous demandons", "s": "souvent", "u": "ми часто себе запитуємо" },
+      { "p": "vous", "v": "vous demandez", "s": "la raison", "u": "ви дивуєтеся причині" },
+      { "p": "ils", "v": "se demandent", "s": "comment ça marche", "u": "вони запитують себе, як це працює" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis demandé", "s": "pourquoi", "u": "я запитав себе чому" },
+      { "p": "tu", "v": "t'es demandé", "s": "si c'est vrai", "u": "ти запитав себе, чи це правда" },
+      { "p": "elle", "v": "s'est demandé", "s": "quoi faire", "u": "вона запитала себе (без 'e'!)" },
+      { "p": "nous", "v": "nous sommes demandé", "s": "souvent", "u": "ми запитали себе (без 's'!)" },
+      { "p": "vous", "v": "vous êtes demandé", "s": "la raison", "u": "ви запитали себе" },
+      { "p": "elles", "v": "se sont demandé", "s": "comment ça marche", "u": "вони (ж.р.) запитали себе (без 'es'!)" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me demanderai", "s": "pourquoi", "u": "я запитуватиму себе чому" },
+      { "p": "tu", "v": "te demanderas", "s": "si c'est vrai", "u": "ти запитуватимеш себе, чи це правда" },
+      { "p": "elle", "v": "se demandera", "s": "quoi faire", "u": "вона дивуватиметься, що робити" },
+      { "p": "nous", "v": "nous demanderons", "s": "souvent", "u": "ми часто запитуватимемо себе" },
+      { "p": "vous", "v": "vous demanderez", "s": "la raison", "u": "ви дивуватиметеся причині" },
+      { "p": "ils", "v": "se demanderont", "s": "comment ça marche", "u": "вони запитуватимуть себе, як це працює" }
+    ]
+  },
+  {
+    "category": "Взаємні дієслова (Reciproques - Тільки множина)",
+    "infFr": "Se rencontrer",
+    "infUk": "зустрічатися (один з одним)",
+    "present": [
+      { "p": "nous", "v": "nous rencontrons", "s": "souvent", "u": "ми часто зустрічаємося" },
+      { "p": "vous", "v": "vous rencontrez", "s": "au café", "u": "ви зустрічаєтеся в кафе" },
+      { "p": "ils", "v": "se rencontrent", "s": "en ville", "u": "вони зустрічаються в місті" },
+      { "p": "elles", "v": "se rencontrent", "s": "par hasard", "u": "вони (ж.р.) зустрічаються випадково" }
+    ],
+    "passe": [
+      { "p": "nous", "v": "nous sommes rencontrés", "s": "souvent", "u": "ми зустрілися" },
+      { "p": "vous", "v": "vous êtes rencontrés", "s": "au café", "u": "ви зустрілися в кафе" },
+      { "p": "ils", "v": "se sont rencontrés", "s": "en ville", "u": "вони зустрілися в місті" },
+      { "p": "elles", "v": "se sont rencontrées", "s": "par hasard", "u": "вони (ж.р.) зустрілися (з узгодженням 'es'!)" }
+    ],
+    "futur": [
+      { "p": "nous", "v": "nous rencontrerons", "s": "souvent", "u": "ми зустрінемося" },
+      { "p": "vous", "v": "vous rencontrerez", "s": "au café", "u": "ви зустрінетеся в кафе" },
+      { "p": "ils", "v": "se rencontreront", "s": "en ville", "u": "вони зустрінуться в місті" },
+      { "p": "elles", "v": "se rencontreront", "s": "par hasard", "u": "вони (ж.р.) зустрінуться випадково" }
+    ]
+  },
+  {
+    "category": "Взаємні дієслова (Без узгодження в PC!)",
+    "infFr": "Se téléphoner",
+    "infUk": "зідзвонюватися",
+    "present": [
+      { "p": "nous", "v": "nous téléphonons", "s": "chaque jour", "u": "ми зідзвонюємося щодня" },
+      { "p": "vous", "v": "vous téléphonez", "s": "le soir", "u": "ви зідзвонюєтеся ввечері" },
+      { "p": "ils", "v": "se téléphonent", "s": "souvent", "u": "вони часто зідзвонюються" },
+      { "p": "elles", "v": "se téléphonent", "s": "parfois", "u": "вони (ж.р.) іноді зідзвонюються" }
+    ],
+    "passe": [
+      { "p": "nous", "v": "nous sommes téléphoné", "s": "chaque jour", "u": "ми зідзвонилися (без 's'!)" },
+      { "p": "vous", "v": "vous êtes téléphoné", "s": "le soir", "u": "ви зідзвонилися (без 's'!)" },
+      { "p": "ils", "v": "se sont téléphoné", "s": "souvent", "u": "вони зідзвонилися (без 's'!)" },
+      { "p": "elles", "v": "se sont téléphoné", "s": "parfois", "u": "вони (ж.р.) зідзвонилися (без 'es'!)" }
+    ],
+    "futur": [
+      { "p": "nous", "v": "nous téléphonerons", "s": "chaque jour", "u": "ми зідзвонимося" },
+      { "p": "vous", "v": "vous téléphonerez", "s": "le soir", "u": "ви зідзвонитеся" },
+      { "p": "ils", "v": "se téléphoneront", "s": "souvent", "u": "вони зідзвоняться" },
+      { "p": "elles", "v": "se téléphoneront", "s": "parfois", "u": "вони (ж.р.) зідзвоняться" }
+    ]
+  },
+  {
+    "category": "2 Група (Тільки 3-тя особа)",
+    "infFr": "S'agrandir",
+    "infUk": "розширюватися / збільшуватися",
+    "present": [
+      { "p": "il", "v": "s'agrandit", "s": "rapidement", "u": "він (проєкт) розширюється швидко" },
+      { "p": "elle", "v": "s'agrandit", "s": "chaque année", "u": "вона (компанія) збільшується щороку" },
+      { "p": "ils", "v": "s'agrandissent", "s": "encore", "u": "вони (будинки) знову розширюються" },
+      { "p": "elles", "v": "s'agrandissent", "s": "vite", "u": "вони (міста) розширюються швидко" }
+    ],
+    "passe": [
+      { "p": "il", "v": "s'est agrandi", "s": "rapidement", "u": "він (проєкт) розширився" },
+      { "p": "elle", "v": "s'est agrandie", "s": "chaque année", "u": "вона (компанія) збільшилася" },
+      { "p": "ils", "v": "se sont agrandis", "s": "encore", "u": "вони (будинки) розширилися" },
+      { "p": "elles", "v": "se sont agrandies", "s": "vite", "u": "вони (міста) розширилися" }
+    ],
+    "futur": [
+      { "p": "il", "v": "s'agrandira", "s": "rapidement", "u": "він (проєкт) розшириться" },
+      { "p": "elle", "v": "s'agrandira", "s": "chaque année", "u": "вона (компанія) збільшиться" },
+      { "p": "ils", "v": "s'agrandiront", "s": "encore", "u": "вони (будинки) розширяться" },
+      { "p": "elles", "v": "s'agrandiront", "s": "vite", "u": "вони (міста) розширяться" }
+    ]
+  },
+  {
+    "category": "2 Група (Тільки 3-тя особа)",
+    "infFr": "Se remplir",
+    "infUk": "наповнюватися",
+    "present": [
+      { "p": "il", "v": "se remplit", "s": "d'eau", "u": "він (стакан) наповнюється водою" },
+      { "p": "elle", "v": "se remplit", "s": "de gens", "u": "вона (зала) наповнюється людьми" },
+      { "p": "ils", "v": "se remplissent", "s": "vite", "u": "вони (басейни) наповнюються швидко" },
+      { "p": "elles", "v": "se remplissent", "s": "lentement", "u": "вони (пляшки) наповнюються повільно" }
+    ],
+    "passe": [
+      { "p": "il", "v": "s'est rempli", "s": "d'eau", "u": "він (стакан) наповнився" },
+      { "p": "elle", "v": "s'est remplie", "s": "de gens", "u": "вона (зала) наповнилася" },
+      { "p": "ils", "v": "se sont remplis", "s": "vite", "u": "вони (басейни) наповнилися" },
+      { "p": "elles", "v": "se sont remplies", "s": "lentement", "u": "вони (пляшки) наповнилися" }
+    ],
+    "futur": [
+      { "p": "il", "v": "se remplira", "s": "d'eau", "u": "він (стакан) наповниться" },
+      { "p": "elle", "v": "se remplira", "s": "de gens", "u": "вона (зала) наповниться" },
+      { "p": "ils", "v": "se rempliront", "s": "vite", "u": "вони (басейни) наповняться" },
+      { "p": "elles", "v": "se rempliront", "s": "lentement", "u": "вони (пляшки) наповняться" }
     ]
   },
   {
@@ -188,8 +425,8 @@
     "passe": [
       { "p": "je", "v": "me suis rendu compte", "s": "de ça", "u": "я усвідомив це" },
       { "p": "tu", "v": "t'es rendu compte", "s": "de l'erreur", "u": "ти усвідомив помилку" },
-      { "p": "elle", "v": "s'est rendu compte", "s": "du danger", "u": "вона усвідомила небезпеку" },
-      { "p": "nous", "v": "nous sommes rendu compte", "s": "du problème", "u": "ми усвідомили проблему" },
+      { "p": "elle", "v": "s'est rendu compte", "s": "du danger", "u": "вона усвідомила небезпеку (без узгодження!)" },
+      { "p": "nous", "v": "nous sommes rendu compte", "s": "du problème", "u": "ми усвідомили проблему (без 's'!)" },
       { "p": "vous", "v": "vous êtes rendu compte", "s": "de la situation", "u": "ви усвідомили ситуацію" },
       { "p": "ils", "v": "se sont rendu compte", "s": "de tout", "u": "вони усвідомили усе" }
     ],
