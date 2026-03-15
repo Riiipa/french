@@ -464,7 +464,7 @@
     ]
   },
   {
-    "category": "Дієслова на -dre",
+    "category": "Основа PRENDRE",
     "infFr": "Prendre",
     "infUk": "брати",
     "present": [
@@ -493,7 +493,7 @@
     ]
   },
   {
-    "category": "Дієслова на -dre",
+    "category": "Основа PRENDRE",
     "infFr": "Apprendre",
     "infUk": "вчити",
     "present": [
@@ -522,7 +522,7 @@
     ]
   },
   {
-    "category": "Дієслова на -dre",
+    "category": "Основа PRENDRE",
     "infFr": "Comprendre",
     "infUk": "розуміти",
     "present": [
@@ -551,7 +551,7 @@
     ]
   },
   {
-    "category": "Дієслова на -dre",
+    "category": "Регулярні -DRE",
     "infFr": "Attendre",
     "infUk": "чекати",
     "present": [
@@ -580,7 +580,7 @@
     ]
   },
   {
-    "category": "Дієслова на -dre",
+    "category": "Регулярні -DRE",
     "infFr": "Répondre",
     "infUk": "відповідати",
     "present": [
@@ -609,7 +609,268 @@
     ]
   },
   {
-    "category": "Дієслова на -oir",
+    "category": "Регулярні -DRE",
+    "infFr": "Descendre",
+    "infUk": "спускатися / виходити з транспорту",
+    "present": [
+      { "p": "je", "v": "descends", "s": "l'escalier", "u": "я спускаюся сходами" },
+      { "p": "tu", "v": "descends", "s": "du train", "u": "ти виходиш з потяга" },
+      { "p": "il", "v": "descend", "s": "vite", "u": "він спускається швидко" },
+      { "p": "nous", "v": "descendons", "s": "au salon", "u": "ми спускаємося у вітальню" },
+      { "p": "vous", "v": "descendez", "s": "ici ?", "u": "ви виходите тут?" },
+      { "p": "ils", "v": "descendent", "s": "dans la rue", "u": "вони спускаються на вулицю" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis descendu", "s": "l'escalier", "u": "я (ч.р.) спустився сходами" },
+      { "p": "tu", "v": "es descendu", "s": "du train", "u": "ти (ч.р.) вийшов з потяга" },
+      { "p": "elle", "v": "est descendue", "s": "vite", "u": "вона спустилася швидко" },
+      { "p": "nous", "v": "sommes descendus", "s": "au salon", "u": "ми спустилися у вітальню" },
+      { "p": "vous", "v": "êtes descendus", "s": "ici ?", "u": "ви вийшли тут?" },
+      { "p": "elles", "v": "sont descendues", "s": "dans la rue", "u": "вони спустилися на вулицю" }
+    ],
+    "futur": [
+      { "p": "je", "v": "descendrai", "s": "l'escalier", "u": "я спускатимуся сходами" },
+      { "p": "tu", "v": "descendras", "s": "du train", "u": "ти виходитимеш з потяга" },
+      { "p": "il", "v": "descendra", "s": "vite", "u": "він спускатиметься швидко" },
+      { "p": "nous", "v": "descendrons", "s": "au salon", "u": "ми спускатимемося у вітальню" },
+      { "p": "vous", "v": "descendrez", "s": "ici ?", "u": "ви виходитимете тут?" },
+      { "p": "ils", "v": "descendront", "s": "dans la rue", "u": "вони спускатимуться на вулицю" }
+    ]
+  },
+  {
+    "category": "Регулярні -DRE",
+    "infFr": "Rendre",
+    "infUk": "повертати (щось) / робити",
+    "present": [
+      { "p": "je", "v": "rends", "s": "le livre", "u": "я повертаю книгу" },
+      { "p": "tu", "v": "rends", "s": "la monnaie", "u": "ти даєш решту" },
+      { "p": "il", "v": "rend", "s": "visite à sa mère", "u": "він відвідує матір" },
+      { "p": "nous", "v": "rendons", "s": "les armes", "u": "ми складаємо зброю" },
+      { "p": "vous", "v": "rendez", "s": "le travail", "u": "ви здаєте роботу" },
+      { "p": "elles", "v": "rendent", "s": "les gens heureux", "u": "вони роблять людей щасливими" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai rendu", "s": "le livre", "u": "я повернув книгу" },
+      { "p": "tu", "v": "as rendu", "s": "la monnaie", "u": "ти дав решту" },
+      { "p": "il", "v": "a rendu", "s": "visite à sa mère", "u": "він відвідав матір" },
+      { "p": "nous", "v": "avons rendu", "s": "les armes", "u": "ми склали зброю" },
+      { "p": "vous", "v": "avez rendu", "s": "le travail", "u": "ви здали роботу" },
+      { "p": "elles", "v": "ont rendu", "s": "les gens heureux", "u": "вони зробили людей щасливими" }
+    ],
+    "futur": [
+      { "p": "je", "v": "rendrai", "s": "le livre", "u": "я поверну книгу" },
+      { "p": "tu", "v": "rendras", "s": "la monnaie", "u": "ти даси решту" },
+      { "p": "il", "v": "rendra", "s": "visite à sa mère", "u": "він відвідає матір" },
+      { "p": "nous", "v": "rendrons", "s": "les armes", "u": "ми складемо зброю" },
+      { "p": "vous", "v": "rendrez", "s": "le travail", "u": "ви здасте роботу" },
+      { "p": "elles", "v": "rendront", "s": "les gens heureux", "u": "вони зроблять людей щасливими" }
+    ]
+  },
+  {
+    "category": "Основа METTRE / BATTRE",
+    "infFr": "Mettre",
+    "infUk": "класти / одягати",
+    "present": [
+      { "p": "je", "v": "mets", "s": "un pull", "u": "я одягаю светр" },
+      { "p": "tu", "v": "mets", "s": "la table", "u": "ти накриваєш на стіл" },
+      { "p": "il", "v": "met", "s": "du temps", "u": "він витрачає час" },
+      { "p": "nous", "v": "mettons", "s": "en ordre", "u": "ми приводимо в порядок" },
+      { "p": "vous", "v": "mettez", "s": "le livre ici", "u": "ви кладете книгу тут" },
+      { "p": "elles", "v": "mettent", "s": "des robes", "u": "вони одягають сукні" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai mis", "s": "un pull", "u": "я одягнув светр" },
+      { "p": "tu", "v": "as mis", "s": "la table", "u": "ти накрив на стіл" },
+      { "p": "il", "v": "a mis", "s": "du temps", "u": "він витратив час" },
+      { "p": "nous", "v": "avons mis", "s": "en ordre", "u": "ми привели в порядок" },
+      { "p": "vous", "v": "avez mis", "s": "le livre ici", "u": "ви поклали книгу тут" },
+      { "p": "elles", "v": "ont mis", "s": "des robes", "u": "вони одягнули сукні" }
+    ],
+    "futur": [
+      { "p": "je", "v": "mettrai", "s": "un pull", "u": "я одягну светр" },
+      { "p": "tu", "v": "mettras", "s": "la table", "u": "ти накриєш на стіл" },
+      { "p": "il", "v": "mettra", "s": "du temps", "u": "він витратить час" },
+      { "p": "nous", "v": "mettrons", "s": "en ordre", "u": "ми приведемо в порядок" },
+      { "p": "vous", "v": "mettrez", "s": "le livre ici", "u": "ви покладете книгу тут" },
+      { "p": "elles", "v": "mettront", "s": "des robes", "u": "вони одягнуть сукні" }
+    ]
+  },
+  {
+    "category": "Основа METTRE / BATTRE",
+    "infFr": "Promettre",
+    "infUk": "обіцяти",
+    "present": [
+      { "p": "je", "v": "promets", "s": "de venir", "u": "я обіцяю прийти" },
+      { "p": "tu", "v": "promets", "s": "la lune", "u": "ти обіцяєш місяць з неба" },
+      { "p": "il", "v": "promet", "s": "une récompense", "u": "він обіцяє нагороду" },
+      { "p": "nous", "v": "promettons", "s": "notre aide", "u": "ми обіцяємо нашу допомогу" },
+      { "p": "vous", "v": "promettez", "s": "de changer", "u": "ви обіцяєте змінитися" },
+      { "p": "ils", "v": "promettent", "s": "trop", "u": "вони обіцяють забагато" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai promis", "s": "de venir", "u": "я пообіцяв прийти" },
+      { "p": "tu", "v": "as promis", "s": "la lune", "u": "ти пообіцяв місяць з неба" },
+      { "p": "il", "v": "a promis", "s": "une récompense", "u": "він пообіцяв нагороду" },
+      { "p": "nous", "v": "avons promis", "s": "notre aide", "u": "ми пообіцяли нашу допомогу" },
+      { "p": "vous", "v": "avez promis", "s": "de changer", "u": "ви пообіцяли змінитися" },
+      { "p": "ils", "v": "ont promis", "s": "trop", "u": "вони пообіцяли забагато" }
+    ],
+    "futur": [
+      { "p": "je", "v": "promettrai", "s": "de venir", "u": "я пообіцяю прийти" },
+      { "p": "tu", "v": "promettras", "s": "la lune", "u": "ти пообіцяєш місяць з неба" },
+      { "p": "il", "v": "promettra", "s": "une récompense", "u": "він пообіцяє нагороду" },
+      { "p": "nous", "v": "promettrons", "s": "notre aide", "u": "ми пообіцяємо нашу допомогу" },
+      { "p": "vous", "v": "promettrez", "s": "de changer", "u": "ви пообіцяєте змінитися" },
+      { "p": "ils", "v": "promettront", "s": "trop", "u": "вони пообіцяють забагато" }
+    ]
+  },
+  {
+    "category": "Основа METTRE / BATTRE",
+    "infFr": "Battre",
+    "infUk": "бити / перемагати",
+    "present": [
+      { "p": "je", "v": "bats", "s": "le record", "u": "я б'ю рекорд" },
+      { "p": "tu", "v": "bats", "s": "les œufs", "u": "ти збиваєш яйця" },
+      { "p": "il", "v": "bat", "s": "son adversaire", "u": "він перемагає суперника" },
+      { "p": "nous", "v": "battons", "s": "des mains", "u": "ми плескаємо в долоні" },
+      { "p": "vous", "v": "battez", "s": "le tapis", "u": "ви вибиваєте килим" },
+      { "p": "ils", "v": "battent", "s": "en retraite", "u": "вони відступають" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai battu", "s": "le record", "u": "я побив рекорд" },
+      { "p": "tu", "v": "as battu", "s": "les œufs", "u": "ти збив яйця" },
+      { "p": "il", "v": "a battu", "s": "son adversaire", "u": "він переміг суперника" },
+      { "p": "nous", "v": "avons battu", "s": "des mains", "u": "ми поплескали в долоні" },
+      { "p": "vous", "v": "avez battu", "s": "le tapis", "u": "ви вибили килим" },
+      { "p": "ils", "v": "ont battu", "s": "en retraite", "u": "вони відступили" }
+    ],
+    "futur": [
+      { "p": "je", "v": "battrai", "s": "le record", "u": "я поб'ю рекорд" },
+      { "p": "tu", "v": "battras", "s": "les œufs", "u": "ти зіб'єш яйця" },
+      { "p": "il", "v": "battra", "s": "son adversaire", "u": "він переможе суперника" },
+      { "p": "nous", "v": "battrons", "s": "des mains", "u": "ми плескатимемо в долоні" },
+      { "p": "vous", "v": "battrez", "s": "le tapis", "u": "ви вибиватимете килим" },
+      { "p": "ils", "v": "battront", "s": "en retraite", "u": "вони відступатимуть" }
+    ]
+  },
+  {
+    "category": "Основа ÉCRIRE",
+    "infFr": "Écrire",
+    "infUk": "писати",
+    "present": [
+      { "p": "j'", "v": "écris", "s": "une lettre", "u": "я пишу листа" },
+      { "p": "tu", "v": "écris", "s": "un message", "u": "ти пишеш повідомлення" },
+      { "p": "elle", "v": "écrit", "s": "un roman", "u": "вона пише роман" },
+      { "p": "nous", "v": "écrivons", "s": "un email", "u": "ми пишемо імейл" },
+      { "p": "vous", "v": "écrivez", "s": "bien", "u": "ви пишете добре" },
+      { "p": "ils", "v": "écrivent", "s": "au tableau", "u": "вони пишуть на дошці" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai écrit", "s": "une lettre", "u": "я писав листа" },
+      { "p": "tu", "v": "as écrit", "s": "un message", "u": "ти писав повідомлення" },
+      { "p": "elle", "v": "a écrit", "s": "un roman", "u": "вона писала роман" },
+      { "p": "nous", "v": "avons écrit", "s": "un email", "u": "ми писали імейл" },
+      { "p": "vous", "v": "avez écrit", "s": "bien", "u": "ви писали добре" },
+      { "p": "ils", "v": "ont écrit", "s": "au tableau", "u": "вони писали на дошці" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "écrirai", "s": "une lettre", "u": "я писатиму листа" },
+      { "p": "tu", "v": "écriras", "s": "un message", "u": "ти писатимеш повідомлення" },
+      { "p": "elle", "v": "écrira", "s": "un roman", "u": "вона писатиме роман" },
+      { "p": "nous", "v": "écrirons", "s": "un email", "u": "ми писатимемо імейл" },
+      { "p": "vous", "v": "écrirez", "s": "bien", "u": "ви писатимете добре" },
+      { "p": "ils", "v": "écriront", "s": "au tableau", "u": "вони писатимуть на дошці" }
+    ]
+  },
+  {
+    "category": "Основа ÉCRIRE",
+    "infFr": "Décrire",
+    "infUk": "описувати",
+    "present": [
+      { "p": "je", "v": "décris", "s": "la scène", "u": "я описую сцену" },
+      { "p": "tu", "v": "décris", "s": "le paysage", "u": "ти описуєш пейзаж" },
+      { "p": "il", "v": "décrit", "s": "son voyage", "u": "він описує свою подорож" },
+      { "p": "nous", "v": "décrivons", "s": "le suspect", "u": "ми описуємо підозрюваного" },
+      { "p": "vous", "v": "décrivez", "s": "bien", "u": "ви описуєте добре" },
+      { "p": "elles", "v": "décrivent", "s": "la situation", "u": "вони описують ситуацію" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai décrit", "s": "la scène", "u": "я описав сцену" },
+      { "p": "tu", "v": "as décrit", "s": "le paysage", "u": "ти описав пейзаж" },
+      { "p": "il", "v": "a décrit", "s": "son voyage", "u": "він описав свою подорож" },
+      { "p": "nous", "v": "avons décrit", "s": "le suspect", "u": "ми описали підозрюваного" },
+      { "p": "vous", "v": "avez décrit", "s": "bien", "u": "ви описали добре" },
+      { "p": "elles", "v": "ont décrit", "s": "la situation", "u": "вони описали ситуацію" }
+    ],
+    "futur": [
+      { "p": "je", "v": "décrirai", "s": "la scène", "u": "я опишу сцену" },
+      { "p": "tu", "v": "décriras", "s": "le paysage", "u": "ти опишеш пейзаж" },
+      { "p": "il", "v": "décrira", "s": "son voyage", "u": "він опише свою подорож" },
+      { "p": "nous", "v": "décrirons", "s": "le suspect", "u": "ми опишемо підозрюваного" },
+      { "p": "vous", "v": "décrirez", "s": "bien", "u": "ви опишете добре" },
+      { "p": "elles", "v": "décriront", "s": "la situation", "u": "вони опишуть ситуацію" }
+    ]
+  },
+  {
+    "category": "Дієслова DIRE / FAIRE",
+    "infFr": "Dire",
+    "infUk": "казати",
+    "present": [
+      { "p": "je", "v": "dis", "s": "la vérité", "u": "я кажу правду" },
+      { "p": "tu", "v": "dis", "s": "n'importe quoi", "u": "ти верзеш нісенітницю" },
+      { "p": "elle", "v": "dit", "s": "bonjour", "u": "вона каже добрий день" },
+      { "p": "nous", "v": "disons", "s": "merci", "u": "ми кажемо дякую" },
+      { "p": "vous", "v": "dites", "s": "oui", "u": "ви кажете так" },
+      { "p": "ils", "v": "disent", "s": "non", "u": "вони кажуть ні" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai dit", "s": "la vérité", "u": "я сказав правду" },
+      { "p": "tu", "v": "as dit", "s": "n'importe quoi", "u": "ти молов нісенітницю" },
+      { "p": "elle", "v": "a dit", "s": "bonjour", "u": "вона сказала добрий день" },
+      { "p": "nous", "v": "avons dit", "s": "merci", "u": "ми сказали дякую" },
+      { "p": "vous", "v": "avez dit", "s": "oui", "u": "ви сказали так" },
+      { "p": "ils", "v": "ont dit", "s": "non", "u": "вони сказали ні" }
+    ],
+    "futur": [
+      { "p": "je", "v": "dirai", "s": "la vérité", "u": "я скажу правду" },
+      { "p": "tu", "v": "diras", "s": "n'importe quoi", "u": "ти молотимеш нісенітницю" },
+      { "p": "elle", "v": "dira", "s": "bonjour", "u": "вона скаже добрий день" },
+      { "p": "nous", "v": "dirons", "s": "merci", "u": "ми скажемо дякую" },
+      { "p": "vous", "v": "direz", "s": "oui", "u": "ви скажете так" },
+      { "p": "ils", "v": "diront", "s": "non", "u": "вони скажуть ні" }
+    ]
+  },
+  {
+    "category": "Дієслова DIRE / FAIRE",
+    "infFr": "Faire",
+    "infUk": "робити",
+    "present": [
+      { "p": "je", "v": "fais", "s": "le ménage", "u": "я роблю прибирання" },
+      { "p": "tu", "v": "fais", "s": "attention", "u": "ти звертаєш увагу" },
+      { "p": "il", "v": "fait", "s": "son travail", "u": "він робить свою роботу" },
+      { "p": "nous", "v": "faisons", "s": "du sport", "u": "ми займаємося спортом" },
+      { "p": "vous", "v": "faites", "s": "du bruit", "u": "ви робите шум" },
+      { "p": "ils", "v": "font", "s": "la fête", "u": "вони влаштовують вечірку" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai fait", "s": "le ménage", "u": "я зробив прибирання" },
+      { "p": "tu", "v": "as fait", "s": "attention", "u": "ти звернув увагу" },
+      { "p": "il", "v": "a fait", "s": "son travail", "u": "він зробив свою роботу" },
+      { "p": "nous", "v": "avons fait", "s": "du sport", "u": "ми займалися спортом" },
+      { "p": "vous", "v": "avez fait", "s": "du bruit", "u": "ви зробили шум" },
+      { "p": "ils", "v": "ont fait", "s": "la fête", "u": "вони влаштували вечірку" }
+    ],
+    "futur": [
+      { "p": "je", "v": "ferai", "s": "le ménage", "u": "я зроблю прибирання" },
+      { "p": "tu", "v": "feras", "s": "attention", "u": "ти звернеш увагу" },
+      { "p": "il", "v": "fera", "s": "son travail", "u": "він зробить свою роботу" },
+      { "p": "nous", "v": "ferons", "s": "du sport", "u": "ми займатимемось спортом" },
+      { "p": "vous", "v": "ferez", "s": "du bruit", "u": "ви зробите шум" },
+      { "p": "ils", "v": "feront", "s": "la fête", "u": "вони влаштують вечірку" }
+    ]
+  },
+  {
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Pouvoir",
     "infUk": "могти",
     "present": [
@@ -638,7 +899,7 @@
     ]
   },
   {
-    "category": "Дієслова на -oir",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Vouloir",
     "infUk": "хотіти",
     "present": [
@@ -667,7 +928,7 @@
     ]
   },
   {
-    "category": "Дієслова на -oir",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Devoir",
     "infUk": "мусити",
     "present": [
@@ -696,7 +957,7 @@
     ]
   },
   {
-    "category": "Дієслова на -oir",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Savoir",
     "infUk": "знати (факт)",
     "present": [
@@ -725,7 +986,7 @@
     ]
   },
   {
-    "category": "Дієслова на -oir",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Voir",
     "infUk": "бачити",
     "present": [
@@ -754,7 +1015,7 @@
     ]
   },
   {
-    "category": "Дієслова на -oir",
+    "category": "Неправильні дієслова (винятки)",
     "infFr": "Recevoir",
     "infUk": "отримувати",
     "present": [
@@ -871,93 +1132,6 @@
   },
   {
     "category": "Неправильні дієслова (винятки)",
-    "infFr": "Faire",
-    "infUk": "робити",
-    "present": [
-      { "p": "je", "v": "fais", "s": "le ménage", "u": "я роблю прибирання" },
-      { "p": "tu", "v": "fais", "s": "attention", "u": "ти звертаєш увагу" },
-      { "p": "il", "v": "fait", "s": "son travail", "u": "він робить свою роботу" },
-      { "p": "nous", "v": "faisons", "s": "du sport", "u": "ми займаємося спортом" },
-      { "p": "vous", "v": "faites", "s": "du bruit", "u": "ви робите шум" },
-      { "p": "ils", "v": "font", "s": "la fête", "u": "вони влаштовують вечірку" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai fait", "s": "le ménage", "u": "я зробив прибирання" },
-      { "p": "tu", "v": "as fait", "s": "attention", "u": "ти звернув увагу" },
-      { "p": "il", "v": "a fait", "s": "son travail", "u": "він зробив свою роботу" },
-      { "p": "nous", "v": "avons fait", "s": "du sport", "u": "ми займалися спортом" },
-      { "p": "vous", "v": "avez fait", "s": "du bruit", "u": "ви зробили шум" },
-      { "p": "ils", "v": "ont fait", "s": "la fête", "u": "вони влаштували вечірку" }
-    ],
-    "futur": [
-      { "p": "je", "v": "ferai", "s": "le ménage", "u": "я зроблю прибирання" },
-      { "p": "tu", "v": "feras", "s": "attention", "u": "ти звернеш увагу" },
-      { "p": "il", "v": "fera", "s": "son travail", "u": "він зробить свою роботу" },
-      { "p": "nous", "v": "ferons", "s": "du sport", "u": "ми займатимемось спортом" },
-      { "p": "vous", "v": "ferez", "s": "du bruit", "u": "ви зробите шум" },
-      { "p": "ils", "v": "feront", "s": "la fête", "u": "вони влаштують вечірку" }
-    ]
-  },
-  {
-    "category": "Неправильні дієслова (винятки)",
-    "infFr": "Dire",
-    "infUk": "казати",
-    "present": [
-      { "p": "je", "v": "dis", "s": "la vérité", "u": "я кажу правду" },
-      { "p": "tu", "v": "dis", "s": "n'importe quoi", "u": "ти верзеш нісенітницю" },
-      { "p": "elle", "v": "dit", "s": "bonjour", "u": "вона каже добрий день" },
-      { "p": "nous", "v": "disons", "s": "merci", "u": "ми кажемо дякую" },
-      { "p": "vous", "v": "dites", "s": "oui", "u": "ви кажете так" },
-      { "p": "ils", "v": "disent", "s": "non", "u": "вони кажуть ні" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai dit", "s": "la vérité", "u": "я сказав правду" },
-      { "p": "tu", "v": "as dit", "s": "n'importe quoi", "u": "ти молов нісенітницю" },
-      { "p": "elle", "v": "a dit", "s": "bonjour", "u": "вона сказала добрий день" },
-      { "p": "nous", "v": "avons dit", "s": "merci", "u": "ми сказали дякую" },
-      { "p": "vous", "v": "avez dit", "s": "oui", "u": "ви сказали так" },
-      { "p": "ils", "v": "ont dit", "s": "non", "u": "вони сказали ні" }
-    ],
-    "futur": [
-      { "p": "je", "v": "dirai", "s": "la vérité", "u": "я скажу правду" },
-      { "p": "tu", "v": "diras", "s": "n'importe quoi", "u": "ти молотимеш нісенітницю" },
-      { "p": "elle", "v": "dira", "s": "bonjour", "u": "вона скаже добрий день" },
-      { "p": "nous", "v": "dirons", "s": "merci", "u": "ми скажемо дякую" },
-      { "p": "vous", "v": "direz", "s": "oui", "u": "ви скажете так" },
-      { "p": "ils", "v": "diront", "s": "non", "u": "вони скажуть ні" }
-    ]
-  },
-  {
-    "category": "Неправильні дієслова (винятки)",
-    "infFr": "Mettre",
-    "infUk": "класти / одягати",
-    "present": [
-      { "p": "je", "v": "mets", "s": "un pull", "u": "я одягаю светр" },
-      { "p": "tu", "v": "mets", "s": "la table", "u": "ти накриваєш на стіл" },
-      { "p": "il", "v": "met", "s": "du temps", "u": "він витрачає час" },
-      { "p": "nous", "v": "mettons", "s": "en ordre", "u": "ми приводимо в порядок" },
-      { "p": "vous", "v": "mettez", "s": "le livre ici", "u": "ви кладете книгу тут" },
-      { "p": "elles", "v": "mettent", "s": "des robes", "u": "вони одягають сукні" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai mis", "s": "un pull", "u": "я одягнув светр" },
-      { "p": "tu", "v": "as mis", "s": "la table", "u": "ти накрив на стіл" },
-      { "p": "il", "v": "a mis", "s": "du temps", "u": "він витратив час" },
-      { "p": "nous", "v": "avons mis", "s": "en ordre", "u": "ми привели в порядок" },
-      { "p": "vous", "v": "avez mis", "s": "le livre ici", "u": "ви поклали книгу тут" },
-      { "p": "elles", "v": "ont mis", "s": "des robes", "u": "вони одягнули сукні" }
-    ],
-    "futur": [
-      { "p": "je", "v": "mettrai", "s": "un pull", "u": "я одягну светр" },
-      { "p": "tu", "v": "mettras", "s": "la table", "u": "ти накриєш на стіл" },
-      { "p": "il", "v": "mettra", "s": "du temps", "u": "він витратить час" },
-      { "p": "nous", "v": "mettrons", "s": "en ordre", "u": "ми приведемо в порядок" },
-      { "p": "vous", "v": "mettrez", "s": "le livre ici", "u": "ви покладете книгу тут" },
-      { "p": "elles", "v": "mettront", "s": "des robes", "u": "вони одягнуть сукні" }
-    ]
-  },
-  {
-    "category": "Неправильні дієслова (винятки)",
     "infFr": "Boire",
     "infUk": "пити",
     "present": [
@@ -1012,35 +1186,6 @@
       { "p": "nous", "v": "lirons", "s": "ensemble", "u": "ми читатимемо разом" },
       { "p": "vous", "v": "lirez", "s": "à haute voix", "u": "ви читатимете вголос" },
       { "p": "elles", "v": "liront", "s": "un magazine", "u": "вони читатимуть журнал" }
-    ]
-  },
-  {
-    "category": "Неправильні дієслова (винятки)",
-    "infFr": "Écrire",
-    "infUk": "писати",
-    "present": [
-      { "p": "j'", "v": "écris", "s": "une lettre", "u": "я пишу листа" },
-      { "p": "tu", "v": "écris", "s": "un message", "u": "ти пишеш повідомлення" },
-      { "p": "elle", "v": "écrit", "s": "un roman", "u": "вона пише роман" },
-      { "p": "nous", "v": "écrivons", "s": "un email", "u": "ми пишемо імейл" },
-      { "p": "vous", "v": "écrivez", "s": "bien", "u": "ви пишете добре" },
-      { "p": "ils", "v": "écrivent", "s": "au tableau", "u": "вони пишуть на дошці" }
-    ],
-    "passe": [
-      { "p": "j'", "v": "ai écrit", "s": "une lettre", "u": "я писав листа" },
-      { "p": "tu", "v": "as écrit", "s": "un message", "u": "ти писав повідомлення" },
-      { "p": "elle", "v": "a écrit", "s": "un roman", "u": "вона писала роман" },
-      { "p": "nous", "v": "avons écrit", "s": "un email", "u": "ми писали імейл" },
-      { "p": "vous", "v": "avez écrit", "s": "bien", "u": "ви писали добре" },
-      { "p": "ils", "v": "ont écrit", "s": "au tableau", "u": "вони писали на дошці" }
-    ],
-    "futur": [
-      { "p": "j'", "v": "écrirai", "s": "une lettre", "u": "я писатиму листа" },
-      { "p": "tu", "v": "écriras", "s": "un message", "u": "ти писатимеш повідомлення" },
-      { "p": "elle", "v": "écrira", "s": "un roman", "u": "вона писатиме роман" },
-      { "p": "nous", "v": "écrirons", "s": "un email", "u": "ми писатимемо імейл" },
-      { "p": "vous", "v": "écrirez", "s": "bien", "u": "ви писатимете добре" },
-      { "p": "ils", "v": "écriront", "s": "au tableau", "u": "вони писатимуть на дошці" }
     ]
   },
   {
