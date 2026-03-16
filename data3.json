@@ -471,7 +471,7 @@
       { "p": "je", "v": "prends", "s": "le train", "u": "я сідаю в потяг" },
       { "p": "tu", "v": "prends", "s": "ton temps", "u": "ти не поспішаєш" },
       { "p": "elle", "v": "prend", "s": "une douche", "u": "вона приймає душ" },
-      { "p": "nous", "v": "prenons", "s": "un café", "u": "ми п'ємо каву" },
+      { "p": "nous", "v": "prenons", "s": "un café", "u": "ми беремо каву" },
       { "p": "vous", "v": "prenez", "s": "des notes", "u": "ви робите нотатки" },
       { "p": "ils", "v": "prennent", "s": "la fuite", "u": "вони тікають" }
     ],
@@ -487,7 +487,7 @@
       { "p": "je", "v": "prendrai", "s": "le train", "u": "я сяду в потяг" },
       { "p": "tu", "v": "prendras", "s": "ton temps", "u": "ти не поспішатимеш" },
       { "p": "elle", "v": "prendra", "s": "une douche", "u": "вона прийме душ" },
-      { "p": "nous", "v": "prendrons", "s": "un café", "u": "ми вип'ємо каву" },
+      { "p": "nous", "v": "prendrons", "s": "un café", "u": "ми візьмемо каву" },
       { "p": "vous", "v": "prendrez", "s": "des notes", "u": "ви зробите нотатки" },
       { "p": "ils", "v": "prendront", "s": "la fuite", "u": "вони втечуть" }
     ]
