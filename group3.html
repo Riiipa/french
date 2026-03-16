@@ -84,6 +84,14 @@
             </button>
         </div>
 
+        <div class="flex items-center justify-center gap-3 w-full mb-6">
+            <span class="font-bold text-slate-600 text-[10px] sm:text-xs uppercase tracking-widest">Ховати інфінітив (Хардкор)</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="hideInfinitiveToggle" class="sr-only peer" onchange="saveSetup()">
+              <div class="w-9 h-5 sm:w-11 sm:h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-teal-500 shadow-inner"></div>
+            </label>
+        </div>
+
         <div id="setupError" class="hidden w-full text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одне дієслово.</div>
 
         <button onclick="initSessionFromSetup()" class="w-full mt-auto bg-teal-600 hover:bg-teal-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
@@ -143,7 +151,7 @@
                 <span id="globalDeckCounter" class="text-xs sm:text-sm font-black text-slate-500">?</span>
             </div>
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
-                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Прогрес</span>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Прогрес слова</span>
                 <div class="flex gap-1 items-center mt-0.5">
                     <div id="streakDot1" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
                     <div id="streakDot2" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-300 transition-colors duration-300"></div>
@@ -448,8 +456,14 @@
 
         function getSavedSetup() {
             const saved = localStorage.getItem('frenchVerbsSetupGroup3'); 
-            if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: null, tenses: ['present', 'passe', 'futur'], skipLearned: true };
+            if (saved) { 
+                try { 
+                    const data = JSON.parse(saved); 
+                    if(data.hideInfinitive === undefined) data.hideInfinitive = false;
+                    return data;
+                } catch (e) { return null; } 
+            }
+            return { verbs: null, tenses: ['present', 'passe', 'futur'], skipLearned: true, hideInfinitive: false };
         }
 
         function saveSetup() {
@@ -458,8 +472,9 @@
             const tenseCb = document.querySelectorAll('.tense-checkbox');
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
             const skipLearned = document.getElementById('skipLearnedToggle').checked;
+            const hideInfinitive = document.getElementById('hideInfinitiveToggle').checked;
             
-            localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses, skipLearned }));
+            localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses, skipLearned, hideInfinitive }));
             updateSelectedVerbsCount();
         }
 
@@ -510,6 +525,7 @@
             const savedSetup = getSavedSetup();
             document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
             document.getElementById('skipLearnedToggle').checked = savedSetup.skipLearned !== false;
+            document.getElementById('hideInfinitiveToggle').checked = savedSetup.hideInfinitive === true;
 
             const groupedVerbs = {};
             rawData.forEach(verb => {
@@ -595,11 +611,13 @@
         let frVoice = null;
         let sessionTargetSize = 10;
         let skipLearnedActive = true;
+        let hideInfinitiveActive = false;
 
         function initSessionFromSetup() {
             const verbCb = document.querySelectorAll('.verb-checkbox:checked');
             const tenseCb = document.querySelectorAll('.tense-checkbox:checked');
             skipLearnedActive = document.getElementById('skipLearnedToggle').checked;
+            hideInfinitiveActive = document.getElementById('hideInfinitiveToggle').checked;
             
             document.getElementById('tenseError').classList.add('hidden');
             document.getElementById('setupError').classList.add('hidden');
@@ -719,8 +737,14 @@
             updateUIStats();
             updateDotsUI(currentCard.streak || 0);
 
-            // Оновлений UI - відображаємо інфінітив на плашці, а переклад внизу
-            document.getElementById('infinitiveBadge').innerText = currentCard.infFr;
+            // Оновлений UI - відображаємо інфінітив на плашці (якщо не приховано), а переклад внизу
+            const infinitiveBadge = document.getElementById('infinitiveBadge');
+            if (hideInfinitiveActive) {
+                infinitiveBadge.classList.add('hidden');
+            } else {
+                infinitiveBadge.classList.remove('hidden');
+                infinitiveBadge.innerText = currentCard.infFr;
+            }
             document.getElementById('translationDisplay').innerText = currentCard.ukFull;
             
             document.getElementById('prefixDisplay').innerText = currentCard.prefix.endsWith("'") ? currentCard.prefix : currentCard.prefix + " ";
