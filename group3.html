@@ -74,7 +74,7 @@
         </div>
 
         <!-- БЛОК: Інформація про вибрані дієслова -->
-        <div class="w-full mb-8 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
+        <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
             <div class="text-left">
                 <h3 class="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest">Дієслова</h3>
                 <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Вибрано: <span id="selectedVerbsCount" class="text-teal-600 font-black">0/0</span></p>
@@ -84,7 +84,8 @@
             </button>
         </div>
 
-        <div class="flex items-center justify-center gap-3 w-full mb-6">
+        <!-- ТУМБЛЕР ХАРДКОР (Ховати інфінітив) -->
+        <div class="flex items-center justify-center gap-3 w-full mb-8">
             <span class="font-bold text-slate-600 text-[10px] sm:text-xs uppercase tracking-widest">Ховати інфінітив (Хардкор)</span>
             <label class="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" id="hideInfinitiveToggle" class="sr-only peer" onchange="saveSetup()">
@@ -163,9 +164,11 @@
 
         <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[10rem] sm:min-h-[12rem]">
             
+            <!-- ОНОВЛЕНИЙ ДИЗАЙН КАРТКИ -->
             <div class="w-full bg-slate-800 text-white rounded-2xl p-6 mb-6 shadow-md relative">
                 <span id="infinitiveBadge" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">???</span>
-                <span id="translationDisplay" class="text-xl sm:text-2xl font-medium text-center leading-tight block text-slate-200">???</span>
+                <!-- Виключно переклад, ніяких дрібних слів -->
+                <span id="translationDisplay" class="text-xl sm:text-2xl font-medium text-center leading-tight block text-slate-200 pt-2">???</span>
             </div>
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
@@ -229,7 +232,7 @@
             "futur": "Futur Simple: До інфінітива додаються закінчення -ai, -as, -a, -ons, -ez, -ont."
         };
 
-        // ПРАВИЛА РОЗДІЛЕНІ ПО ЧАСАХ
+        // ПРАВИЛА РОЗДІЛЕНІ ПО ЧАСАХ (ВЕЛИКИМИ ЛІТЕРАМИ)
         const verbRules = {
             "Offrir": {
                 present: "j'offrE<br>tu offrES<br>il offrE<br>nous offrONS<br>vous offrEZ<br>ils offrENT",
