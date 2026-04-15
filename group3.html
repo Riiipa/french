@@ -164,10 +164,8 @@
 
         <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[10rem] sm:min-h-[12rem]">
             
-            <!-- ОНОВЛЕНИЙ ДИЗАЙН КАРТКИ -->
             <div class="w-full bg-slate-800 text-white rounded-2xl p-6 mb-6 shadow-md relative">
                 <span id="infinitiveBadge" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">???</span>
-                <!-- Виключно переклад, ніяких дрібних слів -->
                 <span id="translationDisplay" class="text-xl sm:text-2xl font-medium text-center leading-tight block text-slate-200 pt-2">???</span>
             </div>
             
@@ -194,7 +192,6 @@
         <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
-        <!-- Правила тепер відформатовані моноширинним текстом -->
         <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left w-full shadow-inner"></div>
     </div>
 
@@ -233,208 +230,208 @@
             "futur": "Futur Simple: До інфінітива додаються закінчення -ai, -as, -a, -ons, -ez, -ont."
         };
 
-        // ПРАВИЛА РОЗДІЛЕНІ ПО ЧАСАХ (ВЕЛИКИМИ ЛІТЕРАМИ)
+        // ПРАВИЛА РОЗДІЛЕНІ ПО ЧАСАХ ТА АБСОЛЮТНО ДЛЯ КОЖНОГО СЛОВА
         const verbRules = {
             "Offrir": {
-                present: "j'offrE<br>tu offrES<br>il offrE<br>nous offrONS<br>vous offrEZ<br>ils offrENT",
+                present: "OffRIR<br><br>j'offrE<br>tu offrES<br>il offrE<br>nous offrONS<br>vous offrEZ<br>ils offrENT",
                 passe: "Participe Passé: <b>offert</b> (з Avoir)",
                 futur: "Основа: <b>offrir-</b><br>j'offrirAI, tu offrirAS..."
             },
             "Souffrir": {
-                present: "je souffrE<br>tu souffrES<br>il souffrE<br>nous souffrONS<br>vous souffrEZ<br>ils souffrENT",
+                present: "SouffRIR<br><br>je souffrE<br>tu souffrES<br>il souffrE<br>nous souffrONS<br>vous souffrEZ<br>ils souffrENT",
                 passe: "Participe Passé: <b>souffert</b> (з Avoir)",
                 futur: "Основа: <b>souffrir-</b><br>je souffrirAI, tu souffrirAS..."
             },
             "Ouvrir": {
-                present: "j'ouvrE<br>tu ouvrES<br>il ouvrE<br>nous ouvrONS<br>vous ouvrEZ<br>ils ouvrENT",
+                present: "OuvRIR<br><br>j'ouvrE<br>tu ouvrES<br>il ouvrE<br>nous ouvrONS<br>vous ouvrEZ<br>ils ouvrENT",
                 passe: "Participe Passé: <b>ouvert</b> (з Avoir)",
                 futur: "Основа: <b>ouvrir-</b><br>j'ouvrirAI, tu ouvrirAS..."
             },
             "Couvrir": {
-                present: "je couvrE<br>tu couvrES<br>il couvrE<br>nous couvrONS<br>vous couvrEZ<br>ils couvrENT",
+                present: "CouvRIR<br><br>je couvrE<br>tu couvrES<br>il couvrE<br>nous couvrONS<br>vous couvrEZ<br>ils couvrENT",
                 passe: "Participe Passé: <b>couvert</b> (з Avoir)",
                 futur: "Основа: <b>couvrir-</b><br>je couvrirAI, tu couvrirAS..."
             },
             "Découvrir": {
-                present: "je découvrE<br>tu découvrES<br>il découvrE<br>nous découvrONS<br>vous découvrEZ<br>ils découvrENT",
+                present: "DécouvRIR<br><br>je découvrE<br>tu découvrES<br>il découvrE<br>nous découvrONS<br>vous découvrEZ<br>ils découvrENT",
                 passe: "Participe Passé: <b>découvert</b> (з Avoir)",
                 futur: "Основа: <b>découvrir-</b><br>je découvrirAI, tu découvrirAS..."
             },
 
             "Sortir": {
-                present: "Відкидаємо приголосну в однині!<br><br>je sorS<br>tu sorS<br>il sorT<br>nous sorTONS<br>vous sorTEZ<br>ils sorTENT",
+                present: "SorTIR (Відкидаємо T в однині)<br><br>je sorS<br>tu sorS<br>il sorT<br>nous sorTONS<br>vous sorTEZ<br>ils sorTENT",
                 passe: "Participe Passé: <b>sorti</b> (з ÊTRE!)<br>je suis sorti(e)",
                 futur: "Основа: <b>sortir-</b><br>je sortirAI, tu sortirAS..."
             },
             "Partir": {
-                present: "je parS<br>tu parS<br>il parT<br>nous parTONS<br>vous parTEZ<br>ils parTENT",
+                present: "ParTIR (Відкидаємо T в однині)<br><br>je parS<br>tu parS<br>il parT<br>nous parTONS<br>vous parTEZ<br>ils parTENT",
                 passe: "Participe Passé: <b>parti</b> (з ÊTRE!)<br>je suis parti(e)",
                 futur: "Основа: <b>partir-</b><br>je partirAI, tu partirAS..."
             },
             "Sentir": {
-                present: "je senS<br>tu senS<br>il senT<br>nous senTONS<br>vous senTEZ<br>ils senTENT",
+                present: "SenTIR (Відкидаємо T в однині)<br><br>je senS<br>tu senS<br>il senT<br>nous senTONS<br>vous senTEZ<br>ils senTENT",
                 passe: "Participe Passé: <b>senti</b> (з Avoir)",
                 futur: "Основа: <b>sentir-</b><br>je sentirAI, tu sentirAS..."
             },
             "Dormir": {
-                present: "je dorS<br>tu dorS<br>il dorT<br>nous dorMONS<br>vous dorMEZ<br>ils dorMENT",
+                present: "DorMIR (Відкидаємо M в однині)<br><br>je dorS<br>tu dorS<br>il dorT<br>nous dorMONS<br>vous dorMEZ<br>ils dorMENT",
                 passe: "Participe Passé: <b>dormi</b> (з Avoir)",
                 futur: "Основа: <b>dormir-</b><br>je dormirAI, tu dormirAS..."
             },
             "Servir": {
-                present: "je serS<br>tu serS<br>il serT<br>nous serVONS<br>vous serVEZ<br>ils serVENT",
+                present: "SerVIR (Відкидаємо V в однині)<br><br>je serS<br>tu serS<br>il serT<br>nous serVONS<br>vous serVEZ<br>ils serVENT",
                 passe: "Participe Passé: <b>servi</b> (з Avoir)",
                 futur: "Основа: <b>servir-</b><br>je servirAI, tu servirAS..."
             },
             "Mentir": {
-                present: "je menS<br>tu menS<br>il menT<br>nous menTONS<br>vous menTEZ<br>ils menTENT",
+                present: "MenTIR (Відкидаємо T в однині)<br><br>je menS<br>tu menS<br>il menT<br>nous menTONS<br>vous menTEZ<br>ils menTENT",
                 passe: "Participe Passé: <b>menti</b> (з Avoir)",
                 futur: "Основа: <b>mentir-</b><br>je mentirAI, tu mentirAS..."
             },
 
             "Venir": {
-                present: "je vIENS<br>tu vIENS<br>il vIENT<br>nous venONS<br>vous venEZ<br>ils vIENNENT",
+                present: "Три основи!<br><br>je vIENS<br>tu vIENS<br>il vIENT<br>nous venONS<br>vous venEZ<br>ils vIENNENT",
                 passe: "Participe Passé: <b>venu</b> (з ÊTRE!)",
                 futur: "Мутований корінь: <b>vIENDR-</b><br>je vIENDRai, tu vIENDRas..."
             },
             "Devenir": {
-                present: "je devIENS<br>tu devIENS<br>il devIENT<br>nous devenONS<br>vous devenEZ<br>ils devIENNENT",
+                present: "Три основи!<br><br>je devIENS<br>tu devIENS<br>il devIENT<br>nous devenONS<br>vous devenEZ<br>ils devIENNENT",
                 passe: "Participe Passé: <b>devenu</b> (з ÊTRE!)",
                 futur: "Мутований корінь: <b>devIENDR-</b><br>je devIENDRai, tu devIENDRas..."
             },
             "Tenir": {
-                present: "je tIENS<br>tu tIENS<br>il tIENT<br>nous tenONS<br>vous tenEZ<br>ils tIENNENT",
+                present: "Три основи!<br><br>je tIENS<br>tu tIENS<br>il tIENT<br>nous tenONS<br>vous tenEZ<br>ils tIENNENT",
                 passe: "Participe Passé: <b>tenu</b> (з Avoir)",
                 futur: "Мутований корінь: <b>tIENDR-</b><br>je tIENDRai, tu tIENDRas..."
             },
             "Obtenir": {
-                present: "j'obtIENS<br>tu obtIENS<br>il obtIENT<br>nous obtenONS<br>vous obtenEZ<br>ils obtIENNENT",
+                present: "Три основи!<br><br>j'obtIENS<br>tu obtIENS<br>il obtIENT<br>nous obtenONS<br>vous obtenEZ<br>ils obtIENNENT",
                 passe: "Participe Passé: <b>obtenu</b> (з Avoir)",
                 futur: "Мутований корінь: <b>obtIENDR-</b><br>j'obtIENDRai, tu obtIENDRas..."
             },
             "Retenir": {
-                present: "je retIENS<br>tu retIENS<br>il retIENT<br>nous retenONS<br>vous retenEZ<br>ils retIENNENT",
+                present: "Три основи!<br><br>je retIENS<br>tu retIENS<br>il retIENT<br>nous retenONS<br>vous retenEZ<br>ils retIENNENT",
                 passe: "Participe Passé: <b>retenu</b> (з Avoir)",
                 futur: "Мутований корінь: <b>retIENDR-</b><br>je retIENDRai, tu retIENDRas..."
             },
 
             "Prendre": {
-                present: "je prenDS<br>tu prenDS<br>il prenD<br>nous prenONS<br>vous prenEZ<br>ils preNNENT",
+                present: "PrenDRE<br><br>je prenDS<br>tu prenDS<br>il prenD<br>nous prenONS<br>vous prenEZ<br>ils preNNENT",
                 passe: "Participe Passé: <b>pris</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>prendr-</b><br>je prendrAI, tu prendrAS..."
             },
             "Apprendre": {
-                present: "j'apprenDS<br>tu apprenDS<br>il apprenD<br>nous apprenONS<br>vous apprenEZ<br>ils appreNNENT",
+                present: "ApprenDRE<br><br>j'apprenDS<br>tu apprenDS<br>il apprenD<br>nous apprenONS<br>vous apprenEZ<br>ils appreNNENT",
                 passe: "Participe Passé: <b>appris</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>apprendr-</b><br>j'apprendrAI, tu apprendrAS..."
             },
             "Comprendre": {
-                present: "je comprenDS<br>tu comprenDS<br>il comprenD<br>nous comprenONS<br>vous comprenEZ<br>ils compreNNENT",
+                present: "ComprenDRE<br><br>je comprenDS<br>tu comprenDS<br>il comprenD<br>nous comprenONS<br>vous comprenEZ<br>ils compreNNENT",
                 passe: "Participe Passé: <b>compris</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>comprendr-</b><br>je comprendrAI, tu comprendrAS..."
             },
 
             "Attendre": {
-                present: "БЕЗ 'T' в 3-й особі однини!<br><br>j'attenDS<br>tu attenDS<br>il attenD<br>nous attendONS<br>vous attendEZ<br>ils attendENT",
+                present: "AttenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>j'attenDS<br>tu attenDS<br>il attenD<br>nous attendONS<br>vous attendEZ<br>ils attendENT",
                 passe: "Participe Passé: <b>attendu</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>attendr-</b><br>j'attendrAI, tu attendrAS..."
             },
             "Répondre": {
-                present: "je réponDS<br>tu réponDS<br>il réponD<br>nous répondONS<br>vous répondEZ<br>ils répondENT",
+                present: "RéponDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je réponDS<br>tu réponDS<br>il réponD<br>nous répondONS<br>vous répondEZ<br>ils répondENT",
                 passe: "Participe Passé: <b>répondu</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>répondr-</b><br>je répondrAI, tu répondrAS..."
             },
             "Descendre": {
-                present: "je descenDS<br>tu descenDS<br>il descenD<br>nous descendONS<br>vous descendEZ<br>ils descendENT",
+                present: "DescenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je descenDS<br>tu descenDS<br>il descenD<br>nous descendONS<br>vous descendEZ<br>ils descendENT",
                 passe: "Participe Passé: <b>descendu</b> (з ÊTRE!)",
                 futur: "Відкидаємо 'e'. Основа: <b>descendr-</b><br>je descendrAI, tu descendrAS..."
             },
             "Rendre": {
-                present: "je renDS<br>tu renDS<br>il renD<br>nous rendONS<br>vous rendEZ<br>ils rendENT",
+                present: "RenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je renDS<br>tu renDS<br>il renD<br>nous rendONS<br>vous rendEZ<br>ils rendENT",
                 passe: "Participe Passé: <b>rendu</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>rendr-</b><br>je rendrAI, tu rendrAS..."
             },
 
             "Mettre": {
-                present: "1 'T' в однині, 2 'T' у множині.<br><br>je meTS<br>tu meTS<br>il meT<br>nous meTTONS<br>vous meTTEZ<br>ils meTTENT",
+                present: "MeTTRE<br>1 'T' в однині, 2 'T' у множині.<br><br>je meTS<br>tu meTS<br>il meT<br>nous meTTONS<br>vous meTTEZ<br>ils meTTENT",
                 passe: "Participe Passé: <b>mis</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>mettr-</b><br>je mettrAI, tu mettrAS..."
             },
             "Promettre": {
-                present: "je promeTS<br>tu promeTS<br>il promeT<br>nous promeTTONS<br>vous promeTTEZ<br>ils promeTTENT",
+                present: "PromeTTRE<br>1 'T' в однині, 2 'T' у множині.<br><br>je promeTS<br>tu promeTS<br>il promeT<br>nous promeTTONS<br>vous promeTTEZ<br>ils promeTTENT",
                 passe: "Participe Passé: <b>promis</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>promettr-</b><br>je promettrAI, tu promettrAS..."
             },
             "Battre": {
-                present: "je baTS<br>tu baTS<br>il baT<br>nous baTTONS<br>vous baTTEZ<br>ils baTTENT",
+                present: "BaTTRE<br>1 'T' в однині, 2 'T' у множині.<br><br>je baTS<br>tu baTS<br>il baT<br>nous baTTONS<br>vous baTTEZ<br>ils baTTENT",
                 passe: "ПАСТКА! Participe Passé: <b>battu</b> (не bis!).",
                 futur: "Відкидаємо 'e'. Основа: <b>battr-</b><br>je battrAI, tu battrAS..."
             },
 
             "Écrire": {
-                present: "У множині з'являється V.<br><br>j'écriS<br>tu écriS<br>il écriT<br>nous écriVONS<br>vous écriVEZ<br>ils écriVENT",
+                present: "ÉcriRE<br>У множині з'являється V.<br><br>j'écriS<br>tu écriS<br>il écriT<br>nous écriVONS<br>vous écriVEZ<br>ils écriVENT",
                 passe: "Participe Passé: <b>écrit</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>écrir-</b><br>j'écrirAI, tu écrirAS..."
             },
             "Décrire": {
-                present: "je décriS<br>tu décriS<br>il décriT<br>nous décriVONS<br>vous décriVEZ<br>ils décriVENT",
+                present: "DécriRE<br>У множині з'являється V.<br><br>je décriS<br>tu décriS<br>il décriT<br>nous décriVONS<br>vous décriVEZ<br>ils décriVENT",
                 passe: "Participe Passé: <b>décrit</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>décrir-</b><br>je décrirAI, tu décrirAS..."
             },
 
             "Dire": {
-                present: "je diS<br>tu diS<br>il diT<br>nous disONS<br>vous <b>diTES</b> (ПАСТКА!)<br>ils disENT",
+                present: "DiRE<br><br>je diS<br>tu diS<br>il diT<br>nous disONS<br>vous <b>diTES</b> (ПАСТКА!)<br>ils disENT",
                 passe: "Participe Passé: <b>dit</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>dir-</b><br>je dirAI, tu dirAS..."
             },
             "Faire": {
-                present: "je faiS<br>tu faiS<br>il faiT<br>nous faisONS<br>vous <b>faiTES</b><br>ils <b>fONT</b>",
+                present: "FaiRE<br><br>je faiS<br>tu faiS<br>il faiT<br>nous faisONS<br>vous <b>faiTES</b><br>ils <b>fONT</b>",
                 passe: "Participe Passé: <b>fait</b> (з Avoir)",
                 futur: "Мутований корінь: <b>fER-</b><br>je fERai, tu fERas..."
             },
 
             "Pouvoir": {
-                present: "je peuX<br>tu peuX<br>il peuT<br>nous pouvONS<br>vous pouvEZ<br>ils peuvENT",
+                present: "PouvOIR<br><br>je peuX<br>tu peuX<br>il peuT<br>nous pouvONS<br>vous pouvEZ<br>ils peuvENT",
                 passe: "Participe Passé: <b>pu</b> (з Avoir)",
                 futur: "Мутований корінь: <b>pOURR-</b><br>je pOURRai, tu pOURRas..."
             },
             "Vouloir": {
-                present: "je veuX<br>tu veuX<br>il veuT<br>nous voulONS<br>vous voulEZ<br>ils veulENT",
+                present: "VoulOIR<br><br>je veuX<br>tu veuX<br>il veuT<br>nous voulONS<br>vous voulEZ<br>ils veulENT",
                 passe: "Participe Passé: <b>voulu</b> (з Avoir)",
                 futur: "Мутований корінь: <b>vOUDR-</b><br>je vOUDRai, tu vOUDRas..."
             },
             "Devoir": {
-                present: "je doiS<br>tu doiS<br>il doiT<br>nous devONS<br>vous devEZ<br>ils doivENT",
+                present: "DevOIR<br><br>je doiS<br>tu doiS<br>il doiT<br>nous devONS<br>vous devEZ<br>ils doivENT",
                 passe: "Participe Passé: <b>dû</b> (з Avoir)",
                 futur: "Мутований корінь: <b>dEVR-</b><br>je dEVRai, tu dEVRas..."
             },
             "Savoir": {
-                present: "je saiS<br>tu saiS<br>il saiT<br>nous savONS<br>vous savEZ<br>ils savENT",
+                present: "SavOIR<br><br>je saiS<br>tu saiS<br>il saiT<br>nous savONS<br>vous savEZ<br>ils savENT",
                 passe: "Participe Passé: <b>su</b> (з Avoir)",
                 futur: "Мутований корінь: <b>sAUR-</b><br>je sAURai, tu sAURas..."
             },
             "Voir": {
-                present: "je voiS<br>tu voiS<br>il voiT<br>nous voYONS<br>vous voYEZ<br>ils voiENT",
+                present: "VOIR<br><br>je voiS<br>tu voiS<br>il voiT<br>nous voYONS<br>vous voYEZ<br>ils voiENT",
                 passe: "Participe Passé: <b>vu</b> (з Avoir)",
                 futur: "Мутований корінь: <b>vERR-</b><br>je vERRai, tu vERRas..."
             },
             "Recevoir": {
-                present: "je reÇoiS<br>tu reÇoiS<br>il reÇoiT<br>nous recevONS<br>vous recevEZ<br>ils reÇoivENT",
+                present: "RecevOIR<br><br>je reÇoiS<br>tu reÇoiS<br>il reÇoiT<br>nous recevONS<br>vous recevEZ<br>ils reÇoivENT",
                 passe: "Participe Passé: <b>reçu</b> (з Avoir)",
                 futur: "Мутований корінь: <b>rECEVR-</b><br>je rECEVRai, tu rECEVRas..."
             },
             "Boire": {
-                present: "Три основи!<br><br>je boiS<br>tu boiS<br>il boiT<br>nous buvONS<br>vous buvEZ<br>ils boivENT",
+                present: "BoiRE (Три основи)<br><br>je boiS<br>tu boiS<br>il boiT<br>nous buvONS<br>vous buvEZ<br>ils boivENT",
                 passe: "Participe Passé: <b>bu</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>boir-</b><br>je boirAI, tu boirAS..."
             },
             "Lire": {
-                present: "je liS<br>tu liS<br>il liT<br>nous liSONS<br>vous liSEZ<br>ils liSENT",
+                present: "LiRE<br><br>je liS<br>tu liS<br>il liT<br>nous liSONS<br>vous liSEZ<br>ils liSENT",
                 passe: "Participe Passé: <b>lu</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>lir-</b><br>je lirAI, tu lirAS..."
             },
             "Croire": {
-                present: "je croiS<br>tu croiS<br>il croiT<br>nous croYONS<br>vous croYEZ<br>ils croiENT",
+                present: "CroiRE<br><br>je croiS<br>tu croiS<br>il croiT<br>nous croYONS<br>vous croYEZ<br>ils croiENT",
                 passe: "Participe Passé: <b>cru</b> (з Avoir)",
                 futur: "Відкидаємо 'e'. Основа: <b>croir-</b><br>je croirAI, tu croirAS..."
             },
@@ -899,10 +896,13 @@
                 const tense = currentCard.tenseKey; // 'present', 'passe', 'futur'
                 let ruleText = "Правила для цього дієслова ще не додані.";
                 
-                if (verbRules[currentCard.infFr] && verbRules[currentCard.infFr][tense]) {
-                    ruleText = verbRules[currentCard.infFr][tense];
+                // Шукаємо ключ без урахування регістру, щоб знаходило слова завжди!
+                const infKey = Object.keys(verbRules).find(k => k.toLowerCase() === currentCard.infFr.toLowerCase());
+                
+                if (infKey && verbRules[infKey] && verbRules[infKey][tense]) {
+                    ruleText = verbRules[infKey][tense];
                 } else {
-                    ruleText = tenseExplanations[tense] || "";
+                    ruleText = tenseExplanations[tense] || "Заглушка: правила відсутні.";
                 }
                 
                 let html = `
@@ -927,7 +927,7 @@
 
         async function bootApp() {
             try {
-                // Оновлено для завантаження трьох файлів json одночасно
+                // Завантаження трьох розбитих файлів, як і обговорювалося
                 const files = ['./data3_1.json', './data3_2.json', './data3_3.json'];
                 const fetchPromises = files.map(file => fetch(file));
                 const responses = await Promise.all(fetchPromises);
