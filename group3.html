@@ -194,6 +194,7 @@
         <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
+        <!-- Правила тепер відформатовані моноширинним текстом -->
         <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left w-full shadow-inner"></div>
     </div>
 
@@ -926,15 +927,24 @@
 
         async function bootApp() {
             try {
-                const response = await fetch('./data3.json');
-                if (!response.ok) throw new Error("Файл data3.json не знайдено");
-                rawData = await response.json();
+                // Оновлено для завантаження трьох файлів json одночасно
+                const files = ['./data3_1.json', './data3_2.json', './data3_3.json'];
+                const fetchPromises = files.map(file => fetch(file));
+                const responses = await Promise.all(fetchPromises);
+                
+                rawData = [];
+                for (let i = 0; i < responses.length; i++) {
+                    if (!responses[i].ok) throw new Error(`Файл ${files[i]} не знайдено`);
+                    const data = await responses[i].json();
+                    rawData = rawData.concat(data);
+                }
+                
                 initSetupScreen();
             } catch (error) {
                 console.error("Критична помилка завантаження:", error);
                 document.getElementById('setupScreen').innerHTML = `
                     <h2 class="text-2xl sm:text-3xl font-black text-red-500 mb-4">Помилка архітектури!</h2>
-                    <p class="text-slate-600 font-medium">Не можу знайти файл <b>data3.json</b>.</p>`;
+                    <p class="text-slate-600 font-medium">Не можу знайти файли <b>data3_*.json</b>.</p>`;
                 document.getElementById('setupScreen').classList.remove('hidden');
             }
         }
