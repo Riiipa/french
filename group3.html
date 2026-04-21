@@ -242,7 +242,20 @@
             return `j'ai <b>${pp}</b><br>tu a${S} <b>${pp}</b><br>il a <b>${pp}</b><br>nous avon${S} <b>${pp}</b><br>vous ave${Z} <b>${pp}</b><br>ils on${T} <b>${pp}</b>`;
         }
         function etre(pp) {
-            return `je sui${S} <b>${pp}</b><br>tu e${S} <b>${pp}</b><br>il e${ST} <b>${pp}</b><br>nous somme${S} <b>${pp}</b>(s)<br>vous ête${S} <b>${pp}</b>(s)<br>ils son${T} <b>${pp}</b>(s)`;
+            const e = '<span class="text-indigo-600 font-black">e</span>';
+            const s = '<span class="text-indigo-600 font-black">s</span>';
+            const es = '<span class="text-indigo-600 font-black">es</span>';
+            const opt_e = '<span class="text-indigo-600 font-bold">(e)</span>';
+            const opt_es = '<span class="text-indigo-600 font-bold">(e)s</span>';
+            const opt_es_vous = '<span class="text-indigo-600 font-bold">(e)(s)</span>';
+
+            return `<div class="bg-indigo-50 border border-indigo-200 p-2 rounded mb-3 text-[10px] text-indigo-800 font-black uppercase tracking-widest leading-tight">Дієслово з Être: Узгоджуємо Participe Passé!</div>` +
+                   `je sui${S} <b>${pp}</b>${opt_e}<br>` +
+                   `tu e${S} <b>${pp}</b>${opt_e}<br>` +
+                   `il e${ST} <b>${pp}</b> <span class="text-slate-300">|</span> elle e${ST} <b>${pp}</b>${e}<br>` +
+                   `nous somme${S} <b>${pp}</b>${opt_es}<br>` +
+                   `vous ête${S} <b>${pp}</b>${opt_es_vous}<br>` +
+                   `ils son${T} <b>${pp}</b>${s} <span class="text-slate-300">|</span> elles son${T} <b>${pp}</b>${es}`;
         }
         function futur(root, elision = false) {
             let je = elision ? `j'${root}AI` : `je ${root}AI`;
@@ -987,7 +1000,7 @@
 
         async function bootApp() {
             try {
-                // Завантаження трьох розбитих файлів, як і обговорювалося
+                // Завантаження трьох розбитих файлів
                 const files = ['./data3_1.json', './data3_2.json', './data3_3.json'];
                 const fetchPromises = files.map(file => fetch(file));
                 const responses = await Promise.all(fetchPromises);
