@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Тренажер: 3 Група (Винятки)</title>
+    <title>Тренажер: 2 Група (-IR)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .pop-animation { animation: pop 0.3s ease-out forwards; }
@@ -20,10 +20,10 @@
             transition: all 0.2s;
             font-size: 1.5rem; 
         }
-        .verb-input:focus { outline: none; border-bottom-color: #0d9488; } 
+        .verb-input:focus { outline: none; border-bottom-color: #e11d48; } /* Rose-600 */
         .verb-input:disabled { background-color: transparent; }
-        .custom-checkbox:checked + div { background-color: #0d9488; color: white; border-color: #0d9488; }
-        .custom-checkbox:checked + div .translation-text { color: #ccfbf1; } 
+        .custom-checkbox:checked + div { background-color: #e11d48; color: white; border-color: #e11d48; }
+        .custom-checkbox:checked + div .translation-text { color: #ffe4e6; } 
         .tense-checkbox:checked + div { background-color: #10b981; color: white; border-color: #10b981; }
         
         .custom-scrollbar::-webkit-scrollbar { width: 5px; }
@@ -37,15 +37,15 @@
     <div id="setupScreen" class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
         
         <div class="flex items-center justify-between w-full mb-6">
-            <a href="index.html" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-2">
+            <a href="index.html" class="text-slate-400 hover:text-rose-600 transition-colors flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 <span class="font-bold hidden sm:inline">В лобі</span>
             </a>
-            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">3 Група (-RE/IR/OIR)</h1>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">2 Група (-IR)</h1>
             <div class="w-6"></div>
         </div>
         
-        <p class="text-slate-500 mb-6 text-sm sm:text-base">Неправильні дієслова. Зміна коренів, нестандартні закінчення.</p>
+        <p class="text-slate-500 mb-6 text-sm sm:text-base">Повністю регулярна група. Головна ознака — суфікс -ISS- у множині.</p>
 
         <!-- БЛОК: Часи -->
         <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
@@ -77,9 +77,9 @@
         <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
             <div class="text-left">
                 <h3 class="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest">Дієслова</h3>
-                <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Вибрано: <span id="selectedVerbsCount" class="text-teal-600 font-black">0/0</span></p>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Вибрано: <span id="selectedVerbsCount" class="text-rose-600 font-black">0/0</span></p>
             </div>
-            <button onclick="openVerbSelection()" class="bg-white border-2 border-teal-100 hover:border-teal-400 text-teal-600 font-bold py-2 px-4 sm:px-5 rounded-xl transition-all shadow-sm active:scale-95 text-sm sm:text-base">
+            <button onclick="openVerbSelection()" class="bg-white border-2 border-rose-100 hover:border-rose-400 text-rose-600 font-bold py-2 px-4 sm:px-5 rounded-xl transition-all shadow-sm active:scale-95 text-sm sm:text-base">
                 Змінити
             </button>
         </div>
@@ -89,13 +89,13 @@
             <span class="font-bold text-slate-600 text-[10px] sm:text-xs uppercase tracking-widest">Ховати інфінітив (Хардкор)</span>
             <label class="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" id="hideInfinitiveToggle" class="sr-only peer" onchange="saveSetup()">
-              <div class="w-9 h-5 sm:w-11 sm:h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-teal-500 shadow-inner"></div>
+              <div class="w-9 h-5 sm:w-11 sm:h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-rose-500 shadow-inner"></div>
             </label>
         </div>
 
         <div id="setupError" class="hidden w-full text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одне дієслово.</div>
 
-        <button onclick="initSessionFromSetup()" class="w-full mt-auto bg-teal-600 hover:bg-teal-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
+        <button onclick="initSessionFromSetup()" class="w-full mt-auto bg-rose-600 hover:bg-rose-700 text-white font-black py-4 sm:py-5 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-lg sm:text-xl tracking-widest uppercase">
             Почати тренування
         </button>
     </div>
@@ -104,7 +104,7 @@
     <div id="verbSelectionScreen" class="hidden bg-white p-6 sm:p-10 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh]">
         
         <div class="flex items-center justify-between w-full mb-4 sm:mb-6 shrink-0">
-            <button onclick="closeVerbSelection()" class="text-slate-400 hover:text-teal-600 transition-colors flex items-center gap-1 sm:gap-2">
+            <button onclick="closeVerbSelection()" class="text-slate-400 hover:text-rose-600 transition-colors flex items-center gap-1 sm:gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                 <span class="font-bold text-sm sm:text-base hidden sm:inline">Назад</span>
             </button>
@@ -114,14 +114,14 @@
 
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full mb-4 shrink-0">
             <div class="flex gap-2 sm:gap-3 flex-1">
-                <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-3 sm:py-4 rounded-xl border border-teal-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Вибрати всі</button>
+                <button onclick="toggleAllVerbs(true)" class="flex-1 flex items-center justify-center bg-rose-50 hover:bg-rose-100 text-rose-700 py-3 sm:py-4 rounded-xl border border-rose-100 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Вибрати всі</button>
                 <button onclick="toggleAllVerbs(false)" class="flex-1 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-500 py-3 sm:py-4 rounded-xl border border-slate-200 transition-colors text-[10px] sm:text-sm font-bold uppercase tracking-wide shadow-sm">Жодного</button>
             </div>
             <div class="flex items-center justify-between gap-3 bg-white px-4 py-3 sm:py-0 rounded-xl border border-slate-200 shadow-sm sm:w-auto">
                 <span class="font-bold text-slate-600 text-[10px] sm:text-xs uppercase tracking-widest whitespace-nowrap">Пропускати вивчені</span>
                 <label class="relative inline-flex items-center cursor-pointer shrink-0">
                   <input type="checkbox" id="skipLearnedToggle" class="sr-only peer" checked onchange="saveSetup()">
-                  <div class="w-9 h-5 sm:w-11 sm:h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-teal-500 shadow-inner"></div>
+                  <div class="w-9 h-5 sm:w-11 sm:h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-rose-500 shadow-inner"></div>
                 </label>
             </div>
         </div>
@@ -145,7 +145,7 @@
         <div class="grid grid-cols-3 gap-2 w-full mb-4 sm:mb-6 px-1 sm:px-2 mt-10 sm:mt-8">
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Картка</span>
-                <span id="sessionCounter" class="text-xs sm:text-sm font-black text-teal-600">1/10</span>
+                <span id="sessionCounter" class="text-xs sm:text-sm font-black text-rose-600">1/10</span>
             </div>
             <div class="flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-xl py-2 shadow-sm">
                 <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Залишилося</span>
@@ -164,35 +164,36 @@
 
         <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[10rem] sm:min-h-[12rem]">
             
+            <!-- ОНОВЛЕНИЙ ДИЗАЙН КАРТКИ -->
             <div class="w-full bg-slate-800 text-white rounded-2xl p-6 mb-6 shadow-md relative">
-                <span id="infinitiveBadge" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">???</span>
+                <span id="infinitiveBadge" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-rose-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">???</span>
                 <span id="translationDisplay" class="text-xl sm:text-2xl font-medium text-center leading-tight block text-slate-200 pt-2">???</span>
             </div>
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <input type="text" id="userInput" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <input type="text" id="userInput" class="verb-input text-rose-700 font-bold border-slate-300" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 <span id="suffixDisplay"></span>
             </div>
 
             <div id="feedbackContainer" class="hidden flex flex-col items-center mt-8 w-full">
                 <span id="feedbackDisplay" class="text-lg sm:text-2xl font-bold mb-3"></span>
-                <button onclick="playCurrentAudio()" class="p-3 sm:p-4 bg-teal-100 hover:bg-teal-200 text-teal-700 rounded-full transition-colors focus:outline-none">
+                <button onclick="playCurrentAudio()" class="p-3 sm:p-4 bg-rose-100 hover:bg-rose-200 text-rose-700 rounded-full transition-colors focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.236l4.328 4.328a2 2 0 003.436-1.414V5.086a2 2 0 00-3.436-1.414L9.236 8H7a2 2 0 00-2 2z" /></svg>
                 </button>
             </div>
         </div>
 
-        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
+        <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Перевірити
         </button>
         <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-rose-500 hover:text-rose-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
-        <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left w-full shadow-inner"></div>
+        <div id="ruleBox" class="hidden mt-3 p-5 bg-rose-50 rounded-2xl border border-rose-100 text-left w-full shadow-inner"></div>
     </div>
 
     <!-- ЕКРАН 3: СТАТИСТИКА -->
@@ -210,326 +211,79 @@
             </div>
         </div>
         <div class="w-full bg-slate-100 rounded-full h-4 mb-2">
-            <div id="accuracyBar" class="bg-teal-500 h-4 rounded-full" style="width: 0%"></div>
+            <div id="accuracyBar" class="bg-rose-500 h-4 rounded-full" style="width: 0%"></div>
         </div>
-        <p class="text-teal-700 font-bold mb-4">Точність: <span id="accuracyText">0%</span></p>
+        <p class="text-rose-700 font-bold mb-4">Точність: <span id="accuracyText">0%</span></p>
 
         <div id="mistakesListContainer" class="hidden w-full mb-6 text-left border-t border-slate-200 pt-4">
             <h3 class="text-sm font-black text-slate-700 uppercase mb-3 text-center">Помилки в раунді:</h3>
             <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"></div>
         </div>
 
-        <button onclick="startSession()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">Наступна сесія</button>
+        <button onclick="startSession()" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">Наступна сесія</button>
         <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm sm:text-base uppercase">В меню</button>
     </div>
 
     <script>
-        const tenseExplanations = {
-            "present": "Présent: Закінчення найчастіше -s, -s, -t (або -d), -ons, -ez, -ent.",
-            "passe": "Passé Composé: Допоміжне Être/Avoir + Participe Passé.",
-            "futur": "Futur Simple: До інфінітива додаються закінчення -ai, -as, -a, -ons, -ez, -ont."
-        };
-
-        const S = '<span class="text-red-500 font-black">S</span>';
-        const T = '<span class="text-red-500 font-black">T</span>';
-        const D = '<span class="text-red-500 font-black">D</span>';
-        const X = '<span class="text-red-500 font-black">X</span>';
-        const Z = '<span class="text-red-500 font-black">Z</span>';
-        const ENT = '<span class="text-red-500 font-black">ENT</span>';
-        const ST = '<span class="text-red-500 font-black">ST</span>';
-
-        function avoir(pp) {
-            return `j'ai <b>${pp}</b><br>tu a${S} <b>${pp}</b><br>il a <b>${pp}</b><br>nous avon${S} <b>${pp}</b><br>vous ave${Z} <b>${pp}</b><br>ils on${T} <b>${pp}</b>`;
-        }
-        function etre(pp) {
-            const e = '<span class="text-indigo-600 font-black">e</span>';
-            const s = '<span class="text-indigo-600 font-black">s</span>';
-            const es = '<span class="text-indigo-600 font-black">es</span>';
-            const opt_e = '<span class="text-indigo-600 font-bold">(e)</span>';
-            const opt_es = '<span class="text-indigo-600 font-bold">(e)s</span>';
-            const opt_es_vous = '<span class="text-indigo-600 font-bold">(e)(s)</span>';
-
-            return `<div class="bg-indigo-50 border border-indigo-200 p-2 rounded mb-3 text-[10px] text-indigo-800 font-black uppercase tracking-widest leading-tight">Дієслово з Être: Узгоджуємо Participe Passé!</div>` +
-                   `je sui${S} <b>${pp}</b>${opt_e}<br>` +
-                   `tu e${S} <b>${pp}</b>${opt_e}<br>` +
-                   `il e${ST} <b>${pp}</b> <span class="text-slate-300">|</span> elle e${ST} <b>${pp}</b>${e}<br>` +
-                   `nous somme${S} <b>${pp}</b>${opt_es}<br>` +
-                   `vous ête${S} <b>${pp}</b>${opt_es_vous}<br>` +
-                   `ils son${T} <b>${pp}</b>${s} <span class="text-slate-300">|</span> elles son${T} <b>${pp}</b>${es}`;
-        }
-        function futur(root, elision = false) {
-            let je = elision ? `j'${root}AI` : `je ${root}AI`;
-            return `${je}<br>tu ${root}A${S}<br>il ${root}A<br>nous ${root}ON${S}<br>vous ${root}E${Z}<br>ils ${root}ON${T}`;
-        }
-
-        // ПРАВИЛА РОЗДІЛЕНІ ПО ЧАСАХ (ВЕЛИКИМИ ЛІТЕРАМИ ТА ЧЕРВОНИМ КОЛЬОРОМ)
-        const verbRules = {
-            "Offrir": {
-                present: `OffRIR<br><br>j'offrE<br>tu offrE${S}<br>il offrE<br>nous offrON${S}<br>vous offrE${Z}<br>ils offr${ENT}`,
-                passe: avoir("offert"),
-                futur: futur("offrir", true)
-            },
-            "Souffrir": {
-                present: `SouffRIR<br><br>je souffrE<br>tu souffrE${S}<br>il souffrE<br>nous souffrON${S}<br>vous souffrE${Z}<br>ils souffr${ENT}`,
-                passe: avoir("souffert"),
-                futur: futur("souffrir", false)
-            },
-            "Ouvrir": {
-                present: `OuvRIR<br><br>j'ouvrE<br>tu ouvrE${S}<br>il ouvrE<br>nous ouvrON${S}<br>vous ouvrE${Z}<br>ils ouvr${ENT}`,
-                passe: avoir("ouvert"),
-                futur: futur("ouvrir", true)
-            },
-            "Couvrir": {
-                present: `CouvRIR<br><br>je couvrE<br>tu couvrE${S}<br>il couvrE<br>nous couvrON${S}<br>vous couvrE${Z}<br>ils couvr${ENT}`,
-                passe: avoir("couvert"),
-                futur: futur("couvrir", false)
-            },
-            "Découvrir": {
-                present: `DécouvRIR<br><br>je découvrE<br>tu découvrE${S}<br>il découvrE<br>nous découvrON${S}<br>vous découvrE${Z}<br>ils découvr${ENT}`,
-                passe: avoir("découvert"),
-                futur: futur("découvrir", false)
-            },
-
-            "Sortir": {
-                present: `SorTIR (Відкидаємо T в однині)<br><br>je sor${S}<br>tu sor${S}<br>il sor${T}<br>nous sorTON${S}<br>vous sorTE${Z}<br>ils sorT${ENT}`,
-                passe: etre("sorti"),
-                futur: futur("sortir", false)
-            },
-            "Partir": {
-                present: `ParTIR (Відкидаємо T в однині)<br><br>je par${S}<br>tu par${S}<br>il par${T}<br>nous parTON${S}<br>vous parTE${Z}<br>ils parT${ENT}`,
-                passe: etre("parti"),
-                futur: futur("partir", false)
-            },
-            "Sentir": {
-                present: `SenTIR (Відкидаємо T в однині)<br><br>je sen${S}<br>tu sen${S}<br>il sen${T}<br>nous senTON${S}<br>vous senTE${Z}<br>ils senT${ENT}`,
-                passe: avoir("senti"),
-                futur: futur("sentir", false)
-            },
-            "Dormir": {
-                present: `DorMIR (Відкидаємо M в однині)<br><br>je dor${S}<br>tu dor${S}<br>il dor${T}<br>nous dorMON${S}<br>vous dorME${Z}<br>ils dorM${ENT}`,
-                passe: avoir("dormi"),
-                futur: futur("dormir", false)
-            },
-            "Servir": {
-                present: `SerVIR (Відкидаємо V в однині)<br><br>je ser${S}<br>tu ser${S}<br>il ser${T}<br>nous serVON${S}<br>vous serVE${Z}<br>ils serV${ENT}`,
-                passe: avoir("servi"),
-                futur: futur("servir", false)
-            },
-            "Mentir": {
-                present: `MenTIR (Відкидаємо T в однині)<br><br>je men${S}<br>tu men${S}<br>il men${T}<br>nous menTON${S}<br>vous menTE${Z}<br>ils menT${ENT}`,
-                passe: avoir("menti"),
-                futur: futur("mentir", false)
-            },
-
-            "Venir": {
-                present: `Три основи!<br><br>je vIEN${S}<br>tu vIEN${S}<br>il vIEN${T}<br>nous venON${S}<br>vous venE${Z}<br>ils vIENN${ENT}`,
-                passe: etre("venu"),
-                futur: futur("viendr", false)
-            },
-            "Devenir": {
-                present: `Три основи!<br><br>je devIEN${S}<br>tu devIEN${S}<br>il devIEN${T}<br>nous devenON${S}<br>vous devenE${Z}<br>ils devIENN${ENT}`,
-                passe: etre("devenu"),
-                futur: futur("deviendr", false)
-            },
-            "Tenir": {
-                present: `Три основи!<br><br>je tIEN${S}<br>tu tIEN${S}<br>il tIEN${T}<br>nous tenON${S}<br>vous tenE${Z}<br>ils tIENN${ENT}`,
-                passe: avoir("tenu"),
-                futur: futur("tiendr", false)
-            },
-            "Obtenir": {
-                present: `Три основи!<br><br>j'obtIEN${S}<br>tu obtIEN${S}<br>il obtIEN${T}<br>nous obtenON${S}<br>vous obtenE${Z}<br>ils obtIENN${ENT}`,
-                passe: avoir("obtenu"),
-                futur: futur("obtiendr", true)
-            },
-            "Retenir": {
-                present: `Три основи!<br><br>je retIEN${S}<br>tu retIEN${S}<br>il retIEN${T}<br>nous retenON${S}<br>vous retenE${Z}<br>ils retIENN${ENT}`,
-                passe: avoir("retenu"),
-                futur: futur("retiendr", false)
-            },
-
-            "Prendre": {
-                present: `PrenDRE<br><br>je prenD${S}<br>tu prenD${S}<br>il pren${D}<br>nous prenON${S}<br>vous prenE${Z}<br>ils preNN${ENT}`,
-                passe: avoir("pris"),
-                futur: futur("prendr", false)
-            },
-            "Apprendre": {
-                present: `ApprenDRE<br><br>j'apprenD${S}<br>tu apprenD${S}<br>il appren${D}<br>nous apprenON${S}<br>vous apprenE${Z}<br>ils appreNN${ENT}`,
-                passe: avoir("appris"),
-                futur: futur("apprendr", true)
-            },
-            "Comprendre": {
-                present: `ComprenDRE<br><br>je comprenD${S}<br>tu comprenD${S}<br>il compren${D}<br>nous comprenON${S}<br>vous comprenE${Z}<br>ils compreNN${ENT}`,
-                passe: avoir("compris"),
-                futur: futur("comprendr", false)
-            },
-
-            "Attendre": {
-                present: `AttenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>j'attenD${S}<br>tu attenD${S}<br>il atten${D}<br>nous attendON${S}<br>vous attendE${Z}<br>ils attend${ENT}`,
-                passe: avoir("attendu"),
-                futur: futur("attendr", true)
-            },
-            "Répondre": {
-                present: `RéponDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je réponD${S}<br>tu réponD${S}<br>il répon${D}<br>nous répondON${S}<br>vous répondE${Z}<br>ils répond${ENT}`,
-                passe: avoir("répondu"),
-                futur: futur("répondr", false)
-            },
-            "Descendre": {
-                present: `DescenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je descenD${S}<br>tu descenD${S}<br>il descen${D}<br>nous descendON${S}<br>vous descendE${Z}<br>ils descend${ENT}`,
-                passe: etre("descendu"),
-                futur: futur("descendr", false)
-            },
-            "Rendre": {
-                present: `RenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je renD${S}<br>tu renD${S}<br>il ren${D}<br>nous rendON${S}<br>vous rendE${Z}<br>ils rend${ENT}`,
-                passe: avoir("rendu"),
-                futur: futur("rendr", false)
-            },
-
-            "Mettre": {
-                present: `MeTTRE<br>1 'T' в однині, 2 'T' у множині.<br><br>je meT${S}<br>tu meT${S}<br>il me${T}<br>nous meTTON${S}<br>vous meTTE${Z}<br>ils meTT${ENT}`,
-                passe: avoir("mis"),
-                futur: futur("mettr", false)
-            },
-            "Promettre": {
-                present: `PromeTTRE<br>1 'T' в однині, 2 'T' у множині.<br><br>je promeT${S}<br>tu promeT${S}<br>il prome${T}<br>nous promeTTON${S}<br>vous promeTTE${Z}<br>ils promeTT${ENT}`,
-                passe: avoir("promis"),
-                futur: futur("promettr", false)
-            },
-            "Battre": {
-                present: `BaTTRE<br>1 'T' в однині, 2 'T' у множині.<br><br>je baT${S}<br>tu baT${S}<br>il ba${T}<br>nous baTTON${S}<br>vous baTTE${Z}<br>ils baTT${ENT}`,
-                passe: avoir("battu") + "<br><span class='text-xs text-red-500 uppercase font-bold mt-1 block'>(не 'bis'!)</span>",
-                futur: futur("battr", false)
-            },
-
-            "Écrire": {
-                present: `ÉcriRE<br>У множині з'являється V.<br><br>j'écri${S}<br>tu écri${S}<br>il écri${T}<br>nous écriVON${S}<br>vous écriVE${Z}<br>ils écriV${ENT}`,
-                passe: avoir("écrit"),
-                futur: futur("écrir", true)
-            },
-            "Décrire": {
-                present: `DécriRE<br>У множині з'являється V.<br><br>je décri${S}<br>tu décri${S}<br>il décri${T}<br>nous décriVON${S}<br>vous décriVE${Z}<br>ils décriV${ENT}`,
-                passe: avoir("décrit"),
-                futur: futur("décrir", false)
-            },
-
-            "Dire": {
-                present: `DiRE<br><br>je di${S}<br>tu di${S}<br>il di${T}<br>nous disON${S}<br>vous <b>diTE${S}</b> (ПАСТКА!)<br>ils dis${ENT}`,
-                passe: avoir("dit"),
-                futur: futur("dir", false)
-            },
-            "Faire": {
-                present: `FaiRE<br><br>je fai${S}<br>tu fai${S}<br>il fai${T}<br>nous faisON${S}<br>vous <b>faiTE${S}</b><br>ils <b>fON${T}</b>`,
-                passe: avoir("fait"),
-                futur: futur("fer", false)
-            },
-
-            "Pouvoir": {
-                present: `PouvOIR<br><br>je peu${X}<br>tu peu${X}<br>il peu${T}<br>nous pouvON${S}<br>vous pouvE${Z}<br>ils peuv${ENT}`,
-                passe: avoir("pu"),
-                futur: futur("pourr", false)
-            },
-            "Vouloir": {
-                present: `VoulOIR<br><br>je veu${X}<br>tu veu${X}<br>il veu${T}<br>nous voulON${S}<br>vous voulE${Z}<br>ils veul${ENT}`,
-                passe: avoir("voulu"),
-                futur: futur("voudr", false)
-            },
-            "Devoir": {
-                present: `DevOIR<br><br>je doi${S}<br>tu doi${S}<br>il doi${T}<br>nous devON${S}<br>vous devE${Z}<br>ils doiv${ENT}`,
-                passe: avoir("dû"),
-                futur: futur("devr", false)
-            },
-            "Savoir": {
-                present: `SavOIR<br><br>je sai${S}<br>tu sai${S}<br>il sai${T}<br>nous savON${S}<br>vous savE${Z}<br>ils sav${ENT}`,
-                passe: avoir("su"),
-                futur: futur("saur", false)
-            },
-            "Voir": {
-                present: `VOIR<br><br>je voi${S}<br>tu voi${S}<br>il voi${T}<br>nous voYON${S}<br>vous voYE${Z}<br>ils voi${ENT}`,
-                passe: avoir("vu"),
-                futur: futur("verr", false)
-            },
-            "Recevoir": {
-                present: `RecevOIR<br><br>je reÇoi${S}<br>tu reÇoi${S}<br>il reÇoi${T}<br>nous recevON${S}<br>vous recevE${Z}<br>ils reÇoiv${ENT}`,
-                passe: avoir("reçu"),
-                futur: futur("recevr", false)
-            },
-            "Boire": {
-                present: `BoiRE (Три основи)<br><br>je boi${S}<br>tu boi${S}<br>il boi${T}<br>nous buvON${S}<br>vous buvE${Z}<br>ils boiv${ENT}`,
-                passe: avoir("bu"),
-                futur: futur("boir", false)
-            },
-            "Lire": {
-                present: `LiRE<br><br>je li${S}<br>tu li${S}<br>il li${T}<br>nous liSON${S}<br>vous liSE${Z}<br>ils liS${ENT}`,
-                passe: avoir("lu"),
-                futur: futur("lir", false)
-            },
-            "Croire": {
-                present: `CroiRE<br><br>je croi${S}<br>tu croi${S}<br>il croi${T}<br>nous croYON${S}<br>vous croYE${Z}<br>ils croi${ENT}`,
-                passe: avoir("cru"),
-                futur: futur("croir", false)
-            },
-
-            "Connaître": {
-                present: `ConnaiTRE<br>У множині з'являється SS.<br><br>je connai${S}<br>tu connai${S}<br>il connaî${T}<br>nous connaiSSON${S}<br>vous connaiSSE${Z}<br>ils connaiSS${ENT}`,
-                passe: avoir("connu"),
-                futur: futur("connaîtr", false)
-            },
-            "Plaire": {
-                present: `PlaiRE<br><br>je plai${S}<br>tu plai${S}<br>il plaî${T}<br>nous plaiSON${S}<br>vous plaiSE${Z}<br>ils plaiS${ENT}`,
-                passe: avoir("plu"),
-                futur: futur("plair", false)
-            },
-            "Rire": {
-                present: `RiRE<br><br>je ri${S}<br>tu ri${S}<br>il ri${T}<br>nous riON${S}<br>vous riE${Z}<br>ils ri${ENT}`,
-                passe: avoir("ri"),
-                futur: futur("rir", false)
-            },
-            "Sourire": {
-                present: `SouriRE<br><br>je souri${S}<br>tu souri${S}<br>il souri${T}<br>nous souriON${S}<br>vous souriE${Z}<br>ils souri${ENT}`,
-                passe: avoir("souri"),
-                futur: futur("sourir", false)
-            },
-            "Vivre": {
-                present: `VivRE<br>У множині з'являється V.<br><br>je vi${S}<br>tu vi${S}<br>il vi${T}<br>nous viVON${S}<br>vous viVE${Z}<br>ils viV${ENT}`,
-                passe: avoir("vécu"),
-                futur: futur("vivr", false)
-            },
-            "Courir": {
-                present: `CouRIR<br><br>je cour${S}<br>tu cour${S}<br>il cour${T}<br>nous courON${S}<br>vous courE${Z}<br>ils cour${ENT}`,
-                passe: avoir("couru"),
-                futur: futur("courr", false) + "<br><span class='text-xs text-red-500 uppercase font-bold mt-1 block'>(Подвоєння R!)</span>"
-            },
-            "Pleuvoir": {
-                present: `PleuvOIR (Безособове)<br>Використовується ТІЛЬКИ з 'il'.<br><br>il pleu${T}`,
-                passe: `il a <b>plu</b>`,
-                futur: `il <b>pleuvrA</b>`
-            },
-            "Falloir": {
-                present: `FallOIR (Безособове)<br>Використовується ТІЛЬКИ з 'il'.<br><br>il fau${T}`,
-                passe: `il a <b>fallu</b>`,
-                futur: `il <b>faudrA</b>`
-            },
-
-            "Être": {
-                present: `je sui${S}<br>tu e${S}<br>il e${ST}<br>nous somme${S}<br>vous ête${S}<br>ils son${T}`,
-                passe: avoir("été"),
-                futur: futur("ser", false)
-            },
-            "Avoir": {
-                present: `j'ai<br>tu a${S}<br>il a<br>nous avon${S}<br>vous ave${Z}<br>ils on${T}`,
-                passe: avoir("eu"),
-                futur: futur("aur", true)
-            },
-            "Aller": {
-                present: `je vai${S}<br>tu va${S}<br>il va<br>nous allon${S}<br>vous alle${Z}<br>ils von${T}`,
-                passe: etre("allé"),
-                futur: futur("ir", true)
-            }
-        };
-
         let rawData = [];
 
+        // ДИНАМІЧНИЙ ГЕНЕРАТОР ПРАВИЛ ДЛЯ 2-Ї ГРУПИ
+        // Оскільки 2-га група на 100% регулярна, ми не пишемо словник для кожного слова.
+        // Функція просто бере корінь і підставляє правильні закінчення.
+        function generateRuleHTML(infinitive, tense) {
+            // Корінь - це інфінітив без останніх двох літер "ir" (напр., finIR -> fin)
+            const root = infinitive.slice(0, -2);
+            
+            if (tense === 'present') {
+                return `
+                    <div class="grid grid-cols-2 gap-x-2 gap-y-4">
+                        <div>
+                            je ${root}I<span class="text-red-500 font-black">S</span><br>
+                            tu ${root}I<span class="text-red-500 font-black">S</span><br>
+                            il ${root}I<span class="text-red-500 font-black">T</span><br>
+                            nous ${root}ISSON<span class="text-red-500 font-black">S</span><br>
+                            vous ${root}ISSE<span class="text-red-500 font-black">Z</span><br>
+                            ils ${root}ISS<span class="text-red-500 font-black">ENT</span>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-4 font-sans uppercase font-bold tracking-widest">* Червоні літери не читаються</p>
+                `;
+            } else if (tense === 'passe') {
+                return `
+                    <p class="font-sans font-bold text-slate-600 mb-3 text-xs uppercase tracking-widest">Participe Passé: <span class="text-rose-600">${root}i</span></p>
+                    <div class="grid grid-cols-2 gap-x-2 gap-y-4">
+                        <div>
+                            j'ai ${root}i<br>
+                            tu a<span class="text-red-500 font-black">s</span> ${root}i<br>
+                            il a ${root}i<br>
+                            nous avon<span class="text-red-500 font-black">s</span> ${root}i<br>
+                            vous ave<span class="text-red-500 font-black">z</span> ${root}i<br>
+                            ils on<span class="text-red-500 font-black">t</span> ${root}i
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-4 font-sans uppercase font-bold tracking-widest">* Червоні літери не читаються</p>
+                `;
+            } else if (tense === 'futur') {
+                return `
+                    <p class="font-sans font-bold text-slate-600 mb-3 text-xs uppercase tracking-widest">Додаємо закінчення до інфінітива:</p>
+                    <div class="grid grid-cols-2 gap-x-2 gap-y-4">
+                        <div>
+                            je ${root}irAI<br>
+                            tu ${root}irA<span class="text-red-500 font-black">S</span><br>
+                            il ${root}irA<br>
+                            nous ${root}irON<span class="text-red-500 font-black">S</span><br>
+                            vous ${root}irE<span class="text-red-500 font-black">Z</span><br>
+                            ils ${root}irON<span class="text-red-500 font-black">T</span>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-4 font-sans uppercase font-bold tracking-widest">* Червоні літери не читаються</p>
+                `;
+            }
+            return "Помилка генерації правила.";
+        }
+
         function getSavedSetup() {
-            const saved = localStorage.getItem('frenchVerbsSetupGroup3'); 
+            const saved = localStorage.getItem('frenchVerbsSetupGroup2'); 
             if (saved) { 
                 try { 
                     const data = JSON.parse(saved); 
@@ -548,7 +302,7 @@
             const skipLearned = document.getElementById('skipLearnedToggle').checked;
             const hideInfinitive = document.getElementById('hideInfinitiveToggle').checked;
             
-            localStorage.setItem('frenchVerbsSetupGroup3', JSON.stringify({ verbs, tenses, skipLearned, hideInfinitive }));
+            localStorage.setItem('frenchVerbsSetupGroup2', JSON.stringify({ verbs, tenses, skipLearned, hideInfinitive }));
             updateSelectedVerbsCount();
         }
 
@@ -575,7 +329,7 @@
         }
 
         function getSRSMemory() {
-            const mem = localStorage.getItem('frenchVerbsSRS3');
+            const mem = localStorage.getItem('frenchVerbsSRS2');
             return mem ? JSON.parse(mem) : {};
         }
 
@@ -589,7 +343,7 @@
                 memory[cardId].streak = 0;
             }
             
-            localStorage.setItem('frenchVerbsSRS3', JSON.stringify(memory));
+            localStorage.setItem('frenchVerbsSRS2', JSON.stringify(memory));
         }
 
         function initSetupScreen() {
@@ -614,7 +368,7 @@
             Object.keys(groupedVerbs).forEach(category => {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = "mb-6 sm:mb-8";
-                categoryDiv.innerHTML = `<h3 class="text-sm sm:text-base font-bold text-slate-700 mb-2 sm:mb-3 border-b-2 border-teal-100 inline-block pb-1">${category}</h3>`;
+                categoryDiv.innerHTML = `<h3 class="text-sm sm:text-base font-bold text-slate-700 mb-2 sm:mb-3 border-b-2 border-rose-100 inline-block pb-1">${category}</h3>`;
                 
                 const grid = document.createElement('div');
                 grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3";
@@ -799,10 +553,10 @@
         }
 
         function updateDotsUI(streak) {
-            document.getElementById('streakDot1').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 1 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
-            document.getElementById('streakDot2').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 2 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
-            document.getElementById('streakDot3').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 3 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
-            document.getElementById('streakDot4').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 4 ? "bg-teal-500 shadow-sm" : "bg-slate-300");
+            document.getElementById('streakDot1').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 1 ? "bg-rose-500 shadow-sm" : "bg-slate-300");
+            document.getElementById('streakDot2').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 2 ? "bg-rose-500 shadow-sm" : "bg-slate-300");
+            document.getElementById('streakDot3').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 3 ? "bg-rose-500 shadow-sm" : "bg-slate-300");
+            document.getElementById('streakDot4').className = "w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-colors duration-300 " + (streak >= 4 ? "bg-rose-500 shadow-sm" : "bg-slate-300");
         }
 
         function loadNextCard() {
@@ -811,7 +565,6 @@
             updateUIStats();
             updateDotsUI(currentCard.streak || 0);
 
-            // Оновлений UI - відображаємо інфінітив на плашці (якщо не приховано), а переклад внизу
             const infinitiveBadge = document.getElementById('infinitiveBadge');
             if (hideInfinitiveActive) {
                 infinitiveBadge.classList.add('hidden');
@@ -827,7 +580,7 @@
             const input = document.getElementById('userInput');
             input.value = ''; input.disabled = false;
             input.style.width = Math.max(140, currentCard.verb.length * 16) + 'px';
-            input.className = "verb-input text-teal-700 font-bold border-slate-300";
+            input.className = "verb-input text-rose-600 font-bold border-slate-300";
             
             document.getElementById('feedbackContainer').classList.add('hidden');
             document.getElementById('checkBtn').classList.remove('hidden');
@@ -903,7 +656,7 @@
                 updateDotsUI(0);
 
                 input.value = currentCard.verb; 
-                feedbackText.innerHTML = `Помилка. Треба: <span class="text-teal-600 font-black">${currentCard.verb}</span>`;
+                feedbackText.innerHTML = `Помилка. Треба: <span class="text-rose-600 font-black">${currentCard.verb}</span>`;
                 feedbackText.className = "text-lg sm:text-2xl mb-2 text-red-500 pop-animation";
                 input.className = "verb-input font-bold text-red-500 border-red-500";
 
@@ -966,22 +719,14 @@
             if (ruleBox.classList.contains('hidden')) {
                 if (currentCard) currentCard.ruleShown = true; 
                 
-                const tense = currentCard.tenseKey; // 'present', 'passe', 'futur'
-                let ruleText = "Правила для цього дієслова ще не додані.";
-                
-                // Шукаємо ключ без урахування регістру, щоб знаходило слова завжди!
-                const infKey = Object.keys(verbRules).find(k => k.toLowerCase() === currentCard.infFr.toLowerCase());
-                
-                if (infKey && verbRules[infKey] && verbRules[infKey][tense]) {
-                    ruleText = verbRules[infKey][tense];
-                } else {
-                    ruleText = tenseExplanations[tense] || "Заглушка: правила відсутні.";
-                }
+                const tense = currentCard.tenseKey; 
+                // Динамічна генерація правила з виділеними червоними закінченнями
+                const ruleText = generateRuleHTML(currentCard.infFr, tense);
                 
                 let html = `
-                    <div class="mb-4 pb-3 border-b border-teal-200">
-                        <p class="font-black text-teal-800 text-lg mb-1">${currentCard.infFr}</p>
-                        <p class="font-bold text-xs text-teal-600 uppercase tracking-wider">${currentCard.tenseName}</p>
+                    <div class="mb-4 pb-3 border-b border-rose-200">
+                        <p class="font-black text-rose-800 text-lg mb-1">${currentCard.infFr}</p>
+                        <p class="font-bold text-xs text-rose-600 uppercase tracking-wider">${currentCard.tenseName}</p>
                     </div>
                     <div class="font-mono text-sm leading-relaxed text-slate-800 tracking-wide">${ruleText}</div>`;
                 
@@ -1000,24 +745,15 @@
 
         async function bootApp() {
             try {
-                // Завантаження трьох розбитих файлів
-                const files = ['./data3_1.json', './data3_2.json', './data3_3.json'];
-                const fetchPromises = files.map(file => fetch(file));
-                const responses = await Promise.all(fetchPromises);
-                
-                rawData = [];
-                for (let i = 0; i < responses.length; i++) {
-                    if (!responses[i].ok) throw new Error(`Файл ${files[i]} не знайдено`);
-                    const data = await responses[i].json();
-                    rawData = rawData.concat(data);
-                }
-                
+                const response = await fetch('./data2.json');
+                if (!response.ok) throw new Error("Файл data2.json не знайдено");
+                rawData = await response.json();
                 initSetupScreen();
             } catch (error) {
                 console.error("Критична помилка завантаження:", error);
                 document.getElementById('setupScreen').innerHTML = `
                     <h2 class="text-2xl sm:text-3xl font-black text-red-500 mb-4">Помилка архітектури!</h2>
-                    <p class="text-slate-600 font-medium">Не можу знайти файли <b>data3_*.json</b>.</p>`;
+                    <p class="text-slate-600 font-medium">Не можу знайти файл <b>data2.json</b>.</p>`;
                 document.getElementById('setupScreen').classList.remove('hidden');
             }
         }
