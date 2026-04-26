@@ -389,8 +389,8 @@
             document.getElementById('ruleBox').classList.add('hidden');
             document.getElementById('ruleToggleBtn').innerText = "Показати правило";
 
-            // Синхронний фокус із мікрозатримкою (надійніше для мобільних)
-            setTimeout(() => { document.getElementById('userInput').focus(); }, 50);
+            // Синхронний фокус без затримок (тримає клавіатуру на мобільних пристроях)
+            input.focus();
         }
 
         function checkAnswer() {
