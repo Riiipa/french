@@ -13,7 +13,7 @@
             100% { transform: scale(1); opacity: 1; }
         }
         .verb-input {
-            width: 140px;
+            width: 180px; /* Фіксований розмір, щоб не підказувати слово */
             text-align: center;
             border-bottom: 3px solid #cbd5e1;
             background: transparent;
@@ -150,7 +150,7 @@
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <!-- ПОЛЕ БЕЗ ПІДКАЗОК -->
+                <!-- ПОЛЕ БЕЗ ПІДКАЗОК. Статична ширина. -->
                 <input type="text" id="userInput" class="verb-input text-blue-700 font-bold border-slate-300" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="">
                 <span id="suffixDisplay"></span>
             </div>
@@ -166,11 +166,11 @@
         <button id="checkBtn" onclick="checkAnswer()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Перевірити
         </button>
-        <!-- КНОПКА "ДАЛІ" НАСТРОЄНА НА АВТОФОКУС -->
         <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-blue-500 hover:text-blue-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg hidden">
+        <!-- Кнопка правила тепер завжди видима -->
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-blue-500 hover:text-blue-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
         <div id="ruleBox" class="hidden mt-3 p-4 bg-blue-50 rounded-2xl border-l-4 border-blue-400 text-left text-sm text-blue-900 w-full shadow-inner leading-relaxed"></div>
@@ -372,34 +372,36 @@
             const input = document.getElementById('userInput');
             input.value = ''; 
             input.disabled = false;
-            // Динамічна ширина 
-            input.style.width = Math.max(100, currentCard.verb.length * 18) + 'px';
+            // НЕ змінюємо ширину динамічно!
             input.className = "verb-input text-blue-700 font-bold border-slate-300";
             
             document.getElementById('feedbackContainer').classList.add('hidden');
             document.getElementById('checkBtn').classList.remove('hidden');
             document.getElementById('nextBtn').classList.add('hidden');
             document.getElementById('ruleBox').classList.add('hidden');
-            document.getElementById('ruleToggleBtn').classList.add('hidden');
-            document.getElementById('ruleToggleBtn').innerText = "Показати правило";
+            
+            // Кнопка правила завжди видима
+            const ruleBtn = document.getElementById('ruleToggleBtn');
+            ruleBtn.classList.remove('hidden');
+            ruleBtn.innerText = "Показати правило";
 
-            // Миттєвий фокус (для мобільних телефонів - тримає клавіатуру)
-            setTimeout(() => { input.focus(); }, 10);
+            // Синхронний фокус без затримок (тримає клавіатуру на мобільних пристроях)
+            input.focus();
         }
 
         function checkAnswer() {
             const input = document.getElementById('userInput');
             if (!input.value.trim()) return;
 
-            // Запобіжник: ігноруємо регістр, пробіли, апострофи та замінюємо 'î' на 'i'
-            const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").replace(/î/g, "i").replace(/\s+/g, ' ').trim();
+            // Запобіжник: не рахуємо за помилку i замість î. Ігноруємо регістр, пробіли, апострофи.
+            const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").replace(/[îï]/g, "i").replace(/\s+/g, ' ').trim();
+            
             const userVerb = normalize(input.value);
             const correctVerb = normalize(currentCard.verb);
 
             input.disabled = true;
             document.getElementById('feedbackContainer').classList.remove('hidden');
             const feedbackText = document.getElementById('feedbackDisplay');
-            const ruleToggleBtn = document.getElementById('ruleToggleBtn');
             
             if (userVerb === correctVerb) {
                 const isFirstAttempt = currentCard.mistakesThisSession === 0;
@@ -446,9 +448,6 @@
                 feedbackText.className = "text-lg sm:text-2xl mb-2 text-red-500 pop-animation";
                 input.className = "verb-input font-bold text-red-500 border-red-500";
 
-                // Робимо кнопку "Показати правило" видимою тільки при помилці
-                ruleToggleBtn.classList.remove('hidden');
-
                 playCurrentAudio();
             }
 
@@ -488,7 +487,11 @@
             if (ruleBox.classList.contains('hidden')) {
                 if (currentCard) currentCard.ruleShown = true; 
                 
-                let html = `<strong>Підказка:</strong> ${currentCard.ruleTrap}`;
+                let html = `
+                    <div class="mb-3 pb-2 border-b border-blue-200">
+                        <strong class="uppercase text-[10px] tracking-widest text-blue-600 block mb-1">Пояснення:</strong>
+                    </div>
+                    <p>${currentCard.ruleTrap}</p>`;
                 
                 ruleBox.innerHTML = html;
                 ruleBox.classList.remove('hidden');
