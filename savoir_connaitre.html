@@ -169,8 +169,8 @@
         <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
-        <!-- Кнопка правила тепер завжди видима і правило з'являється автоматично -->
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-blue-500 hover:text-blue-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg hidden">
+        <!-- Кнопка правила тепер видима завжди -->
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-blue-500 hover:text-blue-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
             Показати правило
         </button>
         <div id="ruleBox" class="hidden mt-3 p-4 bg-blue-50 rounded-2xl border-l-4 border-blue-400 text-left text-sm text-blue-900 w-full shadow-inner leading-relaxed"></div>
@@ -193,7 +193,13 @@
         <div class="w-full bg-slate-100 rounded-full h-4 mb-2">
             <div id="accuracyBar" class="bg-blue-500 h-4 rounded-full" style="width: 0%"></div>
         </div>
-        <p class="text-blue-700 font-bold mb-4">Точність: <span id="accuracyText">0%</span></p>
+        <p class="text-blue-700 font-bold mb-6">Точність: <span id="accuracyText">0%</span></p>
+
+        <!-- Блок для списку помилок -->
+        <div id="mistakesListContainer" class="hidden w-full mb-6 text-left border-t border-slate-200 pt-4">
+            <h3 class="text-sm font-black text-slate-700 uppercase mb-3 text-center">Помилки в раунді:</h3>
+            <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"></div>
+        </div>
 
         <button onclick="startSession()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3 uppercase tracking-widest">Наступна сесія</button>
         <button onclick="returnToSetup()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm sm:text-base uppercase">В меню</button>
@@ -251,7 +257,7 @@
         const SESSION_LENGTH = 10;
         let sessionQueue = [];
         let currentCard = null;
-        let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0 };
+        let sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
         let sessionTargetSize = 10;
 
         function initSession() {
@@ -334,7 +340,7 @@
                 card.ruleShown = false; 
             });
             
-            sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0 };
+            sessionStats = { mistakes: 0, completed: 0, totalErrors: 0, flawless: 0, mistakesList: [] };
             updateUIStats();
             loadNextCard();
         }
@@ -372,26 +378,26 @@
             const input = document.getElementById('userInput');
             input.value = ''; 
             input.disabled = false;
-            input.style.width = '240px'; 
+            // Фіксована ширина!
             input.className = "verb-input text-blue-700 font-bold border-slate-300";
             
             document.getElementById('feedbackContainer').classList.add('hidden');
             document.getElementById('checkBtn').classList.remove('hidden');
             document.getElementById('nextBtn').classList.add('hidden');
             
-            // Ховаємо правило для нової картки
+            // Ховаємо правило для нової картки і робимо кнопку знову видимою
             document.getElementById('ruleBox').classList.add('hidden');
-            document.getElementById('ruleToggleBtn').classList.add('hidden');
+            document.getElementById('ruleToggleBtn').innerText = "Показати правило";
 
-            // Синхронний фокус без затримок (тримає клавіатуру на мобільних пристроях)
-            input.focus();
+            // Синхронний фокус із мікрозатримкою (надійніше для мобільних)
+            setTimeout(() => { document.getElementById('userInput').focus(); }, 50);
         }
 
         function checkAnswer() {
             const input = document.getElementById('userInput');
             if (!input.value.trim()) return;
 
-            // Жодної поблажки для "î". Користувач мусить ввести точне слово.
+            // Жорстка перевірка на "î". Pоблажки для "i" замість "î" більше немає!
             const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").replace(/\s+/g, ' ').trim();
             
             const userVerb = normalize(input.value);
@@ -436,6 +442,16 @@
                 
             } else {
                 sessionStats.totalErrors++; 
+                
+                if (currentCard.mistakesThisSession === 0) {
+                    sessionStats.mistakesList.push({
+                        prefix: currentCard.prefix,
+                        verb: currentCard.verb,
+                        userVerb: userVerb,
+                        suffix: currentCard.suffix
+                    });
+                }
+
                 currentCard.mistakesThisSession++;
                 currentCard.streak = 0; 
                 updateSRSCard(currentCard.id, false, false);
@@ -449,10 +465,10 @@
                 playCurrentAudio();
             }
 
-            // Автоматичне відображення правила після кожної відповіді
+            // АВТОМАТИЧНЕ ВІДОБРАЖЕННЯ ПРАВИЛА ПІСЛЯ КОЖНОЇ ВІДПОВІДІ
             const ruleBox = document.getElementById('ruleBox');
             const ruleBtn = document.getElementById('ruleToggleBtn');
-            currentCard.ruleShown = true; // Зараховується як підказка, якщо побачив і помилився
+            currentCard.ruleShown = true; // Зараховується як підказка
             
             ruleBox.innerHTML = `
                 <div class="mb-3 pb-2 border-b border-blue-200">
@@ -460,7 +476,6 @@
                 </div>
                 <p class="font-medium text-slate-800">${currentCard.ruleTrap}</p>`;
             ruleBox.classList.remove('hidden');
-            ruleBtn.classList.remove('hidden');
             ruleBtn.innerText = "Сховати правило";
 
             updateUIStats(); 
@@ -490,6 +505,27 @@
             const bar = document.getElementById('accuracyBar');
             bar.style.width = accuracy + '%';
             bar.className = accuracy >= 90 ? "bg-green-500 h-4 rounded-full" : (accuracy >= 70 ? "bg-yellow-500 h-4 rounded-full" : "bg-red-500 h-4 rounded-full");
+
+            // Виведення списку помилок
+            const mistakesContainer = document.getElementById('mistakesListContainer');
+            const mistakesListEl = document.getElementById('mistakesList');
+            mistakesListEl.innerHTML = '';
+            
+            if (sessionStats.mistakesList.length > 0) {
+                mistakesContainer.classList.remove('hidden');
+                sessionStats.mistakesList.forEach(m => {
+                    const prefixSpace = m.prefix.endsWith("'") ? m.prefix : m.prefix + " ";
+                    const html = `
+                        <div class="bg-red-50 p-3 rounded-xl border border-red-100 text-sm shadow-sm">
+                            <div class="text-slate-500 line-through decoration-red-400">${prefixSpace}<span class="text-red-500 font-bold">${m.userVerb}</span> ${m.suffix}</div>
+                            <div class="text-slate-800 font-medium">${prefixSpace}<span class="text-green-600 font-black">${m.verb}</span> ${m.suffix}</div>
+                        </div>
+                    `;
+                    mistakesListEl.insertAdjacentHTML('beforeend', html);
+                });
+            } else {
+                mistakesContainer.classList.add('hidden');
+            }
         }
 
         function toggleRule() {
