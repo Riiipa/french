@@ -1,90 +1,82 @@
 [
-  {
-    "category": "Savoir + Інфінітив (Вміти)",
-    "infFr": "Savoir",
-    "infUk": "Знати як / Вміти",
-    "present": [
-      { "p": "Je", "v": "sais", "s": "nager.", "u": "Я вмію плавати.", "trap": "Savoir + дієслово в інфінітиві. Означає 'вміти щось робити'. Connaître ніколи не стоїть перед інфінітивом." },
-      { "p": "Tu", "v": "sais", "s": "parler français ?", "u": "Ти вмієш розмовляти французькою?", "trap": "Savoir + інфінітив (parler). Означає навичку." },
-      { "p": "Il ne", "v": "sait", "s": "pas conduire.", "u": "Він не вміє водити машину.", "trap": "Savoir + інфінітив (conduire)." },
-      { "p": "Nous", "v": "savons", "s": "cuisiner.", "u": "Ми вміємо готувати.", "trap": "Savoir + інфінітив (cuisiner)." },
-      { "p": "Vous", "v": "savez", "s": "jouer du piano ?", "u": "Ви вмієте грати на піаніно?", "trap": "Savoir + інфінітив (jouer)." }
-    ],
-    "passe": [
-      { "p": "J'ai", "v": "su", "s": "réparer la voiture.", "u": "Я зміг (зумів) полагодити машину.", "trap": "У минулому часі Savoir + інфінітив означає 'зумів щось зробити'." }
-    ],
-    "futur": [
-      { "p": "Elle", "v": "saura", "s": "trouver la solution.", "u": "Вона зможе (знатиме як) знайти рішення.", "trap": "Savoir + інфінітив." }
-    ]
-  },
-  {
-    "category": "Savoir + Que (Знати, що...)",
-    "infFr": "Savoir",
-    "infUk": "Знати факт",
-    "present": [
-      { "p": "Je", "v": "sais", "s": "que tu es fatigué.", "u": "Я знаю, що ти втомлений.", "trap": "Savoir завжди використовується перед сполучником 'que' (що). Connaître тут неможливе." },
-      { "p": "Elle", "v": "sait", "s": "qu'il ment.", "u": "Вона знає, що він бреше.", "trap": "Savoir + que (qu'). Виражає знання факту." },
-      { "p": "Nous", "v": "savons", "s": "que c'est difficile.", "u": "Ми знаємо, що це складно.", "trap": "Savoir + que." },
-      { "p": "Ils", "v": "savent", "s": "que la réunion est annulée.", "u": "Вони знають, що зустріч скасовано.", "trap": "Savoir + que." }
-    ],
-    "passe": [
-      { "p": "J'ai", "v": "su", "s": "que tu étais malade.", "u": "Я дізнався, що ти був хворий.", "trap": "У Passé Composé 'Savoir' часто перекладається як 'дізнатися'." }
-    ],
-    "futur": [
-      { "p": "Il", "v": "saura", "s": "que nous sommes partis.", "u": "Він дізнається, що ми поїхали.", "trap": "Savoir + que." }
-    ]
-  },
-  {
-    "category": "Savoir + Питальне слово",
-    "infFr": "Savoir",
-    "infUk": "Знати де, коли, чому...",
-    "present": [
-      { "p": "Tu", "v": "sais", "s": "où il habite ?", "u": "Ти знаєш, де він живе?", "trap": "Savoir + питальне слово (où). Connaître ніколи не ставиться перед питаннями." },
-      { "p": "Je ne", "v": "sais", "s": "pas comment faire.", "u": "Я не знаю, як це зробити.", "trap": "Savoir + питальне слово (comment)." },
-      { "p": "Vous", "v": "savez", "s": "pourquoi elle pleure ?", "u": "Ви знаєте, чому вона плаче?", "trap": "Savoir + питальне слово (pourquoi)." },
-      { "p": "Il", "v": "sait", "s": "quand le train arrive.", "u": "Він знає, коли прибуває потяг.", "trap": "Savoir + питальне слово (quand)." }
-    ],
-    "passe": [
-      { "p": "Nous n'avons pas", "v": "su", "s": "quoi répondre.", "u": "Ми не знали (не знайшлися), що відповісти.", "trap": "Savoir + питальне слово (quoi)." }
-    ],
-    "futur": [
-      { "p": "Je", "v": "saurai", "s": "comment te remercier.", "u": "Я знатиму, як тобі подякувати.", "trap": "Savoir + comment." }
-    ]
-  },
-  {
-    "category": "Connaître + Людина або Місце",
-    "infFr": "Connaître",
-    "infUk": "Бути знайомим (особисто)",
-    "present": [
-      { "p": "Je", "v": "connais", "s": "bien Paris.", "u": "Я добре знаю Париж.", "trap": "Connaître + іменник (місце). Означає 'бути знайомим з чимось особисто'." },
-      { "p": "Tu", "v": "connais", "s": "mon frère ?", "u": "Ти знаєш мого брата?", "trap": "Connaître + людина. Ми знайомі з людьми, тому тільки 'connaître'." },
-      { "p": "Il ne", "v": "connaît", "s": "personne ici.", "u": "Він тут нікого не знає.", "trap": "Connaître + personne (людина)." },
-      { "p": "Nous", "v": "connaissons", "s": "ce restaurant.", "u": "Ми знаємо цей ресторан.", "trap": "Connaître + заклад/місце." },
-      { "p": "Vous", "v": "connaissez", "s": "le directeur ?", "u": "Ви знаєте директора?", "trap": "Connaître + людина." }
-    ],
-    "passe": [
-      { "p": "J'ai", "v": "connu", "s": "Marie à l'université.", "u": "Я познайомився з Марі в університеті.", "trap": "У Passé Composé 'Connaître' означає 'познайомитися'." },
-      { "p": "Ils ont", "v": "connu", "s": "cette ville.", "u": "Вони знали це місто (були знайомі з ним).", "trap": "Connaître + місце." }
-    ],
-    "futur": [
-      { "p": "Tu", "v": "connaîtras", "s": "mes parents demain.", "u": "Ти познайомишся з моїми батьками завтра.", "trap": "Connaître + люди." }
-    ]
-  },
-  {
-    "category": "Connaître + Предмет / Абстракція",
-    "infFr": "Connaître",
-    "infUk": "Бути обізнаним",
-    "present": [
-      { "p": "Je", "v": "connais", "s": "cette chanson.", "u": "Я знаю цю пісню.", "trap": "Connaître + прямий додаток (пісня). Означає 'ця пісня мені знайома'." },
-      { "p": "Elle", "v": "connaît", "s": "la vérité.", "u": "Вона знає правду.", "trap": "Connaître + іменник. Якщо після слова 'знати' йде одразу іменник без прийменників, частіше вживається 'connaître'." },
-      { "p": "Tu", "v": "connais", "s": "son adresse ?", "u": "Ти знаєш його адресу?", "trap": "Connaître + іменник (адреса). Якби було питання 'де він живе' (où), було б 'savoir'." },
-      { "p": "Nous", "v": "connaissons", "s": "la réponse.", "u": "Ми знаємо відповідь.", "trap": "Connaître + іменник (відповідь)." }
-    ],
-    "passe": [
-      { "p": "Elle n'a jamais", "v": "connu", "s": "la pauvreté.", "u": "Вона ніколи не знала бідності.", "trap": "Connaître + абстрактне поняття." }
-    ],
-    "futur": [
-      { "p": "Vous", "v": "connaîtrez", "s": "le succès.", "u": "Ви пізнаєте успіх.", "trap": "Connaître + абстрактне поняття." }
-    ]
-  }
+  { "p": "Je", "v": "sais", "s": "nager très bien.", "u": "Я вмію дуже добре плавати.", "trap": "Savoir + інфінітив (вміти щось робити)." },
+  { "p": "Tu", "v": "sais", "s": "parler français ?", "u": "Ти вмієш говорити французькою?", "trap": "Savoir + інфінітив." },
+  { "p": "Il ne", "v": "sait", "s": "pas conduire.", "u": "Він не вміє водити.", "trap": "Savoir + інфінітив." },
+  { "p": "Nous", "v": "savons", "s": "cuisiner.", "u": "Ми вміємо готувати.", "trap": "Savoir + інфінітив." },
+  { "p": "Vous", "v": "savez", "s": "jouer du piano ?", "u": "Ви вмієте грати на піаніно?", "trap": "Savoir + інфінітив." },
+  { "p": "Elles ne", "v": "savent", "s": "pas skier.", "u": "Вони не вміють кататися на лижах.", "trap": "Savoir + інфінітив." },
+  { "p": "Je", "v": "sais", "s": "que tu es là.", "u": "Я знаю, що ти там.", "trap": "Savoir + підрядне речення (que)." },
+  { "p": "Il", "v": "sait", "s": "qu'elle est partie.", "u": "Він знає, що вона пішла.", "trap": "Savoir + підрядне речення (qu')." },
+  { "p": "Tu", "v": "sais", "s": "qui a fait ça ?", "u": "Ти знаєшь, хто це зробив?", "trap": "Savoir + питальне слово (qui)." },
+  { "p": "Nous ne", "v": "savons", "s": "pas où il est.", "u": "Ми не знаємо, де він.", "trap": "Savoir + питальне слово (où)." },
+  { "p": "Vous", "v": "savez", "s": "quand il arrive ?", "u": "Ви знаєте, коли він прибуває?", "trap": "Savoir + питальне слово (quand)." },
+  { "p": "Ils", "v": "savent", "s": "comment faire.", "u": "Вони знають, як робити.", "trap": "Savoir + питальне слово (comment)." },
+  { "p": "Je", "v": "sais", "s": "pourquoi tu pleures.", "u": "Я знаю, чому ти плачеш.", "trap": "Savoir + питальне слово (pourquoi)." },
+  { "p": "Tu", "v": "sais", "s": "si elle vient ?", "u": "Ти знаєш, чи вона прийде?", "trap": "Savoir + підрядне речення (si - чи)." },
+  { "p": "Il ne", "v": "sait", "s": "pas quoi dire.", "u": "Він не знає, що сказати.", "trap": "Savoir + питальне слово (quoi)." },
+  { "p": "Nous", "v": "savons", "s": "combien ça coûte.", "u": "Ми знаємо, скільки це коштує.", "trap": "Savoir + питальне слово (combien)." },
+  { "p": "Je", "v": "sais", "s": "!", "u": "Я знаю!", "trap": "Savoir як самостійна відповідь." },
+  { "p": "Tu le", "v": "sais", "s": "très bien.", "u": "Ти це дуже добре знаєш.", "trap": "Savoir з абстрактним фактом (le = це)." },
+  { "p": "Qui", "v": "sait", "s": "?", "u": "Хто знає?", "trap": "Savoir у сталому виразі." },
+  { "p": "On ne", "v": "sait", "s": "jamais.", "u": "Ніколи не знаєш (як буде).", "trap": "Savoir у сталому виразі." },
+  { "p": "Elle", "v": "sait", "s": "sa leçon.", "u": "Вона знає свій урок.", "trap": "Savoir з тим, що вивчено/запам'ятовано напам'ять." },
+  { "p": "Tu", "v": "sais", "s": "ton poème par cœur ?", "u": "Ти знаєш свій вірш напам'ять?", "trap": "Savoir + вивчене напам'ять (par cœur)." },
+  { "p": "Je ne", "v": "sais", "s": "pas son numéro.", "u": "Я не знаю його номера телефону.", "trap": "Savoir з фактом/інформацією (номер телефону)." },
+  { "p": "Vous", "v": "savez", "s": "l'heure ?", "u": "Ви знаєте котра година?", "trap": "Savoir + точна інформація (час)." },
+  { "p": "Ils", "v": "savent", "s": "les règles.", "u": "Вони знають правила.", "trap": "Savoir + вивчена інформація (правила)." },
+  { "p": "Je", "v": "sais", "s": "le code Wi-Fi.", "u": "Я знаю пароль від Wi-Fi.", "trap": "Savoir + факт/точна інформація." },
+  { "p": "Tu", "v": "sais", "s": "la vérité.", "u": "Ти знаєш правду.", "trap": "Savoir з абстрактним фактом/знанням." },
+  { "p": "Il", "v": "sait", "s": "le prix de cette voiture.", "u": "Він знає ціну цієї машини.", "trap": "Savoir + факт/інформація." },
+  { "p": "Nous", "v": "savons", "s": "le résultat.", "u": "Ми знаємо результат.", "trap": "Savoir + факт." },
+  { "p": "Vous", "v": "savez", "s": "la date du concert ?", "u": "Ви знаєте дату концерту?", "trap": "Savoir + інформація." },
+  { "p": "Je", "v": "sais", "s": "que c'est faux.", "u": "Я знаю, що це брехня.", "trap": "Savoir + que." },
+  { "p": "Tu", "v": "sais", "s": "comment aller au parc ?", "u": "Ти знаєш, як дійти до парку?", "trap": "Savoir + comment." },
+  { "p": "Elle", "v": "sait", "s": "qui tu es.", "u": "Вона знає, хто ти.", "trap": "Savoir + qui." },
+  { "p": "Nous", "v": "savons", "s": "lire.", "u": "Ми вміємо читати.", "trap": "Savoir + інфінітив." },
+  { "p": "Vous ne", "v": "savez", "s": "pas écrire ?", "u": "Ви не вмієте писати?", "trap": "Savoir + інфінітив." },
+  { "p": "Ils", "v": "savent", "s": "où nous sommes.", "u": "Вони знають, де ми.", "trap": "Savoir + où." },
+  { "p": "Je ne", "v": "sais", "s": "rien.", "u": "Я нічого не знаю.", "trap": "Savoir як самостійний факт." },
+  { "p": "Tu", "v": "sais", "s": "jouer aux échecs ?", "u": "Ти вмієш грати в шахи?", "trap": "Savoir + інфінітив." },
+  { "p": "Il", "v": "sait", "s": "tout sur l'histoire.", "u": "Він знає все про історію.", "trap": "Savoir + абстрактні знання/інформація." },
+  { "p": "Nous", "v": "savons", "s": "ce qui se passe.", "u": "Ми знаємо, що відбувається.", "trap": "Savoir + ce qui (підрядне речення)." },
+  { "p": "Je", "v": "connais", "s": "ce garçon.", "u": "Я знаю цього хлопця.", "trap": "Connaître + людина." },
+  { "p": "Tu", "v": "connais", "s": "mon frère ?", "u": "Ти знаєш мого брата?", "trap": "Connaître + людина." },
+  { "p": "Elle", "v": "connaît", "s": "son voisin.", "u": "Вона знає свого сусіда.", "trap": "Connaître + людина." },
+  { "p": "Nous ne", "v": "connaissons", "s": "personne ici.", "u": "Ми тут нікого не знаємо.", "trap": "Connaître + personne (людина)." },
+  { "p": "Vous", "v": "connaissez", "s": "ce médecin ?", "u": "Ви знаєте цього лікаря?", "trap": "Connaître + людина." },
+  { "p": "Ils", "v": "connaissent", "s": "le directeur.", "u": "Вони знають директора.", "trap": "Connaître + людина." },
+  { "p": "Je", "v": "connais", "s": "bien Paris.", "u": "Я добре знаю Париж.", "trap": "Connaître + місце (місто)." },
+  { "p": "Tu", "v": "connais", "s": "la France ?", "u": "Ти знаєш Францію?", "trap": "Connaître + місце (країна)." },
+  { "p": "Il", "v": "connaît", "s": "ce quartier.", "u": "Він знає цей район.", "trap": "Connaître + місце." },
+  { "p": "Nous", "v": "connaissons", "s": "un bon restaurant.", "u": "Ми знаємо хороший ресторан.", "trap": "Connaître + місце (через досвід)." },
+  { "p": "Vous", "v": "connaissez", "s": "cette rue ?", "u": "Ви знаєте цю вулицю?", "trap": "Connaître + місце." },
+  { "p": "Ils", "v": "connaissent", "s": "le chemin.", "u": "Вони знають дорогу.", "trap": "Connaître + місце/шлях." },
+  { "p": "Je", "v": "connais", "s": "cette chanson.", "u": "Я знаю цю пісню.", "trap": "Connaître + твір мистецтва (пісня)." },
+  { "p": "Tu", "v": "connais", "s": "ce livre ?", "u": "Ти знаєш цю книгу?", "trap": "Connaître + твір." },
+  { "p": "Elle", "v": "connaît", "s": "ce film.", "u": "Вона знає цей фільм.", "trap": "Connaître + твір (фільм)." },
+  { "p": "Nous", "v": "connaissons", "s": "ce poème.", "u": "Ми знайомі з цим віршем.", "trap": "Connaître + твір. (Увага: 'savoir par cœur' = знати напам'ять, але 'connaître' = бути знайомим з твором)." },
+  { "p": "Vous", "v": "connaissez", "s": "ce jeu ?", "u": "Ви знаєте цю гру?", "trap": "Connaître + предмет/гра." },
+  { "p": "Ils", "v": "connaissent", "s": "ce tableau.", "u": "Вони знають цю картину.", "trap": "Connaître + твір мистецтва." },
+  { "p": "Je", "v": "connais", "s": "ce sentiment.", "u": "Я знаю це відчуття.", "trap": "Connaître + абстрактне поняття (почуття через досвід)." },
+  { "p": "Tu", "v": "connais", "s": "la pauvreté ?", "u": "Ти знаєш (пізнав) бідність?", "trap": "Connaître + абстрактне поняття (досвід)." },
+  { "p": "Il a", "v": "connu", "s": "le succès.", "u": "Він пізнав успіх.", "trap": "Connaître + абстрактне поняття (успіх)." },
+  { "p": "Nous", "v": "connaissons", "s": "la joie.", "u": "Ми знаємо радість.", "trap": "Connaître + почуття." },
+  { "p": "Vous", "v": "connaissez", "s": "la douleur ?", "u": "Ви знаєте біль?", "trap": "Connaître + почуття (досвід)." },
+  { "p": "Ils", "v": "connaissent", "s": "la difficulté de ce travail.", "u": "Вони знають складність цієї роботи.", "trap": "Connaître + абстрактне поняття/ситуація." },
+  { "p": "Je", "v": "connais", "s": "cette race de chien.", "u": "Я знаю цю породу собак.", "trap": "Connaître + тварини/види." },
+  { "p": "Tu", "v": "connais", "s": "cet animal ?", "u": "Ти знаєш цю тварину?", "trap": "Connaître + тварина." },
+  { "p": "Elle", "v": "connaît", "s": "son adresse.", "u": "Вона знає його адресу.", "trap": "Connaître + іменник (фактичний об'єкт/предмет). (Savoir + où il habite)." },
+  { "p": "Nous", "v": "connaissons", "s": "la réponse.", "u": "Ми знаємо відповідь.", "trap": "Connaître + іменник. ('Savoir' теж можливо: Je sais la réponse. Але connaître - бути знайомим з відповіддю)." },
+  { "p": "Vous", "v": "connaissez", "s": "la vérité ?", "u": "Ви знаєте правду?", "trap": "Connaître + абстрактний об'єкт. (Або Je sais la vérité)." },
+  { "p": "Ils", "v": "connaissent", "s": "ce mot.", "u": "Вони знають це слово.", "trap": "Connaître + предмет/слово (бути знайомим зі словом)." },
+  { "p": "Je ne", "v": "connais", "s": "pas ce plat.", "u": "Я не знаю цієї страви.", "trap": "Connaître + предмет (бути знайомим через смак/досвід)." },
+  { "p": "Tu", "v": "connais", "s": "le programme ?", "u": "Ти знаєш програму?", "trap": "Connaître + об'єкт/розклад." },
+  { "p": "Il", "v": "connaît", "s": "le sujet.", "u": "Він знайомий з темою.", "trap": "Connaître + тема (бути обізнаним)." },
+  { "p": "Nous", "v": "connaissons", "s": "le code secret.", "u": "Ми знаємо секретний код.", "trap": "Connaître + об'єкт/інформація." },
+  { "p": "Vous", "v": "connaissez", "s": "la fin de l'histoire ?", "u": "Ви знаєте кінець історії?", "trap": "Connaître + частина твору." },
+  { "p": "Ils", "v": "connaissent", "s": "le menu par cœur.", "u": "Вони знають меню напам'ять.", "trap": "Connaître + предмет. (Увага: 'savoir par cœur' частіше, але з 'menu' можна connaître)." },
+  { "p": "Je", "v": "connais", "s": "la situation.", "u": "Я обізнаний із ситуацією.", "trap": "Connaître + ситуація (досвід)." },
+  { "p": "Tu", "v": "connais", "s": "ce texte ?", "u": "Ти знаєш цей текст?", "trap": "Connaître + твір/текст." },
+  { "p": "Il", "v": "connaît", "s": "très peu de gens.", "u": "Він знає дуже мало людей.", "trap": "Connaître + люди." },
+  { "p": "Nous", "v": "connaissons", "s": "cette règle.", "u": "Ми знаємо це правило.", "trap": "Connaître + абстрактний об'єкт." }
 ]
