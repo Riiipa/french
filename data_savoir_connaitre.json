@@ -1,0 +1,90 @@
+[
+  {
+    "category": "Savoir + Інфінітив (Вміти)",
+    "infFr": "Savoir",
+    "infUk": "Знати як / Вміти",
+    "present": [
+      { "p": "Je", "v": "sais", "s": "nager.", "u": "Я вмію плавати.", "trap": "Savoir + дієслово в інфінітиві. Означає 'вміти щось робити'. Connaître ніколи не стоїть перед інфінітивом." },
+      { "p": "Tu", "v": "sais", "s": "parler français ?", "u": "Ти вмієш розмовляти французькою?", "trap": "Savoir + інфінітив (parler). Означає навичку." },
+      { "p": "Il ne", "v": "sait", "s": "pas conduire.", "u": "Він не вміє водити машину.", "trap": "Savoir + інфінітив (conduire)." },
+      { "p": "Nous", "v": "savons", "s": "cuisiner.", "u": "Ми вміємо готувати.", "trap": "Savoir + інфінітив (cuisiner)." },
+      { "p": "Vous", "v": "savez", "s": "jouer du piano ?", "u": "Ви вмієте грати на піаніно?", "trap": "Savoir + інфінітив (jouer)." }
+    ],
+    "passe": [
+      { "p": "J'ai", "v": "su", "s": "réparer la voiture.", "u": "Я зміг (зумів) полагодити машину.", "trap": "У минулому часі Savoir + інфінітив означає 'зумів щось зробити'." }
+    ],
+    "futur": [
+      { "p": "Elle", "v": "saura", "s": "trouver la solution.", "u": "Вона зможе (знатиме як) знайти рішення.", "trap": "Savoir + інфінітив." }
+    ]
+  },
+  {
+    "category": "Savoir + Que (Знати, що...)",
+    "infFr": "Savoir",
+    "infUk": "Знати факт",
+    "present": [
+      { "p": "Je", "v": "sais", "s": "que tu es fatigué.", "u": "Я знаю, що ти втомлений.", "trap": "Savoir завжди використовується перед сполучником 'que' (що). Connaître тут неможливе." },
+      { "p": "Elle", "v": "sait", "s": "qu'il ment.", "u": "Вона знає, що він бреше.", "trap": "Savoir + que (qu'). Виражає знання факту." },
+      { "p": "Nous", "v": "savons", "s": "que c'est difficile.", "u": "Ми знаємо, що це складно.", "trap": "Savoir + que." },
+      { "p": "Ils", "v": "savent", "s": "que la réunion est annulée.", "u": "Вони знають, що зустріч скасовано.", "trap": "Savoir + que." }
+    ],
+    "passe": [
+      { "p": "J'ai", "v": "su", "s": "que tu étais malade.", "u": "Я дізнався, що ти був хворий.", "trap": "У Passé Composé 'Savoir' часто перекладається як 'дізнатися'." }
+    ],
+    "futur": [
+      { "p": "Il", "v": "saura", "s": "que nous sommes partis.", "u": "Він дізнається, що ми поїхали.", "trap": "Savoir + que." }
+    ]
+  },
+  {
+    "category": "Savoir + Питальне слово",
+    "infFr": "Savoir",
+    "infUk": "Знати де, коли, чому...",
+    "present": [
+      { "p": "Tu", "v": "sais", "s": "où il habite ?", "u": "Ти знаєш, де він живе?", "trap": "Savoir + питальне слово (où). Connaître ніколи не ставиться перед питаннями." },
+      { "p": "Je ne", "v": "sais", "s": "pas comment faire.", "u": "Я не знаю, як це зробити.", "trap": "Savoir + питальне слово (comment)." },
+      { "p": "Vous", "v": "savez", "s": "pourquoi elle pleure ?", "u": "Ви знаєте, чому вона плаче?", "trap": "Savoir + питальне слово (pourquoi)." },
+      { "p": "Il", "v": "sait", "s": "quand le train arrive.", "u": "Він знає, коли прибуває потяг.", "trap": "Savoir + питальне слово (quand)." }
+    ],
+    "passe": [
+      { "p": "Nous n'avons pas", "v": "su", "s": "quoi répondre.", "u": "Ми не знали (не знайшлися), що відповісти.", "trap": "Savoir + питальне слово (quoi)." }
+    ],
+    "futur": [
+      { "p": "Je", "v": "saurai", "s": "comment te remercier.", "u": "Я знатиму, як тобі подякувати.", "trap": "Savoir + comment." }
+    ]
+  },
+  {
+    "category": "Connaître + Людина або Місце",
+    "infFr": "Connaître",
+    "infUk": "Бути знайомим (особисто)",
+    "present": [
+      { "p": "Je", "v": "connais", "s": "bien Paris.", "u": "Я добре знаю Париж.", "trap": "Connaître + іменник (місце). Означає 'бути знайомим з чимось особисто'." },
+      { "p": "Tu", "v": "connais", "s": "mon frère ?", "u": "Ти знаєш мого брата?", "trap": "Connaître + людина. Ми знайомі з людьми, тому тільки 'connaître'." },
+      { "p": "Il ne", "v": "connaît", "s": "personne ici.", "u": "Він тут нікого не знає.", "trap": "Connaître + personne (людина)." },
+      { "p": "Nous", "v": "connaissons", "s": "ce restaurant.", "u": "Ми знаємо цей ресторан.", "trap": "Connaître + заклад/місце." },
+      { "p": "Vous", "v": "connaissez", "s": "le directeur ?", "u": "Ви знаєте директора?", "trap": "Connaître + людина." }
+    ],
+    "passe": [
+      { "p": "J'ai", "v": "connu", "s": "Marie à l'université.", "u": "Я познайомився з Марі в університеті.", "trap": "У Passé Composé 'Connaître' означає 'познайомитися'." },
+      { "p": "Ils ont", "v": "connu", "s": "cette ville.", "u": "Вони знали це місто (були знайомі з ним).", "trap": "Connaître + місце." }
+    ],
+    "futur": [
+      { "p": "Tu", "v": "connaîtras", "s": "mes parents demain.", "u": "Ти познайомишся з моїми батьками завтра.", "trap": "Connaître + люди." }
+    ]
+  },
+  {
+    "category": "Connaître + Предмет / Абстракція",
+    "infFr": "Connaître",
+    "infUk": "Бути обізнаним",
+    "present": [
+      { "p": "Je", "v": "connais", "s": "cette chanson.", "u": "Я знаю цю пісню.", "trap": "Connaître + прямий додаток (пісня). Означає 'ця пісня мені знайома'." },
+      { "p": "Elle", "v": "connaît", "s": "la vérité.", "u": "Вона знає правду.", "trap": "Connaître + іменник. Якщо після слова 'знати' йде одразу іменник без прийменників, частіше вживається 'connaître'." },
+      { "p": "Tu", "v": "connais", "s": "son adresse ?", "u": "Ти знаєш його адресу?", "trap": "Connaître + іменник (адреса). Якби було питання 'де він живе' (où), було б 'savoir'." },
+      { "p": "Nous", "v": "connaissons", "s": "la réponse.", "u": "Ми знаємо відповідь.", "trap": "Connaître + іменник (відповідь)." }
+    ],
+    "passe": [
+      { "p": "Elle n'a jamais", "v": "connu", "s": "la pauvreté.", "u": "Вона ніколи не знала бідності.", "trap": "Connaître + абстрактне поняття." }
+    ],
+    "futur": [
+      { "p": "Vous", "v": "connaîtrez", "s": "le succès.", "u": "Ви пізнаєте успіх.", "trap": "Connaître + абстрактне поняття." }
+    ]
+  }
+]
