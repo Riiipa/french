@@ -13,7 +13,7 @@
             100% { transform: scale(1); opacity: 1; }
         }
         .verb-input {
-            width: 180px; /* Фіксований розмір, щоб не підказувати слово */
+            width: 240px; /* Строго фіксований розмір, щоб не підказувати слово */
             text-align: center;
             border-bottom: 3px solid #cbd5e1;
             background: transparent;
@@ -150,7 +150,7 @@
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <!-- ПОЛЕ БЕЗ ПІДКАЗОК. Статична ширина. -->
+                <!-- ПОЛЕ БЕЗ ПІДКАЗОК. Строго фіксована ширина! -->
                 <input type="text" id="userInput" class="verb-input text-blue-700 font-bold border-slate-300" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="">
                 <span id="suffixDisplay"></span>
             </div>
@@ -169,8 +169,8 @@
         <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
-        <!-- Кнопка правила тепер завжди видима -->
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-blue-500 hover:text-blue-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
+        <!-- Кнопка правила тепер завжди видима і правило з'являється автоматично -->
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-blue-500 hover:text-blue-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg hidden">
             Показати правило
         </button>
         <div id="ruleBox" class="hidden mt-3 p-4 bg-blue-50 rounded-2xl border-l-4 border-blue-400 text-left text-sm text-blue-900 w-full shadow-inner leading-relaxed"></div>
@@ -372,18 +372,16 @@
             const input = document.getElementById('userInput');
             input.value = ''; 
             input.disabled = false;
-            // НЕ змінюємо ширину динамічно!
+            input.style.width = '240px'; 
             input.className = "verb-input text-blue-700 font-bold border-slate-300";
             
             document.getElementById('feedbackContainer').classList.add('hidden');
             document.getElementById('checkBtn').classList.remove('hidden');
             document.getElementById('nextBtn').classList.add('hidden');
-            document.getElementById('ruleBox').classList.add('hidden');
             
-            // Кнопка правила завжди видима
-            const ruleBtn = document.getElementById('ruleToggleBtn');
-            ruleBtn.classList.remove('hidden');
-            ruleBtn.innerText = "Показати правило";
+            // Ховаємо правило для нової картки
+            document.getElementById('ruleBox').classList.add('hidden');
+            document.getElementById('ruleToggleBtn').classList.add('hidden');
 
             // Синхронний фокус без затримок (тримає клавіатуру на мобільних пристроях)
             input.focus();
@@ -393,8 +391,8 @@
             const input = document.getElementById('userInput');
             if (!input.value.trim()) return;
 
-            // Запобіжник: не рахуємо за помилку i замість î. Ігноруємо регістр, пробіли, апострофи.
-            const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").replace(/[îï]/g, "i").replace(/\s+/g, ' ').trim();
+            // Жодної поблажки для "î". Користувач мусить ввести точне слово.
+            const normalize = (str) => str.toLowerCase().replace(/[’`]/g, "'").replace(/\s+/g, ' ').trim();
             
             const userVerb = normalize(input.value);
             const correctVerb = normalize(currentCard.verb);
@@ -451,13 +449,26 @@
                 playCurrentAudio();
             }
 
+            // Автоматичне відображення правила після кожної відповіді
+            const ruleBox = document.getElementById('ruleBox');
+            const ruleBtn = document.getElementById('ruleToggleBtn');
+            currentCard.ruleShown = true; // Зараховується як підказка, якщо побачив і помилився
+            
+            ruleBox.innerHTML = `
+                <div class="mb-3 pb-2 border-b border-blue-200">
+                    <strong class="uppercase text-[10px] tracking-widest text-blue-600 block mb-1">Пояснення:</strong>
+                </div>
+                <p class="font-medium text-slate-800">${currentCard.ruleTrap}</p>`;
+            ruleBox.classList.remove('hidden');
+            ruleBtn.classList.remove('hidden');
+            ruleBtn.innerText = "Сховати правило";
+
             updateUIStats(); 
             document.getElementById('checkBtn').classList.add('hidden');
             const nextBtn = document.getElementById('nextBtn');
             nextBtn.classList.remove('hidden');
             
-            // Фокус на кнопці Далі, але на мобільному це не закриє клавіатуру, якщо натиснути Enter
-            nextBtn.focus();
+            // На мобільних пристроях ми не ставимо фокус на nextBtn, щоб клавіатура не закривалася
         }
 
         // Фокус одразу після натискання на "Далі"
@@ -491,7 +502,7 @@
                     <div class="mb-3 pb-2 border-b border-blue-200">
                         <strong class="uppercase text-[10px] tracking-widest text-blue-600 block mb-1">Пояснення:</strong>
                     </div>
-                    <p>${currentCard.ruleTrap}</p>`;
+                    <p class="font-medium text-slate-800">${currentCard.ruleTrap}</p>`;
                 
                 ruleBox.innerHTML = html;
                 ruleBox.classList.remove('hidden');
