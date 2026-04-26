@@ -100,42 +100,6 @@
                 <p class="text-slate-400 text-sm font-medium mt-auto relative z-10">Жодної української. Тільки аудіо-запитання та таймер. Навчись думати і реагувати миттєво, без перекладу в голові.</p>
             </a>
         </div>
-
-        <!-- Кнопка Синхронізації -->
-        <button onclick="openSyncModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-6 rounded-2xl transition-all active:scale-95 text-sm flex items-center justify-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-            </svg>
-            Синхронізація прогресу
-        </button>
-    </div>
-
-    <!-- Модальне вікно Синхронізації -->
-    <div id="syncModalOverlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <div id="syncModal" class="bg-white p-6 sm:p-8 rounded-3xl shadow-2xl max-w-md w-full border border-slate-200 flex flex-col text-center transform scale-95 opacity-0 transition-all duration-300">
-            
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-black text-slate-800">Синхронізація</h2>
-                <button onclick="closeSyncModal()" class="text-slate-400 hover:text-slate-700 transition-colors p-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            
-            <p class="text-slate-500 mb-6 text-sm">Скопіюйте стиснений код, щоб перенести свій прогрес на інший пристрій.</p>
-
-            <textarea id="syncDataArea" class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-slate-700 text-xs font-mono h-24 mb-4 focus:outline-none focus:border-indigo-400 resize-none break-all" placeholder="Натисніть «Експорт», щоб згенерувати код, або вставте сюди код для імпорту..."></textarea>
-
-            <div id="syncMessage" class="text-sm font-bold h-5 mb-4 text-green-500 hidden"></div>
-
-            <div class="grid grid-cols-2 gap-3">
-                <button onclick="exportProgress()" class="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-bold py-3 px-4 rounded-xl transition-all active:scale-95 text-sm flex items-center justify-center gap-2">
-                    Експорт
-                </button>
-                <button onclick="importProgress()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-4 rounded-xl transition-all active:scale-95 text-sm flex items-center justify-center gap-2">
-                    Імпорт
-                </button>
-            </div>
-        </div>
     </div>
 
     <script>
