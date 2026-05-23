@@ -74,7 +74,7 @@
         </div>
 
         <!-- БЛОК: Інформація про вибрані дієслова -->
-        <div class="w-full mb-8 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
+        <div class="w-full mb-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex justify-between items-center">
             <div class="text-left">
                 <h3 class="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest">Дієслова</h3>
                 <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Вибрано: <span id="selectedVerbsCount" class="text-teal-600 font-black">0/0</span></p>
@@ -82,6 +82,15 @@
             <button onclick="openVerbSelection()" class="bg-white border-2 border-teal-100 hover:border-teal-400 text-teal-600 font-bold py-2 px-4 sm:px-5 rounded-xl transition-all shadow-sm active:scale-95 text-sm sm:text-base">
                 Змінити
             </button>
+        </div>
+
+        <!-- ТУМБЛЕР ХАРДКОР (Ховати інфінітив) -->
+        <div class="flex items-center justify-center gap-3 w-full mb-8">
+            <span class="font-bold text-slate-600 text-[10px] sm:text-xs uppercase tracking-widest">Ховати інфінітив (Хардкор)</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="hideInfinitiveToggle" class="sr-only peer" onchange="saveSetup()">
+              <div class="w-9 h-5 sm:w-11 sm:h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-teal-500 shadow-inner"></div>
+            </label>
         </div>
 
         <div id="setupError" class="hidden w-full text-red-500 font-bold mb-4 pop-animation">Виберіть хоча б одне дієслово.</div>
@@ -100,7 +109,7 @@
                 <span class="font-bold text-sm sm:text-base hidden sm:inline">Назад</span>
             </button>
             <h2 class="text-lg sm:text-2xl font-black text-slate-800 uppercase tracking-widest">Вибір дієслів</h2>
-            <div class="w-6 sm:w-7"></div> <!-- Для балансу -->
+            <div class="w-6 sm:w-7"></div> 
         </div>
 
         <!-- Керування списком: Кнопки + Перемикач -->
@@ -118,7 +127,6 @@
             </div>
         </div>
 
-        <!-- Контейнер для списку (займає весь залишок висоти і скролиться) -->
         <div id="verbCategoriesContainer" class="w-full flex-1 overflow-y-auto px-1 sm:px-2 text-left mb-4 custom-scrollbar"></div>
 
         <button onclick="closeVerbSelection()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-3 sm:py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg tracking-widest uppercase shrink-0 mt-auto">
@@ -155,13 +163,16 @@
             </div>
         </div>
 
-        <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[8rem] sm:min-h-[10rem]">
+        <div class="flex flex-col items-center justify-center w-full mb-3 sm:mb-4 min-h-[10rem] sm:min-h-[12rem]">
             
-            <span id="wordDisplay" class="text-2xl sm:text-4xl font-black text-slate-800 mb-6 sm:mb-6 text-center leading-tight">???</span>
+            <div class="w-full bg-slate-800 text-white rounded-2xl p-6 mb-6 shadow-md relative">
+                <span id="infinitiveBadge" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">???</span>
+                <span id="translationDisplay" class="text-xl sm:text-2xl font-medium text-center leading-tight block text-slate-200 pt-2">???</span>
+            </div>
             
             <div class="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-3 text-xl sm:text-3xl font-semibold text-slate-700 w-full">
                 <span id="prefixDisplay"></span>
-                <input type="text" id="userInput" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <input type="text" id="userInput" class="verb-input text-teal-700 font-bold" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="займенник + дієслово">
                 <span id="suffixDisplay"></span>
             </div>
 
@@ -179,10 +190,10 @@
         <button id="nextBtn" onclick="nextTask()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all active:scale-95 text-base sm:text-lg mb-3">
             Далі
         </button>
-        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg">
+        <button id="ruleToggleBtn" onclick="toggleRule()" class="text-teal-500 hover:text-teal-700 font-medium underline transition-colors text-xs sm:text-sm py-2 px-4 rounded-lg hidden">
             Показати правило
         </button>
-        <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left text-sm text-teal-900 w-full shadow-inner"></div>
+        <div id="ruleBox" class="hidden mt-3 p-5 bg-teal-50 rounded-2xl border border-teal-100 text-left w-full shadow-inner"></div>
     </div>
 
     <!-- ЕКРАН 3: СТАТИСТИКА -->
@@ -204,7 +215,6 @@
         </div>
         <p class="text-teal-700 font-bold mb-4">Точність: <span id="accuracyText">0%</span></p>
 
-        <!-- Блок для списку помилок -->
         <div id="mistakesListContainer" class="hidden w-full mb-6 text-left border-t border-slate-200 pt-4">
             <h3 class="text-sm font-black text-slate-700 uppercase mb-3 text-center">Помилки в раунді:</h3>
             <div id="mistakesList" class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"></div>
@@ -216,36 +226,186 @@
 
     <script>
         const tenseExplanations = {
-            "present": "Présent: Додається зворотний займенник (me, te, se, nous, vous, se), який узгоджується з підметом. Увага на елізію (m', t', s') перед голосними.",
-            "passe": "Passé Composé: ВСІ зворотні дієслова відмінюються з допоміжним ÊTRE. Але стережись пасток: якщо після дієслова є прямий додаток (COD) або займенник непрямий (COI), узгодження ЗНИКАЄ!",
-            "futur": "Futur Simple: Зворотний займенник залишається безпосередньо перед дієсловом (je me lèverai). Базові правила утворення зберігаються."
+            "present": "Présent: Додається зворотний займенник (me, te, se, nous, vous, se), який узгоджується з підметом.",
+            "passe": "Passé Composé: ВСІ зворотні дієслова відмінюються з допоміжним ÊTRE.",
+            "futur": "Futur Simple: Зворотний займенник залишається безпосередньо перед дієсловом (je me lèverai)."
         };
 
+        const S = '<span class="text-red-500 font-black">S</span>';
+        const T = '<span class="text-red-500 font-black">T</span>';
+        const D = '<span class="text-red-500 font-black">D</span>';
+        const X = '<span class="text-red-500 font-black">X</span>';
+        const Z = '<span class="text-red-500 font-black">Z</span>';
+        const ENT = '<span class="text-red-500 font-black">ENT</span>';
+        const ST = '<span class="text-red-500 font-black">ST</span>';
+
+        function etrePron(pp, apostrophe = false) {
+            const e = '<span class="text-indigo-600 font-black">e</span>';
+            const s = '<span class="text-indigo-600 font-black">s</span>';
+            const es = '<span class="text-indigo-600 font-black">es</span>';
+            const opt_e = '<span class="text-indigo-600 font-bold">(e)</span>';
+            const opt_es = '<span class="text-indigo-600 font-bold">(e)s</span>';
+            const opt_es_vous = '<span class="text-indigo-600 font-bold">(e)(s)</span>';
+
+            let me = apostrophe ? "je me sui" : "je me sui";
+            let te = apostrophe ? "tu t'e" : "tu t'e";
+            let se_il = apostrophe ? "il s'e" : "il s'e";
+            let se_elle = apostrophe ? "elle s'e" : "elle s'e";
+            let se_ils = apostrophe ? "ils se son" : "ils se son";
+            let se_elles = apostrophe ? "elles se son" : "elles se son";
+
+            return `<div class="bg-indigo-50 border border-indigo-200 p-2 rounded mb-3 text-[10px] text-indigo-800 font-black uppercase tracking-widest leading-tight">Зворотне дієслово (з Être): Узгоджуємо!</div>` +
+                   `${me}${S} <b>${pp}</b>${opt_e}<br>` +
+                   `${te}${S} <b>${pp}</b>${opt_e}<br>` +
+                   `${se_il}${ST} <b>${pp}</b> <span class="text-slate-300">|</span> ${se_elle}${ST} <b>${pp}</b>${e}<br>` +
+                   `nous nous somme${S} <b>${pp}</b>${opt_es}<br>` +
+                   `vous vous ête${S} <b>${pp}</b>${opt_es_vous}<br>` +
+                   `${se_ils}${T} <b>${pp}</b>${s} <span class="text-slate-300">|</span> ${se_elles}${T} <b>${pp}</b>${es}`;
+        }
+
+        function etrePronNoAgr(pp, reasonText, apostrophe = false) {
+            let me = apostrophe ? "je me sui" : "je me sui";
+            let te = apostrophe ? "tu t'e" : "tu t'e";
+            let se_il = apostrophe ? "il s'e" : "il s'e";
+            let se_elle = apostrophe ? "elle s'e" : "elle s'e";
+            let se_ils = apostrophe ? "ils se son" : "ils se son";
+            let se_elles = apostrophe ? "elles se son" : "elles se son";
+
+            return `<div class="bg-red-50 border border-red-200 p-2 rounded mb-3 text-[10px] text-red-800 font-black uppercase tracking-widest leading-tight">ПАСТКА: ${reasonText}</div>` +
+                   `${me}${S} <b>${pp}</b><br>` +
+                   `${te}${S} <b>${pp}</b><br>` +
+                   `${se_il}${ST} <b>${pp}</b> <span class="text-slate-300">|</span> ${se_elle}${ST} <b>${pp}</b><br>` +
+                   `nous nous somme${S} <b>${pp}</b><br>` +
+                   `vous vous ête${S} <b>${pp}</b><br>` +
+                   `${se_ils}${T} <b>${pp}</b> <span class="text-slate-300">|</span> ${se_elles}${T} <b>${pp}</b>`;
+        }
+
         const verbRules = {
-            "Se réveiller": "1-ша група. У Passé Composé відмінюється з Être. Узгодження дієприкметника з підметом обов'язкове (elle s'est réveillée).",
-            "Se doucher": "1-ша група. У Passé Composé відмінюється з Être. Узгоджується з підметом (ils se sont douchés).",
-            "Se laver (les mains)": "ПАСТКА! Зазвичай узгоджується (elle s'est lavée). АЛЕ якщо після дієслова йде прямий додаток (les mains, le visage), узгодження ЗНИКАЄ: elle s'est lavé les mains.",
-            "S'habiller": "1-ша група. Починається з німого 'h', тому обов'язкова елізія (m'habille, t'habilles, s'habille).",
-            "Se coucher": "1-ша група. Базове зворотне дієслово. У Passé Composé завжди узгоджується з підметом (elles se sont couchées).",
-            "S'appeler": "1-ша група, зміна кореня. Подвоєння приголосної 'l' (je m'appelle), АЛЕ одне 'l' для nous/vous (nous nous appelons).",
-            "S'ennuyer": "1-ша група, зміна кореня. 'y' змінюється на 'i' перед німим 'e' (je m'ennuie), АЛЕ залишається для nous/vous (nous nous ennuyons).",
-            "Se promener": "1-ша група, зміна кореня. Поява аксанта (è) перед німим складом (je me promène), АЛЕ зникає для nous/vous (nous nous promenons).",
-            "Se demander": "ПАСТКА B1! Займенник 'se' тут непрямий додаток (COI - запитувати КОМУ? собі). Тому в Passé Composé ЖОДНОГО УЗГОДЖЕННЯ (elles se sont demandé).",
-            "Se rencontrer": "Взаємне дієслово (réciproque). Вживається переважно в множині. Узгодження в Passé Composé обов'язкове (ils se sont rencontrés).",
-            "Se téléphoner": "АБСОЛЮТНА ПАСТКА! Дієслово керується прийменником 'à' (téléphoner À quelqu'un). Тому 'se' — це COI. В Passé Composé НІКОЛИ не узгоджується (elles se sont téléphoné).",
-            "S'agrandir": "2-га група (-iss- у множині). Вживається переважно для неживих об'єктів у 3-й особі. Узгоджується з підметом (la ville s'est agrandie).",
-            "Se remplir": "2-га група (-iss- у множині). Використовується в 3-й особі. Узгоджується з підметом (les verres se sont remplis).",
-            "Se souvenir": "3-тя група. Відмінюється як venir (je me souviens, nous nous souvenons). У Passé Composé узгоджується з підметом (elle s'est souvenue).",
-            "S'asseoir": "3-тя група. Абсолютно неправильне дієслово. Має дві форми відмінювання, тут використовується форма з 'oi' (je m'assois, nous nous asseyons).",
-            "Se rendre compte": "СУПЕР-ПАСТКА B1! Слово 'compte' діє як прямий додаток (COD), який стоїть після дієслова. Тому дієприкметник 'rendu' НІКОЛИ не узгоджується (elle s'est rendu compte)."
+            "Se réveiller": {
+                present: `je me réveillE<br>tu te réveillE${S}<br>il se réveillE<br>nous nous réveillON${S}<br>vous vous réveillE${Z}<br>ils se réveill${ENT}`,
+                passe: etrePron("réveillé", false),
+                futur: `je me réveillerAI<br>tu te réveillerA${S}...`
+            },
+            "Se doucher": {
+                present: `je me douchE<br>tu te douchE${S}<br>il se douchE<br>nous nous douchON${S}<br>vous vous douchE${Z}<br>ils se douch${ENT}`,
+                passe: etrePron("douché", false),
+                futur: `je me doucherAI<br>tu te doucherA${S}...`
+            },
+            "Se laver (les mains)": {
+                present: `je me lavE<br>tu te lavE${S}<br>il se lavE<br>nous nous lavON${S}<br>vous vous lavE${Z}<br>ils se lav${ENT}`,
+                passe: etrePronNoAgr("lavé", "Прямий додаток (les mains) стоїть після дієслова! Узгодження ЗНИКАЄ.", false),
+                futur: `je me laverAI<br>tu te laverA${S}...`
+            },
+            "S'habiller": {
+                present: `je m'habillE<br>tu t'habillE${S}<br>il s'habillE<br>nous nous habillON${S}<br>vous vous habillE${Z}<br>ils s'habill${ENT}`,
+                passe: etrePron("habillé", true),
+                futur: `je m'habillerAI<br>tu t'habillerA${S}...`
+            },
+            "Se coucher": {
+                present: `je me couchE<br>tu te couchE${S}<br>il se couchE<br>nous nous couchON${S}<br>vous vous couchE${Z}<br>ils se couch${ENT}`,
+                passe: etrePron("couché", false),
+                futur: `je me coucherAI<br>tu te coucherA${S}...`
+            },
+            "S'appeler": {
+                present: `je m'appellE<br>tu t'appellE${S}<br>il s'appellE<br>nous nous appelON${S} (одне L)<br>vous vous appelE${Z} (одне L)<br>ils s'appell${ENT}`,
+                passe: etrePron("appelé", true),
+                futur: `je m'appellerAI<br>tu t'appellerA${S}...`
+            },
+            "S'ennuyer": {
+                present: `je m'ennuiE<br>tu t'ennuiE${S}<br>il s'ennuiE<br>nous nous ennuyON${S} (Y)<br>vous vous ennuyE${Z} (Y)<br>ils s'ennui${ENT}`,
+                passe: etrePron("ennuyé", true),
+                futur: `je m'ennuierAI<br>tu t'ennuierA${S}...`
+            },
+            "Se promener": {
+                present: `je me promènE<br>tu te promènE${S}<br>il se promènE<br>nous nous promenON${S} (без аксанта)<br>vous vous promenE${Z} (без аксанта)<br>ils se promèn${ENT}`,
+                passe: etrePron("promené", false),
+                futur: `je me promènerAI<br>tu te promènerA${S}...`
+            },
+            "Se demander": {
+                present: `je me demandE<br>tu te demandE${S}<br>il se demandE<br>nous nous demandON${S}<br>vous vous demandE${Z}<br>ils se demand${ENT}`,
+                passe: etrePronNoAgr("demandé", "Займенник 'se' тут непрямий (запитувати КОМУ? собі). Узгодження ЗНИКАЄ!", false),
+                futur: `je me demanderAI<br>tu te demanderA${S}...`
+            },
+            "Se rencontrer": {
+                present: `(Тільки множина)<br><br>nous nous rencontrON${S}<br>vous vous rencontrE${Z}<br>ils se rencontr${ENT}`,
+                passe: etrePron("rencontré", false),
+                futur: `nous nous rencontrerON${S}<br>vous vous rencontrerE${Z}...`
+            },
+            "Se téléphoner": {
+                present: `(Тільки множина)<br><br>nous nous téléphonON${S}<br>vous vous téléphonE${Z}<br>ils se téléphon${ENT}`,
+                passe: etrePronNoAgr("téléphoné", "Téléphoner À quelqu'un. Займенник 'se' - це COI. Узгодження ЗНИКАЄ!", false),
+                futur: `nous nous téléphonerON${S}<br>vous vous téléphonerE${Z}...`
+            },
+            "S'agrandir": {
+                present: `(Тільки 3-тя особа)<br><br>il s'agrandi${T}<br>ils s'agrandiss${ENT}`,
+                passe: etrePron("agrandi", true),
+                futur: `il s'agrandirA<br>ils s'agrandirON${T}`
+            },
+            "Se remplir": {
+                present: `(Тільки 3-тя особа)<br><br>il se rempli${T}<br>ils se rempliss${ENT}`,
+                passe: etrePron("rempli", false),
+                futur: `il se remplirA<br>ils se remplirON${T}`
+            },
+            "Se rendre compte": {
+                present: `je me renD${S}<br>tu te renD${S}<br>il se ren${D}<br>nous nous rendON${S}<br>vous vous rendE${Z}<br>ils se rend${ENT}<br>+ compte`,
+                passe: etrePronNoAgr("rendu compte", "Слово 'compte' є прямим додатком (COD) після дієслова. Узгодження ЗНИКАЄ!", false),
+                futur: `je me rendrAI compte...`
+            },
+
+            "Se sentir": {
+                present: `Se sentIR<br><br>je me sen${S}<br>tu te sen${S}<br>il se sen${T}<br>nous nous sentON${S}<br>vous vous sentE${Z}<br>ils se senT${ENT}`,
+                passe: etrePron("senti", false),
+                futur: `je me sentirAI<br>tu te sentirA${S}...`
+            },
+            "S'endormir": {
+                present: `S'endormIR<br><br>je m'endor${S}<br>tu t'endor${S}<br>il s'endor${T}<br>nous nous endormON${S}<br>vous vous endormE${Z}<br>ils s'endorM${ENT}`,
+                passe: etrePron("endormi", true),
+                futur: `je m'endormirAI<br>tu t'endormirA${S}...`
+            },
+            "Se souvenir": {
+                present: `Se souvenIR<br><br>je me souvien${S}<br>tu te souvien${S}<br>il se souvien${T}<br>nous nous souvenON${S}<br>vous vous souvenE${Z}<br>ils se souvieNN${ENT}`,
+                passe: etrePron("souvenu", false),
+                futur: `je me souviendrAI<br>tu te souviendrA${S}...`
+            },
+            "Se mettre": {
+                present: `Se mettRE<br><br>je me meT${S}<br>tu te meT${S}<br>il se me${T}<br>nous nous mettON${S}<br>vous vous mettE${Z}<br>ils se meTT${ENT}`,
+                passe: etrePron("mis", false),
+                futur: `je me mettrAI<br>tu te mettrA${S}...`
+            },
+            "Se distraire": {
+                present: `Se distraiRE<br><br>je me distrai${S}<br>tu te distrai${S}<br>il se distrai${T}<br>nous nous distrayON${S}<br>vous vous distrayE${Z}<br>ils se distrai${ENT}`,
+                passe: etrePron("distrait", false),
+                futur: `je me distrairAI<br>tu te distrairA${S}...`
+            },
+            "S'asseoir": {
+                present: `S'asseoIR<br><br>je m'assoi${S}<br>tu t'assoi${S}<br>il s'assoi${T}<br>nous nous assoYON${S}<br>vous vous assoYE${Z}<br>ils s'assoi${ENT}`,
+                passe: etrePron("assis", true),
+                futur: `je m'assoirAI<br>tu t'assoirA${S}...`
+            },
+            "Se taire": {
+                present: `Se taiRE<br><br>je me tai${S}<br>tu te tai${S}<br>il se tai${T}<br>nous nous taiSON${S}<br>vous vous taiSE${Z}<br>ils se taiS${ENT}`,
+                passe: etrePron("tu", false),
+                futur: `je me tairAI<br>tu te tairA${S}...`
+            },
+            "S'enfuir": {
+                present: `S'enfuiR<br><br>je m'enfui${S}<br>tu t'enfui${S}<br>il s'enfui${T}<br>nous nous enfuYON${S}<br>vous vous enfuYE${Z}<br>ils s'enfui${ENT}`,
+                passe: etrePron("enfui", true),
+                futur: `je m'enfuirAI<br>tu t'enfuirA${S}...`
+            }
         };
 
         let rawData = [];
 
         function getSavedSetup() {
             const saved = localStorage.getItem('frenchVerbsSetupPronominal'); 
-            if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
-            return { verbs: null, tenses: ['present', 'passe', 'futur'], skipLearned: true };
+            if (saved) { 
+                try { 
+                    const data = JSON.parse(saved); 
+                    if(data.hideInfinitive === undefined) data.hideInfinitive = false;
+                    return data;
+                } catch (e) { return null; } 
+            }
+            return { verbs: null, tenses: ['present', 'passe', 'futur'], skipLearned: true, hideInfinitive: false };
         }
 
         function saveSetup() {
@@ -254,8 +414,9 @@
             const tenseCb = document.querySelectorAll('.tense-checkbox');
             const tenses = Array.from(tenseCb).filter(cb => cb.checked).map(cb => cb.value);
             const skipLearned = document.getElementById('skipLearnedToggle').checked;
+            const hideInfinitive = document.getElementById('hideInfinitiveToggle').checked;
             
-            localStorage.setItem('frenchVerbsSetupPronominal', JSON.stringify({ verbs, tenses, skipLearned }));
+            localStorage.setItem('frenchVerbsSetupPronominal', JSON.stringify({ verbs, tenses, skipLearned, hideInfinitive }));
             updateSelectedVerbsCount();
         }
 
@@ -306,6 +467,7 @@
             const savedSetup = getSavedSetup();
             document.querySelectorAll('.tense-checkbox').forEach(cb => { cb.checked = savedSetup.tenses.includes(cb.value); });
             document.getElementById('skipLearnedToggle').checked = savedSetup.skipLearned !== false;
+            document.getElementById('hideInfinitiveToggle').checked = savedSetup.hideInfinitive === true;
 
             const groupedVerbs = {};
             rawData.forEach(verb => {
@@ -391,11 +553,13 @@
         let frVoice = null;
         let sessionTargetSize = 10;
         let skipLearnedActive = true;
+        let hideInfinitiveActive = false;
 
         function initSessionFromSetup() {
             const verbCb = document.querySelectorAll('.verb-checkbox:checked');
             const tenseCb = document.querySelectorAll('.tense-checkbox:checked');
             skipLearnedActive = document.getElementById('skipLearnedToggle').checked;
+            hideInfinitiveActive = document.getElementById('hideInfinitiveToggle').checked;
             
             document.getElementById('tenseError').classList.add('hidden');
             document.getElementById('setupError').classList.add('hidden');
@@ -413,7 +577,6 @@
                 if (selectedVerbs.includes(verbObj.infFr)) {
                     selectedTenses.forEach(tenseKey => {
                         if (verbObj[tenseKey]) {
-                            const conjugationTable = verbObj[tenseKey].map(f => (f.p.endsWith("'") ? f.p : f.p + " ") + f.v);
                             verbObj[tenseKey].forEach(form => {
                                 const cardId = `PRON_${verbObj.infFr}_${tenseKey}_${form.p}`;
                                 const memory = srsMemory[cardId] || { streak: 0 };
@@ -423,9 +586,7 @@
                                 allDatabaseCards.push({
                                     id: cardId, streak: memory.streak, infFr: verbObj.infFr, infUk: verbObj.infUk,
                                     tenseKey: tenseKey, tenseName: tenseNames[tenseKey],
-                                    prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u,
-                                    rule: tenseExplanations[tenseKey] + "<br><br>" + (verbRules[verbObj.infFr] || "Особливих правил для цього дієслова немає."),
-                                    allForms: conjugationTable
+                                    prefix: form.p, verb: form.v, suffix: form.s, ukFull: form.u
                                 });
                             });
                         }
@@ -518,7 +679,15 @@
             updateUIStats();
             updateDotsUI(currentCard.streak || 0);
 
-            document.getElementById('wordDisplay').innerText = currentCard.ukFull;
+            const infinitiveBadge = document.getElementById('infinitiveBadge');
+            if (hideInfinitiveActive) {
+                infinitiveBadge.classList.add('hidden');
+            } else {
+                infinitiveBadge.classList.remove('hidden');
+                infinitiveBadge.innerText = currentCard.infFr;
+            }
+            document.getElementById('translationDisplay').innerText = currentCard.ukFull;
+            
             document.getElementById('prefixDisplay').innerText = currentCard.prefix.endsWith("'") ? currentCard.prefix : currentCard.prefix + " ";
             document.getElementById('suffixDisplay').innerText = " " + currentCard.suffix;
             
@@ -531,10 +700,13 @@
             document.getElementById('feedbackContainer').classList.add('hidden');
             document.getElementById('checkBtn').classList.remove('hidden');
             document.getElementById('nextBtn').classList.add('hidden');
+            
+            // Ховаємо правило для нової картки і робимо кнопку знову видимою
             document.getElementById('ruleBox').classList.add('hidden');
+            document.getElementById('ruleToggleBtn').classList.remove('hidden');
             document.getElementById('ruleToggleBtn').innerText = "Показати правило";
 
-            input.focus();
+            setTimeout(() => { input.focus(); }, 50);
         }
 
         function checkAnswer() {
@@ -609,10 +781,37 @@
                 playCurrentAudio();
             }
 
+            // АВТОМАТИЧНЕ ВІДОБРАЖЕННЯ ПРАВИЛА ПІСЛЯ КОЖНОЇ ВІДПОВІДІ
+            const ruleBox = document.getElementById('ruleBox');
+            const ruleBtn = document.getElementById('ruleToggleBtn');
+            currentCard.ruleShown = true; 
+            
+            const tense = currentCard.tenseKey; 
+            let ruleText = "Правила для цього дієслова ще не додані.";
+            const infKey = Object.keys(verbRules).find(k => k.toLowerCase() === currentCard.infFr.toLowerCase());
+            if (infKey && verbRules[infKey] && verbRules[infKey][tense]) {
+                ruleText = verbRules[infKey][tense];
+            } else {
+                ruleText = tenseExplanations[tense] || "Заглушка: правила відсутні.";
+            }
+            
+            let html = `
+                <div class="mb-4 pb-3 border-b border-teal-200">
+                    <p class="font-black text-teal-800 text-lg mb-1">${currentCard.infFr} <span class="text-teal-600 font-medium text-sm">— ${currentCard.infUk}</span></p>
+                    <p class="font-bold text-xs text-teal-600 uppercase tracking-wider">${currentCard.tenseName}</p>
+                </div>
+                <div class="font-mono text-sm leading-relaxed text-slate-800 tracking-wide">${ruleText}</div>`;
+            
+            ruleBox.innerHTML = html;
+            ruleBox.classList.remove('hidden');
+            ruleBtn.innerText = "Сховати правило";
+
             updateUIStats(); 
             document.getElementById('checkBtn').classList.add('hidden');
             const nextBtn = document.getElementById('nextBtn');
             nextBtn.classList.remove('hidden');
+            
+            // На мобільному не ставимо фокус, щоб клавіатура не закрилась
             nextBtn.focus();
         }
 
@@ -665,20 +864,22 @@
             if (ruleBox.classList.contains('hidden')) {
                 if (currentCard) currentCard.ruleShown = true; 
                 
-                const ruleText = currentCard ? currentCard.rule : "";
+                const tense = currentCard.tenseKey; 
+                let ruleText = "Правила для цього дієслова ще не додані.";
+                const infKey = Object.keys(verbRules).find(k => k.toLowerCase() === currentCard.infFr.toLowerCase());
+                if (infKey && verbRules[infKey] && verbRules[infKey][tense]) {
+                    ruleText = verbRules[infKey][tense];
+                } else {
+                    ruleText = tenseExplanations[tense] || "Заглушка: правила відсутні.";
+                }
                 
                 let html = `
                     <div class="mb-4 pb-3 border-b border-teal-200">
                         <p class="font-black text-teal-800 text-lg mb-1">${currentCard.infFr} <span class="text-teal-600 font-medium text-sm">— ${currentCard.infUk}</span></p>
                         <p class="font-bold text-xs text-teal-600 uppercase tracking-wider">${currentCard.tenseName}</p>
                     </div>
-                    <p class="font-medium leading-relaxed">${ruleText}</p>`;
-                    
-                if (currentCard && currentCard.allForms) {
-                    html += `<div class="mt-4 grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-3 sm:gap-y-2 text-slate-700 bg-white p-3 rounded-xl border border-teal-100 shadow-sm font-medium">
-                                ${currentCard.allForms.map(f => `<div>${f}</div>`).join('')}
-                            </div>`;
-                }
+                    <div class="font-mono text-sm leading-relaxed text-slate-800 tracking-wide">${ruleText}</div>`;
+                
                 ruleBox.innerHTML = html;
                 ruleBox.classList.remove('hidden');
                 ruleBtn.innerText = "Сховати правило";
@@ -701,8 +902,8 @@
             } catch (error) {
                 console.error("Критична помилка завантаження:", error);
                 document.getElementById('setupScreen').innerHTML = `
-                    <h2 class="text-2xl sm:text-3xl font-black text-red-500 mb-4">Помилка архітектури!</h2>
-                    <p class="text-slate-600 font-medium">Не можу знайти файл <b>data_pronominal.json</b>.</p>`;
+                    <h2 class=\"text-2xl sm:text-3xl font-black text-red-500 mb-4\">Помилка архітектури!</h2>
+                    <p class=\"text-slate-600 font-medium\">Не можу знайти файл <b>data_pronominal.json</b>.</p>`;
                 document.getElementById('setupScreen').classList.remove('hidden');
             }
         }
