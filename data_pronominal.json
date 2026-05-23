@@ -227,7 +227,7 @@
       { "p": "tu", "v": "te promèneras", "s": "souvent", "u": "ти будеш гуляти часто" },
       { "p": "elle", "v": "se promènera", "s": "en ville", "u": "вона буде гуляти в місті" },
       { "p": "nous", "v": "nous promènerons", "s": "le soir", "u": "ми будемо гуляти ввечері" },
-      { "p": "vous", "v": "vous promènerez", "s": "avec le chien", "u": "ви будете гуляти з собакою" },
+      { "p": "vous", "v": "vous promènerez", "s": "avec le chien", "u": "ви будемо гуляти з собакою" },
       { "p": "ils", "v": "se promèneront", "s": "sur la plage", "u": "вони будуть гуляти на пляжі" }
     ]
   },
@@ -355,30 +355,30 @@
   {
     "category": "Зворотні 3-ї групи",
     "infFr": "Se souvenir",
-    "infUk": "пам'ятати / згадувати",
+    "infUk": "згадувати / пам'ятати",
     "present": [
-      { "p": "je", "v": "me souviens", "s": "de toi", "u": "я пам'ятаю тебе" },
-      { "p": "tu", "v": "te souviens", "s": "de ce jour", "u": "ти пам'ятаєш цей день" },
-      { "p": "elle", "v": "se souvient", "s": "de tout", "u": "вона пам'ятає все" },
-      { "p": "nous", "v": "nous souvenons", "s": "de notre enfance", "u": "ми пам'ятаємо наше дитинство" },
-      { "p": "vous", "v": "vous souvenez", "s": "de lui ?", "u": "ви пам'ятаєте його?" },
-      { "p": "ils", "v": "se souviennent", "s": "des détails", "u": "вони пам'ятають деталі" }
+      { "p": "je", "v": "me souviens", "s": "de toi", "u": "я згадую тебе" },
+      { "p": "tu", "v": "te souviens", "s": "de ce jour", "u": "ти згадуєш цей день" },
+      { "p": "il", "v": "se souvient", "s": "de tout", "u": "він згадує все" },
+      { "p": "nous", "v": "nous souvenons", "s": "de notre enfance", "u": "ми згадуємо наше дитинство" },
+      { "p": "vous", "v": "vous souvenez", "s": "de lui ?", "u": "ви згадуєте його?" },
+      { "p": "ils", "v": "se souviennent", "s": "des détails", "u": "вони згадують деталі" }
     ],
     "passe": [
       { "p": "je", "v": "me suis souvenu", "s": "de toi", "u": "я (ч.р.) згадав тебе" },
       { "p": "tu", "v": "t'es souvenu", "s": "de ce jour", "u": "ти (ч.р.) згадав цей день" },
-      { "p": "elle", "v": "s'est souvenue", "s": "de tout", "u": "вона згадала все" },
+      { "p": "il", "v": "s'est souvenu", "s": "de tout", "u": "він згадав все" },
       { "p": "nous", "v": "nous sommes souvenus", "s": "de notre enfance", "u": "ми згадали наше дитинство" },
       { "p": "vous", "v": "vous êtes souvenus", "s": "de lui ?", "u": "ви згадали його?" },
-      { "p": "elles", "v": "se sont souvenues", "s": "des détails", "u": "вони (ж.р.) згадали деталі" }
+      { "p": "ils", "v": "se sont souvenus", "s": "des détails", "u": "вони згадали деталі" }
     ],
     "futur": [
-      { "p": "je", "v": "me souviendrai", "s": "de toi", "u": "я буду пам'ятати тебе" },
-      { "p": "tu", "v": "te souviendras", "s": "de ce jour", "u": "ти будеш пам'ятати цей день" },
-      { "p": "elle", "v": "se souviendra", "s": "de tout", "u": "вона буде пам'ятати все" },
-      { "p": "nous", "v": "nous souviendrons", "s": "de notre enfance", "u": "ми будемо пам'ятати наше дитинство" },
-      { "p": "vous", "v": "vous souviendrez", "s": "de lui ?", "u": "ви будете пам'ятати його?" },
-      { "p": "ils", "v": "se souviendront", "s": "des détails", "u": "вони будуть пам'ятати деталі" }
+      { "p": "je", "v": "me souviendrai", "s": "de toi", "u": "я буду згадувати тебе" },
+      { "p": "tu", "v": "te souviendras", "s": "de ce jour", "u": "ти будеш згадувати цей день" },
+      { "p": "il", "v": "se souviendra", "s": "de tout", "u": "він буде згадувати все" },
+      { "p": "nous", "v": "nous souviendrons", "s": "de notre enfance", "u": "ми будемо згадувати наше дитинство" },
+      { "p": "vous", "v": "vous souviendrez", "s": "de lui ?", "u": "ви будете згадувати його?" },
+      { "p": "ils", "v": "se souviendront", "s": "des détails", "u": "вони будуть згадувати деталі" }
     ]
   },
   {
@@ -391,15 +391,15 @@
       { "p": "il", "v": "s'assoit", "s": "à côté", "u": "він сідає поруч" },
       { "p": "nous", "v": "nous asseyons", "s": "à table", "u": "ми сідаємо за стіл" },
       { "p": "vous", "v": "vous asseyez", "s": "par terre", "u": "ви сідаєте на підлогу" },
-      { "p": "elles", "v": "s'assoient", "s": "au fond", "u": "вони сідають в кінці" }
+      { "p": "ils", "v": "s'assoient", "s": "au fond", "u": "вони сідають в кінці" }
     ],
     "passe": [
       { "p": "je", "v": "me suis assis", "s": "ici", "u": "я (ч.р.) сів тут" },
       { "p": "tu", "v": "t'es assis", "s": "sur le canapé", "u": "ти (ч.р.) сів на диван" },
-      { "p": "elle", "v": "s'est assise", "s": "à côté", "u": "вона сіла поруч" },
+      { "p": "il", "v": "s'est assis", "s": "à côté", "u": "він сів поруч" },
       { "p": "nous", "v": "nous sommes assis", "s": "à table", "u": "ми сіли за стіл" },
       { "p": "vous", "v": "vous êtes assis", "s": "par terre", "u": "ви сіли на підлогу" },
-      { "p": "elles", "v": "se sont assises", "s": "au fond", "u": "вони (ж.р.) сіли в кінці" }
+      { "p": "ils", "v": "se sont assis", "s": "au fond", "u": "вони сіли в кінці" }
     ],
     "futur": [
       { "p": "je", "v": "m'assoirai", "s": "ici", "u": "я сяду тут" },
@@ -407,7 +407,7 @@
       { "p": "il", "v": "s'assoira", "s": "à côté", "u": "він сяде поруч" },
       { "p": "nous", "v": "nous assoirons", "s": "à table", "u": "ми сядемо за стіл" },
       { "p": "vous", "v": "vous assoirez", "s": "par terre", "u": "ви сядете на підлогу" },
-      { "p": "elles", "v": "s'assoiront", "s": "au fond", "u": "вони сядуть в кінці" }
+      { "p": "ils", "v": "s'assoiront", "s": "au fond", "u": "вони сядуть в кінці" }
     ]
   },
   {
@@ -437,6 +437,180 @@
       { "p": "nous", "v": "nous rendrons compte", "s": "du problème", "u": "ми усвідомимо проблему" },
       { "p": "vous", "v": "vous rendrez compte", "s": "de la situation", "u": "ви усвідомите ситуацію" },
       { "p": "ils", "v": "se rendront compte", "s": "de tout", "u": "вони усвідомлять усе" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "Se sentir",
+    "infUk": "почуватися",
+    "present": [
+      { "p": "je", "v": "me sens", "s": "bien", "u": "я почуваюся добре" },
+      { "p": "tu", "v": "te sens", "s": "mal", "u": "ти почуваєшся погано" },
+      { "p": "il", "v": "se sent", "s": "fatigué", "u": "він почувається втомленим" },
+      { "p": "nous", "v": "nous sentons", "s": "mieux", "u": "ми почуваємося краще" },
+      { "p": "vous", "v": "vous sentez", "s": "prêts", "u": "ви почуваєтеся готовими" },
+      { "p": "ils", "v": "se sentent", "s": "faibles", "u": "вони почуваються слабкими" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis senti", "s": "bien", "u": "я (ч.р.) почувався добре" },
+      { "p": "tu", "v": "t'es senti", "s": "mal", "u": "ти (ч.р.) почувався погано" },
+      { "p": "il", "v": "s'est senti", "s": "fatigué", "u": "він почувався втомленим" },
+      { "p": "nous", "v": "nous sommes sentis", "s": "mieux", "u": "ми почувалися краще" },
+      { "p": "vous", "v": "vous êtes sentis", "s": "prêts", "u": "ви почувалися готовими" },
+      { "p": "ils", "v": "se sont sentis", "s": "faibles", "u": "вони почувалися слабкими" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me sentirai", "s": "bien", "u": "я почуватимуся добре" },
+      { "p": "tu", "v": "te sentiras", "s": "mal", "u": "ти почуватимешся погано" },
+      { "p": "il", "v": "se sentira", "s": "fatigué", "u": "він почуватиметься втомленим" },
+      { "p": "nous", "v": "nous sentirons", "s": "mieux", "u": "ми почуватимемося краще" },
+      { "p": "vous", "v": "vous sentirez", "s": "prêts", "u": "ви почуватиметеся готовими" },
+      { "p": "ils", "v": "se sentiront", "s": "faibles", "u": "вони почуватимуться слабкими" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "S'endormir",
+    "infUk": "засинати",
+    "present": [
+      { "p": "je", "v": "m'endors", "s": "vite", "u": "я засинаю швидко" },
+      { "p": "tu", "v": "t'endors", "s": "tard", "u": "ти засинаєш пізно" },
+      { "p": "il", "v": "s'endort", "s": "facilement", "u": "він засинає легко" },
+      { "p": "nous", "v": "nous endormons", "s": "en cours", "u": "ми засинаємо на уроці" },
+      { "p": "vous", "v": "vous endormez", "s": "devant la télé", "u": "ви засинаєте перед телевізором" },
+      { "p": "ils", "v": "s'endorment", "s": "tard", "u": "вони засинають пізно" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis endormi", "s": "vite", "u": "я (ч.р.) заснув швидко" },
+      { "p": "tu", "v": "t'es endormi", "s": "tard", "u": "ти (ч.р.) заснув пізно" },
+      { "p": "il", "v": "s'est endormi", "s": "facilement", "u": "він заснув легко" },
+      { "p": "nous", "v": "nous sommes endormis", "s": "en cours", "u": "ми заснули на уроці" },
+      { "p": "vous", "v": "vous êtes endormis", "s": "devant la télé", "u": "ви заснули перед телевізором" },
+      { "p": "ils", "v": "se sont endormis", "s": "tard", "u": "вони заснули пізно" }
+    ],
+    "futur": [
+      { "p": "je", "v": "m'endormirai", "s": "vite", "u": "я засну швидко" },
+      { "p": "tu", "v": "t'endormiras", "s": "tard", "u": "ти заснеш пізно" },
+      { "p": "il", "v": "s'endormira", "s": "facilement", "u": "він засне легко" },
+      { "p": "nous", "v": "nous endormirons", "s": "en cours", "u": "ми заснемо на уроці" },
+      { "p": "vous", "v": "vous endormirez", "s": "devant la télé", "u": "ви заснете перед телевізором" },
+      { "p": "ils", "v": "s'endormiront", "s": "tard", "u": "вони заснуть пізно" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "Se mettre",
+    "infUk": "починати / ставати (до чогось)",
+    "present": [
+      { "p": "je", "v": "me mets", "s": "au travail", "u": "я стаю до роботи" },
+      { "p": "tu", "v": "te mets", "s": "à rire", "u": "ти починаєш сміятися" },
+      { "p": "il", "v": "se met", "s": "en colère", "u": "він починає злитися (стає злим)" },
+      { "p": "nous", "v": "nous mettons", "s": "à table", "u": "ми сідаємо (стаємо) за стіл" },
+      { "p": "vous", "v": "vous mettez", "s": "en route", "u": "ви вирушаєте в дорогу" },
+      { "p": "ils", "v": "se mettent", "s": "à pleurer", "u": "вони починають плакати" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis mis", "s": "au travail", "u": "я (ч.р.) став до роботи" },
+      { "p": "tu", "v": "t'es mis", "s": "à rire", "u": "ти (ч.р.) почав сміятися" },
+      { "p": "il", "v": "s'est mis", "s": "en colère", "u": "він розізлився" },
+      { "p": "nous", "v": "nous sommes mis", "s": "à table", "u": "ми сіли за стіл" },
+      { "p": "vous", "v": "vous êtes mis", "s": "en route", "u": "ви вирушили в дорогу" },
+      { "p": "ils", "v": "se sont mis", "s": "à pleurer", "u": "вони почали плакати" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me mettrai", "s": "au travail", "u": "я стану до роботи" },
+      { "p": "tu", "v": "te mettras", "s": "à rire", "u": "ти почнеш сміятися" },
+      { "p": "il", "v": "se mettra", "s": "en colère", "u": "він розізлиться" },
+      { "p": "nous", "v": "nous mettrons", "s": "à table", "u": "ми сядемо за стіл" },
+      { "p": "vous", "v": "vous mettrez", "s": "en route", "u": "ви вирушите в дорогу" },
+      { "p": "ils", "v": "se mettront", "s": "à pleurer", "u": "вони почнуть плакати" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "Se distraire",
+    "infUk": "відволікатися / розважатися",
+    "present": [
+      { "p": "je", "v": "me distrais", "s": "facilement", "u": "я легко відволікаюся" },
+      { "p": "tu", "v": "te distrais", "s": "un peu", "u": "ти трохи розважаєшся" },
+      { "p": "il", "v": "se distrait", "s": "avec un livre", "u": "він розважається книгою" },
+      { "p": "nous", "v": "nous distrayons", "s": "le week-end", "u": "ми розважаємося на вихідних" },
+      { "p": "vous", "v": "vous distrayez", "s": "souvent", "u": "ви часто відволікаєтеся" },
+      { "p": "ils", "v": "se distraient", "s": "au cinéma", "u": "вони розважаються в кіно" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis distrait", "s": "facilement", "u": "я (ч.р.) легко відволікся" },
+      { "p": "tu", "v": "t'es distrait", "s": "un peu", "u": "ти (ч.р.) трохи розважився" },
+      { "p": "il", "v": "s'est distrait", "s": "avec un livre", "u": "він розважився книгою" },
+      { "p": "nous", "v": "nous sommes distraits", "s": "le week-end", "u": "ми розважилися на вихідних" },
+      { "p": "vous", "v": "vous êtes distraits", "s": "souvent", "u": "ви часто відволікалися" },
+      { "p": "ils", "v": "se sont distraits", "s": "au cinéma", "u": "вони розважилися в кіно" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me distrairai", "s": "facilement", "u": "я буду легко відволікатися" },
+      { "p": "tu", "v": "te distrairas", "s": "un peu", "u": "ти будеш трохи розважатися" },
+      { "p": "il", "v": "se distraira", "s": "avec un livre", "u": "він розважатиметься книгою" },
+      { "p": "nous", "v": "nous distrairons", "s": "le week-end", "u": "ми розважатимемося на вихідних" },
+      { "p": "vous", "v": "vous distrairez", "s": "souvent", "u": "ви будете часто відволікатися" },
+      { "p": "ils", "v": "se distrairont", "s": "au cinéma", "u": "вони розважатимуться в кіно" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "Se taire",
+    "infUk": "замовкати / мовчати",
+    "present": [
+      { "p": "je", "v": "me tais", "s": "maintenant", "u": "я мовчу зараз" },
+      { "p": "tu", "v": "te tais", "s": "enfin", "u": "ти нарешті замовкаєш" },
+      { "p": "il", "v": "se tait", "s": "souvent", "u": "він мовчить часто" },
+      { "p": "nous", "v": "nous taisons", "s": "pour écouter", "u": "ми замовкаємо, щоб послухати" },
+      { "p": "vous", "v": "vous taisez", "s": "parfois ?", "u": "ви іноді замовкаєте?" },
+      { "p": "ils", "v": "se taisent", "s": "devant elle", "u": "вони мовчать перед нею" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis tu", "s": "maintenant", "u": "я (ч.р.) замовк зараз" },
+      { "p": "tu", "v": "t'es tu", "s": "enfin", "u": "ти (ч.р.) нарешті замовк" },
+      { "p": "il", "v": "s'est tu", "s": "souvent", "u": "він часто мовчав" },
+      { "p": "nous", "v": "nous sommes tus", "s": "pour écouter", "u": "ми замовкли, щоб послухати" },
+      { "p": "vous", "v": "vous êtes tus", "s": "parfois ?", "u": "ви іноді замовкали?" },
+      { "p": "ils", "v": "se sont tus", "s": "devant elle", "u": "вони замовкли перед нею" }
+    ],
+    "futur": [
+      { "p": "je", "v": "me tairai", "s": "maintenant", "u": "я буду мовчати зараз" },
+      { "p": "tu", "v": "te tairas", "s": "enfin", "u": "ти нарешті замовкнеш" },
+      { "p": "il", "v": "se taira", "s": "souvent", "u": "він часто мовчатиме" },
+      { "p": "nous", "v": "nous tairons", "s": "pour écouter", "u": "ми замовкнемо, щоб послухати" },
+      { "p": "vous", "v": "vous tairez", "s": "parfois ?", "u": "ви іноді замовкатимете?" },
+      { "p": "ils", "v": "se tairont", "s": "devant elle", "u": "вони замовкнуть перед нею" }
+    ]
+  },
+  {
+    "category": "Зворотні 3-ї групи",
+    "infFr": "S'enfuir",
+    "infUk": "тікати",
+    "present": [
+      { "p": "je", "v": "m'enfuis", "s": "loin", "u": "я тікаю далеко" },
+      { "p": "tu", "v": "t'enfuis", "s": "en courant", "u": "ти тікаєш бігом" },
+      { "p": "il", "v": "s'enfuit", "s": "par la fenêtre", "u": "він тікає через вікно" },
+      { "p": "nous", "v": "nous enfuyons", "s": "vite", "u": "ми тікаємо швидко" },
+      { "p": "vous", "v": "vous enfuyez", "s": "ensemble", "u": "ви тікаєте разом" },
+      { "p": "ils", "v": "s'enfuient", "s": "dans la forêt", "u": "вони тікають в ліс" }
+    ],
+    "passe": [
+      { "p": "je", "v": "me suis enfui", "s": "loin", "u": "я (ч.р.) втік далеко" },
+      { "p": "tu", "v": "t'es enfui", "s": "en courant", "u": "ти (ч.р.) втік бігом" },
+      { "p": "il", "v": "s'est enfui", "s": "par la fenêtre", "u": "він втік через вікно" },
+      { "p": "nous", "v": "nous sommes enfuis", "s": "vite", "u": "ми втекли швидко" },
+      { "p": "vous", "v": "vous êtes enfuis", "s": "ensemble", "u": "ви втекли разом" },
+      { "p": "ils", "v": "se sont enfuis", "s": "dans la forêt", "u": "вони втекли в ліс" }
+    ],
+    "futur": [
+      { "p": "je", "v": "m'enfuirai", "s": "loin", "u": "я втечу далеко" },
+      { "p": "tu", "v": "t'enfuiras", "s": "en courant", "u": "ти втечеш бігом" },
+      { "p": "il", "v": "s'enfuira", "s": "par la fenêtre", "u": "він втече через вікно" },
+      { "p": "nous", "v": "nous enfuirons", "s": "vite", "u": "ми втечемо швидко" },
+      { "p": "vous", "v": "vous enfuirez", "s": "ensemble", "u": "ви втечете разом" },
+      { "p": "ils", "v": "s'enfuiront", "s": "dans la forêt", "u": "вони втечуть в ліс" }
     ]
   }
 ]
