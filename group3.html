@@ -33,6 +33,9 @@
 </head>
 <body class="bg-slate-100 min-h-[100dvh] flex flex-col items-center justify-start sm:justify-center pt-4 sm:pt-8 pb-4 text-slate-800">
 
+    <!-- СПОВІЩЕННЯ (TOAST) -->
+    <div id="toastBanner" class="hidden fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-slate-800 text-white px-5 py-3 rounded-2xl shadow-lg text-sm font-bold text-center max-w-md w-[calc(100%-2rem)] pop-animation"></div>
+
     <!-- ЕКРАН 1: НАЛАШТУВАННЯ (ЛОБІ) -->
     <div id="setupScreen" class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl text-center max-w-2xl w-[calc(100%-2rem)] mx-auto border border-slate-200 flex flex-col items-center">
         
@@ -230,13 +233,26 @@
             "futur": "Futur Simple: До інфінітива додаються закінчення -ai, -as, -a, -ons, -ez, -ont."
         };
 
+        // Червоним кольором виділяються німі літери (які НЕ читаються)
         const S = '<span class="text-red-500 font-black">S</span>';
         const T = '<span class="text-red-500 font-black">T</span>';
         const D = '<span class="text-red-500 font-black">D</span>';
+        const C = '<span class="text-red-500 font-black">C</span>';
         const X = '<span class="text-red-500 font-black">X</span>';
         const Z = '<span class="text-red-500 font-black">Z</span>';
         const ENT = '<span class="text-red-500 font-black">ENT</span>';
         const ST = '<span class="text-red-500 font-black">ST</span>';
+
+        let toastTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById('toastBanner');
+            toast.innerText = message;
+            toast.classList.remove('hidden');
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
 
         function avoir(pp) {
             return `j'ai <b>${pp}</b><br>tu a${S} <b>${pp}</b><br>il a <b>${pp}</b><br>nous avon${S} <b>${pp}</b><br>vous ave${Z} <b>${pp}</b><br>ils on${T} <b>${pp}</b>`;
@@ -364,24 +380,71 @@
             },
 
             "Attendre": {
-                present: `AttenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>j'attenD${S}<br>tu attenD${S}<br>il atten${D}<br>nous attendON${S}<br>vous attendE${Z}<br>ils attend${ENT}`,
+                present: `AttenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>j'atten${D}${S}<br>tu atten${D}${S}<br>il atten${D}<br>nous attendON${S}<br>vous attendE${Z}<br>ils attend${ENT}`,
                 passe: avoir("attendu"),
                 futur: futur("attendr", true)
             },
             "Répondre": {
-                present: `RéponDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je réponD${S}<br>tu réponD${S}<br>il répon${D}<br>nous répondON${S}<br>vous répondE${Z}<br>ils répond${ENT}`,
+                present: `RéponDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je répon${D}${S}<br>tu répon${D}${S}<br>il répon${D}<br>nous répondON${S}<br>vous répondE${Z}<br>ils répond${ENT}`,
                 passe: avoir("répondu"),
                 futur: futur("répondr", false)
             },
             "Descendre": {
-                present: `DescenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je descenD${S}<br>tu descenD${S}<br>il descen${D}<br>nous descendON${S}<br>vous descendE${Z}<br>ils descend${ENT}`,
+                present: `DescenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je descen${D}${S}<br>tu descen${D}${S}<br>il descen${D}<br>nous descendON${S}<br>vous descendE${Z}<br>ils descend${ENT}`,
                 passe: etre("descendu"),
                 futur: futur("descendr", false)
             },
             "Rendre": {
-                present: `RenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je renD${S}<br>tu renD${S}<br>il ren${D}<br>nous rendON${S}<br>vous rendE${Z}<br>ils rend${ENT}`,
+                present: `RenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je ren${D}${S}<br>tu ren${D}${S}<br>il ren${D}<br>nous rendON${S}<br>vous rendE${Z}<br>ils rend${ENT}`,
                 passe: avoir("rendu"),
                 futur: futur("rendr", false)
+            },
+            "Défendre": {
+                present: `DéfenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je défen${D}${S}<br>tu défen${D}${S}<br>il défen${D}<br>nous défendON${S}<br>vous défendE${Z}<br>ils défend${ENT}`,
+                passe: avoir("défendu"),
+                futur: futur("défendr", false)
+            },
+            "Dépendre": {
+                present: `DépenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je dépen${D}${S}<br>tu dépen${D}${S}<br>il dépen${D}<br>nous dépendON${S}<br>vous dépendE${Z}<br>ils dépend${ENT}`,
+                passe: avoir("dépendu"),
+                futur: futur("dépendr", false)
+            },
+            "Fondre": {
+                present: `FonDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je fon${D}${S}<br>tu fon${D}${S}<br>il fon${D}<br>nous fondON${S}<br>vous fondE${Z}<br>ils fond${ENT}`,
+                passe: avoir("fondu"),
+                futur: futur("fondr", false)
+            },
+            "Confondre": {
+                present: `ConfonDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>je confon${D}${S}<br>tu confon${D}${S}<br>il confon${D}<br>nous confondON${S}<br>vous confondE${Z}<br>ils confond${ENT}`,
+                passe: avoir("confondu"),
+                futur: futur("confondr", false)
+            },
+            "Entendre": {
+                present: `EntenDRE<br>БЕЗ 'T' в 3-й особі однини!<br><br>j'enten${D}${S}<br>tu enten${D}${S}<br>il enten${D}<br>nous entendON${S}<br>vous entendE${Z}<br>ils entend${ENT}`,
+                passe: avoir("entendu"),
+                futur: futur("entendr", true)
+            },
+
+            "Atteindre": {
+                present: `AtteinDRE<br>В однині D зникає, у множині з'являється GN [нь].<br><br>j'attein${S}<br>tu attein${S}<br>il attein${T}<br>nous atteiGNON${S}<br>vous atteiGNE${Z}<br>ils atteiGN${ENT}`,
+                passe: avoir("atteint"),
+                futur: futur("atteindr", true)
+            },
+            "Éteindre": {
+                present: `ÉteinDRE<br>В однині D зникає, у множині з'являється GN [нь].<br><br>j'étein${S}<br>tu étein${S}<br>il étein${T}<br>nous éteiGNON${S}<br>vous éteiGNE${Z}<br>ils éteiGN${ENT}`,
+                passe: avoir("éteint"),
+                futur: futur("éteindr", true)
+            },
+
+            "Vaincre": {
+                present: `VainCRE<br>В однині C не читається, у множині C → QU [к].<br><br>je vain${C}${S}<br>tu vain${C}${S}<br>il vain${C}<br>nous vainQUON${S}<br>vous vainQUE${Z}<br>ils vainQU${ENT}`,
+                passe: avoir("vaincu"),
+                futur: futur("vaincr", false)
+            },
+            "Convaincre": {
+                present: `ConvainCRE<br>В однині C не читається, у множині C → QU [к].<br><br>je convain${C}${S}<br>tu convain${C}${S}<br>il convain${C}<br>nous convainQUON${S}<br>vous convainQUE${Z}<br>ils convainQU${ENT}`,
+                passe: avoir("convaincu"),
+                futur: futur("convaincr", false)
             },
 
             "Mettre": {
@@ -432,6 +495,11 @@
                 passe: avoir("voulu"),
                 futur: futur("voudr", false)
             },
+            "Valoir": {
+                present: `ValOIR<br>Закінчення -X, -X, -T в однині.<br><br>je vau${X}<br>tu vau${X}<br>il vau${T}<br>nous valON${S}<br>vous valE${Z}<br>ils val${ENT}`,
+                passe: avoir("valu"),
+                futur: futur("vaudr", false)
+            },
             "Devoir": {
                 present: `DevOIR<br><br>je doi${S}<br>tu doi${S}<br>il doi${T}<br>nous devON${S}<br>vous devE${Z}<br>ils doiv${ENT}`,
                 passe: avoir("dû"),
@@ -472,6 +540,21 @@
                 present: `ConnaiTRE<br>У множині з'являється SS.<br><br>je connai${S}<br>tu connai${S}<br>il connaî${T}<br>nous connaiSSON${S}<br>vous connaiSSE${Z}<br>ils connaiSS${ENT}`,
                 passe: avoir("connu"),
                 futur: futur("connaîtr", false)
+            },
+            "Paraître": {
+                present: `ParaîTRE<br>У множині з'являється SS.<br><br>je parai${S}<br>tu parai${S}<br>il paraî${T}<br>nous paraiSSON${S}<br>vous paraiSSE${Z}<br>ils paraiSS${ENT}`,
+                passe: avoir("paru"),
+                futur: futur("paraîtr", false)
+            },
+            "Apparaître": {
+                present: `ApparaîTRE<br>У множині з'являється SS.<br><br>j'apparai${S}<br>tu apparai${S}<br>il apparaî${T}<br>nous apparaiSSON${S}<br>vous apparaiSSE${Z}<br>ils apparaiSS${ENT}`,
+                passe: etre("apparu"),
+                futur: futur("apparaîtr", true)
+            },
+            "Disparaître": {
+                present: `DisparaîTRE<br>У множині з'являється SS.<br><br>je disparai${S}<br>tu disparai${S}<br>il disparaî${T}<br>nous disparaiSSON${S}<br>vous disparaiSSE${Z}<br>ils disparaiSS${ENT}`,
+                passe: avoir("disparu"),
+                futur: futur("disparaîtr", false)
             },
             "Plaire": {
                 present: `PlaiRE<br><br>je plai${S}<br>tu plai${S}<br>il plaî${T}<br>nous plaiSON${S}<br>vous plaiSE${Z}<br>ils plaiS${ENT}`,
@@ -727,7 +810,7 @@
             });
 
             if (allDatabaseCards.length === 0) {
-                alert("Усі обрані дієслова вже вивчені! 🎉 Вимкніть перемикач «Пропускати вивчені», щоб повторити їх.");
+                showToast("Усі обрані дієслова вже вивчені! Вимкніть «Пропускати вивчені», щоб повторити їх.");
                 return;
             }
 
@@ -763,12 +846,12 @@
             
             if (unmasteredCards.length === 0) {
                 if (allDatabaseCards.length === 0) {
-                    alert("Сесію завершено!");
+                    showToast("Сесію завершено!");
                     returnToSetup();
                     return;
                 }
                 unmasteredCards = [...allDatabaseCards];
-                if (sessionStats.completed > 0) alert("Починаємо нове коло!");
+                if (sessionStats.completed > 0) showToast("Починаємо нове коло!");
             }
             
             unmasteredCards.sort((a, b) => (a.streak - b.streak) || (Math.random() - 0.5));
@@ -811,7 +894,6 @@
             updateUIStats();
             updateDotsUI(currentCard.streak || 0);
 
-            // Оновлений UI - відображаємо інфінітив на плашці (якщо не приховано), а переклад внизу
             const infinitiveBadge = document.getElementById('infinitiveBadge');
             if (hideInfinitiveActive) {
                 infinitiveBadge.classList.add('hidden');
@@ -966,10 +1048,9 @@
             if (ruleBox.classList.contains('hidden')) {
                 if (currentCard) currentCard.ruleShown = true; 
                 
-                const tense = currentCard.tenseKey; // 'present', 'passe', 'futur'
+                const tense = currentCard.tenseKey;
                 let ruleText = "Правила для цього дієслова ще не додані.";
                 
-                // Шукаємо ключ без урахування регістру, щоб знаходило слова завжди!
                 const infKey = Object.keys(verbRules).find(k => k.toLowerCase() === currentCard.infFr.toLowerCase());
                 
                 if (infKey && verbRules[infKey] && verbRules[infKey][tense]) {
@@ -1000,8 +1081,8 @@
 
         async function bootApp() {
             try {
-                // Завантаження трьох розбитих файлів
-                const files = ['./data3_1.json', './data3_2.json', './data3_3.json'];
+                // Завантаження чотирьох розбитих файлів
+                const files = ['./data3_1.json', './data3_2.json', './data3_3.json', './data3_4.json'];
                 const fetchPromises = files.map(file => fetch(file));
                 const responses = await Promise.all(fetchPromises);
                 
