@@ -1,0 +1,379 @@
+[
+  {
+    "category": "Основа CONNAÎTRE",
+    "infFr": "Paraître",
+    "infUk": "здаватися / виглядати",
+    "present": [
+      { "p": "je", "v": "parais", "s": "fatigué", "u": "я виглядаю втомленим" },
+      { "p": "tu", "v": "parais", "s": "calme", "u": "ти здаєшся спокійним" },
+      { "p": "elle", "v": "paraît", "s": "heureuse", "u": "вона виглядає щасливою" },
+      { "p": "nous", "v": "paraissons", "s": "surpris", "u": "ми здаємося здивованими" },
+      { "p": "vous", "v": "paraissez", "s": "jeune", "u": "ви виглядаєте молодо" },
+      { "p": "ils", "v": "paraissent", "s": "prêts", "u": "вони виглядають готовими" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai paru", "s": "fatigué", "u": "я виглядав втомленим" },
+      { "p": "tu", "v": "as paru", "s": "calme", "u": "ти здавався спокійним" },
+      { "p": "elle", "v": "a paru", "s": "heureuse", "u": "вона виглядала щасливою" },
+      { "p": "nous", "v": "avons paru", "s": "surpris", "u": "ми здавалися здивованими" },
+      { "p": "vous", "v": "avez paru", "s": "jeune", "u": "ви виглядали молодо" },
+      { "p": "ils", "v": "ont paru", "s": "prêts", "u": "вони виглядали готовими" }
+    ],
+    "futur": [
+      { "p": "je", "v": "paraîtrai", "s": "fatigué", "u": "я виглядатиму втомленим" },
+      { "p": "tu", "v": "paraîtras", "s": "calme", "u": "ти здаватимешся спокійним" },
+      { "p": "elle", "v": "paraîtra", "s": "heureuse", "u": "вона виглядатиме щасливою" },
+      { "p": "nous", "v": "paraîtrons", "s": "surpris", "u": "ми здаватимемося здивованими" },
+      { "p": "vous", "v": "paraîtrez", "s": "jeune", "u": "ви виглядатимете молодо" },
+      { "p": "ils", "v": "paraîtront", "s": "prêts", "u": "вони виглядатимуть готовими" }
+    ]
+  },
+  {
+    "category": "Основа CONNAÎTRE",
+    "infFr": "Apparaître",
+    "infUk": "з'являтися",
+    "present": [
+      { "p": "j'", "v": "apparais", "s": "sur la photo", "u": "я з'являюся на фото" },
+      { "p": "tu", "v": "apparais", "s": "soudain", "u": "ти з'являєшся раптово" },
+      { "p": "elle", "v": "apparaît", "s": "à l'écran", "u": "вона з'являється на екрані" },
+      { "p": "nous", "v": "apparaissons", "s": "sur scène", "u": "ми з'являємося на сцені" },
+      { "p": "vous", "v": "apparaissez", "s": "dans le film", "u": "ви з'являєтеся у фільмі" },
+      { "p": "elles", "v": "apparaissent", "s": "dans le ciel", "u": "вони з'являються на небі" }
+    ],
+    "passe": [
+      { "p": "je", "v": "suis apparu", "s": "sur la photo", "u": "я (ч.р.) з'явився на фото" },
+      { "p": "tu", "v": "es apparu", "s": "soudain", "u": "ти (ч.р.) з'явився раптово" },
+      { "p": "elle", "v": "est apparue", "s": "à l'écran", "u": "вона з'явилася на екрані" },
+      { "p": "nous", "v": "sommes apparus", "s": "sur scène", "u": "ми з'явилися на сцені" },
+      { "p": "vous", "v": "êtes apparus", "s": "dans le film", "u": "ви з'явилися у фільмі" },
+      { "p": "elles", "v": "sont apparues", "s": "dans le ciel", "u": "вони з'явилися на небі" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "apparaîtrai", "s": "sur la photo", "u": "я з'явлюся на фото" },
+      { "p": "tu", "v": "apparaîtras", "s": "soudain", "u": "ти з'явишся раптово" },
+      { "p": "elle", "v": "apparaîtra", "s": "à l'écran", "u": "вона з'явиться на екрані" },
+      { "p": "nous", "v": "apparaîtrons", "s": "sur scène", "u": "ми з'явимося на сцені" },
+      { "p": "vous", "v": "apparaîtrez", "s": "dans le film", "u": "ви з'явитеся у фільмі" },
+      { "p": "elles", "v": "apparaîtront", "s": "dans le ciel", "u": "вони з'являться на небі" }
+    ]
+  },
+  {
+    "category": "Основа CONNAÎTRE",
+    "infFr": "Disparaître",
+    "infUk": "зникати",
+    "present": [
+      { "p": "je", "v": "disparais", "s": "dans la foule", "u": "я зникаю в натовпі" },
+      { "p": "tu", "v": "disparais", "s": "sans un mot", "u": "ти зникаєш без жодного слова" },
+      { "p": "il", "v": "disparaît", "s": "dans la nuit", "u": "він зникає в ночі" },
+      { "p": "nous", "v": "disparaissons", "s": "vite", "u": "ми швидко зникаємо" },
+      { "p": "vous", "v": "disparaissez", "s": "souvent", "u": "ви часто зникаєте" },
+      { "p": "ils", "v": "disparaissent", "s": "derrière le mur", "u": "вони зникають за стіною" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai disparu", "s": "dans la foule", "u": "я зник у натовпі" },
+      { "p": "tu", "v": "as disparu", "s": "sans un mot", "u": "ти зник без жодного слова" },
+      { "p": "il", "v": "a disparu", "s": "dans la nuit", "u": "він зник у ночі" },
+      { "p": "nous", "v": "avons disparu", "s": "vite", "u": "ми швидко зникли" },
+      { "p": "vous", "v": "avez disparu", "s": "souvent", "u": "ви часто зникали" },
+      { "p": "ils", "v": "ont disparu", "s": "derrière le mur", "u": "вони зникли за стіною" }
+    ],
+    "futur": [
+      { "p": "je", "v": "disparaîtrai", "s": "dans la foule", "u": "я зникну в натовпі" },
+      { "p": "tu", "v": "disparaîtras", "s": "sans un mot", "u": "ти зникнеш без жодного слова" },
+      { "p": "il", "v": "disparaîtra", "s": "dans la nuit", "u": "він зникне в ночі" },
+      { "p": "nous", "v": "disparaîtrons", "s": "vite", "u": "ми швидко зникнемо" },
+      { "p": "vous", "v": "disparaîtrez", "s": "souvent", "u": "ви часто зникатимете" },
+      { "p": "ils", "v": "disparaîtront", "s": "derrière le mur", "u": "вони зникнуть за стіною" }
+    ]
+  },
+  {
+    "category": "Регулярні -DRE",
+    "infFr": "Défendre",
+    "infUk": "захищати / забороняти",
+    "present": [
+      { "p": "je", "v": "défends", "s": "mes amis", "u": "я захищаю своїх друзів" },
+      { "p": "tu", "v": "défends", "s": "ton opinion", "u": "ти захищаєш свою думку" },
+      { "p": "il", "v": "défend", "s": "son pays", "u": "він захищає свою країну" },
+      { "p": "nous", "v": "défendons", "s": "la nature", "u": "ми захищаємо природу" },
+      { "p": "vous", "v": "défendez", "s": "ce projet", "u": "ви захищаєте цей проєкт" },
+      { "p": "elles", "v": "défendent", "s": "leurs droits", "u": "вони захищають свої права" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai défendu", "s": "mes amis", "u": "я захистив своїх друзів" },
+      { "p": "tu", "v": "as défendu", "s": "ton opinion", "u": "ти захистив свою думку" },
+      { "p": "il", "v": "a défendu", "s": "son pays", "u": "він захистив свою країну" },
+      { "p": "nous", "v": "avons défendu", "s": "la nature", "u": "ми захистили природу" },
+      { "p": "vous", "v": "avez défendu", "s": "ce projet", "u": "ви захистили цей проєкт" },
+      { "p": "elles", "v": "ont défendu", "s": "leurs droits", "u": "вони захистили свої права" }
+    ],
+    "futur": [
+      { "p": "je", "v": "défendrai", "s": "mes amis", "u": "я захищатиму своїх друзів" },
+      { "p": "tu", "v": "défendras", "s": "ton opinion", "u": "ти захищатимеш свою думку" },
+      { "p": "il", "v": "défendra", "s": "son pays", "u": "він захищатиме свою країну" },
+      { "p": "nous", "v": "défendrons", "s": "la nature", "u": "ми захищатимемо природу" },
+      { "p": "vous", "v": "défendrez", "s": "ce projet", "u": "ви захищатимете цей проєкт" },
+      { "p": "elles", "v": "défendront", "s": "leurs droits", "u": "вони захищатимуть свої права" }
+    ]
+  },
+  {
+    "category": "Регулярні -DRE",
+    "infFr": "Dépendre",
+    "infUk": "залежати",
+    "present": [
+      { "p": "je", "v": "dépends", "s": "de mes parents", "u": "я залежу від своїх батьків" },
+      { "p": "tu", "v": "dépends", "s": "de lui", "u": "ти залежиш від нього" },
+      { "p": "il", "v": "dépend", "s": "de la météo", "u": "він залежить від погоди" },
+      { "p": "nous", "v": "dépendons", "s": "de vous", "u": "ми залежимо від вас" },
+      { "p": "vous", "v": "dépendez", "s": "de cette décision", "u": "ви залежите від цього рішення" },
+      { "p": "ils", "v": "dépendent", "s": "de notre aide", "u": "вони залежать від нашої допомоги" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai dépendu", "s": "de mes parents", "u": "я залежав від своїх батьків" },
+      { "p": "tu", "v": "as dépendu", "s": "de lui", "u": "ти залежав від нього" },
+      { "p": "il", "v": "a dépendu", "s": "de la météo", "u": "він залежав від погоди" },
+      { "p": "nous", "v": "avons dépendu", "s": "de vous", "u": "ми залежали від вас" },
+      { "p": "vous", "v": "avez dépendu", "s": "de cette décision", "u": "ви залежали від цього рішення" },
+      { "p": "ils", "v": "ont dépendu", "s": "de notre aide", "u": "вони залежали від нашої допомоги" }
+    ],
+    "futur": [
+      { "p": "je", "v": "dépendrai", "s": "de mes parents", "u": "я залежатиму від своїх батьків" },
+      { "p": "tu", "v": "dépendras", "s": "de lui", "u": "ти залежатимеш від нього" },
+      { "p": "il", "v": "dépendra", "s": "de la météo", "u": "він залежатиме від погоди" },
+      { "p": "nous", "v": "dépendrons", "s": "de vous", "u": "ми залежатимемо від вас" },
+      { "p": "vous", "v": "dépendrez", "s": "de cette décision", "u": "ви залежатимете від цього рішення" },
+      { "p": "ils", "v": "dépendront", "s": "de notre aide", "u": "вони залежатимуть від нашої допомоги" }
+    ]
+  },
+  {
+    "category": "Регулярні -DRE",
+    "infFr": "Fondre",
+    "infUk": "танути / плавити",
+    "present": [
+      { "p": "je", "v": "fonds", "s": "de bonheur", "u": "я тану від щастя" },
+      { "p": "tu", "v": "fonds", "s": "en larmes", "u": "ти заливаєшся сльозами" },
+      { "p": "il", "v": "fond", "s": "au soleil", "u": "він тане на сонці" },
+      { "p": "nous", "v": "fondons", "s": "le chocolat", "u": "ми розтоплюємо шоколад" },
+      { "p": "vous", "v": "fondez", "s": "le beurre", "u": "ви розтоплюєте масло" },
+      { "p": "elles", "v": "fondent", "s": "vite", "u": "вони швидко тануть" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai fondu", "s": "de bonheur", "u": "я розтанув від щастя" },
+      { "p": "tu", "v": "as fondu", "s": "en larmes", "u": "ти залився сльозами" },
+      { "p": "il", "v": "a fondu", "s": "au soleil", "u": "він розтанув на сонці" },
+      { "p": "nous", "v": "avons fondu", "s": "le chocolat", "u": "ми розтопили шоколад" },
+      { "p": "vous", "v": "avez fondu", "s": "le beurre", "u": "ви розтопили масло" },
+      { "p": "elles", "v": "ont fondu", "s": "vite", "u": "вони швидко розтанули" }
+    ],
+    "futur": [
+      { "p": "je", "v": "fondrai", "s": "de bonheur", "u": "я розтану від щастя" },
+      { "p": "tu", "v": "fondras", "s": "en larmes", "u": "ти заллєшся сльозами" },
+      { "p": "il", "v": "fondra", "s": "au soleil", "u": "він розтане на сонці" },
+      { "p": "nous", "v": "fondrons", "s": "le chocolat", "u": "ми розтопимо шоколад" },
+      { "p": "vous", "v": "fondrez", "s": "le beurre", "u": "ви розтопите масло" },
+      { "p": "elles", "v": "fondront", "s": "vite", "u": "вони швидко розтануть" }
+    ]
+  },
+  {
+    "category": "Регулярні -DRE",
+    "infFr": "Confondre",
+    "infUk": "плутати",
+    "present": [
+      { "p": "je", "v": "confonds", "s": "ces deux mots", "u": "я плутаю ці два слова" },
+      { "p": "tu", "v": "confonds", "s": "les dates", "u": "ти плутаєш дати" },
+      { "p": "elle", "v": "confond", "s": "les noms", "u": "вона плутає імена" },
+      { "p": "nous", "v": "confondons", "s": "les clés", "u": "ми плутаємо ключі" },
+      { "p": "vous", "v": "confondez", "s": "tout", "u": "ви все плутаєте" },
+      { "p": "ils", "v": "confondent", "s": "les jumeaux", "u": "вони плутають близнюків" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai confondu", "s": "ces deux mots", "u": "я сплутав ці два слова" },
+      { "p": "tu", "v": "as confondu", "s": "les dates", "u": "ти сплутав дати" },
+      { "p": "elle", "v": "a confondu", "s": "les noms", "u": "вона сплутала імена" },
+      { "p": "nous", "v": "avons confondu", "s": "les clés", "u": "ми сплутали ключі" },
+      { "p": "vous", "v": "avez confondu", "s": "tout", "u": "ви все сплутали" },
+      { "p": "ils", "v": "ont confondu", "s": "les jumeaux", "u": "вони сплутали близнюків" }
+    ],
+    "futur": [
+      { "p": "je", "v": "confondrai", "s": "ces deux mots", "u": "я плутатиму ці два слова" },
+      { "p": "tu", "v": "confondras", "s": "les dates", "u": "ти плутатимеш дати" },
+      { "p": "elle", "v": "confondra", "s": "les noms", "u": "вона плутатиме імена" },
+      { "p": "nous", "v": "confondrons", "s": "les clés", "u": "ми плутатимемо ключі" },
+      { "p": "vous", "v": "confondrez", "s": "tout", "u": "ви все плутатимете" },
+      { "p": "ils", "v": "confondront", "s": "les jumeaux", "u": "вони плутатимуть близнюків" }
+    ]
+  },
+  {
+    "category": "Регулярні -DRE",
+    "infFr": "Entendre",
+    "infUk": "чути",
+    "present": [
+      { "p": "j'", "v": "entends", "s": "de la musique", "u": "я чую музику" },
+      { "p": "tu", "v": "entends", "s": "un bruit", "u": "ти чуєш шум" },
+      { "p": "il", "v": "entend", "s": "bien", "u": "він добре чує" },
+      { "p": "nous", "v": "entendons", "s": "la mer", "u": "ми чуємо море" },
+      { "p": "vous", "v": "entendez", "s": "ma voix", "u": "ви чуєте мій голос" },
+      { "p": "elles", "v": "entendent", "s": "tout", "u": "вони все чують" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai entendu", "s": "de la musique", "u": "я чув музику" },
+      { "p": "tu", "v": "as entendu", "s": "un bruit", "u": "ти чув шум" },
+      { "p": "il", "v": "a entendu", "s": "bien", "u": "він добре чув" },
+      { "p": "nous", "v": "avons entendu", "s": "la mer", "u": "ми чули море" },
+      { "p": "vous", "v": "avez entendu", "s": "ma voix", "u": "ви чули мій голос" },
+      { "p": "elles", "v": "ont entendu", "s": "tout", "u": "вони все чули" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "entendrai", "s": "de la musique", "u": "я почую музику" },
+      { "p": "tu", "v": "entendras", "s": "un bruit", "u": "ти почуєш шум" },
+      { "p": "il", "v": "entendra", "s": "bien", "u": "він добре чутиме" },
+      { "p": "nous", "v": "entendrons", "s": "la mer", "u": "ми почуємо море" },
+      { "p": "vous", "v": "entendrez", "s": "ma voix", "u": "ви почуєте мій голос" },
+      { "p": "elles", "v": "entendront", "s": "tout", "u": "вони все почують" }
+    ]
+  },
+  {
+    "category": "Дієслова на -EINDRE",
+    "infFr": "Atteindre",
+    "infUk": "досягати",
+    "present": [
+      { "p": "j'", "v": "atteins", "s": "mon but", "u": "я досягаю своєї мети" },
+      { "p": "tu", "v": "atteins", "s": "le sommet", "u": "ти досягаєш вершини" },
+      { "p": "elle", "v": "atteint", "s": "son objectif", "u": "вона досягає своєї цілі" },
+      { "p": "nous", "v": "atteignons", "s": "la gare", "u": "ми дістаємося вокзалу" },
+      { "p": "vous", "v": "atteignez", "s": "un record", "u": "ви досягаєте рекорду" },
+      { "p": "ils", "v": "atteignent", "s": "la ville", "u": "вони дістаються міста" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai atteint", "s": "mon but", "u": "я досяг своєї мети" },
+      { "p": "tu", "v": "as atteint", "s": "le sommet", "u": "ти досяг вершини" },
+      { "p": "elle", "v": "a atteint", "s": "son objectif", "u": "вона досягла своєї цілі" },
+      { "p": "nous", "v": "avons atteint", "s": "la gare", "u": "ми дісталися вокзалу" },
+      { "p": "vous", "v": "avez atteint", "s": "un record", "u": "ви досягли рекорду" },
+      { "p": "ils", "v": "ont atteint", "s": "la ville", "u": "вони дісталися міста" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "atteindrai", "s": "mon but", "u": "я досягну своєї мети" },
+      { "p": "tu", "v": "atteindras", "s": "le sommet", "u": "ти досягнеш вершини" },
+      { "p": "elle", "v": "atteindra", "s": "son objectif", "u": "вона досягне своєї цілі" },
+      { "p": "nous", "v": "atteindrons", "s": "la gare", "u": "ми дістанемося вокзалу" },
+      { "p": "vous", "v": "atteindrez", "s": "un record", "u": "ви досягнете рекорду" },
+      { "p": "ils", "v": "atteindront", "s": "la ville", "u": "вони дістануться міста" }
+    ]
+  },
+  {
+    "category": "Дієслова на -EINDRE",
+    "infFr": "Éteindre",
+    "infUk": "вимикати / гасити",
+    "present": [
+      { "p": "j'", "v": "éteins", "s": "la lumière", "u": "я вимикаю світло" },
+      { "p": "tu", "v": "éteins", "s": "la télé", "u": "ти вимикаєш телевізор" },
+      { "p": "il", "v": "éteint", "s": "son téléphone", "u": "він вимикає свій телефон" },
+      { "p": "nous", "v": "éteignons", "s": "le feu", "u": "ми гасимо вогонь" },
+      { "p": "vous", "v": "éteignez", "s": "l'ordinateur", "u": "ви вимикаєте комп'ютер" },
+      { "p": "elles", "v": "éteignent", "s": "les bougies", "u": "вони гасять свічки" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai éteint", "s": "la lumière", "u": "я вимкнув світло" },
+      { "p": "tu", "v": "as éteint", "s": "la télé", "u": "ти вимкнув телевізор" },
+      { "p": "il", "v": "a éteint", "s": "son téléphone", "u": "він вимкнув свій телефон" },
+      { "p": "nous", "v": "avons éteint", "s": "le feu", "u": "ми загасили вогонь" },
+      { "p": "vous", "v": "avez éteint", "s": "l'ordinateur", "u": "ви вимкнули комп'ютер" },
+      { "p": "elles", "v": "ont éteint", "s": "les bougies", "u": "вони загасили свічки" }
+    ],
+    "futur": [
+      { "p": "j'", "v": "éteindrai", "s": "la lumière", "u": "я вимкну світло" },
+      { "p": "tu", "v": "éteindras", "s": "la télé", "u": "ти вимкнеш телевізор" },
+      { "p": "il", "v": "éteindra", "s": "son téléphone", "u": "він вимкне свій телефон" },
+      { "p": "nous", "v": "éteindrons", "s": "le feu", "u": "ми загасимо вогонь" },
+      { "p": "vous", "v": "éteindrez", "s": "l'ordinateur", "u": "ви вимкнете комп'ютер" },
+      { "p": "elles", "v": "éteindront", "s": "les bougies", "u": "вони загасять свічки" }
+    ]
+  },
+  {
+    "category": "Основа VAINCRE",
+    "infFr": "Vaincre",
+    "infUk": "перемагати",
+    "present": [
+      { "p": "je", "v": "vaincs", "s": "ma peur", "u": "я долаю свій страх" },
+      { "p": "tu", "v": "vaincs", "s": "les obstacles", "u": "ти долаєш перешкоди" },
+      { "p": "il", "v": "vainc", "s": "son adversaire", "u": "він перемагає свого суперника" },
+      { "p": "nous", "v": "vainquons", "s": "ensemble", "u": "ми перемагаємо разом" },
+      { "p": "vous", "v": "vainquez", "s": "le doute", "u": "ви долаєте сумніви" },
+      { "p": "ils", "v": "vainquent", "s": "l'ennemi", "u": "вони перемагають ворога" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai vaincu", "s": "ma peur", "u": "я подолав свій страх" },
+      { "p": "tu", "v": "as vaincu", "s": "les obstacles", "u": "ти подолав перешкоди" },
+      { "p": "il", "v": "a vaincu", "s": "son adversaire", "u": "він переміг свого суперника" },
+      { "p": "nous", "v": "avons vaincu", "s": "ensemble", "u": "ми перемогли разом" },
+      { "p": "vous", "v": "avez vaincu", "s": "le doute", "u": "ви подолали сумніви" },
+      { "p": "ils", "v": "ont vaincu", "s": "l'ennemi", "u": "вони перемогли ворога" }
+    ],
+    "futur": [
+      { "p": "je", "v": "vaincrai", "s": "ma peur", "u": "я подолаю свій страх" },
+      { "p": "tu", "v": "vaincras", "s": "les obstacles", "u": "ти подолаєш перешкоди" },
+      { "p": "il", "v": "vaincra", "s": "son adversaire", "u": "він переможе свого суперника" },
+      { "p": "nous", "v": "vaincrons", "s": "ensemble", "u": "ми переможемо разом" },
+      { "p": "vous", "v": "vaincrez", "s": "le doute", "u": "ви подолаєте сумніви" },
+      { "p": "ils", "v": "vaincront", "s": "l'ennemi", "u": "вони переможуть ворога" }
+    ]
+  },
+  {
+    "category": "Основа VAINCRE",
+    "infFr": "Convaincre",
+    "infUk": "переконувати",
+    "present": [
+      { "p": "je", "v": "convaincs", "s": "mes amis", "u": "я переконую своїх друзів" },
+      { "p": "tu", "v": "convaincs", "s": "le public", "u": "ти переконуєш публіку" },
+      { "p": "elle", "v": "convainc", "s": "son patron", "u": "вона переконує свого шефа" },
+      { "p": "nous", "v": "convainquons", "s": "le jury", "u": "ми переконуємо журі" },
+      { "p": "vous", "v": "convainquez", "s": "tout le monde", "u": "ви переконуєте всіх" },
+      { "p": "ils", "v": "convainquent", "s": "les clients", "u": "вони переконують клієнтів" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai convaincu", "s": "mes amis", "u": "я переконав своїх друзів" },
+      { "p": "tu", "v": "as convaincu", "s": "le public", "u": "ти переконав публіку" },
+      { "p": "elle", "v": "a convaincu", "s": "son patron", "u": "вона переконала свого шефа" },
+      { "p": "nous", "v": "avons convaincu", "s": "le jury", "u": "ми переконали журі" },
+      { "p": "vous", "v": "avez convaincu", "s": "tout le monde", "u": "ви переконали всіх" },
+      { "p": "ils", "v": "ont convaincu", "s": "les clients", "u": "вони переконали клієнтів" }
+    ],
+    "futur": [
+      { "p": "je", "v": "convaincrai", "s": "mes amis", "u": "я переконаю своїх друзів" },
+      { "p": "tu", "v": "convaincras", "s": "le public", "u": "ти переконаєш публіку" },
+      { "p": "elle", "v": "convaincra", "s": "son patron", "u": "вона переконає свого шефа" },
+      { "p": "nous", "v": "convaincrons", "s": "le jury", "u": "ми переконаємо журі" },
+      { "p": "vous", "v": "convaincrez", "s": "tout le monde", "u": "ви переконаєте всіх" },
+      { "p": "ils", "v": "convaincront", "s": "les clients", "u": "вони переконають клієнтів" }
+    ]
+  },
+  {
+    "category": "Особливості -OIR",
+    "infFr": "Valoir",
+    "infUk": "вартувати / коштувати",
+    "present": [
+      { "p": "je", "v": "vaux", "s": "mieux que ça", "u": "я вартий більшого" },
+      { "p": "tu", "v": "vaux", "s": "de l'or", "u": "ти на вагу золота" },
+      { "p": "il", "v": "vaut", "s": "dix euros", "u": "він коштує десять євро" },
+      { "p": "nous", "v": "valons", "s": "beaucoup", "u": "ми багато чого варті" },
+      { "p": "vous", "v": "valez", "s": "votre prix", "u": "ви варті своєї ціни" },
+      { "p": "elles", "v": "valent", "s": "la peine", "u": "вони того варті" }
+    ],
+    "passe": [
+      { "p": "j'", "v": "ai valu", "s": "mieux que ça", "u": "я був вартий більшого" },
+      { "p": "tu", "v": "as valu", "s": "de l'or", "u": "ти був на вагу золота" },
+      { "p": "il", "v": "a valu", "s": "dix euros", "u": "він коштував десять євро" },
+      { "p": "nous", "v": "avons valu", "s": "beaucoup", "u": "ми багато чого були варті" },
+      { "p": "vous", "v": "avez valu", "s": "votre prix", "u": "ви були варті своєї ціни" },
+      { "p": "elles", "v": "ont valu", "s": "la peine", "u": "вони були того варті" }
+    ],
+    "futur": [
+      { "p": "je", "v": "vaudrai", "s": "mieux que ça", "u": "я буду вартий більшого" },
+      { "p": "tu", "v": "vaudras", "s": "de l'or", "u": "ти будеш на вагу золота" },
+      { "p": "il", "v": "vaudra", "s": "dix euros", "u": "він коштуватиме десять євро" },
+      { "p": "nous", "v": "vaudrons", "s": "beaucoup", "u": "ми багато чого будемо варті" },
+      { "p": "vous", "v": "vaudrez", "s": "votre prix", "u": "ви будете варті своєї ціни" },
+      { "p": "elles", "v": "vaudront", "s": "la peine", "u": "вони будуть того варті" }
+    ]
+  }
+]
